@@ -11,6 +11,7 @@ import sys
 from subprocess import call
 
 import os
+import torch
 
 # Job id and gpu_id
 if len(sys.argv) > 2:
@@ -32,7 +33,10 @@ executable = 'python'
 # =====Program=====
 if_test = int(False)
 run_model = 'relgan'
-CUDA = int(True)
+if torch.cuda.is_available() and torch.cuda.device_count() > 0:
+    CUDA = int(True)
+else:
+    CUDA = int(False)
 if_real_data = [int(False), int(True)]
 data_shuffle = int(False)
 gen_init = 'truncated_normal'
