@@ -48,7 +48,7 @@ dis_pretrain = int(False)
 # =====Oracle  or Real=====
 dataset = ['oracle', 'image_coco']
 model_type = 'vanilla'
-loss_type = 'RSGAN'
+loss_type = 'rsgan'
 vocab_size = [5000, 6613]
 temp_adpt = 'exp'
 temperature = [2, 100]
