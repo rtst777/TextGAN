@@ -90,15 +90,18 @@ if __name__ == '__main__':
         from instructor.real_data.seqgan_instructor import SeqGANInstructor
         from instructor.real_data.leakgan_instructor import LeakGANInstructor
         from instructor.real_data.relgan_instructor import RelGANInstructor
-
+        from instructor.real_data.gumbelgan_instructor import GumbelGANInstructor
     else:
         from instructor.oracle_data.seqgan_instructor import SeqGANInstructor
         from instructor.oracle_data.leakgan_instructor import LeakGANInstructor
         from instructor.oracle_data.relgan_instructor import RelGANInstructor
+        from instructor.oracle_data.gumbelgan_instructor import GumbelGANInstructor
+
     instruction_dict = {
         'leakgan': LeakGANInstructor,
         'seqgan': SeqGANInstructor,
         'relgan': RelGANInstructor,
+        'gumbelgan': GumbelGANInstructor,
     }
 
     inst = instruction_dict[cfg.run_model](opt)

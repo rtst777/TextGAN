@@ -22,7 +22,7 @@ oracle_pretrain = True  # True
 gen_pretrain = False
 dis_pretrain = False
 
-run_model = 'relgan'  # seqgan, leakgan, relgan
+run_model = 'relgan'  # seqgan, leakgan, relgan, gumbelgan
 gen_init = 'normal'  # normal, uniform, truncated_normal
 dis_init = 'uniform'  # normal, uniform, truncated_normal
 
@@ -30,16 +30,16 @@ dis_init = 'uniform'  # normal, uniform, truncated_normal
 if_real_data = False  # if use real data
 dataset = 'oracle'  # oracle, image_coco, emnlp_news
 model_type = 'vanilla'  # vanilla, noRMC, noGumbel (custom)
-loss_type = 'rsgan'  # standard, JS, KL, hinge, tv, LS, rsgan (for RelGAN)
+loss_type = 'rsgan'  # standard, JS, KL, hinge, tv, LS, rsgan (for RelGAN) TODO(ethanjiang) decide which loss for gumbelgan
 vocab_size = 5000  # oracle: 5000, coco: 6613, emnlp: 5255
 
-temp_adpt = 'exp'  # no, lin, exp, log, sigmoid, quad, sqrt (for RelGAN)
+temp_adpt = 'exp'  # no, lin, exp, log, sigmoid, quad, sqrt (for RelGAN) TODO(ethanjiang) decide which temp for gumbelgan
 temperature = 2
 
 # =====Basic Train=====
 samples_num = 10000  # 10000
-MLE_train_epoch = 150  # SeqGAN-80, LeakGAN-8, RelGAN-150
-ADV_train_epoch = 3000  # SeqGAN, LeakGAN-200, RelGAN-3000
+MLE_train_epoch = 150  # SeqGAN-80, LeakGAN-8, RelGAN-150  TODO(ethanjiang) decide the number for gumbelgan
+ADV_train_epoch = 3000  # SeqGAN, LeakGAN-200, RelGAN-3000  TODO(ethanjiang) decide the number for gumbelgan
 inter_epoch = 10  # LeakGAN-10
 batch_size = 64  # 64
 max_seq_len = 20  # 20
@@ -48,8 +48,8 @@ padding_idx = 0
 start_token = 'BOS'
 padding_token = 'EOS'
 gen_lr = 0.01  # 0.01
-gen_adv_lr = 1e-4  # RelGAN-1e-4
-dis_lr = 1e-4  # SeqGAN,LeakGAN-1e-2, RelGAN-1e-4
+gen_adv_lr = 1e-4  # RelGAN-1e-4  TODO(ethanjiang) decide the number for gumbelgan
+dis_lr = 1e-4  # SeqGAN,LeakGAN-1e-2, RelGAN-1e-4  TODO(ethanjiang) decide the number for gumbelgan
 clip_norm = 5.0
 
 pre_log_step = 10
@@ -66,19 +66,19 @@ gen_hidden_dim = 32  # 32
 goal_size = 16  # LeakGAN-16
 step_size = 4  # LeakGAN-4
 
-mem_slots = 1  # RelGAN-1
-num_heads = 2  # RelGAN-2
-head_size = 256  # RelGAN-256
+mem_slots = 1  # RelGAN-1  TODO(ethanjiang) decide the number for gumbelgan
+num_heads = 2  # RelGAN-2  TODO(ethanjiang) decide the number for gumbelgan
+head_size = 256  # RelGAN-256  TODO(ethanjiang) decide the number for gumbelgan
 
 # =====Discriminator=====
 d_step = 5  # SeqGAN-50, LeakGAN-5
 d_epoch = 3  # SeqGAN,LeakGAN-3
-ADV_d_step = 5  # SeqGAN,LeakGAN,RelGAN-5
+ADV_d_step = 5  # SeqGAN,LeakGAN,RelGAN-5  TODO(ethanjiang) decide the number for gumbelgan
 ADV_d_epoch = 3  # SeqGAN,LeakGAN-3
 
 dis_embed_dim = 64
 dis_hidden_dim = 64
-num_rep = 64  # RelGAN
+num_rep = 64  # RelGAN  TODO(ethanjiang) decide the number for gumbelgan
 
 # =====log=====
 log_time_str = strftime("%m%d_%H%M_%S", localtime())
