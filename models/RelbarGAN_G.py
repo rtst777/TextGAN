@@ -7,11 +7,11 @@ from models.generator import LSTMGenerator
 from models.relational_rnn_general import RelationalMemory
 
 
-class GumbelGAN_G(LSTMGenerator):
+class RelbarGAN_G(LSTMGenerator):
     def __init__(self, mem_slots, num_heads, head_size, embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx,
                  gpu=False):
-        super(GumbelGAN_G, self).__init__(embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, gpu)
-        self.name = 'gumbelgan'
+        super(RelbarGAN_G, self).__init__(embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, gpu)
+        self.name = 'relbargan'
 
         self.temperature = 1.0  # init value is 1.0
 
@@ -31,7 +31,7 @@ class GumbelGAN_G(LSTMGenerator):
 
     def step(self, inp, hidden):
         """
-        GumbelGAN step forward
+        RelbarGAN step forward
         :param inp: [batch_size]
         :param hidden: memory size
         :return: pred, hidden, next_token, next_token_onehot, next_o
@@ -56,8 +56,8 @@ class GumbelGAN_G(LSTMGenerator):
 
     def sample(self, num_samples, batch_size, one_hot=False, start_letter=cfg.start_letter):
         """
-        Sample from GumbelGAN Generator
-        - one_hot: if return pred of GumbelGAN, used for adversarial training
+        Sample from RelbarGAN Generator
+        - one_hot: if return pred of RelbarGAN, used for adversarial training
         :return:
             - all_preds: batch_size * seq_len * vocab_size, only use for a batch
             - samples: all samples

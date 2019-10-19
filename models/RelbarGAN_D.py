@@ -8,9 +8,9 @@ dis_filter_sizes = [2, 3, 4, 5]
 dis_num_filters = [300, 300, 300, 300]
 
 
-class GumbelGAN_D(CNNDiscriminator):
+class RelbarGAN_D(CNNDiscriminator):
     def __init__(self, embed_dim, max_seq_len, num_rep, vocab_size, padding_idx, gpu=False, dropout=0.25):
-        super(GumbelGAN_D, self).__init__(embed_dim, vocab_size, dis_filter_sizes, dis_num_filters, padding_idx,
+        super(RelbarGAN_D, self).__init__(embed_dim, vocab_size, dis_filter_sizes, dis_num_filters, padding_idx,
                                        gpu, dropout)
 
         self.embed_dim = embed_dim

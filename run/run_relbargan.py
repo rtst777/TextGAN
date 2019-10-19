@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Author       : William
-# @Project      : TextGAN-william
-# @FileName     : run_relgan.py
-# @Time         : Created at 2019-05-28
-# @Blog         : http://zhiweil.ml/
-# @Description  : 
-# Copyrights (C) 2018. All Rights Reserved.
-
 import sys
 from subprocess import call
 
@@ -32,7 +23,7 @@ executable = 'python'
 
 # =====Program=====
 if_test = int(False)
-run_model = 'relgan'
+run_model = 'relbargan'
 if torch.cuda.is_available() and torch.cuda.device_count() > 0:
     CUDA = int(True)
 else:
@@ -55,8 +46,8 @@ temperature = [2, 100]
 
 # =====Basic Train=====
 samples_num = 10000
-MLE_train_epoch = 10 # 150
-ADV_train_epoch = 20 # 3000
+MLE_train_epoch = 1 # 150
+ADV_train_epoch = 2 # 3000
 batch_size = 64
 max_seq_len = 20
 gen_lr = 0.01
@@ -131,7 +122,7 @@ args = [
     '--num_rep', num_rep,
 
     # Log
-    '--tips', 'vanilla RelGAN',
+    '--tips', 'vanilla RelbarGAN',
 ]
 
 args = list(map(str, args))

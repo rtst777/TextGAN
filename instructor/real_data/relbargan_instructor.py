@@ -7,21 +7,21 @@ from tqdm import tqdm
 import config as cfg
 from instructor.real_data.instructor import BasicInstructor
 from metrics.bleu import BLEU
-from models.GumbelGAN_D import GumbelGAN_D
-from models.GumbelGAN_G import GumbelGAN_G
+from models.RelbarGAN_D import RelbarGAN_D
+from models.RelbarGAN_G import RelbarGAN_G
 from utils.data_loader import GenDataIter
 from utils.helpers import get_fixed_temperature, get_losses
 from utils.text_process import tensor_to_tokens
 
 
-class GumbelGANInstructor(BasicInstructor):
+class RelbarGANInstructor(BasicInstructor):
     def __init__(self, opt):
-        super(GumbelGANInstructor, self).__init__(opt)
+        super(RelbarGANInstructor, self).__init__(opt)
 
         # generator, discriminator
-        self.gen = GumbelGAN_G(cfg.mem_slots, cfg.num_heads, cfg.head_size, cfg.gen_embed_dim, cfg.gen_hidden_dim,
+        self.gen = RelbarGAN_G(cfg.mem_slots, cfg.num_heads, cfg.head_size, cfg.gen_embed_dim, cfg.gen_hidden_dim,
                             cfg.vocab_size, cfg.max_seq_len, cfg.padding_idx, gpu=cfg.CUDA)
-        self.dis = GumbelGAN_D(cfg.dis_embed_dim, cfg.max_seq_len, cfg.num_rep, cfg.vocab_size, cfg.padding_idx,
+        self.dis = RelbarGAN_D(cfg.dis_embed_dim, cfg.max_seq_len, cfg.num_rep, cfg.vocab_size, cfg.padding_idx,
                             gpu=cfg.CUDA)
         self.init_model()
 

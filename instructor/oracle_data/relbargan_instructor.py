@@ -5,24 +5,23 @@ import torch.optim as optim
 from tqdm import tqdm
 
 import config as cfg
-from instructor.real_data.instructor import BasicInstructor
-from metrics.bleu import BLEU
-from models.GumbelGAN_D import GumbelGAN_D
-from models.GumbelGAN_G import GumbelGAN_G
+from instructor.oracle_data.instructor import BasicInstructor
+from models.RelbarGAN_D import RelbarGAN_D
+from models.RelbarGAN_G import RelbarGAN_G
 from utils.data_loader import GenDataIter
 from utils.helpers import get_fixed_temperature, get_losses
-from utils.text_process import tensor_to_tokens
 
 
-class GumbelGANInstructor(BasicInstructor):
+class RelbarGANInstructor(BasicInstructor):
     def __init__(self, opt):
-        super(GumbelGANInstructor, self).__init__(opt)
+        super(RelbarGANInstructor, self).__init__(opt)
 
         # generator, discriminator
-        self.gen = GumbelGAN_G(cfg.mem_slots, cfg.num_heads, cfg.head_size, cfg.gen_embed_dim, cfg.gen_hidden_dim,
+        self.gen = RelbarGAN_G(cfg.mem_slots, cfg.num_heads, cfg.head_size, cfg.gen_embed_dim, cfg.gen_hidden_dim,
                             cfg.vocab_size, cfg.max_seq_len, cfg.padding_idx, gpu=cfg.CUDA)
-        self.dis = GumbelGAN_D(cfg.dis_embed_dim, cfg.max_seq_len, cfg.num_rep, cfg.vocab_size, cfg.padding_idx,
+        self.dis = RelbarGAN_D(cfg.dis_embed_dim, cfg.max_seq_len, cfg.num_rep, cfg.vocab_size, cfg.padding_idx,
                             gpu=cfg.CUDA)
+
         self.init_model()
 
         # Optimizer
@@ -32,18 +31,9 @@ class GumbelGANInstructor(BasicInstructor):
 
         # Criterion
         self.mle_criterion = nn.NLLLoss()
-        self.adv_criterion = nn.BCEWithLogitsLoss()
 
         # DataLoader
         self.gen_data = GenDataIter(self.gen.sample(cfg.batch_size, cfg.batch_size))
-
-        # Metrics
-        self.bleu = BLEU(test_text=tensor_to_tokens(self.gen_data.target, self.index_word_dict),
-                         real_text=tensor_to_tokens(self.test_data.target, self.test_data.index_word_dict),
-                         gram=[2, 3, 4, 5])
-        self.self_bleu = BLEU(test_text=tensor_to_tokens(self.gen_data.target, self.index_word_dict),
-                              real_text=tensor_to_tokens(self.gen_data.target, self.index_word_dict),
-                              gram=3)
 
     def _run(self):
         # =====PRE-TRAINING (GENERATOR)=====
@@ -52,7 +42,7 @@ class GumbelGANInstructor(BasicInstructor):
             self.pretrain_generator(cfg.MLE_train_epoch)
             if cfg.if_save and not cfg.if_test:
                 torch.save(self.gen.state_dict(), cfg.pretrained_gen_path)
-                print('Save pretrain_generator: {}'.format(cfg.pretrained_gen_path))
+                print('Save pre-trained generator: {}'.format(cfg.pretrained_gen_path))
 
         # # =====ADVERSARIAL TRAINING=====
         self.log.info('Starting Adversarial Training...')
@@ -93,12 +83,12 @@ class GumbelGANInstructor(BasicInstructor):
             self.sig.update()
             if self.sig.pre_sig:
                 # =====Train=====
-                pre_loss = self.train_gen_epoch(self.gen, self.train_data.loader, self.mle_criterion, self.gen_opt)
+                pre_loss = self.train_gen_epoch(self.gen, self.oracle_data.loader, self.mle_criterion, self.gen_opt)
 
                 # =====Test=====
                 if epoch % cfg.pre_log_step == 0 or epoch == epochs - 1:
-                    self.log.info('[MLE-GEN] epoch %d : pre_loss = %.4f, %s' % (
-                        epoch, pre_loss, self.cal_metrics(fmt_str=True)))
+                    self.log.info(
+                        '[MLE-GEN] epoch %d : pre_loss = %.4f, %s' % (epoch, pre_loss, self.cal_metrics(fmt_str=True)))
 
                     if cfg.if_save and not cfg.if_test:
                         self._save('MLE', epoch)
@@ -111,11 +101,10 @@ class GumbelGANInstructor(BasicInstructor):
     def adv_train_generator(self, g_step):
         total_loss = 0
         for step in range(g_step):
-            real_samples = self.train_data.random_batch()['target']
+            real_samples = F.one_hot(self.oracle_data.random_batch()['target'], cfg.vocab_size).float()
             gen_samples = self.gen.sample(cfg.batch_size, cfg.batch_size, one_hot=True)
             if cfg.CUDA:
                 real_samples, gen_samples = real_samples.cuda(), gen_samples.cuda()
-            real_samples = F.one_hot(real_samples, cfg.vocab_size).float()
 
             # =====Train=====
             d_out_real = self.dis(real_samples)
@@ -130,11 +119,10 @@ class GumbelGANInstructor(BasicInstructor):
     def adv_train_discriminator(self, d_step):
         total_loss = 0
         for step in range(d_step):
-            real_samples = self.train_data.random_batch()['target']
+            real_samples = F.one_hot(self.oracle_data.random_batch()['target'], cfg.vocab_size).float()
             gen_samples = self.gen.sample(cfg.batch_size, cfg.batch_size, one_hot=True)
             if cfg.CUDA:
                 real_samples, gen_samples = real_samples.cuda(), gen_samples.cuda()
-            real_samples = F.one_hot(real_samples, cfg.vocab_size).float()
 
             # =====Train=====
             d_out_real = self.dis(real_samples)
@@ -151,6 +139,7 @@ class GumbelGANInstructor(BasicInstructor):
 
     @staticmethod
     def optimize(opt, loss, model=None, retain_graph=False):
+        """Add clip_grad_norm_"""
         opt.zero_grad()
         loss.backward(retain_graph=retain_graph)
         if model is not None:

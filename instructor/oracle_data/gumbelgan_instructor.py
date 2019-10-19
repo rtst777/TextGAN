@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Author       : William
-# @Project      : TextGAN-william
-# @FileName     : gumbelgan_instructor.py
-# @Time         : Created at 2019-04-25
-# @Blog         : http://zhiweil.ml/
-# @Description  :
-# Copyrights (C) 2018. All Rights Reserved.
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
