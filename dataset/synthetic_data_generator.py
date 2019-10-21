@@ -19,7 +19,7 @@ def generate_synthetic_data(num_data=100, max_sequence_len=1, num_operations=4, 
         num_operations: The number of operations that will be used in data generation.
         num_operands: The number of operands that will be used in data generation.
         early_stop: If true, the sequence length might be less than max_sequence_len; And the short sequence will be
-            padded with the special token "<pad>".
+            padded with the special token 'EOS'.
     """
     assert num_data > 0, 'num_data should be positive'
     assert max_sequence_len >= 1, 'max_sequence_len should be >= 1'
@@ -46,9 +46,7 @@ def generate_synthetic_data(num_data=100, max_sequence_len=1, num_operations=4, 
             for i in range(1, max_sequence_len, 2):
                 next_op = random.choice(operations)
                 if next_op == PADDING_TOKEN or i == max_sequence_len - 1:
-                    while i < max_sequence_len:
-                        sequence = sequence + PADDING_TOKEN + ' '
-                        i += 1
+                    sequence += PADDING_TOKEN
                     break
                 sequence = sequence + next_op + ' ' + random.choice(operands) + ' '
             f.write(sequence + '' if line == num_data - 1 else sequence + '\n')
