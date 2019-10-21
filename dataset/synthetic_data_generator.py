@@ -3,20 +3,23 @@ import random
 
 OPERATIONS = ['+', '-', '*', '/', '%', '^', '|', '&']
 OPERANDS = ['x', 'y', 'z', 'm', 'n', 'k', 'p', 'q']
+PADDING_TOKEN = 'EOS'
 
 
 def generate_synthetic_data(num_data=100, max_sequence_len=1, num_operations=4, num_operands=1, early_stop=False):
     """Generates synthetic data sequence using simple context-grammar.
 
-    Each sequence obeys the grammar rule: S -> operand || S operator S
+    Note:
+        - Each sequence obeys the grammar rule: S -> operand || S operator S
+        - Tokens are separated by space
 
     Args:
         num_data: The number of data sequence to generate.
-        max_sequence_len: The maximum length of each sequence.
+        max_sequence_len: The maximum number of tokens for each sequence.
         num_operations: The number of operations that will be used in data generation.
         num_operands: The number of operands that will be used in data generation.
         early_stop: If true, the sequence length might be less than max_sequence_len; And the short sequence will be
-            padded with space.
+            padded with the special token "<pad>".
     """
     assert num_data > 0, 'num_data should be positive'
     assert max_sequence_len >= 1, 'max_sequence_len should be >= 1'
@@ -29,7 +32,7 @@ def generate_synthetic_data(num_data=100, max_sequence_len=1, num_operations=4, 
         early_stop = True
         print('Turn on early_stop for generating grammarly correct sequence')
 
-    operations = OPERATIONS[:num_operations] + [' '] if early_stop else OPERATIONS[:num_operations]
+    operations = OPERATIONS[:num_operations] + [PADDING_TOKEN] if early_stop else OPERATIONS[:num_operations]
     operands = OPERANDS[:num_operands]
 
     file_name = 'synthetic_dataset_%d_data_%d_maxlen_%d_operations_%d_operands' % (
@@ -39,16 +42,15 @@ def generate_synthetic_data(num_data=100, max_sequence_len=1, num_operations=4, 
 
     with open(file_name + '.txt', 'w+') as f:
         for line in range(num_data):
-            sequence = random.choice(operands)
+            sequence = random.choice(operands) + ' '
             for i in range(1, max_sequence_len, 2):
                 next_op = random.choice(operations)
-                if next_op == ' ' or i == max_sequence_len - 1:
-                    sequence.ljust(max_sequence_len)
+                if next_op == PADDING_TOKEN or i == max_sequence_len - 1:
+                    while i < max_sequence_len:
+                        sequence = sequence + PADDING_TOKEN + ' '
+                        i += 1
                     break
-
-                sequence += next_op
-                sequence += random.choice(operands)
-
+                sequence = sequence + next_op + ' ' + random.choice(operands) + ' '
             f.write(sequence + '' if line == num_data - 1 else sequence + '\n')
 
 
