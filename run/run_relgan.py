@@ -55,15 +55,15 @@ temperature = [2, 100]
 
 # =====Basic Train=====
 samples_num = 10000
-MLE_train_epoch = 10 # 150
-ADV_train_epoch = 20 # 3000
+MLE_train_epoch = 150
+ADV_train_epoch = 3000
 batch_size = 64
 max_seq_len = 20
 gen_lr = 0.01
 gen_adv_lr = 1e-4
 dis_lr = 1e-4
-pre_log_step = 1 # 10
-adv_log_step = 1 # 20
+pre_log_step = 10
+adv_log_step = 20
 
 # =====Generator=====
 ADV_g_step = 1
