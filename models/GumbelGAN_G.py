@@ -70,11 +70,13 @@ class GumbelGAN_G(LSTMGenerator):
 
 
     @staticmethod
-    def add_gumbel(theta, eps=1e-10, gpu=cfg.CUDA):
-        u = torch.zeros(theta.size())
+    def add_gumbel(theta_logit, eps=1e-10, gpu=cfg.CUDA):
+        u = torch.zeros(theta_logit.size())
         if gpu:
             u = u.cuda()
 
         u.uniform_(0, 1)
-        gumbel_t = torch.log(theta + eps) - torch.log(-torch.log(u + eps) + eps)
+        # F.softmax(theta_logit, dim=-1) converts theta_logit to categorical distribution.
+        gumbel_t = torch.log(F.softmax(theta_logit, dim=-1) + eps) - torch.log(-torch.log(u + eps) + eps)
+        # gumbel_t = theta_logit - torch.log(-torch.log(u + eps) + eps)  TODO(ethanjiang) should come back to this formula and evaluate again
         return gumbel_t

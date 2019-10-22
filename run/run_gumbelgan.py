@@ -48,15 +48,15 @@ temperature = [2, 100, 1]  # TODO(ethanjiang) tune temperature
 
 # =====Basic Train=====
 samples_num = 10000
-MLE_train_epoch = 150
-ADV_train_epoch = 3000
+MLE_train_epoch = 2 # 150
+ADV_train_epoch = 2 # 3000
 batch_size = 64
-max_seq_len = 20
+max_seq_len = [20, 20, 3]
 gen_lr = 0.01
 gen_adv_lr = 1e-4
 dis_lr = 1e-4
-pre_log_step = 10
-adv_log_step = 20
+pre_log_step = 1 # 10
+adv_log_step = 1 # 20
 
 # =====Generator=====
 ADV_g_step = 1
@@ -94,7 +94,7 @@ args = [
     '--mle_epoch', MLE_train_epoch,
     '--adv_epoch', ADV_train_epoch,
     '--batch_size', batch_size,
-    '--max_seq_len', max_seq_len,
+    '--max_seq_len', max_seq_len[job_id],
     '--gen_lr', gen_lr,
     '--gen_adv_lr', gen_adv_lr,
     '--dis_lr', dis_lr,
