@@ -103,3 +103,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# macOS
+.DS_Store
+
+# datasets
+dataset/*_dict.txt
