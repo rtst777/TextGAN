@@ -1,45 +1,28 @@
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 
 import config as cfg
 from models.generator import LSTMGenerator
-from models.relational_rnn_general import RelationalMemory
 
 
 class GumbelGAN_G(LSTMGenerator):
-    def __init__(self, mem_slots, num_heads, head_size, embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx,
-                 gpu=False):
+    def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, gpu=False):
         super(GumbelGAN_G, self).__init__(embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, gpu)
+
         self.name = 'gumbelgan'
-
         self.temperature = 1.0  # init value is 1.0
-
-        # RMC
-        self.embeddings = nn.Embedding(vocab_size, embedding_dim, padding_idx=padding_idx)
-        self.hidden_dim = mem_slots * num_heads * head_size
-        self.lstm = RelationalMemory(mem_slots=mem_slots, head_size=head_size, input_size=embedding_dim,
-                                     num_heads=num_heads, return_all_outputs=True)
-        self.lstm2out = nn.Linear(self.hidden_dim, vocab_size)
-
-        # LSTM
-        # self.hidden_dim = 512
-        # self.lstm = nn.LSTM(embedding_dim, self.hidden_dim, batch_first=True)
-        # self.lstm2out = nn.Linear(self.hidden_dim, vocab_size)
-
         self.init_params()
 
     def step(self, inp, hidden):
         """
         GumbelGAN step forward
         :param inp: [batch_size]
-        :param hidden: memory size
-        :return: pred, hidden, next_token, next_token_onehot, next_o
+        :param hidden: (h, c)
+        :return: pred, hidden, next_token, next_token_onehot
             - pred: batch_size * vocab_size, use for adversarial training backward
             - hidden: next hidden
             - next_token: [batch_size], next sentence token
             - next_token_onehot: batch_size * vocab_size, not used yet
-            - next_o: batch_size * vocab_size, not used yet
         """
         emb = self.embeddings(inp).unsqueeze(1)
         out, hidden = self.lstm(emb, hidden)
@@ -49,10 +32,8 @@ class GumbelGAN_G(LSTMGenerator):
         next_token_onehot = None
 
         pred = F.softmax(gumbel_t * self.temperature, dim=-1)  # batch_size * vocab_size
-        # next_o = torch.sum(next_token_onehot * pred, dim=1)  # not used yet
-        next_o = None
 
-        return pred, hidden, next_token, next_token_onehot, next_o
+        return pred, hidden, next_token, next_token_onehot
 
     def sample(self, num_samples, batch_size, one_hot=False, start_letter=cfg.start_letter):
         """
@@ -76,7 +57,7 @@ class GumbelGAN_G(LSTMGenerator):
                 inp = inp.cuda()
 
             for i in range(self.max_seq_len):
-                pred, hidden, next_token, _, _ = self.step(inp, hidden)
+                pred, hidden, next_token, _ = self.step(inp, hidden)
                 samples[b * batch_size:(b + 1) * batch_size, i] = next_token
                 if one_hot:
                     all_preds[:, i] = pred
@@ -87,20 +68,13 @@ class GumbelGAN_G(LSTMGenerator):
             return all_preds  # batch_size * seq_len * vocab_size
         return samples
 
-    def init_hidden(self, batch_size=cfg.batch_size):
-        """init RMC memory"""
-        memory = self.lstm.initial_state(batch_size)
-        memory = self.lstm.repackage_hidden(memory)  # detch memory at first
-        return memory.cuda() if self.gpu else memory
 
     @staticmethod
-    def add_gumbel(o_t, eps=1e-10, gpu=cfg.CUDA):
-        """Add o_t by a vector sampled from Gumbel(0,1)"""
-        u = torch.zeros(o_t.size())
+    def add_gumbel(theta, eps=1e-10, gpu=cfg.CUDA):
+        u = torch.zeros(theta.size())
         if gpu:
             u = u.cuda()
 
         u.uniform_(0, 1)
-        g_t = -torch.log(-torch.log(u + eps) + eps)
-        gumbel_t = o_t + g_t
+        gumbel_t = torch.log(theta + eps) - torch.log(-torch.log(u + eps) + eps)
         return gumbel_t

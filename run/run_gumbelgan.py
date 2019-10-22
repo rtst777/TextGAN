@@ -28,7 +28,7 @@ if torch.cuda.is_available() and torch.cuda.device_count() > 0:
     CUDA = int(True)
 else:
     CUDA = int(False)
-if_real_data = [int(False), int(True)]
+if_real_data = [int(False), int(True), int(True)]
 data_shuffle = int(False)
 gen_init = 'truncated_normal'
 dis_init = 'uniform'
@@ -37,12 +37,14 @@ gen_pretrain = int(False)
 dis_pretrain = int(False)
 
 # =====Oracle  or Real=====
-dataset = ['oracle', 'image_coco']
+dataset = ['oracle',
+           'image_coco',
+           'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands']
 model_type = 'vanilla'
 loss_type = 'rsgan'
-vocab_size = [5000, 6613]
+vocab_size = [5000, 6613, 7]
 temp_adpt = 'exp'
-temperature = [2, 100]
+temperature = [2, 100, 1]  # TODO(ethanjiang) tune temperature
 
 # =====Basic Train=====
 samples_num = 10000
@@ -60,9 +62,6 @@ adv_log_step = 20
 ADV_g_step = 1
 gen_embed_dim = 32
 gen_hidden_dim = 32
-mem_slots = 1
-num_heads = 2
-head_size = 256
 
 # =====Discriminator=====
 ADV_d_step = 5
@@ -111,9 +110,6 @@ args = [
     '--adv_g_step', ADV_g_step,
     '--gen_embed_dim', gen_embed_dim,
     '--gen_hidden_dim', gen_hidden_dim,
-    '--mem_slots', mem_slots,
-    '--num_heads', num_heads,
-    '--head_size', head_size,
 
     # Discriminator
     '--adv_d_step', ADV_d_step,

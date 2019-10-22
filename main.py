@@ -82,6 +82,11 @@ if __name__ == '__main__':
 
     if opt.if_real_data:
         opt.max_seq_len, opt.vocab_size = text_process('dataset/' + opt.dataset + '.txt')
+        if opt.vocab_size < opt.gen_embed_dim:
+            opt.gen_embed_dim = opt.vocab_size
+        if opt.vocab_size < opt.gen_hidden_dim:
+            opt.gen_hidden_dim = opt.vocab_size
+
     cfg.init_param(opt)
     opt.save_root = cfg.save_root
 
@@ -96,8 +101,6 @@ if __name__ == '__main__':
         from instructor.oracle_data.seqgan_instructor import SeqGANInstructor
         from instructor.oracle_data.leakgan_instructor import LeakGANInstructor
         from instructor.oracle_data.relgan_instructor import RelGANInstructor
-        from instructor.oracle_data.gumbelgan_instructor import GumbelGANInstructor
-        from instructor.oracle_data.relbargan_instructor import RelbarGANInstructor
 
     instruction_dict = {
         'leakgan': LeakGANInstructor,

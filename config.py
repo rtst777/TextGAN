@@ -66,9 +66,9 @@ gen_hidden_dim = 32  # 32
 goal_size = 16  # LeakGAN-16
 step_size = 4  # LeakGAN-4
 
-mem_slots = 1  # RelGAN-1  TODO(ethanjiang) decide the number for gumbelgan, relbargan
-num_heads = 2  # RelGAN-2  TODO(ethanjiang) decide the number for gumbelgan, relbargan
-head_size = 256  # RelGAN-256  TODO(ethanjiang) decide the number for gumbelgan, relbargan
+mem_slots = 1  # RelGAN-1  TODO(ethanjiang) decide the number for relbargan
+num_heads = 2  # RelGAN-2  TODO(ethanjiang) decide the number for relbargan
+head_size = 256  # RelGAN-256  TODO(ethanjiang) decide the number for relbargan
 
 # =====Discriminator=====
 d_step = 5  # SeqGAN-50, LeakGAN-5

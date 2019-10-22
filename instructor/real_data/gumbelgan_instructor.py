@@ -19,10 +19,10 @@ class GumbelGANInstructor(BasicInstructor):
         super(GumbelGANInstructor, self).__init__(opt)
 
         # generator, discriminator
-        self.gen = GumbelGAN_G(cfg.mem_slots, cfg.num_heads, cfg.head_size, cfg.gen_embed_dim, cfg.gen_hidden_dim,
-                            cfg.vocab_size, cfg.max_seq_len, cfg.padding_idx, gpu=cfg.CUDA)
+        self.gen = GumbelGAN_G(cfg.gen_embed_dim, cfg.gen_hidden_dim, cfg.vocab_size, cfg.max_seq_len, cfg.padding_idx,
+                               gpu=cfg.CUDA)
         self.dis = GumbelGAN_D(cfg.dis_embed_dim, cfg.max_seq_len, cfg.num_rep, cfg.vocab_size, cfg.padding_idx,
-                            gpu=cfg.CUDA)
+                               gpu=cfg.CUDA)
         self.init_model()
 
         # Optimizer
