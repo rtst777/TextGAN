@@ -5,16 +5,18 @@ import torch.nn.functional as F
 from models.discriminator import CNNDiscriminator
 
 
-dis_filter_sizes = [2, 3, 4, 5]
-dis_num_filters = [300, 300, 300, 300]
-dis_filter_sizes2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20]
-dis_num_filters2 = [100, 200, 200, 200, 200, 100, 100, 100, 100, 100, 160, 160]
+dis_filter_sizes_raw1 = [2, 3, 4, 5]
+dis_num_filters_raw1 = [300, 300, 300, 300]
+dis_filter_sizes_raw2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20]
+dis_num_filters_raw2 = [100, 200, 200, 200, 200, 100, 100, 100, 100, 100, 160, 160]
 
 
 class GumbelGAN_D(CNNDiscriminator):
     '''The discriminator from RelGAN.'''
 
     def __init__(self, embed_dim, max_seq_len, num_rep, vocab_size, padding_idx, gpu=False, dropout=0.25):
+        dis_filter_sizes, dis_num_filters = CNNDiscriminator.get_filters(max_seq_len, dis_filter_sizes_raw1,
+                                                                         dis_num_filters_raw1)
         super(GumbelGAN_D, self).__init__(embed_dim, vocab_size, dis_filter_sizes, dis_num_filters, padding_idx,
                                        gpu, dropout)
 
@@ -61,8 +63,10 @@ class GumbelGAN_D(CNNDiscriminator):
 class GumbelGAN_D2(CNNDiscriminator):
     '''Ordinary CNN-based discriminator.'''
 
-    def __init__(self, embed_dim, max_seq_len, num_rep, vocab_size, padding_idx, gpu=False, dropout=0.25):
-        super(GumbelGAN_D2, self).__init__(embed_dim, vocab_size, dis_filter_sizes2, dis_num_filters2, padding_idx,
+    def __init__(self, embed_dim, max_seq_len, vocab_size, padding_idx, gpu=False, dropout=0.25):
+        dis_filter_sizes, dis_num_filters = CNNDiscriminator.get_filters(max_seq_len, dis_filter_sizes_raw2,
+                                                                         dis_num_filters_raw2)
+        super(GumbelGAN_D2, self).__init__(embed_dim, vocab_size, dis_filter_sizes, dis_num_filters, padding_idx,
                                        gpu, dropout)
 
         self.feature2out = nn.Linear(self.feature_dim, 1)  # For 'rsgan' loss

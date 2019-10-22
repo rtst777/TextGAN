@@ -66,6 +66,16 @@ class CNNDiscriminator(nn.Module):
                 elif cfg.dis_init == 'truncated_normal':
                     truncated_normal_(param, std=stddev)
 
+    @staticmethod
+    def get_filters(max_seq_len, dis_filter_sizes_raw, dis_num_filters_raw):
+        dis_filter_sizes = []
+        dis_num_filters = []
+        for index, value in enumerate(dis_filter_sizes_raw):
+            if value <= max_seq_len:
+                dis_filter_sizes.append(dis_filter_sizes_raw[index])
+                dis_num_filters.append(dis_num_filters_raw[index])
+        return dis_filter_sizes, dis_num_filters
+
 
 class GRUDiscriminator(nn.Module):
 
