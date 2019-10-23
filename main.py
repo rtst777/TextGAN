@@ -97,6 +97,7 @@ if __name__ == '__main__':
         from instructor.real_data.relgan_instructor import RelGANInstructor
         from instructor.real_data.gumbelgan_instructor import GumbelGANInstructor
         from instructor.real_data.relbargan_instructor import RelbarGANInstructor
+        from instructor.real_data.rebargan_instructor import RebarGANInstructor
     else:
         from instructor.oracle_data.seqgan_instructor import SeqGANInstructor
         from instructor.oracle_data.leakgan_instructor import LeakGANInstructor
@@ -108,6 +109,7 @@ if __name__ == '__main__':
         'relgan': RelGANInstructor,
         'gumbelgan': GumbelGANInstructor,
         'relbargan': RelbarGANInstructor,
+        'rebargan': RebarGANInstructor,
     }
 
     inst = instruction_dict[cfg.run_model](opt)
