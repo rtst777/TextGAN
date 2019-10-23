@@ -4,12 +4,14 @@ import torch.nn.functional as F
 
 from models.discriminator import CNNDiscriminator
 
-dis_filter_sizes = [2, 3, 4, 5]
-dis_num_filters = [300, 300, 300, 300]
+dis_filter_sizes_raw = [2, 3, 4, 5]
+dis_num_filters_raw = [300, 300, 300, 300]
 
 
 class RelbarGAN_D(CNNDiscriminator):
     def __init__(self, embed_dim, max_seq_len, num_rep, vocab_size, padding_idx, gpu=False, dropout=0.25):
+        dis_filter_sizes, dis_num_filters = CNNDiscriminator.get_filters(max_seq_len, dis_filter_sizes_raw,
+                                                                         dis_num_filters_raw)
         super(RelbarGAN_D, self).__init__(embed_dim, vocab_size, dis_filter_sizes, dis_num_filters, padding_idx,
                                        gpu, dropout)
 

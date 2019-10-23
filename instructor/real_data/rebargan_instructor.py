@@ -20,7 +20,7 @@ class RebarGANInstructor(BasicInstructor):
         # generator, discriminator
         self.gen = RebarGAN_G(cfg.gen_embed_dim, cfg.gen_hidden_dim, cfg.vocab_size, cfg.max_seq_len,
                             cfg.padding_idx, cfg.temperature, gpu=cfg.CUDA)
-        self.dis = RebarGAN_D(cfg.dis_embed_dim, cfg.vocab_size, cfg.padding_idx, gpu=cfg.CUDA)
+        self.dis = RebarGAN_D(cfg.dis_embed_dim, cfg.max_seq_len, cfg.vocab_size, cfg.padding_idx, gpu=cfg.CUDA)
         self.init_model()
 
         # Optimizer
