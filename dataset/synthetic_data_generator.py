@@ -49,7 +49,7 @@ def generate_synthetic_data(num_data=100, max_sequence_len=1, num_operations=4, 
                     sequence += PADDING_TOKEN
                     break
                 sequence = sequence + next_op + ' ' + random.choice(operands) + ' '
-            f.write(sequence + '' if line == num_data - 1 else sequence + '\n')
+            f.write(sequence if line == num_data - 1 else sequence + '\n')
 
 
 def main():
