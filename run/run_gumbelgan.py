@@ -28,7 +28,7 @@ if torch.cuda.is_available() and torch.cuda.device_count() > 0:
     CUDA = int(True)
 else:
     CUDA = int(False)
-if_real_data = [int(False), int(True), int(True), int(True)]
+if_real_data = [int(True), int(True), int(True)]
 data_shuffle = int(False)
 gen_init = 'truncated_normal'
 dis_init = 'uniform'
@@ -37,22 +37,21 @@ gen_pretrain = int(False)
 dis_pretrain = int(False)
 
 # =====Oracle  or Real=====
-dataset = ['oracle',
-           'image_coco',
+dataset = ['image_coco',
            'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
            'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
 model_type = 'vanilla'
 loss_type = 'rsgan'
-vocab_size = [5000, 6613, 7, 7]
+vocab_size = [6613, 7, 7]
 temp_adpt = 'exp'
-temperature = [2, 100, 1, 1]  # TODO(ethanjiang) tune temperature
+temperature = [100, 1, 1]  # TODO(ethanjiang) tune temperature
 
 # =====Basic Train=====
 samples_num = 10000
 MLE_train_epoch = 150
 ADV_train_epoch = 3000
 batch_size = 64
-max_seq_len = [20, 20, 3, 15]
+max_seq_len = [20, 3, 15]
 gen_lr = 0.01
 gen_adv_lr = 1e-4
 dis_lr = 1e-4
