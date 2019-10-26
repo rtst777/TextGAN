@@ -2,13 +2,15 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
+import functools
 import config as cfg
 from instructor.real_data.instructor import BasicInstructor
 from metrics.bleu import BLEU
 from models.RebarGAN_D import RebarGAN_D
+from models.RebarGAN_D import RebarGAN_D2
 from models.RebarGAN_G import RebarGAN_G
 from utils import rollout
-from utils.rebar_gradient_estimator import RebarGE
+from utils.rebar_gradient_estimator import RebarGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
 from utils.text_process import tensor_to_tokens
 
@@ -20,7 +22,7 @@ class RebarGANInstructor(BasicInstructor):
         # generator, discriminator
         self.gen = RebarGAN_G(cfg.gen_embed_dim, cfg.gen_hidden_dim, cfg.vocab_size, cfg.max_seq_len,
                             cfg.padding_idx, cfg.temperature, gpu=cfg.CUDA)
-        self.dis = RebarGAN_D(cfg.dis_embed_dim, cfg.max_seq_len, cfg.vocab_size, cfg.padding_idx, gpu=cfg.CUDA)
+        self.dis = RebarGAN_D2(cfg.dis_embed_dim, cfg.max_seq_len, cfg.vocab_size, cfg.padding_idx, gpu=cfg.CUDA)
         self.init_model()
 
         # Optimizer
@@ -143,7 +145,7 @@ class RebarGANInstructor(BasicInstructor):
             for epoch in range(d_epoch):
                 # =====Train=====
                 d_loss, train_acc = self.train_dis_epoch(self.dis, self.dis_data.loader, self.dis_criterion,
-                                                         self.dis_opt)
+                                                         self.dis_opt, one_hot=True)
 
             # =====Test=====
             self.log.info('[%s-DIS] d_step %d: d_loss = %.4f, train_acc = %.4f,' % (

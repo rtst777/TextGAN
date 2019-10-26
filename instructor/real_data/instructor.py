@@ -9,6 +9,7 @@
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 import config as cfg
 from utils.data_loader import GenDataIter
@@ -73,7 +74,7 @@ class BasicInstructor:
             total_loss += loss.item()
         return total_loss / len(data_loader)
 
-    def train_dis_epoch(self, model, data_loader, criterion, optimizer):
+    def train_dis_epoch(self, model, data_loader, criterion, optimizer, one_hot=False):
         total_loss = 0
         total_acc = 0
         total_num = 0
@@ -81,6 +82,8 @@ class BasicInstructor:
             inp, target = data['input'], data['target']
             if cfg.CUDA:
                 inp, target = inp.cuda(), target.cuda()
+            if one_hot:
+                inp = F.one_hot(inp, cfg.vocab_size).float()
 
             pred = model.forward(inp)
             loss = criterion(pred, target)
@@ -137,11 +140,13 @@ class BasicInstructor:
             opt.step()
 
     @staticmethod
-    def optimize(opt, loss, model=None, retain_graph=False):
+    def optimize(opt, loss, model=None, retain_graph=False, callback=None):
         opt.zero_grad()
         loss.backward(retain_graph=retain_graph)
         if model is not None:
             torch.nn.utils.clip_grad_norm_(model.parameters(), cfg.clip_norm)
+        if callback is not None:
+            callback()
         opt.step()
 
     def show_config(self):
