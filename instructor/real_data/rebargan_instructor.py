@@ -113,18 +113,20 @@ class RebarGANInstructor(BasicInstructor):
         The gen is trained using policy gradients, using the reward from the discriminator.
         Training is done for num_batches batches.
         """
-        # rebar_ge = RebarGE(self.gen, cfg.CUDA) TODO
-        rollout_func = rollout.ROLLOUT(self.gen, cfg.CUDA, one_hot=True)
+        # rebar_ge = RebarGradientEstimator(self.gen, cfg.batch_size, cfg.CUDA) TODO
+        rollout_func = rollout.ROLLOUT(self.gen, cfg.CUDA)
         total_g_loss = 0
         for step in range(g_step):
             inp, target = self.gen_data.prepare(self.gen.sample(cfg.batch_size, cfg.batch_size), gpu=cfg.CUDA)
 
             # =====Train=====
             rewards = rollout_func.get_reward(target, cfg.rollout_num, self.dis)
-            # estimated_gradient = rebar_ge.estimate_gradient() TODO
+            # estimated_gradient, temperature_grad = rebar_ge.estimate_gradient() TODO
             adv_loss = self.gen.batchPGLoss(inp, target, rewards)
-            # adv_loss = self.gen.batchRebarLoss(estimated_gradient) TODO
+            # adv_loss = self.gen.computeRebarLoss(estimated_gradient) TODO
             self.optimize(self.gen_adv_opt, adv_loss)
+            # self.optimize(self.gen_adv_opt, adv_loss,
+            #               callback=functools.partial(self.gen.set_temperature_gradient, temperature_grad))  TODO
             total_g_loss += adv_loss.item()
 
         # =====Test=====
