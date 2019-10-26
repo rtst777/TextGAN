@@ -45,7 +45,7 @@ class RebarGAN_G(LSTMGenerator):
         '''Sets temperature gradient.'''
 
         assert self.theta.shape == temperature_grad.shape, 'temperature_grad has different shape with self.temperature'
-        self.temperature.grad = temperature_grad
+        self.temperature.grad = temperature_grad.clone().detach()
 
 
     def sample_theta(self, start_letter=cfg.start_letter):
@@ -76,11 +76,11 @@ class RebarGAN_G(LSTMGenerator):
         """
         Computes the loss based on the estimated REBAR gradient
 
-        :param estimated_gradient: estimated gradient for theta with respect to the reward. Shape: seq_len * vocab_size
+        :param estimated_gradient: estimated gradient for theta with respect to the loss. Shape: seq_len * vocab_size
         :return loss: REBAR loss
         """
         assert self.theta.shape == estimated_gradient.shape, 'estimated_gradient has different shape with self.theta'
 
-        rebar_loss_matrix = self.theta * -estimated_gradient
+        rebar_loss_matrix = self.theta * estimated_gradient
         rebar_loss = rebar_loss_matrix.sum()
         return rebar_loss
