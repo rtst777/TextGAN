@@ -10,10 +10,11 @@
 import copy
 import torch
 import torch.nn.functional as F
+import config as cfg
 
 
 class ROLLOUT:
-    def __init__(self, gen, gpu=True):
+    def __init__(self, gen, gpu=True, one_hot=False):
         self.gen = gen
         self.old_model = copy.deepcopy(gen)
         self.max_seq_len = gen.max_seq_len
@@ -21,6 +22,7 @@ class ROLLOUT:
         self.step_size = gen.step_size if gen.name == 'leakgan' else 0
         self.goal_out_size = gen.goal_out_size if gen.name == 'leakgan' else 0
         self.gpu = gpu
+        self.one_hot = one_hot
 
     def rollout_mc_search(self, sentences, given_num):
         """
@@ -142,6 +144,8 @@ class ROLLOUT:
         for i in range(rollout_num):
             for given_num in range(1, self.max_seq_len + 1):
                 samples = self.rollout_mc_search(sentences, given_num)
+                if self.one_hot:
+                    samples = F.one_hot(samples, cfg.vocab_size).float()
                 out = dis.forward(samples)
                 out = F.softmax(out, dim=-1)
                 reward = out[:, current_k + 1]

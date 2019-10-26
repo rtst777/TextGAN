@@ -10,7 +10,7 @@ from models.RebarGAN_D import RebarGAN_D
 from models.RebarGAN_D import RebarGAN_D2
 from models.RebarGAN_G import RebarGAN_G
 from utils import rollout
-from utils.rebar_gradient_estimator import RebarGradientEstimator
+# from utils.rebar_gradient_estimator import RebarGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
 from utils.text_process import tensor_to_tokens
 
@@ -114,7 +114,7 @@ class RebarGANInstructor(BasicInstructor):
         Training is done for num_batches batches.
         """
         # rebar_ge = RebarGE(self.gen, cfg.CUDA) TODO
-        rollout_func = rollout.ROLLOUT(self.gen, cfg.CUDA)
+        rollout_func = rollout.ROLLOUT(self.gen, cfg.CUDA, one_hot=True)
         total_g_loss = 0
         for step in range(g_step):
             inp, target = self.gen_data.prepare(self.gen.sample(cfg.batch_size, cfg.batch_size), gpu=cfg.CUDA)
