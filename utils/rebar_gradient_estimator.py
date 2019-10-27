@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+import config as cfg
 
 class RebarGradientEstimator:
     def __init__(self, discriminator, batch_size, is_multiclass=True, gpu=False, true_label=1):
@@ -62,14 +63,22 @@ class RebarGradientEstimator:
 
     def _compute_z_tilde(self, b, theta):
         """
-        Computes z tilde under categorical distribution
+        Computes z tilde under categorical distribution by using the equations in appendix C of REBAR paper.
 
         :param b: index of each sample element. Shape: batch_size * seq_len
         :param theta: softmax of the network output. Shape: batch_size * seq_len * vocab_size
         :return z_tilde: logit of Gumbel-Softmax which can lead to b. Shape: batch_size * seq_len * vocab_size
         """
-        v = self._sample_from_uniform_distribution(theta.size())
-        # TODO
+        v = self._sample_from_uniform_distribution(theta.size())  # Shape: batch_size * seq_len * vocab_size
+
+        idx_k = b.repeat(theta.shape[0], theta.shape[2], 1).transpose(1, 2)  # Shape: batch_size * seq_len * vocab_size
+        v_k = v.gather(dim=2, index=idx_k) # Shape: batch_size * seq_len * vocab_size
+        z_tilde_k = -torch.log(- torch.log(v_k))  # Shape: batch_size * seq_len * vocab_size
+        z_tilde_not_k = -torch.log(-(torch.log(v) / theta) - torch.log(v_k))  # Shape: batch_size * seq_len * vocab_size
+
+        mask = F.one_hot(b, num_classes=cfg.vocab_size).bool()  # Shape: batch_size * seq_len * vocab_size
+        z_tilde = z_tilde_not_k.masked_scatter(mask, z_tilde_k[mask])  # Shape: batch_size * seq_len * vocab_size
+        return z_tilde
 
     def _compute_gumbel_softmax(self, z, temperature):
         """
@@ -110,9 +119,9 @@ class RebarGradientEstimator:
         theta.grad = torch.zeros(theta.shape)
         return gradient
 
-    def estimate_gradient(self, theta, temperature, f):
+    def estimate_gradient(self, theta, temperature):
         """
-        Estimates REBAR gradient.
+        Estimates REBAR gradient by using the equation (4) in REBAR paper.
 
         :param theta: softmax of the network output. Shape: seq_len * vocab_size
         :param temperature: temperature to control Gumbel-Softmax. Shape: scalar
