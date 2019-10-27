@@ -1,11 +1,15 @@
 import torch
+import torch.nn as nn
 import torch.nn.functional as F
 
 
 class RebarGradientEstimator:
-    def __init__(self, discriminator, criterion, batch_size, gpu=True, true_label=1):
+    def __init__(self, discriminator, batch_size, is_multiclass=True, gpu=False, true_label=1):
         self.discriminator = discriminator
-        self.criterion = criterion
+        if is_multiclass:
+            self.criterion = nn.CrossEntropyLoss(reduction='none')
+        else:
+            self.criterion = nn.BCEWithLogitsLoss(reduction='none')
         self.true_label = torch.tensor(true_label)
         self.batch_size = batch_size
         self.gpu = gpu
@@ -15,7 +19,7 @@ class RebarGradientEstimator:
         The environment function that computes the loss for the samples with respect to the true label.
 
         :param input: input that will be evaluated. Shape: batch_size * seq_len * vocab_size
-        :return loss: scalar
+        :return loss: the loss for the samples with respect to the true label. Shape: batch_size
         """
         flat_input = input.view(-1, input.shape[-1])
         target = self.true_label.repeat(flat_input.shape[0])
@@ -24,7 +28,7 @@ class RebarGradientEstimator:
 
     def _compute_eta(self):
         """
-        Gets a sample from uniform distribution.
+        Computes eta.
 
         :return ƞ
         """
@@ -62,7 +66,7 @@ class RebarGradientEstimator:
 
         :param b: index of each sample element. Shape: batch_size * seq_len
         :param theta: softmax of the network output. Shape: batch_size * seq_len * vocab_size
-        :return z_tilde: logit of Gumbel-Softmax which can lead to b. batch_size * seq_len * vocab_size
+        :return z_tilde: logit of Gumbel-Softmax which can lead to b. Shape: batch_size * seq_len * vocab_size
         """
         v = self._sample_from_uniform_distribution(theta.size())
         # TODO
@@ -72,7 +76,7 @@ class RebarGradientEstimator:
         Computes Gumbel-Softmax
 
         :param z: logit of Gumbel-Softmax. Shape: batch_size * seq_len * vocab_size
-        :param temperature: temperature to control Gumbel-Softmax
+        :param temperature: temperature to control Gumbel-Softmax. Shape: scalar
         :return sigma_lambda: gumbel_softmax value. Shape: batch_size * seq_len * vocab_size
         """
         sigma_lambda = F.softmax(z * temperature, dim=-1)
@@ -84,10 +88,10 @@ class RebarGradientEstimator:
 
         :param theta: softmax of the network output. Shape: batch_size * seq_len * vocab_size
         :param f_input: input passed to the environment function. Shape: batch_size * seq_len * vocab_size
-        :return gradient: batch_size * seq_len * vocab_size
+        :return gradient: gradient of theta w.r.t. environment function output. Shape: batch_size * seq_len * vocab_size
         """
-        res = self._environment_function(f_input)
-        res.backward()
+        loss_batch = self._environment_function(f_input)
+        loss_batch.sum().backward()
         gradient = theta.grad.clone().detach()
         theta.grad = torch.zeros(theta.shape)
         return gradient
@@ -98,7 +102,7 @@ class RebarGradientEstimator:
 
         :param theta: softmax of the network output. Shape: batch_size * seq_len * vocab_size
         :param b: index of each sample element. Shape: batch_size * seq_len
-        :return gradient: batch_size * seq_len * vocab_size
+        :return gradient: gradient of theta w.r.t. log p(b). Shape: batch_size * seq_len * vocab_size
         """
         res = 1  # TODO
         res.backward()
@@ -111,9 +115,9 @@ class RebarGradientEstimator:
         Estimates REBAR gradient.
 
         :param theta: softmax of the network output. Shape: seq_len * vocab_size
-        :param temperature: temperature to control Gumbel-Softmax
-        :return gradient: estimated REBAR gradient
-                temperature_grad: gradient of the temperature
+        :param temperature: temperature to control Gumbel-Softmax. Shape: scalar
+        :return expected_theta_gradient: estimated REBAR gradient for theta. Shape: seq_len * vocab_size
+                expected_temperature_gradient: estimated REBAR gradient for temperature. Shape: scalar
         """
 
         theta_batch = theta.repeat(self.batch_size, 1, 1)  # Shape: batch_size * seq_len * vocab_size
@@ -125,9 +129,9 @@ class RebarGradientEstimator:
         sigma_lambda_z_tilde_batch = self._compute_gumbel_softmax(z_tilde_batch,
                                                                   temperature)  # Shape: batch_size * seq_len * vocab_size
 
-        f_H_z_batch = self._environment_function(b_batch)  # scalar
-        eta = self._compute_eta()  # scalar
-        f_sigma_lambda_z_tilde_batch = self._environment_function(sigma_lambda_z_tilde_batch)  # scalar
+        f_H_z_batch = self._environment_function(b_batch)  # Shape: batch_size
+        eta = self._compute_eta()  # Shape: scalar
+        f_sigma_lambda_z_tilde_batch = self._environment_function(sigma_lambda_z_tilde_batch)  # Shape: batch_size
         gradient_wrt_log_pb_batch = self._compute_gradient_of_theta_wrt_log_pb(theta_batch,
                                                                                b_batch)  # Shape: batch_size * seq_len * vocab_size
         gradient_wrt_f_sigma_lambda_z_batch = self._compute_gradient_of_theta_wrt_f(theta_batch,
@@ -135,7 +139,10 @@ class RebarGradientEstimator:
         gradient_wrt_f_sigma_lambda_z_tilde_batch = self._compute_gradient_of_theta_wrt_f(theta_batch,
                                                                                           sigma_lambda_z_tilde_batch)  # Shape: batch_size * seq_len * vocab_size
 
-        # TODO implement expected REBAR gradient (should be vectorized)
+        theta_gradient_batch = (f_H_z_batch - eta * f_sigma_lambda_z_tilde_batch).reshape([self.batch_size, 1, 1]) * gradient_wrt_log_pb_batch \
+                               + eta * gradient_wrt_f_sigma_lambda_z_batch \
+                               - eta * gradient_wrt_f_sigma_lambda_z_tilde_batch  # Shape: batch_size * seq_len * vocab_size
+        expected_theta_gradient = theta_gradient_batch.mean(dim=0)  # Shape: seq_len * vocab_size
+        expected_temperature_gradient = temperature.grad / self.batch_size  # Shape: scalar
 
-        temperature_grad = temperature.grad / self.batch_size
-        pass
+        return expected_theta_gradient, expected_temperature_gradient
