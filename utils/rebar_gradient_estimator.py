@@ -119,6 +119,23 @@ class RebarGradientEstimator:
         theta.grad = torch.zeros(theta.shape)
         return gradient
 
+    def _get_batched_tensor(self, input):
+        """
+        Gets the batched tensor by duplicating the input self.batch_size times.
+
+        Note:
+            - The batched tensor is a leaf tensor, so it is independent to input tensor.
+            - The gradient is enabled on the batched tensor.
+
+        :param input: input tensor.
+        :return output: the batched tensor. Shape: batch_size * input_tensor_shape
+        """
+        output = torch.empty([self.batch_size, *input.size()], requires_grad=True)
+        with torch.no_grad():
+            for batch_idx in range(self.batch_size):
+                output[batch_idx] = input.data
+        return output
+
     def estimate_gradient(self, theta, temperature):
         """
         Estimates REBAR gradient by using the equation (4) in REBAR paper.
@@ -129,7 +146,7 @@ class RebarGradientEstimator:
                 expected_temperature_gradient: estimated REBAR gradient for temperature. Shape: scalar
         """
 
-        theta_batch = theta.repeat(self.batch_size, 1, 1)  # Shape: batch_size * seq_len * vocab_size
+        theta_batch = self._get_batched_tensor(theta)  # Shape: batch_size * seq_len * vocab_size
         b_batch = torch.argmax(theta_batch, dim=-1).detach()  # Shape: batch_size * seq_len
         z_batch = self._compute_gumbel_softmax_logit(theta_batch)  # Shape: batch_size * seq_len * vocab_size
         z_tilde_batch = self._compute_z_tilde(b_batch, theta_batch)  # Shape: batch_size * seq_len * vocab_size
