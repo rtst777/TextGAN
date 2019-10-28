@@ -22,9 +22,9 @@ class RebarGradientEstimator:
         :param input: input that will be evaluated. Shape: batch_size * seq_len * vocab_size
         :return loss: the loss for the samples with respect to the true label. Shape: batch_size
         """
-        flat_input = input.view(-1, input.shape[-1])
-        target = self.true_label.repeat(flat_input.shape[0])
-        loss = self.criterion(flat_input, target)
+        pred = self.discriminator(input)
+        target = self.true_label.repeat(pred.shape[0])
+        loss = self.criterion(pred, target)
         return loss
 
     def _compute_eta(self):
@@ -71,7 +71,7 @@ class RebarGradientEstimator:
         """
         v = self._sample_from_uniform_distribution(theta.size())  # Shape: batch_size * seq_len * vocab_size
 
-        idx_k = b.repeat(theta.shape[0], theta.shape[2], 1).transpose(1, 2)  # Shape: batch_size * seq_len * vocab_size
+        idx_k = b.repeat(theta.shape[2], 1, 1).permute(1, 2, 0)  # Shape: batch_size * seq_len * vocab_size
         v_k = v.gather(dim=2, index=idx_k) # Shape: batch_size * seq_len * vocab_size
         z_tilde_k = -torch.log(- torch.log(v_k))  # Shape: batch_size * seq_len * vocab_size
         z_tilde_not_k = -torch.log(-(torch.log(v) / theta) - torch.log(v_k))  # Shape: batch_size * seq_len * vocab_size
@@ -147,15 +147,15 @@ class RebarGradientEstimator:
         """
 
         theta_batch = self._get_batched_tensor(theta)  # Shape: batch_size * seq_len * vocab_size
-        b_batch = torch.argmax(theta_batch, dim=-1).detach()  # Shape: batch_size * seq_len
         z_batch = self._compute_gumbel_softmax_logit(theta_batch)  # Shape: batch_size * seq_len * vocab_size
+        b_batch = torch.argmax(z_batch, dim=-1).detach()  # Shape: batch_size * seq_len
         z_tilde_batch = self._compute_z_tilde(b_batch, theta_batch)  # Shape: batch_size * seq_len * vocab_size
         sigma_lambda_z_batch = self._compute_gumbel_softmax(z_batch,
                                                             temperature)  # Shape: batch_size * seq_len * vocab_size
         sigma_lambda_z_tilde_batch = self._compute_gumbel_softmax(z_tilde_batch,
                                                                   temperature)  # Shape: batch_size * seq_len * vocab_size
 
-        f_H_z_batch = self._environment_function(b_batch)  # Shape: batch_size
+        f_H_z_batch = self._environment_function(F.one_hot(b_batch, cfg.vocab_size))  # Shape: batch_size
         eta = self._compute_eta()  # Shape: scalar
         f_sigma_lambda_z_tilde_batch = self._environment_function(sigma_lambda_z_tilde_batch)  # Shape: batch_size
         gradient_wrt_log_pb_batch = self._compute_gradient_of_theta_wrt_log_pb(theta_batch,
