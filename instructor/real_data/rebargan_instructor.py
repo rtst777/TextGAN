@@ -120,8 +120,9 @@ class RebarGANInstructor(BasicInstructor):
             inp, target = self.gen_data.prepare(self.gen.sample(cfg.batch_size, cfg.batch_size), gpu=cfg.CUDA)
 
             # =====Train=====
+            # theta = self.gen.sample_theta() TODO
             rewards = rollout_func.get_reward(target, cfg.rollout_num, self.dis)
-            # estimated_gradient, temperature_grad = rebar_ge.estimate_gradient() TODO
+            # estimated_gradient, temperature_grad = rebar_ge.estimate_gradient(theta, self.temperature.clone().detach()) TODO
             adv_loss = self.gen.batchPGLoss(inp, target, rewards)
             # adv_loss = self.gen.computeRebarLoss(estimated_gradient) TODO
             self.optimize(self.gen_adv_opt, adv_loss)
