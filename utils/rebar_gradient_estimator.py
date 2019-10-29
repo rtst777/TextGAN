@@ -5,7 +5,7 @@ import torch.nn.functional as F
 import config as cfg
 
 class RebarGradientEstimator:
-    def __init__(self, discriminator, batch_size, is_multiclass=True, gpu=False, true_label=1):
+    def __init__(self, discriminator, batch_size, eta=1, is_multiclass=True, gpu=False, true_label=1):
         self.discriminator = discriminator
         if is_multiclass:
             self.criterion = nn.CrossEntropyLoss(reduction='none')
@@ -14,6 +14,10 @@ class RebarGradientEstimator:
         self.true_label = torch.tensor(true_label)
         self.batch_size = batch_size
         self.gpu = gpu
+        # Ideally, eta(ƞ) should be computed using the equation in Appendix A of REBAR paper. However, it is infeasible
+        # to implement that equation under practical situation (e.g. when the environment function is a Discriminator
+        # Neural Network). Therefore, we simply set eta to 1. TODO tune eta if necessary.
+        self.eta = eta
 
     def _environment_function(self, input):
         """
@@ -26,16 +30,6 @@ class RebarGradientEstimator:
         target = self.true_label.repeat(pred.shape[0])
         loss = self.criterion(pred, target)
         return loss
-
-    def _compute_eta(self):
-        """
-        Computes eta.
-
-        :return ƞ
-        """
-        # TODO
-        eta = 1
-        return eta
 
     def _sample_from_uniform_distribution(self, shape):
         """
@@ -156,7 +150,6 @@ class RebarGradientEstimator:
                                                                   temperature)  # Shape: batch_size * seq_len * vocab_size
 
         f_H_z_batch = self._environment_function(F.one_hot(b_batch, cfg.vocab_size))  # Shape: batch_size
-        eta = self._compute_eta()  # Shape: scalar
         f_sigma_lambda_z_tilde_batch = self._environment_function(sigma_lambda_z_tilde_batch)  # Shape: batch_size
         gradient_wrt_log_pb_batch = self._compute_gradient_of_theta_wrt_log_pb(theta_batch,
                                                                                b_batch)  # Shape: batch_size * seq_len * vocab_size
@@ -165,9 +158,9 @@ class RebarGradientEstimator:
         gradient_wrt_f_sigma_lambda_z_tilde_batch = self._compute_gradient_of_theta_wrt_f(theta_batch,
                                                                                           sigma_lambda_z_tilde_batch)  # Shape: batch_size * seq_len * vocab_size
 
-        theta_gradient_batch = (f_H_z_batch - eta * f_sigma_lambda_z_tilde_batch).reshape([self.batch_size, 1, 1]) * gradient_wrt_log_pb_batch \
-                               + eta * gradient_wrt_f_sigma_lambda_z_batch \
-                               - eta * gradient_wrt_f_sigma_lambda_z_tilde_batch  # Shape: batch_size * seq_len * vocab_size
+        theta_gradient_batch = (f_H_z_batch - self.eta * f_sigma_lambda_z_tilde_batch).reshape([self.batch_size, 1, 1]) * gradient_wrt_log_pb_batch \
+                               + self.eta * gradient_wrt_f_sigma_lambda_z_batch \
+                               - self.eta * gradient_wrt_f_sigma_lambda_z_tilde_batch  # Shape: batch_size * seq_len * vocab_size
         expected_theta_gradient = theta_gradient_batch.mean(dim=0)  # Shape: seq_len * vocab_size
         expected_temperature_gradient = temperature.grad / self.batch_size  # Shape: scalar
 
