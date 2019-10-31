@@ -110,7 +110,7 @@ class RebarGradientEstimator:
         """
         mask = F.one_hot(b, cfg.vocab_size).bool()  # Shape: batch_size * seq_len * vocab_size
         log_pb = torch.log(z[mask]).sum()  # scalar
-        log_pb.backward()
+        log_pb.backward(retain_graph=True) # We don't want z get freed.
         gradient = theta.grad.clone().detach()
         theta.grad = torch.zeros(theta.shape)
         return gradient
@@ -151,7 +151,7 @@ class RebarGradientEstimator:
         sigma_lambda_z_tilde_batch = self._compute_gumbel_softmax(z_tilde_batch,
                                                                   temperature)  # Shape: batch_size * seq_len * vocab_size
 
-        f_H_z_batch = self._environment_function(F.one_hot(b_batch, cfg.vocab_size))  # Shape: batch_size
+        f_H_z_batch = self._environment_function(F.one_hot(b_batch, cfg.vocab_size).float())  # Shape: batch_size
         f_sigma_lambda_z_tilde_batch = self._environment_function(sigma_lambda_z_tilde_batch)  # Shape: batch_size
         gradient_wrt_log_pb_batch = self._compute_gradient_of_theta_wrt_log_pb(theta_batch, b_batch,
                                                                                z_batch)  # Shape: batch_size * seq_len * vocab_size
@@ -166,4 +166,4 @@ class RebarGradientEstimator:
         expected_theta_gradient = theta_gradient_batch.mean(dim=0)  # Shape: seq_len * vocab_size
         expected_temperature_gradient = temperature.grad / self.batch_size  # Shape: scalar
 
-        return expected_theta_gradient, expected_temperature_gradient
+        return expected_theta_gradient.clone().detach(), expected_temperature_gradient.clone().detach()

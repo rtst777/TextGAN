@@ -9,15 +9,11 @@ class RebarGAN_G(LSTMGenerator):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, temperature, gpu=False):
         super(RebarGAN_G, self).__init__(embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, gpu)
         self.name = 'rebargan'
-
-        self.temperature = temperature
-        # TODO(ethanjiang) switch to tunable temperature by uncommenting below code
-        # self.temperature = torch.tensor(temperature, requires_grad=True).float()
-        # if gpu:
-        #     self.temperature = self.temperature.cuda()
-
+        self.temperature = torch.tensor(temperature, dtype=torch.float, requires_grad=True)
+        if gpu:
+            self.temperature = self.temperature.cuda()
         # θ parameter in the REBAR equation. It is the softmax probability of the Generator output.
-        self.theta = torch.zeros(self.max_seq_len, self.vocab_size).long()
+        self.theta = None
 
 
     def batchPGLoss(self, inp, target, reward):
@@ -44,7 +40,7 @@ class RebarGAN_G(LSTMGenerator):
     def set_temperature_gradient(self, temperature_grad):
         '''Sets temperature gradient.'''
 
-        assert self.theta.shape == temperature_grad.shape, 'temperature_grad has different shape with self.temperature'
+        assert self.temperature.shape == temperature_grad.shape, 'temperature_grad has different shape with self.temperature'
         self.temperature.grad = temperature_grad.clone().detach()
 
 
@@ -56,7 +52,7 @@ class RebarGAN_G(LSTMGenerator):
         :return θ: max_seq_length * vocab_size
         """
 
-        theta_logit = torch.zeros(self.max_seq_len, self.vocab_size).long()
+        theta_logit = torch.zeros(self.max_seq_len, self.vocab_size, dtype=torch.float)
         hidden = self.init_hidden(1)
         inp = torch.LongTensor([start_letter])
         if self.gpu:
@@ -79,7 +75,8 @@ class RebarGAN_G(LSTMGenerator):
         :param estimated_gradient: estimated gradient for theta with respect to the loss. Shape: seq_len * vocab_size
         :return loss: REBAR loss
         """
-        assert self.theta.shape == estimated_gradient.shape, 'estimated_gradient has different shape with self.theta'
+        assert self.theta is not None and \
+               self.theta.shape == estimated_gradient.shape, 'estimated_gradient has different shape with self.theta'
 
         rebar_loss_matrix = self.theta * estimated_gradient
         rebar_loss = rebar_loss_matrix.sum()

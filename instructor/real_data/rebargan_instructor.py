@@ -6,11 +6,9 @@ import functools
 import config as cfg
 from instructor.real_data.instructor import BasicInstructor
 from metrics.bleu import BLEU
-from models.RebarGAN_D import RebarGAN_D
-from models.RebarGAN_D import RebarGAN_D2
+from models.RebarGAN_D import RebarGAN_D, RebarGAN_D2
 from models.RebarGAN_G import RebarGAN_G
-from utils import rollout
-# from utils.rebar_gradient_estimator import RebarGradientEstimator
+from utils.rebar_gradient_estimator import RebarGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
 from utils.text_process import tensor_to_tokens
 
@@ -113,21 +111,16 @@ class RebarGANInstructor(BasicInstructor):
         The gen is trained using policy gradients, using the reward from the discriminator.
         Training is done for num_batches batches.
         """
-        # rebar_ge = RebarGradientEstimator(self.gen, cfg.batch_size, cfg.CUDA) TODO
-        rollout_func = rollout.ROLLOUT(self.gen, cfg.CUDA, one_hot=True)
+        rebar_ge = RebarGradientEstimator(discriminator=self.dis, batch_size=cfg.batch_size, gpu=cfg.CUDA)
         total_g_loss = 0
         for step in range(g_step):
-            inp, target = self.gen_data.prepare(self.gen.sample(cfg.batch_size, cfg.batch_size), gpu=cfg.CUDA)
-
             # =====Train=====
-            # theta = self.gen.sample_theta() TODO
-            rewards = rollout_func.get_reward(target, cfg.rollout_num, self.dis)
-            # estimated_gradient, temperature_grad = rebar_ge.estimate_gradient(theta, self.temperature.clone().detach()) TODO
-            adv_loss = self.gen.batchPGLoss(inp, target, rewards)
-            # adv_loss = self.gen.computeRebarLoss(estimated_gradient) TODO
-            self.optimize(self.gen_adv_opt, adv_loss)
-            # self.optimize(self.gen_adv_opt, adv_loss,
-            #               callback=functools.partial(self.gen.set_temperature_gradient, temperature_grad))  TODO
+            theta = self.gen.sample_theta()
+            estimated_gradient, temperature_grad = rebar_ge.estimate_gradient(theta,
+                                                                              self.gen.temperature.clone().detach().requires_grad_())
+            adv_loss = self.gen.computeRebarLoss(estimated_gradient)
+            self.optimize(self.gen_adv_opt, adv_loss,
+                          callback=functools.partial(self.gen.set_temperature_gradient, temperature_grad))
             total_g_loss += adv_loss.item()
 
         # =====Test=====
