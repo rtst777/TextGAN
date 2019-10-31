@@ -38,10 +38,14 @@ class RebarGAN_G(LSTMGenerator):
 
 
     def set_temperature_gradient(self, temperature_grad):
-        '''Sets temperature gradient.'''
+        """
+        Sets temperature gradient.
 
+        :param temperature_grad: estimated gradient for temperature (has to be detached). Shape: scalar
+        :return θ: max_seq_length * vocab_size
+        """
         assert self.temperature.shape == temperature_grad.shape, 'temperature_grad has different shape with self.temperature'
-        self.temperature.grad = temperature_grad.clone().detach()
+        self.temperature.grad = temperature_grad
 
 
     def sample_theta(self, start_letter=cfg.start_letter):
@@ -51,7 +55,6 @@ class RebarGAN_G(LSTMGenerator):
         :param start_letter: index of start_token
         :return θ: max_seq_length * vocab_size
         """
-
         theta_logit = torch.zeros(self.max_seq_len, self.vocab_size, dtype=torch.float)
         hidden = self.init_hidden(1)
         inp = torch.LongTensor([start_letter])
@@ -72,7 +75,7 @@ class RebarGAN_G(LSTMGenerator):
         """
         Computes the loss based on the estimated REBAR gradient
 
-        :param estimated_gradient: estimated gradient for theta with respect to the loss. Shape: seq_len * vocab_size
+        :param estimated_gradient: estimated gradient for theta with respect to the loss (has to be detached). Shape: seq_len * vocab_size
         :return loss: REBAR loss
         """
         assert self.theta is not None and \

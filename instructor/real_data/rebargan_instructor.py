@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 import functools
+import itertools
 import config as cfg
 from instructor.real_data.instructor import BasicInstructor
 from metrics.bleu import BLEU
@@ -25,7 +26,8 @@ class RebarGANInstructor(BasicInstructor):
 
         # Optimizer
         self.gen_opt = optim.Adam(self.gen.parameters(), lr=cfg.gen_lr)
-        self.gen_adv_opt = optim.Adam(self.gen.parameters(), lr=cfg.gen_lr)
+        # self.gen_adv_opt = optim.Adam(self.gen.parameters(), lr=cfg.gen_lr)  # TODO make tunable temperature as a configuration
+        self.gen_adv_opt = optim.Adam(itertools.chain(self.gen.parameters(), [self.gen.temperature]), lr=cfg.gen_lr)
         self.dis_opt = optim.Adam(self.dis.parameters(), lr=cfg.dis_lr)
 
         # Criterion
