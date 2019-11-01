@@ -69,5 +69,4 @@ class GumbelGAN_D2(CNNDiscriminator):
         super(GumbelGAN_D2, self).__init__(embed_dim, vocab_size, dis_filter_sizes, dis_num_filters, padding_idx,
                                        gpu, dropout)
 
-        self.feature2out = nn.Linear(self.feature_dim, 1)  # For 'rsgan' loss
-        # self.feature2out = nn.Linear(self.feature_dim, 2)  # For 'JS' loss
+        self.embeddings = nn.Linear(vocab_size, embed_dim, bias=False)

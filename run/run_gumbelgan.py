@@ -30,7 +30,7 @@ else:
     CUDA = int(False)
 if_real_data = [int(True), int(True), int(True)]
 data_shuffle = int(False)
-gen_init = 'truncated_normal'
+gen_init = 'normal'
 dis_init = 'uniform'
 oracle_pretrain = int(True)
 gen_pretrain = int(False)
@@ -41,10 +41,10 @@ dataset = ['image_coco',
            'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
            'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
 model_type = 'vanilla'
-loss_type = 'rsgan'
+loss_type = 'JS'
 vocab_size = [6613, 7, 7]
 temp_adpt = 'exp'
-temperature = [100, 1, 1]  # TODO(ethanjiang) tune temperature
+temperature = [100, 2, 2]  # TODO(ethanjiang) tune temperature
 
 # =====Basic Train=====
 samples_num = 10000
@@ -53,7 +53,7 @@ ADV_train_epoch = 3000
 batch_size = 64
 max_seq_len = [20, 3, 15]
 gen_lr = 0.01
-gen_adv_lr = 1e-4
+gen_adv_lr = 0.01
 dis_lr = 1e-4
 pre_log_step = 10
 adv_log_step = 20
@@ -64,10 +64,12 @@ gen_embed_dim = 32
 gen_hidden_dim = 32
 
 # =====Discriminator=====
-ADV_d_step = 5
+d_step = 5
+d_epoch = 3
+ADV_d_step = 4
+ADV_d_epoch = 2
 dis_embed_dim = 64
 dis_hidden_dim = 64
-num_rep = 64
 
 # =====Run=====
 rootdir = '../'
@@ -112,10 +114,12 @@ args = [
     '--gen_hidden_dim', gen_hidden_dim,
 
     # Discriminator
+    '--d_step', d_step,
+    '--d_epoch', d_epoch,
     '--adv_d_step', ADV_d_step,
+    '--adv_d_epoch', ADV_d_epoch,
     '--dis_embed_dim', dis_embed_dim,
     '--dis_hidden_dim', dis_hidden_dim,
-    '--num_rep', num_rep,
 
     # Log
     '--tips', 'vanilla GumbelGAN',
