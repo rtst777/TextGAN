@@ -52,13 +52,13 @@ ADV_train_epoch = 200
 batch_size = 64
 max_seq_len = [20, 3, 15]
 gen_lr = 0.01
+gen_adv_lr = 0.01
 dis_lr = 1e-4
 pre_log_step = 5
 adv_log_step = 1
 
 # =====Generator=====
 ADV_g_step = 1
-rollout_num = 16  # TODO(ethanjiang) remove rollout related code
 gen_embed_dim = 32
 gen_hidden_dim = 32
 
@@ -97,6 +97,7 @@ args = [
     '--batch_size', batch_size,
     '--max_seq_len', max_seq_len[job_id],
     '--gen_lr', gen_lr,
+    '--gen_adv_lr', gen_adv_lr,
     '--dis_lr', dis_lr,
     '--pre_log_step', pre_log_step,
     '--adv_log_step', adv_log_step,
@@ -107,7 +108,6 @@ args = [
 
     # Generator
     '--adv_g_step', ADV_g_step,
-    '--rollout_num', rollout_num,
     '--gen_embed_dim', gen_embed_dim,
     '--gen_hidden_dim', gen_hidden_dim,
 

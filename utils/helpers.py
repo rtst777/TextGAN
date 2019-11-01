@@ -108,9 +108,11 @@ def get_fixed_temperature(temper, i, N, adapt):
     return temper_var_np
 
 
-def get_losses(d_out_real, d_out_fake, loss_type='JS'):
+def get_losses(d_out_real, d_out_fake, loss_type='JS', reduction='mean'):
     """Get different adversarial losses according to given loss_type"""
-    bce_loss = nn.BCEWithLogitsLoss()
+    bce_loss = nn.BCEWithLogitsLoss(reduction=reduction)
+    g_loss = None
+    d_loss = None
 
     if loss_type == 'standard':  # the non-satuating GAN loss
         d_loss_real = bce_loss(d_out_real, torch.ones_like(d_out_real))
@@ -120,9 +122,10 @@ def get_losses(d_out_real, d_out_fake, loss_type='JS'):
         g_loss = bce_loss(d_out_fake, torch.ones_like(d_out_fake))
 
     elif loss_type == 'JS':  # the vanilla GAN loss
-        d_loss_real = bce_loss(d_out_real, torch.ones_like(d_out_real))
         d_loss_fake = bce_loss(d_out_fake, torch.zeros_like(d_out_fake))
-        d_loss = d_loss_real + d_loss_fake
+        if d_out_real is not None:
+            d_loss_real = bce_loss(d_out_real, torch.ones_like(d_out_real))
+            d_loss = d_loss_real + d_loss_fake
 
         g_loss = -d_loss_fake
 

@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import torch.nn.functional as F
 
 import functools
 import itertools
@@ -12,6 +13,7 @@ from models.RebarGAN_G import RebarGAN_G
 from utils.rebar_gradient_estimator import RebarGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
 from utils.text_process import tensor_to_tokens
+from utils.helpers import get_losses
 
 
 class RebarGANInstructor(BasicInstructor):
@@ -27,27 +29,28 @@ class RebarGANInstructor(BasicInstructor):
         # Optimizer
         self.gen_opt = optim.Adam(self.gen.parameters(), lr=cfg.gen_lr)
         # self.gen_adv_opt = optim.Adam(self.gen.parameters(), lr=cfg.gen_lr)  # TODO make tunable temperature as a configuration
-        self.gen_adv_opt = optim.Adam(itertools.chain(self.gen.parameters(), [self.gen.temperature]), lr=cfg.gen_lr)
+        self.gen_adv_opt = optim.Adam(itertools.chain(self.gen.parameters(), [self.gen.temperature]), lr=cfg.gen_adv_lr)
         self.dis_opt = optim.Adam(self.dis.parameters(), lr=cfg.dis_lr)
 
         # Criterion
         self.mle_criterion = nn.NLLLoss()
-        self.dis_criterion = nn.CrossEntropyLoss()
+        self.dis_pretrain_criterion = nn.BCEWithLogitsLoss()
 
         # DataLoader
         self.gen_data = GenDataIter(self.gen.sample(cfg.batch_size, cfg.batch_size))
         self.dis_data = DisDataIter(self.train_data.random_batch()['target'], self.gen_data.random_batch()['target'])
 
         # Metrics
+        bleu_gram = list(range(2, cfg.max_seq_len + 1)) if cfg.max_seq_len < 5 else [2, 3, 4, 5]
         self.bleu = BLEU(test_text=tensor_to_tokens(self.gen_data.target, self.index_word_dict),
-                         real_text=tensor_to_tokens(self.test_data.target, self.test_data.index_word_dict), gram=3)
+                         real_text=tensor_to_tokens(self.test_data.target, self.test_data.index_word_dict),
+                         gram=bleu_gram)
         self.self_bleu = BLEU(test_text=tensor_to_tokens(self.gen_data.target, self.index_word_dict),
                               real_text=tensor_to_tokens(self.gen_data.target, self.index_word_dict),
-                          gram=3)
+                              gram=3)
 
     def _run(self):
-        # =====PRE-TRAINING=====
-        # TRAIN GENERATOR
+        # =====PRE-TRAINING (GENERATOR)=====
         if not cfg.gen_pretrain:
             self.log.info('Starting Generator MLE Training...')
             self.pretrain_generator(cfg.MLE_train_epoch)
@@ -55,10 +58,10 @@ class RebarGANInstructor(BasicInstructor):
                 torch.save(self.gen.state_dict(), cfg.pretrained_gen_path)
                 print('Save pre-trained generator: {}'.format(cfg.pretrained_gen_path))
 
-        # =====TRAIN DISCRIMINATOR======
+        # =====PRE-TRAINING (DISCRIMINATOR)=====
         if not cfg.dis_pretrain:
             self.log.info('Starting Discriminator Training...')
-            self.train_discriminator(cfg.d_step, cfg.d_epoch)
+            self.pretrain_discriminator(cfg.d_step, cfg.d_epoch)
             if cfg.if_save and not cfg.if_test:
                 torch.save(self.dis.state_dict(), cfg.pretrained_dis_path)
                 print('Save pretrain_generator discriminator: {}'.format(cfg.pretrained_dis_path))
@@ -72,7 +75,7 @@ class RebarGANInstructor(BasicInstructor):
             self.sig.update()
             if self.sig.adv_sig:
                 self.adv_train_generator(cfg.ADV_g_step)  # Generator
-                self.train_discriminator(cfg.ADV_d_step, cfg.ADV_d_epoch, 'ADV')  # Discriminator
+                self.adv_train_discriminator(cfg.d_step)  # Discriminator
 
                 if adv_epoch % cfg.adv_log_step == 0:
                     if cfg.if_save and not cfg.if_test:
@@ -94,12 +97,13 @@ class RebarGANInstructor(BasicInstructor):
         for epoch in range(epochs):
             self.sig.update()
             if self.sig.pre_sig:
+                # =====Train=====
                 pre_loss = self.train_gen_epoch(self.gen, self.train_data.loader, self.mle_criterion, self.gen_opt)
 
                 # =====Test=====
-                if epoch % cfg.pre_log_step == 0:
-                    self.log.info(
-                        '[MLE-GEN] epoch %d : pre_loss = %.4f, %s' % (epoch, pre_loss, self.cal_metrics(fmt_str=True)))
+                if epoch % cfg.pre_log_step == 0 or epoch == epochs - 1:
+                    self.log.info('[MLE-GEN] epoch %d : pre_loss = %.4f, %s' % (
+                        epoch, pre_loss, self.cal_metrics(fmt_str=True)))
                     if cfg.if_save and not cfg.if_test:
                         self._save('MLE', epoch)
             else:
@@ -113,8 +117,10 @@ class RebarGANInstructor(BasicInstructor):
         The gen is trained using policy gradients, using the reward from the discriminator.
         Training is done for num_batches batches.
         """
-        rebar_ge = RebarGradientEstimator(discriminator=self.dis, batch_size=cfg.batch_size, gpu=cfg.CUDA)
-        total_g_loss = 0
+        rebar_ge = RebarGradientEstimator(discriminator=self.dis, batch_size=cfg.batch_size,
+                                          real_samples=self.train_data.random_batch()['target'], gpu=cfg.CUDA)
+        total_rebar_loss = 0
+        old_temperature = self.gen.temperature.item()
         for step in range(g_step):
             # =====Train=====
             theta = self.gen.sample_theta()
@@ -123,12 +129,48 @@ class RebarGANInstructor(BasicInstructor):
             adv_loss = self.gen.computeRebarLoss(estimated_gradient)
             self.optimize(self.gen_adv_opt, adv_loss,
                           callback=functools.partial(self.gen.set_temperature_gradient, temperature_grad))
-            total_g_loss += adv_loss.item()
+            total_rebar_loss += adv_loss.item()
 
         # =====Test=====
-        self.log.info('[ADV-GEN]: g_loss = %.4f, %s' % (total_g_loss, self.cal_metrics(fmt_str=True)))
+        avg_rebar_loss = total_rebar_loss / g_step if g_step != 0 else 0
+        self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, %s'
+                      % (avg_rebar_loss, old_temperature, self.cal_metrics(fmt_str=True)))
 
-    def train_discriminator(self, d_step, d_epoch, phrase='MLE'):
+
+    def adv_train_discriminator(self, d_step):
+        total_loss = 0
+        total_acc = 0
+        for step in range(d_step):
+            # TODO(ethanjiang) we may want to train a full epoch instead of a random batch
+            real_samples = self.train_data.random_batch()['target']
+            gen_samples = self.gen.sample(cfg.batch_size, cfg.batch_size)
+            if cfg.CUDA:
+                real_samples, gen_samples = real_samples.cuda(), gen_samples.cuda()
+            real_samples = F.one_hot(real_samples, cfg.vocab_size).float()
+            gen_samples = F.one_hot(gen_samples, cfg.vocab_size).float()
+
+            # =====Train=====
+            d_out_real = self.dis(real_samples)
+            d_out_fake = self.dis(gen_samples)
+            _, d_loss = get_losses(d_out_real, d_out_fake, cfg.loss_type)
+
+            self.dis_opt.zero_grad()
+            d_loss.backward()
+            torch.nn.utils.clip_grad_norm_(self.dis.parameters(), cfg.clip_norm)
+            self.dis_opt.step()
+
+            total_loss += d_loss.item()
+            predictions = torch.cat((d_out_real, d_out_fake))
+            labels = torch.cat((torch.ones_like(d_out_real), torch.zeros_like(d_out_fake)))
+            total_acc += torch.sum(((predictions > 0).float() == labels)).item()
+
+        # =====Test=====
+        avg_loss = total_loss / d_step if d_step != 0 else 0
+        avg_acc = total_acc / (d_step * cfg.batch_size * 2) if d_step != 0 else 0
+        self.log.info('[ADV-DIS] d_loss = %.4f, train_acc = %.4f,' % (avg_loss, avg_acc))
+
+
+    def pretrain_discriminator(self, d_step, d_epoch, phrase='MLE'):
         """
         Training the discriminator on real_data_samples (positive) and generated samples from gen (negative).
         Samples are drawn d_step times, and the discriminator is trained for d_epoch d_epoch.
@@ -142,12 +184,10 @@ class RebarGANInstructor(BasicInstructor):
 
             for epoch in range(d_epoch):
                 # =====Train=====
-                d_loss, train_acc = self.train_dis_epoch(self.dis, self.dis_data.loader, self.dis_criterion,
+                d_loss, train_acc = self.train_dis_epoch(self.dis, self.dis_data.loader, self.dis_pretrain_criterion,
                                                          self.dis_opt, one_hot=True)
 
             # =====Test=====
             self.log.info('[%s-DIS] d_step %d: d_loss = %.4f, train_acc = %.4f,' % (
                 phrase, step, d_loss, train_acc))
 
-            if cfg.if_save and not cfg.if_test:
-                torch.save(self.dis.state_dict(), cfg.pretrained_dis_path)

@@ -90,7 +90,7 @@ class BasicInstructor:
             self.optimize(optimizer, loss, model)
 
             total_loss += loss.item()
-            total_acc += torch.sum((pred.argmax(dim=-1) == target)).item()
+            total_acc += torch.sum(((pred > 0).float() == target)).item()
             total_num += inp.size(0)
 
         total_loss /= len(data_loader)

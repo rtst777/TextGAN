@@ -1,19 +1,34 @@
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 
 import config as cfg
+from utils.helpers import get_losses
 
 class RebarGradientEstimator:
-    def __init__(self, discriminator, batch_size, eta=1, is_multiclass=True, gpu=False, true_label=1):
+    def __init__(self, discriminator, batch_size, real_samples, eta=1., gpu=False):
+        """
+        A class used to estimate REBAR-based gradient for GAN-based text sequence generation problem.
+        ...
+
+        Attributes
+        ----------
+        discriminator : torch.nn.Module
+            Discriminator Neural Network to represent the environment function
+        batch_size : int
+            batch size of the sequence
+        real_samples : torch.tensor
+            real sequence samples from training dataset. Shape: batch_size * seq_len
+        eta : float
+            hyperparameter to minimize the variance of the REBAR estimator
+        gpu : bool
+            if CUDA is enabled
+        """
         self.discriminator = discriminator
-        if is_multiclass:
-            self.criterion = nn.CrossEntropyLoss(reduction='none')
-        else:
-            self.criterion = nn.BCEWithLogitsLoss(reduction='none')
-        self.true_label = torch.tensor(true_label)
+        self.real_samples = F.one_hot(real_samples, cfg.vocab_size).float()
         self.batch_size = batch_size
         self.gpu = gpu
+        if gpu:
+            self.real_samples = self.real_samples.cuda()
         # Ideally, eta(ƞ) should be computed using the equation in Appendix A of REBAR paper. However, it is infeasible
         # to implement that equation under practical situation (e.g. when the environment function is a Discriminator
         # Neural Network). Therefore, we simply set eta to 1. TODO tune eta if necessary.
@@ -24,12 +39,14 @@ class RebarGradientEstimator:
         The environment function that computes the loss for the samples with respect to the true label.
 
         :param input: input that will be evaluated. Shape: batch_size * seq_len * vocab_size
-        :return loss: the loss for the samples with respect to the true label. Shape: batch_size
+        :return g_loss: the loss for the samples with respect to the true label. Shape: batch_size
         """
-        pred = self.discriminator(input)
-        target = self.true_label.repeat(pred.shape[0])
-        loss = self.criterion(pred, target)
-        return loss
+        d_out_real = None
+        d_out_fake = self.discriminator(input)
+        if cfg.loss_type == 'rsgan':
+            d_out_real = self.discriminator(self.real_samples)
+        g_loss, _ = get_losses(d_out_real, d_out_fake, cfg.loss_type, reduction='none')
+        return g_loss
 
     def _sample_from_uniform_distribution(self, shape):
         """

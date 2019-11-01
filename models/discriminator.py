@@ -24,7 +24,7 @@ class CNNDiscriminator(nn.Module):
             nn.Conv2d(1, n, (f, embed_dim)) for (n, f) in zip(num_filters, filter_sizes)
         ])
         self.highway = nn.Linear(self.feature_dim, self.feature_dim)
-        self.feature2out = nn.Linear(self.feature_dim, 2)
+        self.feature2out = nn.Linear(self.feature_dim, 1)
         self.dropout = nn.Dropout(dropout)
 
         self.init_params()
@@ -33,10 +33,10 @@ class CNNDiscriminator(nn.Module):
         """
         Get final predictions of discriminator
         :param inp: batch_size * seq_len
-        :return: pred: batch_size * seq_len * vocab_size
+        :return: pred: batch_size
         """
         feature = self.get_feature(inp)
-        pred = self.feature2out(self.dropout(feature))
+        pred = self.feature2out(self.dropout(feature)).squeeze(1)
 
         return pred
 

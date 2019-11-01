@@ -70,5 +70,3 @@ class RebarGAN_D2(CNNDiscriminator):
                                            gpu, dropout)
 
         self.embeddings = nn.Linear(vocab_size, embed_dim, bias=False)
-        # self.feature2out = nn.Linear(self.feature_dim, 1)  # For 'rsgan' loss
-        self.feature2out = nn.Linear(self.feature_dim, 2)  # For 'JS' loss
