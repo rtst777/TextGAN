@@ -115,9 +115,10 @@ def get_losses(d_out_real, d_out_fake, loss_type='JS', reduction='mean'):
     d_loss = None
 
     if loss_type == 'standard':  # the non-satuating GAN loss
-        d_loss_real = bce_loss(d_out_real, torch.ones_like(d_out_real))
-        d_loss_fake = bce_loss(d_out_fake, torch.zeros_like(d_out_fake))
-        d_loss = d_loss_real + d_loss_fake
+        if d_out_real is not None:
+            d_loss_real = bce_loss(d_out_real, torch.ones_like(d_out_real))
+            d_loss_fake = bce_loss(d_out_fake, torch.zeros_like(d_out_fake))
+            d_loss = d_loss_real + d_loss_fake
 
         g_loss = bce_loss(d_out_fake, torch.ones_like(d_out_fake))
 
@@ -130,9 +131,10 @@ def get_losses(d_out_real, d_out_fake, loss_type='JS', reduction='mean'):
         g_loss = -d_loss_fake
 
     elif loss_type == 'KL':  # the GAN loss implicitly minimizing KL-divergence
-        d_loss_real = bce_loss(d_out_real, torch.ones_like(d_out_real))
-        d_loss_fake = bce_loss(d_out_fake, torch.zeros_like(d_out_fake))
-        d_loss = d_loss_real + d_loss_fake
+        if d_out_real is not None:
+            d_loss_real = bce_loss(d_out_real, torch.ones_like(d_out_real))
+            d_loss_fake = bce_loss(d_out_fake, torch.zeros_like(d_out_fake))
+            d_loss = d_loss_real + d_loss_fake
 
         g_loss = torch.mean(-d_out_fake)
 

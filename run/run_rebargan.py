@@ -41,7 +41,7 @@ dataset = ['image_coco',
            'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
            'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
 model_type = 'vanilla'
-loss_type = 'JS'
+loss_type = 'standard'
 vocab_size = [6613, 7, 7]
 temperature = [1, 1, 1]  # TODO(ethanjiang) tune temperature
 
