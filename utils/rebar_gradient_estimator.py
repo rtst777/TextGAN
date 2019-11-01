@@ -111,7 +111,7 @@ class RebarGradientEstimator:
         :return gradient: gradient of theta w.r.t. environment function output. Shape: batch_size * seq_len * vocab_size
         """
         loss_batch = self._environment_function(f_input)
-        loss_batch.sum().backward()
+        loss_batch.sum().backward(retain_graph=True) # We don't want z or z_tilde get freed.
         gradient = theta.grad.clone().detach()
         theta.grad = torch.zeros(theta.shape)
         return gradient
@@ -149,6 +149,19 @@ class RebarGradientEstimator:
                 output[batch_idx] = input.data
         return output
 
+    def _compute_gradient_of_temperature(self, expected_theta_gradient, temperature):
+        """
+        Computes the gradient of temperature to minimize the expected theta gradient, using equation (6) in RELAX paper.
+
+        :param expected_theta_gradient: estimated REBAR gradient for theta. Shape: seq_len * vocab_size
+        :param temperature: temperature to control Gumbel-Softmax. Shape: scalar
+        :return expected_temperature_gradient: estimated REBAR gradient for temperature. Shape: scalar
+        """
+        temperature.grad = torch.zeros(temperature.shape)
+        temperature_loss = torch.pow(expected_theta_gradient, 2).mean()
+        temperature_loss.backward()
+        return temperature.grad.clone().detach()
+
     def estimate_gradient(self, theta, temperature):
         """
         Estimates REBAR gradient by using the equation (4) in REBAR paper.
@@ -181,6 +194,6 @@ class RebarGradientEstimator:
                                + self.eta * gradient_wrt_f_sigma_lambda_z_batch \
                                - self.eta * gradient_wrt_f_sigma_lambda_z_tilde_batch  # Shape: batch_size * seq_len * vocab_size
         expected_theta_gradient = theta_gradient_batch.mean(dim=0)  # Shape: seq_len * vocab_size
-        expected_temperature_gradient = temperature.grad / self.batch_size  # Shape: scalar
+        expected_temperature_gradient = self._compute_gradient_of_temperature(expected_theta_gradient, temperature)  # Shape: scalar
 
-        return expected_theta_gradient.clone().detach(), expected_temperature_gradient.clone().detach()
+        return expected_theta_gradient.clone().detach(), expected_temperature_gradient
