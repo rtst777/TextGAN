@@ -40,7 +40,7 @@ class LeakGANInstructor(BasicInstructor):
 
         # Criterion
         self.mle_criterion = nn.NLLLoss()
-        self.dis_criterion = nn.CrossEntropyLoss()
+        self.dis_criterion = nn.BCEWithLogitsLoss()
 
         # DataLoader
         self.gen_data = GenDataIter(self.gen.sample(cfg.batch_size, cfg.batch_size, self.dis))
