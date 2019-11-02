@@ -22,14 +22,15 @@ class RebarGANInstructor(BasicInstructor):
 
         # generator, discriminator
         self.gen = RebarGAN_G(cfg.gen_embed_dim, cfg.gen_hidden_dim, cfg.vocab_size, cfg.max_seq_len,
-                            cfg.padding_idx, cfg.temperature, gpu=cfg.CUDA)
+                              cfg.padding_idx, cfg.temperature, cfg.eta, gpu=cfg.CUDA)
         self.dis = RebarGAN_D2(cfg.dis_embed_dim, cfg.max_seq_len, cfg.vocab_size, cfg.padding_idx, gpu=cfg.CUDA)
         self.init_model()
 
         # Optimizer
         self.gen_opt = optim.Adam(self.gen.parameters(), lr=cfg.gen_lr)
         # self.gen_adv_opt = optim.Adam(self.gen.parameters(), lr=cfg.gen_lr)  # TODO make tunable temperature as a configuration
-        self.gen_adv_opt = optim.Adam(itertools.chain(self.gen.parameters(), [self.gen.temperature]), lr=cfg.gen_adv_lr)
+        self.gen_adv_opt = optim.Adam(itertools.chain(self.gen.parameters(), [self.gen.temperature, self.gen.eta]),
+                                      lr=cfg.gen_adv_lr)
         self.dis_opt = optim.Adam(self.dis.parameters(), lr=cfg.dis_lr)
 
         # Criterion
@@ -121,21 +122,22 @@ class RebarGANInstructor(BasicInstructor):
                                           real_samples=self.train_data.random_batch()['target'], gpu=cfg.CUDA)
         total_rebar_loss = 0
         old_temperature = self.gen.temperature.item()
+        old_eta = self.gen.eta.item()
         for step in range(g_step):
             # =====Train=====
             theta = self.gen.sample_theta()
-            estimated_gradient, temperature_grad = rebar_ge.estimate_gradient(theta,
-                                                                              self.gen.temperature.clone().detach().requires_grad_())
+            estimated_gradient, temperature_grad, eta_grad = rebar_ge.estimate_gradient(theta,
+                                                                                        self.gen.temperature.clone().detach().requires_grad_(),
+                                                                                        self.gen.eta.clone().detach().requires_grad_())
             adv_loss = self.gen.computeRebarLoss(estimated_gradient)
             self.optimize(self.gen_adv_opt, adv_loss,
-                          callback=functools.partial(self.gen.set_temperature_gradient, temperature_grad))
+                          callback=functools.partial(self.gen.set_variance_loss_gradients, temperature_grad, eta_grad))
             total_rebar_loss += adv_loss.item()
 
         # =====Test=====
         avg_rebar_loss = total_rebar_loss / g_step if g_step != 0 else 0
-        self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, %s'
-                      % (avg_rebar_loss, old_temperature, self.cal_metrics(fmt_str=True)))
-
+        self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f, %s'
+                      % (avg_rebar_loss, old_temperature, old_eta, self.cal_metrics(fmt_str=True)))
 
     def adv_train_discriminator(self, d_step):
         total_loss = 0
@@ -169,7 +171,6 @@ class RebarGANInstructor(BasicInstructor):
         avg_acc = total_acc / (d_step * cfg.batch_size * 2) if d_step != 0 else 0
         self.log.info('[ADV-DIS] d_loss = %.4f, train_acc = %.4f,' % (avg_loss, avg_acc))
 
-
     def pretrain_discriminator(self, d_step, d_epoch, phrase='MLE'):
         """
         Training the discriminator on real_data_samples (positive) and generated samples from gen (negative).
@@ -190,4 +191,3 @@ class RebarGANInstructor(BasicInstructor):
             # =====Test=====
             self.log.info('[%s-DIS] d_step %d: d_loss = %.4f, train_acc = %.4f,' % (
                 phrase, step, d_loss, train_acc))
-

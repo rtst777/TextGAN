@@ -35,6 +35,7 @@ vocab_size = 5000  # oracle: 5000, coco: 6613, emnlp: 5255
 
 temp_adpt = 'exp'  # no, lin, exp, log, sigmoid, quad, sqrt (for RelGAN) TODO(ethanjiang) decide which temp for gumbelgan, rebargan, relbargan
 temperature = 2
+eta = 2
 
 # =====Basic Train=====
 samples_num = 10000  # 10000
@@ -112,7 +113,7 @@ torch.cuda.set_device(device)
 save_root = 'save/{}/{}/{}_{}_lt-{}_sl{}_temp{}_T{}/'.format(time.strftime("%Y%m%d"),
                                                              dataset, run_model, model_type,
                                                              loss_type, max_seq_len,
-                                                             temperature,
+                                                             temperature, eta,
                                                              log_time_str)
 save_samples_root = save_root + 'samples/'
 save_model_root = save_root + 'models/'
@@ -135,7 +136,7 @@ def init_param(opt):
     global run_model, model_type, loss_type, CUDA, device, data_shuffle, samples_num, vocab_size, \
         MLE_train_epoch, ADV_train_epoch, inter_epoch, batch_size, max_seq_len, start_letter, padding_idx, \
         gen_lr, gen_adv_lr, dis_lr, clip_norm, pre_log_step, adv_log_step, train_data, test_data, temp_adpt, \
-        temperature, oracle_pretrain, gen_pretrain, dis_pretrain, ADV_g_step, rollout_num, gen_embed_dim, \
+        temperature, eta, oracle_pretrain, gen_pretrain, dis_pretrain, ADV_g_step, rollout_num, gen_embed_dim, \
         gen_hidden_dim, goal_size, step_size, mem_slots, num_heads, head_size, d_step, d_epoch, \
         ADV_d_step, ADV_d_epoch, dis_embed_dim, dis_hidden_dim, num_rep, log_filename, save_root, \
         signal_file, tips, save_samples_root, save_model_root, if_real_data, pretrained_gen_path, \
@@ -172,6 +173,7 @@ def init_param(opt):
     test_data = opt.test_data
     temp_adpt = opt.temp_adpt
     temperature = opt.temperature
+    eta = opt.eta
     oracle_pretrain = True if opt.ora_pretrain == 1 else False
     gen_pretrain = True if opt.gen_pretrain == 1 else False
     dis_pretrain = True if opt.dis_pretrain == 1 else False
@@ -205,7 +207,7 @@ def init_param(opt):
     save_root = 'save/{}/{}/{}_{}_lt-{}_sl{}_temp{}_T{}/'.format(time.strftime("%Y%m%d"),
                                                                  dataset, run_model, model_type,
                                                                  loss_type, max_seq_len,
-                                                                 temperature,
+                                                                 temperature, eta,
                                                                  log_time_str)
     save_samples_root = save_root + 'samples/'
     save_model_root = save_root + 'models/'

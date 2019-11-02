@@ -6,12 +6,17 @@ from models.generator import LSTMGenerator
 
 
 class RebarGAN_G(LSTMGenerator):
-    def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, temperature, gpu=False):
+    def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, temperature, eta, gpu=False):
         super(RebarGAN_G, self).__init__(embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, gpu)
         self.name = 'rebargan'
         self.temperature = torch.tensor(temperature, dtype=torch.float, requires_grad=True)
+        # Ideally, eta(ƞ) should be computed using the equation in Appendix A of REBAR paper. However, it is infeasible
+        # to implement that equation under practical situation (e.g. when the environment function is a Discriminator
+        # Neural Network). Therefore, we let eta to be a learnable variable.
+        self.eta = torch.tensor(eta, dtype=torch.float, requires_grad=True)
         if gpu:
             self.temperature = self.temperature.cuda()
+            self.eta = self.eta.cuda()
         # θ parameter in the REBAR equation. It is the softmax probability of the Generator output.
         self.theta = None
 
@@ -37,15 +42,17 @@ class RebarGAN_G(LSTMGenerator):
         return loss
 
 
-    def set_temperature_gradient(self, temperature_grad):
+    def set_variance_loss_gradients(self, temperature_grad, eta_gradient):
         """
-        Sets temperature gradient.
+        Sets the variance loss gradients to control variate parameters.
 
-        :param temperature_grad: estimated gradient for temperature (has to be detached). Shape: scalar
-        :return θ: max_seq_length * vocab_size
+        :param temperature_gradient: gradient from variance loss w.r.t. temperature (has to be detached). Shape: scalar
+        :param eta_gradient: gradient from variance loss w.r.t. eta (has to be detached). Shape: scalar
         """
         assert self.temperature.shape == temperature_grad.shape, 'temperature_grad has different shape with self.temperature'
+        assert self.eta.shape == eta_gradient.shape, 'eta_gradient has different shape with self.eta'
         self.temperature.grad = temperature_grad
+        self.eta.grad = eta_gradient
 
 
     def sample_theta(self, start_letter=cfg.start_letter):
