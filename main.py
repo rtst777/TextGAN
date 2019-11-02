@@ -41,6 +41,8 @@ def program_config(parser):
     parser.add_argument('--temp_adpt', default=cfg.temp_adpt, type=str)
     parser.add_argument('--temperature', default=cfg.temperature, type=int)
     parser.add_argument('--eta', default=cfg.eta, type=int)
+    parser.add_argument('--learn_temperature', default=cfg.learn_temperature, type=int)
+    parser.add_argument('--learn_eta', default=cfg.learn_eta, type=int)
     parser.add_argument('--ora_pretrain', default=cfg.oracle_pretrain, type=int)
     parser.add_argument('--gen_pretrain', default=cfg.gen_pretrain, type=int)
     parser.add_argument('--dis_pretrain', default=cfg.dis_pretrain, type=int)

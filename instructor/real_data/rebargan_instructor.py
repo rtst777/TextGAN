@@ -28,7 +28,6 @@ class RebarGANInstructor(BasicInstructor):
 
         # Optimizer
         self.gen_opt = optim.Adam(self.gen.parameters(), lr=cfg.gen_lr)
-        # self.gen_adv_opt = optim.Adam(self.gen.parameters(), lr=cfg.gen_lr)  # TODO make tunable temperature as a configuration
         self.gen_adv_opt = optim.Adam(itertools.chain(self.gen.parameters(), [self.gen.temperature, self.gen.eta]),
                                       lr=cfg.gen_adv_lr)
         self.dis_opt = optim.Adam(self.dis.parameters(), lr=cfg.dis_lr)
@@ -130,6 +129,8 @@ class RebarGANInstructor(BasicInstructor):
                                                                                         self.gen.temperature.clone().detach().requires_grad_(),
                                                                                         self.gen.eta.clone().detach().requires_grad_())
             adv_loss = self.gen.computeRebarLoss(estimated_gradient)
+            temperature_grad = temperature_grad if cfg.learn_temperature else torch.zeros_like(temperature_grad)
+            eta_grad = eta_grad if cfg.learn_eta else torch.zeros_like(eta_grad)
             self.optimize(self.gen_adv_opt, adv_loss,
                           callback=functools.partial(self.gen.set_variance_loss_gradients, temperature_grad, eta_grad))
             total_rebar_loss += adv_loss.item()
