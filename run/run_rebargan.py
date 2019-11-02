@@ -43,7 +43,10 @@ dataset = ['image_coco',
 model_type = 'vanilla'
 loss_type = 'standard'
 vocab_size = [6613, 7, 7]
-temperature = [1, 1, 1]  # TODO(ethanjiang) tune temperature
+temperature = [1, 1, 1]
+eta = [1, 1, 1]
+learn_temperature = int(True)
+learn_eta = int(True)
 
 # =====Basic Train=====
 samples_num = 10000
@@ -102,6 +105,9 @@ args = [
     '--pre_log_step', pre_log_step,
     '--adv_log_step', adv_log_step,
     '--temperature', temperature[job_id],
+    '--eta', eta[job_id],
+    '--learn_temperature', learn_temperature,
+    '--learn_eta', learn_eta,
     '--ora_pretrain', oracle_pretrain,
     '--gen_pretrain', gen_pretrain,
     '--dis_pretrain', dis_pretrain,

@@ -5,7 +5,7 @@ import config as cfg
 from utils.helpers import get_losses
 
 class RebarGradientEstimator:
-    def __init__(self, discriminator, batch_size, real_samples, eta=1., gpu=False):
+    def __init__(self, discriminator, batch_size, real_samples, gpu=False):
         """
         A class used to estimate REBAR-based gradient for GAN-based text sequence generation problem.
         ...
@@ -29,10 +29,6 @@ class RebarGradientEstimator:
         self.gpu = gpu
         if gpu:
             self.real_samples = self.real_samples.cuda()
-        # Ideally, eta(ƞ) should be computed using the equation in Appendix A of REBAR paper. However, it is infeasible
-        # to implement that equation under practical situation (e.g. when the environment function is a Discriminator
-        # Neural Network). Therefore, we simply set eta to 1. TODO tune eta if necessary.
-        self.eta = eta
 
     def _environment_function(self, input):
         """
@@ -113,7 +109,7 @@ class RebarGradientEstimator:
         loss_batch = self._environment_function(f_input)
         loss_batch.sum().backward(retain_graph=True) # We don't want z or z_tilde get freed.
         gradient = theta.grad.clone().detach()
-        theta.grad = torch.zeros(theta.shape)
+        theta.grad = torch.zeros_like(theta)
         return gradient
 
     def _compute_gradient_of_theta_wrt_log_pb(self, theta, b, sigma_lambda_z):
@@ -130,7 +126,7 @@ class RebarGradientEstimator:
         log_pb = torch.log(sigma_lambda_z[mask]).sum()  # scalar
         log_pb.backward(retain_graph=True) # We don't want z get freed.
         gradient = theta.grad.clone().detach()
-        theta.grad = torch.zeros(theta.shape)
+        theta.grad = torch.zeros_like(theta)
         return gradient
 
     def _get_batched_tensor(self, input):
@@ -150,27 +146,34 @@ class RebarGradientEstimator:
                 output[batch_idx] = input.data
         return output
 
-    def _compute_gradient_of_temperature(self, expected_theta_gradient, temperature):
+    def _compute_gradients_from_variance_loss(self, expected_theta_gradient, temperature, eta):
         """
-        Computes the gradient of temperature to minimize the expected theta gradient, using equation (6) in RELAX paper.
+        Computes the gradient from variance loss using equation (6) in RELAX paper.
+
+        The gradients will be used to update control variate parameters for minimizing the variance of the estimator.
 
         :param expected_theta_gradient: estimated REBAR gradient for theta. Shape: seq_len * vocab_size
         :param temperature: temperature to control Gumbel-Softmax. Shape: scalar
-        :return expected_temperature_gradient: estimated REBAR gradient for temperature. Shape: scalar
+        :param eta: control variate parameter to minimize the variance of the estimator. Shape: scalar
+        :return expected_temperature_gradient: gradient from variance loss w.r.t. temperature. Shape: scalar
+                expected_eta_gradient: gradient from variance loss w.r.t. eta. Shape: scalar
         """
-        temperature.grad = torch.zeros(temperature.shape)
+        temperature.grad = torch.zeros_like(temperature)
+        eta.grad = torch.zeros_like(eta)
         temperature_loss = torch.pow(expected_theta_gradient, 2).mean()
         temperature_loss.backward()
-        return temperature.grad.clone().detach()
+        return temperature.grad.clone().detach(), eta.grad.clone().detach()
 
-    def estimate_gradient(self, theta, temperature):
+    def estimate_gradient(self, theta, temperature, eta):
         """
         Estimates REBAR gradient by using the equation (4) in REBAR paper.
 
         :param theta: softmax of the network output. Shape: seq_len * vocab_size
         :param temperature: temperature to control Gumbel-Softmax. Shape: scalar
+        :param eta: control variate parameter to minimize the variance of the estimator. Shape: scalar
         :return expected_theta_gradient: estimated REBAR gradient for theta. Shape: seq_len * vocab_size
-                expected_temperature_gradient: estimated REBAR gradient for temperature. Shape: scalar
+                expected_temperature_gradient: gradient from variance loss w.r.t. temperature. Shape: scalar
+                expected_eta_gradient: gradient from variance loss w.r.t. eta. Shape: scalar
         """
 
         theta_batch = self._get_batched_tensor(theta)  # Shape: batch_size * seq_len * vocab_size
@@ -191,10 +194,11 @@ class RebarGradientEstimator:
         gradient_wrt_f_sigma_lambda_z_tilde_batch = self._compute_gradient_of_theta_wrt_f(theta_batch,
                                                                                           sigma_lambda_z_tilde_batch)  # Shape: batch_size * seq_len * vocab_size
 
-        theta_gradient_batch = (f_H_z_batch - self.eta * f_sigma_lambda_z_tilde_batch).reshape([self.batch_size, 1, 1]) * gradient_wrt_log_pb_batch \
-                               + self.eta * gradient_wrt_f_sigma_lambda_z_batch \
-                               - self.eta * gradient_wrt_f_sigma_lambda_z_tilde_batch  # Shape: batch_size * seq_len * vocab_size
+        theta_gradient_batch = (f_H_z_batch - eta * f_sigma_lambda_z_tilde_batch).reshape([self.batch_size, 1, 1]) * gradient_wrt_log_pb_batch \
+                               + eta * gradient_wrt_f_sigma_lambda_z_batch \
+                               - eta * gradient_wrt_f_sigma_lambda_z_tilde_batch  # Shape: batch_size * seq_len * vocab_size
         expected_theta_gradient = theta_gradient_batch.mean(dim=0)  # Shape: seq_len * vocab_size
-        expected_temperature_gradient = self._compute_gradient_of_temperature(expected_theta_gradient, temperature)  # Shape: scalar
+        expected_temperature_gradient, expected_eta_gradient = \
+            self._compute_gradients_from_variance_loss(expected_theta_gradient, temperature, eta)  # Shape: scalar
 
-        return expected_theta_gradient.clone().detach(), expected_temperature_gradient
+        return expected_theta_gradient.clone().detach(), expected_temperature_gradient, expected_eta_gradient
