@@ -9,14 +9,15 @@ class RebarGAN_G(LSTMGenerator):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, temperature, eta, gpu=False):
         super(RebarGAN_G, self).__init__(embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, gpu)
         self.name = 'rebargan'
-        self.temperature = torch.tensor(temperature, dtype=torch.float, requires_grad=True)
-        # Ideally, eta(ƞ) should be computed using the equation in Appendix A of REBAR paper. However, it is infeasible
-        # to implement that equation under practical situation (e.g. when the environment function is a Discriminator
-        # Neural Network). Therefore, we let eta to be a learnable variable.
-        self.eta = torch.tensor(eta, dtype=torch.float, requires_grad=True)
         if gpu:
-            self.temperature = self.temperature.cuda()
-            self.eta = self.eta.cuda()
+            self.temperature = torch.tensor(temperature, dtype=torch.float, device='cuda', requires_grad=True)
+            self.eta = torch.tensor(eta, dtype=torch.float, device='cuda', requires_grad=True)
+        else:
+            self.temperature = torch.tensor(temperature, dtype=torch.float, requires_grad=True)
+            # Ideally, eta(ƞ) should be computed using the equation in Appendix A of REBAR paper. However, it is
+            # infeasible to implement that equation under practical situation (e.g. when the environment function is a
+            # Discriminator Neural Network). Therefore, we let eta to be a learnable variable.
+            self.eta = torch.tensor(eta, dtype=torch.float, requires_grad=True)
         # θ parameter in the REBAR equation. It is the softmax probability of the Generator output.
         self.theta = None
 
