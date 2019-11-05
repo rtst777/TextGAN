@@ -140,7 +140,11 @@ class RebarGradientEstimator:
         :param input: input tensor.
         :return output: the batched tensor. Shape: batch_size * input_tensor_shape
         """
-        output = torch.empty([self.batch_size, *input.size()], requires_grad=True)
+        if self.gpu:
+            output = torch.empty([self.batch_size, *input.size()], requires_grad=True, device='cuda')
+        else:
+            output = torch.empty([self.batch_size, *input.size()], requires_grad=True)
+            
         with torch.no_grad():
             for batch_idx in range(self.batch_size):
                 output[batch_idx] = input.data

@@ -76,6 +76,8 @@ class RebarGAN_G(LSTMGenerator):
             inp = next_token.view(-1)
 
         self.theta = F.softmax(theta_logit, dim=-1)
+        if self.gpu:
+            self.theta = self.theta.cuda()
         return self.theta
 
 
