@@ -73,8 +73,8 @@ class GumbelGANInstructor(BasicInstructor):
             # self.log.info('-----\nADV EPOCH %d\n-----' % adv_epoch)
             self.sig.update()
             if self.sig.adv_sig:
-                d_loss = self.adv_train_generator(cfg.ADV_g_step)  # Generator
-                g_loss, g_acc = self.adv_train_discriminator(cfg.ADV_d_step)  # Discriminator
+                g_loss = self.adv_train_generator(cfg.ADV_g_step)  # Generator
+                d_loss, d_acc = self.adv_train_discriminator(cfg.ADV_d_step)  # Discriminator
                 self.update_temperature(adv_epoch, cfg.ADV_train_epoch)  # update temperature
 
                 progress.set_description(
