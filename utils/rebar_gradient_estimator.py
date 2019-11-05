@@ -112,18 +112,19 @@ class RebarGradientEstimator:
         theta.grad = torch.zeros_like(theta)
         return gradient
 
-    def _compute_gradient_of_theta_wrt_log_pb(self, theta, b, sigma_lambda_z):
+    def _compute_gradient_of_theta_wrt_log_pb(self, theta, b, z):
         """
         Computes the gradient of theta with respect to log p(b).
 
         :param theta: softmax of the network output. Shape: batch_size * seq_len * vocab_size
         :param b: index of each sample element. Shape: batch_size * seq_len
-        :param sigma_lambda_z: Gumbel-Softmax of z. Shape: batch_size * seq_len * vocab_size
+        :param z: logit of Gumbel-Softmax. Shape: batch_size * seq_len * vocab_size
         :return gradient: gradient of theta w.r.t. log p(b). Shape: batch_size * seq_len * vocab_size
         """
         mask = F.one_hot(b, cfg.vocab_size).bool()  # Shape: batch_size * seq_len * vocab_size
+        softmax_z = F.softmax(z, dim=-1)  # Shape: batch_size * seq_len * vocab_size
         # TODO try theta[mask]
-        log_pb = torch.log(sigma_lambda_z[mask]).sum()  # scalar
+        log_pb = torch.log(softmax_z[mask]).sum()  # scalar
         log_pb.backward(retain_graph=True) # We don't want z get freed.
         gradient = theta.grad.clone().detach()
         theta.grad = torch.zeros_like(theta)
@@ -192,7 +193,7 @@ class RebarGradientEstimator:
         f_H_z_batch = self._environment_function(F.one_hot(b_batch, cfg.vocab_size).float())  # Shape: batch_size
         f_sigma_lambda_z_tilde_batch = self._environment_function(sigma_lambda_z_tilde_batch)  # Shape: batch_size
         gradient_wrt_log_pb_batch = self._compute_gradient_of_theta_wrt_log_pb(theta_batch, b_batch,
-                                                                               sigma_lambda_z_batch)  # Shape: batch_size * seq_len * vocab_size
+                                                                               z_batch)  # Shape: batch_size * seq_len * vocab_size
         gradient_wrt_f_sigma_lambda_z_batch = self._compute_gradient_of_theta_wrt_f(theta_batch,
                                                                                     sigma_lambda_z_batch)  # Shape: batch_size * seq_len * vocab_size
         gradient_wrt_f_sigma_lambda_z_tilde_batch = self._compute_gradient_of_theta_wrt_f(theta_batch,
