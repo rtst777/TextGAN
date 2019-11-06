@@ -59,8 +59,8 @@ class RebarGAN_G(LSTMGenerator):
             gumbel_t = self.add_gumbel(out)  # batch_size * vocab_size
             next_token = torch.argmax(gumbel_t, dim=1).detach()  # batch_size * vocab_size
 
-            self.theta[:, 0, :] = out
-            z[:, 0, :] = gumbel_t
+            self.theta[:, i, :] = out
+            z[:, i, :] = gumbel_t
             inp = next_token.view(-1)
 
         if self.gpu:
