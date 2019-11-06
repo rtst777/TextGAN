@@ -1,0 +1,83 @@
+====================================================================================================
+> training arguments:
+>>> if_test: 0
+>>> run_model: rebargan
+>>> dataset: synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands
+>>> model_type: vanilla
+>>> loss_type: standard
+>>> if_real_data: 1
+>>> cuda: 0
+>>> device: -1
+>>> shuffle: 0
+>>> gen_init: normal
+>>> dis_init: uniform
+>>> samples_num: 10000
+>>> vocab_size: 7
+>>> mle_epoch: 1
+>>> adv_epoch: 3
+>>> inter_epoch: 10
+>>> batch_size: 64
+>>> max_seq_len: 3
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.01
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 1
+>>> adv_log_step: 1
+>>> train_data: dataset/oracle.txt
+>>> test_data: dataset/testdata/oracle_test.txt
+>>> temp_adpt: exp
+>>> temperature: 1
+>>> eta: 1
+>>> learn_temperature: 1
+>>> learn_eta: 1
+>>> ora_pretrain: 1
+>>> gen_pretrain: 0
+>>> dis_pretrain: 0
+>>> adv_g_step: 1
+>>> rollout_num: 4
+>>> gen_embed_dim: 7
+>>> gen_hidden_dim: 7
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 4
+>>> d_epoch: 1
+>>> adv_d_step: 4
+>>> adv_d_epoch: 1
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> log_file: log/log_1105_2302_15.txt
+>>> save_root: save/20191105/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands/rebargan_vanilla_lt-standard_sl3_temp1_T1/
+>>> signal_file: run_signal.txt
+>>> tips: vanilla RebarGAN
+====================================================================================================
+Starting Generator MLE Training...
+[MLE-GEN] epoch 0 : pre_loss = 0.6712, BLEU-[2, 3] = [0.99, 0.986], gen_NLL = 0.4693, self_bleu = [0.994],
+Starting Discriminator Training...
+[MLE-DIS] d_step 0: d_loss = 0.6930, train_acc = 0.5056,
+[MLE-DIS] d_step 1: d_loss = 0.6913, train_acc = 0.5165,
+[MLE-DIS] d_step 2: d_loss = 0.6893, train_acc = 0.5123,
+[MLE-DIS] d_step 3: d_loss = 0.6877, train_acc = 0.5161,
+Starting Adversarial Training...
+Initial generator: BLEU-[2, 3] = [0.99, 0.988], gen_NLL = 0.4693, self_bleu = [1.0],
+-----
+ADV EPOCH 0
+-----
+[ADV-GEN] rebar_loss = 3.4477, temperature = 1.0000, eta = 1.0000, BLEU-[2, 3] = [0.997, 0.994], gen_NLL = 0.4688, self_bleu = [1.0],
+[ADV-DIS] d_loss = 1.3767, train_acc = 0.5176,
+-----
+ADV EPOCH 1
+-----
+[ADV-GEN] rebar_loss = 7.4276, temperature = 1.0100, eta = 1.0100, BLEU-[2, 3] = [0.994, 0.987], gen_NLL = 0.4685, self_bleu = [0.996],
+[ADV-DIS] d_loss = 1.3742, train_acc = 0.5059,
+-----
+ADV EPOCH 2
+-----
+[ADV-GEN] rebar_loss = 7.3757, temperature = 1.0198, eta = 1.0180, BLEU-[2, 3] = [0.997, 0.994], gen_NLL = 0.4682, self_bleu = [0.992],
+[ADV-DIS] d_loss = 1.3754, train_acc = 0.5117,
