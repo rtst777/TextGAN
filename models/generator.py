@@ -2,6 +2,7 @@ import math
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 import config as cfg
 from utils.helpers import truncated_normal_
@@ -99,3 +100,30 @@ class LSTMGenerator(nn.Module):
             return h.cuda(), c.cuda()
         else:
             return h, c
+
+    def sample_vanilla_theta(self, batch_size, start_letter=cfg.start_letter):
+        """
+        Samples the network based on argmax theta (no Gumbel involved).
+        :param start_letter: index of start_token
+        :return θ: batch_size * max_seq_length * vocab_size
+        """
+        vanilla_theta = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
+
+        hidden = self.init_hidden(batch_size)
+        inp = torch.LongTensor([start_letter] * batch_size)
+        if self.gpu:
+            inp = inp.cuda()
+
+        for i in range(self.max_seq_len):
+            emb = self.embeddings(inp).unsqueeze(1)  # batch_size * 1 * embedding_dim
+            out, hidden = self.lstm(emb, hidden)
+            out = self.lstm2out(out.squeeze(1))  # batch_size * vocab_size
+            out = F.softmax(out, dim=-1)  # batch_size * vocab_size
+            next_token = torch.argmax(out, dim=1).detach()  # batch_size * vocab_size
+
+            vanilla_theta[:, i, :] = out
+            inp = next_token.view(-1)
+
+        if self.gpu:
+            vanilla_theta = vanilla_theta.cuda()
+        return vanilla_theta

@@ -11,6 +11,7 @@ from metrics.bleu import BLEU
 from models.RebarGAN_D import RebarGAN_D, RebarGAN_D2
 from models.RebarGAN_G import RebarGAN_G
 from utils.rebar_gradient_estimator import RebarGradientEstimator
+from utils.true_gradient_estimator import TrueGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
 from utils.text_process import tensor_to_tokens
 from utils.helpers import get_losses
@@ -113,12 +114,10 @@ class RebarGANInstructor(BasicInstructor):
             self._save('MLE', epoch)
 
     def adv_train_generator(self, g_step):
-        """
-        The gen is trained using policy gradients, using the reward from the discriminator.
-        Training is done for num_batches batches.
-        """
         rebar_ge = RebarGradientEstimator(discriminator=self.dis, batch_size=cfg.batch_size,
                                           real_samples=self.train_data.random_batch()['target'], gpu=cfg.CUDA)
+        # true_ge = TrueGradientEstimator()  TODO
+
         total_rebar_loss = 0
         old_temperature = self.gen.temperature.item()
         old_eta = self.gen.eta.item()
@@ -128,6 +127,9 @@ class RebarGANInstructor(BasicInstructor):
             estimated_gradient, temperature_grad, eta_grad = rebar_ge.estimate_gradient(theta, z,
                                                                                         self.gen.temperature.clone().detach().requires_grad_(),
                                                                                         self.gen.eta.clone().detach().requires_grad_())
+            # vanilla_theta = self.gen.sample_vanilla_theta()
+            # true_ge = true_ge.estimate_gradient(vanilla_theta...)  TODO
+
             adv_loss = self.gen.computeRebarLoss(estimated_gradient)
             temperature_grad = temperature_grad if cfg.learn_temperature else torch.zeros_like(temperature_grad)
             eta_grad = eta_grad if cfg.learn_eta else torch.zeros_like(eta_grad)

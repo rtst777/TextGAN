@@ -8,6 +8,7 @@ from instructor.real_data.instructor import BasicInstructor
 from metrics.bleu import BLEU
 from models.GumbelGAN_D import GumbelGAN_D, GumbelGAN_D2
 from models.GumbelGAN_G import GumbelGAN_G
+from utils.true_gradient_estimator import TrueGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
 from utils.helpers import get_fixed_temperature, get_losses
 from utils.text_process import tensor_to_tokens
@@ -111,6 +112,8 @@ class GumbelGANInstructor(BasicInstructor):
             self._save('MLE', epoch)
 
     def adv_train_generator(self, g_step):
+        # true_ge = TrueGradientEstimator()  TODO
+
         total_loss = 0
         for step in range(g_step):
             real_samples = self.train_data.random_batch()['target']
@@ -120,6 +123,9 @@ class GumbelGANInstructor(BasicInstructor):
             real_samples = F.one_hot(real_samples, cfg.vocab_size).float()
 
             # =====Train=====
+            # vanilla_theta = self.gen.sample_vanilla_theta()
+            # true_ge = true_ge.estimate_gradient(vanilla_theta...)  TODO
+
             d_out_real = self.dis(real_samples)
             d_out_fake = self.dis(gen_samples)
             g_loss, _ = get_losses(d_out_real, d_out_fake, cfg.loss_type)
