@@ -22,27 +22,6 @@ class RebarGAN_G(LSTMGenerator):
         self.theta = None
 
 
-    def batchPGLoss(self, inp, target, reward):
-        """
-        Returns a policy gradient loss
-
-        :param inp: batch_size x seq_len, inp should be target with <s> (start letter) prepended
-        :param target: batch_size x seq_len
-        :param reward: batch_size (discriminator reward for each sentence, applied to each token of the corresponding sentence)
-        :return loss: policy loss
-        """
-
-        batch_size, seq_len = inp.size()
-        hidden = self.init_hidden(batch_size)
-
-        out = self.forward(inp, hidden).view(batch_size, self.max_seq_len, self.vocab_size)
-        target_onehot = F.one_hot(target, self.vocab_size).float()  # batch_size * seq_len * vocab_size
-        pred = torch.sum(out * target_onehot, dim=-1)  # batch_size * seq_len
-        loss = -torch.sum(pred * reward)
-
-        return loss
-
-
     def set_variance_loss_gradients(self, temperature_grad, eta_gradient):
         """
         Sets the variance loss gradients to control variate parameters.
@@ -56,29 +35,38 @@ class RebarGAN_G(LSTMGenerator):
         self.eta.grad = eta_gradient
 
 
-    def sample_theta(self, start_letter=cfg.start_letter):
+    def sample_theta(self, batch_size, start_letter=cfg.start_letter):
         """
-        Samples the network and returns θ
+        Samples the network based on Gumbel logit.
 
         :param start_letter: index of start_token
-        :return θ: max_seq_length * vocab_size
+        :return θ: batch_size * max_seq_length * vocab_size
+                z: batch_size * max_seq_length * vocab_size
         """
-        theta_logit = torch.zeros(self.max_seq_len, self.vocab_size, dtype=torch.float)
-        hidden = self.init_hidden(1)
-        inp = torch.LongTensor([start_letter])
+        self.theta = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
+        z = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
+
+        hidden = self.init_hidden(batch_size)
+        inp = torch.LongTensor([start_letter] * batch_size)
         if self.gpu:
             inp = inp.cuda()
 
         for i in range(self.max_seq_len):
-            out, hidden = self.forward(inp, hidden, need_hidden=True)  # out: 1 * vocab_size
-            next_token = torch.argmax(torch.exp(out), 1)  # next_token: 1 * 1
-            theta_logit[i] = out.view(-1)
+            emb = self.embeddings(inp).unsqueeze(1)  # batch_size * 1 * embedding_dim
+            out, hidden = self.lstm(emb, hidden)
+            out = self.lstm2out(out.squeeze(1))  # batch_size * vocab_size
+            out = F.softmax(out, dim=-1)  # batch_size * vocab_size
+            gumbel_t = self.add_gumbel(out)  # batch_size * vocab_size
+            next_token = torch.argmax(gumbel_t, dim=1).detach()  # batch_size * vocab_size
+
+            self.theta[:, 0, :] = out
+            z[:, 0, :] = gumbel_t
             inp = next_token.view(-1)
 
-        self.theta = F.softmax(theta_logit, dim=-1)
         if self.gpu:
             self.theta = self.theta.cuda()
-        return self.theta
+            z = z.cuda()
+        return self.theta, z
 
 
     def computeRebarLoss(self, estimated_gradient):
@@ -94,3 +82,15 @@ class RebarGAN_G(LSTMGenerator):
         rebar_loss_matrix = self.theta * estimated_gradient
         rebar_loss = rebar_loss_matrix.sum()
         return rebar_loss
+
+
+    @staticmethod
+    def add_gumbel(theta, eps=1e-10, gpu=cfg.CUDA):
+        u = torch.zeros(theta.size())
+        if gpu:
+            u = u.cuda()
+
+        u.uniform_(0, 1)
+        # F.softmax(theta_logit, dim=-1) converts theta_logit to categorical distribution.
+        gumbel_t = torch.log(theta + eps) - torch.log(-torch.log(u + eps) + eps)
+        return gumbel_t
