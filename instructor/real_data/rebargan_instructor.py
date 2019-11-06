@@ -124,7 +124,7 @@ class RebarGANInstructor(BasicInstructor):
         old_eta = self.gen.eta.item()
         for step in range(g_step):
             # =====Train=====
-            theta, z = self.gen.sample_theta()
+            theta, z = self.gen.sample_theta(cfg.batch_size)
             estimated_gradient, temperature_grad, eta_grad = rebar_ge.estimate_gradient(theta, z,
                                                                                         self.gen.temperature.clone().detach().requires_grad_(),
                                                                                         self.gen.eta.clone().detach().requires_grad_())
