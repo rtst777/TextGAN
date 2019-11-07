@@ -5,7 +5,7 @@ import config as cfg
 from utils.helpers import get_losses
 
 class RebarGradientEstimator:
-    def __init__(self, discriminator, batch_size, real_samples, gpu=False):
+    def __init__(self, discriminator, batch_size, real_samples, gpu=False, num_rep=1):
         """
         A class used to estimate REBAR-based gradient for GAN-based text sequence generation problem.
         ...
@@ -26,6 +26,7 @@ class RebarGradientEstimator:
         self.discriminator = discriminator
         self.real_samples = F.one_hot(real_samples, cfg.vocab_size).float()
         self.batch_size = batch_size
+        self.num_rep = num_rep
         self.gpu = gpu
         if gpu:
             self.real_samples = self.real_samples.cuda()
@@ -42,6 +43,8 @@ class RebarGradientEstimator:
         if cfg.loss_type == 'rsgan':
             d_out_real = self.discriminator(self.real_samples)
         g_loss, _ = get_losses(d_out_real, d_out_fake, cfg.loss_type, reduction='none')
+        if self.num_rep != 1:
+            g_loss = torch.mean(g_loss.reshape(self.batch_size, self.num_rep), dim=1)
         return g_loss
 
     def _sample_from_uniform_distribution(self, shape):

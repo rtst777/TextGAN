@@ -74,7 +74,7 @@ class BasicInstructor:
             total_loss += loss.item()
         return total_loss / len(data_loader)
 
-    def train_dis_epoch(self, model, data_loader, criterion, optimizer, one_hot=False):
+    def train_dis_epoch(self, model, data_loader, criterion, optimizer, one_hot=False, num_rep=1):
         total_loss = 0
         total_acc = 0
         total_num = 0
@@ -85,6 +85,8 @@ class BasicInstructor:
             if one_hot:
                 inp = F.one_hot(inp, cfg.vocab_size).float()
 
+            if num_rep != 1:
+                target = target.repeat(num_rep, 1).transpose(0, 1).reshape(num_rep * cfg.batch_size)
             pred = model.forward(inp)
             loss = criterion(pred, target)
             self.optimize(optimizer, loss, model)

@@ -76,7 +76,7 @@ class RebarGANInstructor(BasicInstructor):
             self.sig.update()
             if self.sig.adv_sig:
                 self.adv_train_generator(cfg.ADV_g_step)  # Generator
-                self.adv_train_discriminator(cfg.d_step)  # Discriminator
+                self.adv_train_discriminator(cfg.ADV_d_step)  # Discriminator
 
                 if adv_epoch % cfg.adv_log_step == 0:
                     if cfg.if_save and not cfg.if_test:
