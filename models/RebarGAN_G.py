@@ -84,6 +84,57 @@ class RebarGAN_G(LSTMGenerator):
         return rebar_loss
 
 
+    # For simplicity, I will assume the seq length is 2 first
+    def sample_vanilla_theta(self, start_letter=cfg.start_letter):
+                """
+        Samples all possibility.
+
+        :param start_letter: index of start_token (BOS)
+        :return θ_: vocab_size * vocab_size * ... * vocab_size * max_seq_length (There are max_seq_length vocab size before the last factor)
+        """
+        
+
+        # define the size for theta_ as a list
+        the_size = []
+        for i in range(self.max_seq_length):
+            the_size.append(self.vocab_size)
+        the_size.append(self.max_seq_length)
+        theta_ = torch.zeros(the_size)
+        z_ = torch.zeros(the_size)
+        
+        # initialize
+        hidden = self.init_hidden()
+        inp = torch.LongTensor([start_letter])
+        if self.gpu:
+            inp = inp.cuda()
+        
+        # get the distribution for first word
+        # and store the prob for each word
+        emb = self.embeddings(inp)  # embedding_dim
+        out, hidden = self.lstm(emb, hidden)
+        out = self.lstm2out(out)  # vocab_size
+        out = F.softmax(out, dim=-1)  # vocab_size
+        gumbel_t = self.add_gumbel(out) # vocab_size
+        for i in range(out.shape[0]):
+            theta_[i, :, 0] = out[i]
+            z_[i, :, 0] = gumbel_t[i]
+
+        # get the distribution for second word
+        # and store the prob for each word "based on the first word"
+        for j in range(self.vocab_size):
+            inp = torch.LongTensor([j])
+            emb = self.embeddings(inp)
+            out, hidden = self.lstm(emb, hidden)
+            out = self.lstm2out(out)  # vocab_size
+            out = F.softmax(out, dim=-1)  # vocab_size
+            for k in range(out.shape[0]):
+                theta_[j, k, 1] = out[k];
+
+        return theta_ #should be vocab_size*vocab_size*2 currently
+
+
+
+
     @staticmethod
     def add_gumbel(theta, eps=1e-10, gpu=cfg.CUDA):
         u = torch.zeros(theta.size())
