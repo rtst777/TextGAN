@@ -33,8 +33,8 @@ data_shuffle = int(False)
 gen_init = 'normal'
 dis_init = 'uniform'
 oracle_pretrain = int(True)
-gen_pretrain = int(True)
-dis_pretrain = int(True)
+gen_pretrain = int(False)
+dis_pretrain = int(False)
 
 # =====Oracle  or Real=====
 dataset = ['image_coco',

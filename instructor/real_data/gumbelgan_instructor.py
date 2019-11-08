@@ -66,23 +66,18 @@ class GumbelGANInstructor(BasicInstructor):
 
         # =====ADVERSARIAL TRAINING=====
         self.log.info('Starting Adversarial Training...')
-        # self.log.info('Initial generator: %s' % (self.cal_metrics(fmt_str=True)))
+        self.log.info('Initial generator: %s' % (self.cal_metrics(fmt_str=True)))
 
-        progress = tqdm(range(cfg.ADV_train_epoch))
-        for adv_epoch in progress:
-            # self.log.info('-----\nADV EPOCH %d\n-----' % adv_epoch)
+        for adv_epoch in range(cfg.ADV_train_epoch):
+            if adv_epoch % cfg.adv_log_step == 0:
+                self.log.info('-----\nADV EPOCH %d\n-----' % adv_epoch)
             self.sig.update()
             if self.sig.adv_sig:
-                g_loss = self.adv_train_generator(cfg.ADV_g_step)  # Generator
-                d_loss, d_acc = self.adv_train_discriminator(cfg.ADV_d_step)  # Discriminator
+                self.adv_train_generator(cfg.ADV_g_step, adv_epoch)  # Generator
+                self.adv_train_discriminator(cfg.ADV_d_step, adv_epoch)  # Discriminator
                 self.update_temperature(adv_epoch, cfg.ADV_train_epoch)  # update temperature
 
-                progress.set_description(
-                    'g_loss: %.4f, d_loss: %.4f, temperature: %.4f' % (g_loss, d_loss, self.gen.temperature))
-
                 if adv_epoch % cfg.adv_log_step == 0:
-                    self.log.info('[ADV] epoch %d: g_loss: %.4f, d_loss: %.4f, %s' % (
-                        adv_epoch, g_loss, d_loss, self.cal_metrics(fmt_str=True)))
                     if cfg.if_save and not cfg.if_test:
                         self._save('ADV', adv_epoch)
             else:
@@ -117,7 +112,7 @@ class GumbelGANInstructor(BasicInstructor):
         if cfg.if_save and not cfg.if_test:
             self._save('MLE', epoch)
 
-    def adv_train_generator(self, g_step):
+    def adv_train_generator(self, g_step, adv_epoch):
         total_loss = 0
         for step in range(g_step):
             real_samples = self.train_data.random_batch()['target']
@@ -136,66 +131,66 @@ class GumbelGANInstructor(BasicInstructor):
 
         # =====Test=====
         avg_loss = total_loss / g_step if g_step != 0 else 0
-        # self.log.info('[ADV-GEN] g_loss = %.4f, temperature = %.4f, %s'
-        #              % (avg_loss, self.gen.temperature, self.cal_metrics(fmt_str=True)))
-        return avg_loss
+        if adv_epoch % cfg.adv_log_step == 0:
+            self.log.info('[ADV-GEN] g_loss = %.4f, temperature = %.4f, %s'
+                     % (avg_loss, self.gen.temperature, self.cal_metrics(fmt_str=True)))
 
-    def adv_train_discriminator(self, d_step):
+    def adv_train_discriminator(self, d_step, adv_epoch):
         total_loss = 0
         total_acc = 0
         for step in range(d_step):
             # train discriminator on a random batch
-            # real_samples = self.train_data.random_batch()['target']
-            # gen_samples = self.gen.sample(cfg.batch_size, cfg.batch_size, one_hot=True)
-            # if cfg.CUDA:
-            #     real_samples, gen_samples = real_samples.cuda(), gen_samples.cuda()
-            # real_samples = F.one_hot(real_samples, cfg.vocab_size).float()
-            #
-            # # =====Train=====
-            # d_out_real = self.dis(real_samples)
-            # d_out_fake = self.dis(gen_samples)
-            # _, d_loss = get_losses(d_out_real, d_out_fake, cfg.loss_type)
-            #
-            # self.optimize(self.dis_opt, d_loss, self.dis)
-            #
-            # total_loss += d_loss.item()
-            # predictions = torch.cat((d_out_real, d_out_fake))
-            # labels = torch.cat((torch.ones_like(d_out_real), torch.zeros_like(d_out_fake)))
-            # total_acc += torch.sum(((predictions > 0).float() == labels)).item()
-
-            # train discriminator on a entire epoch
-            real_samples = self.train_data.target
-            gen_samples = self.gen.sample(cfg.samples_num, cfg.batch_size)
+            real_samples = self.train_data.random_batch()['target']
+            gen_samples = self.gen.sample(cfg.batch_size, cfg.batch_size, one_hot=True)
             if cfg.CUDA:
                 real_samples, gen_samples = real_samples.cuda(), gen_samples.cuda()
-            real_samples = GenDataIter(real_samples)
-            gen_samples = GenDataIter(gen_samples)
+            real_samples = F.one_hot(real_samples, cfg.vocab_size).float()
 
             # =====Train=====
-            for i, (real_sample_batch, gen_sample_batch) in enumerate(zip(real_samples.loader, gen_samples.loader)):
-                real_sample_batch = F.one_hot(real_sample_batch["target"], cfg.vocab_size).float()
-                gen_sample_batch = F.one_hot(gen_sample_batch["target"], cfg.vocab_size).float()
-                d_out_real = self.dis(real_sample_batch)
-                d_out_fake = self.dis(gen_sample_batch)
-                _, d_loss = get_losses(d_out_real, d_out_fake, cfg.loss_type)
+            d_out_real = self.dis(real_samples)
+            d_out_fake = self.dis(gen_samples)
+            _, d_loss = get_losses(d_out_real, d_out_fake, cfg.loss_type)
 
-                self.optimize(self.dis_opt, d_loss, self.dis)
+            self.optimize(self.dis_opt, d_loss, self.dis)
 
-                total_loss += d_loss.item()
-                predictions = torch.cat((d_out_real, d_out_fake))
-                labels = torch.cat((torch.ones_like(d_out_real), torch.zeros_like(d_out_fake)))
-                total_acc += torch.sum(((predictions > 0).float() == labels)).item()
+            total_loss += d_loss.item()
+            predictions = torch.cat((d_out_real, d_out_fake))
+            labels = torch.cat((torch.ones_like(d_out_real), torch.zeros_like(d_out_fake)))
+            total_acc += torch.sum(((predictions > 0).float() == labels)).item()
+
+            # train discriminator on a entire epoch
+            # real_samples = self.train_data.target
+            # gen_samples = self.gen.sample(cfg.samples_num, cfg.batch_size)
+            # if cfg.CUDA:
+            #     real_samples, gen_samples = real_samples.cuda(), gen_samples.cuda()
+            # real_samples = GenDataIter(real_samples)
+            # gen_samples = GenDataIter(gen_samples)
+            #
+            # # =====Train=====
+            # for i, (real_sample_batch, gen_sample_batch) in enumerate(zip(real_samples.loader, gen_samples.loader)):
+            #     real_sample_batch = F.one_hot(real_sample_batch["target"], cfg.vocab_size).float()
+            #     gen_sample_batch = F.one_hot(gen_sample_batch["target"], cfg.vocab_size).float()
+            #     d_out_real = self.dis(real_sample_batch)
+            #     d_out_fake = self.dis(gen_sample_batch)
+            #     _, d_loss = get_losses(d_out_real, d_out_fake, cfg.loss_type)
+            #
+            #     self.optimize(self.dis_opt, d_loss, self.dis)
+            #
+            #     total_loss += d_loss.item()
+            #     predictions = torch.cat((d_out_real, d_out_fake))
+            #     labels = torch.cat((torch.ones_like(d_out_real), torch.zeros_like(d_out_fake)))
+            #     total_acc += torch.sum(((predictions > 0).float() == labels)).item()
 
         # =====Test=====
-        # avg_loss = total_loss / d_step if d_step != 0 else 0
-        # avg_acc = total_acc / (d_step * cfg.batch_size * 2) if d_step != 0 else 0
+        avg_loss = total_loss / d_step if d_step != 0 else 0
+        avg_acc = total_acc / (d_step * cfg.batch_size * 2) if d_step != 0 else 0
 
-        num_batch = cfg.samples_num // cfg.batch_size + 1
-        avg_loss = total_loss / (d_step * num_batch) if d_step != 0 else 0
-        avg_acc = total_acc / (d_step * cfg.samples_num * 2) if d_step != 0 else 0
+        # num_batch = cfg.samples_num // cfg.batch_size + 1
+        # avg_loss = total_loss / (d_step * num_batch) if d_step != 0 else 0
+        # avg_acc = total_acc / (d_step * cfg.samples_num * 2) if d_step != 0 else 0
 
-        # self.log.info('[ADV-DIS] d_loss = %.4f, train_acc = %.4f,' % (avg_loss, avg_acc))
-        return avg_loss, avg_acc
+        if adv_epoch % cfg.adv_log_step == 0:
+            self.log.info('[ADV-DIS] d_loss = %.4f, train_acc = %.4f,' % (avg_loss, avg_acc))
 
     def update_temperature(self, i, N):
         self.gen.temperature = get_fixed_temperature(cfg.temperature, i, N, cfg.temp_adpt)
