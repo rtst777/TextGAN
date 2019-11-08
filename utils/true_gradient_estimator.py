@@ -63,12 +63,16 @@ class TrueGradientEstimator:
 
         gradients = torch.zeros(theta_.shape[0])
         
-        for i in theta.shape[0]:
-            for j in theta.shape[1]:
+        for i in theta_size[0]:
+            for j in theta_size[1]:
                 Db = self._environment_function(F.one_hot([i,j], cfg.vocab_size).float())
-                grad_1 = 1/theta_[i]*Db
-                grad_2 = 1/theta_[j]*Db
-                gradients[i] += grad_1
-                gradients[j] += grad_2
+                log_pb = torch.log(theta_[i,j,0])+torch.log(theta_[i,j,1]) # scalar
+                log_pb.backward(retain_graph=True)
+                gradient = theta_.grad.clone().detach()
+                gradients += gradient * Db
+                # grad_1 = 1/theta_[i]*Db
+                # grad_2 = 1/theta_[j]*Db
+                # gradients[i] += grad_1
+                # gradients[j] += grad_2
 
         return gradients/num_sentences

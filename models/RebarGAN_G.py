@@ -100,7 +100,6 @@ class RebarGAN_G(LSTMGenerator):
             the_size.append(self.vocab_size)
         the_size.append(self.max_seq_length)
         theta_ = torch.zeros(the_size)
-        z_ = torch.zeros(the_size)
         
         # initialize
         hidden = self.init_hidden()
@@ -117,7 +116,6 @@ class RebarGAN_G(LSTMGenerator):
         gumbel_t = self.add_gumbel(out) # vocab_size
         for i in range(out.shape[0]):
             theta_[i, :, 0] = out[i]
-            z_[i, :, 0] = gumbel_t[i]
 
         # get the distribution for second word
         # and store the prob for each word "based on the first word"
@@ -127,8 +125,9 @@ class RebarGAN_G(LSTMGenerator):
             out, hidden = self.lstm(emb, hidden)
             out = self.lstm2out(out)  # vocab_size
             out = F.softmax(out, dim=-1)  # vocab_size
+            gumbel_t = self.add_gumbel(out) # vocab_size
             for k in range(out.shape[0]):
-                theta_[j, k, 1] = out[k];
+                theta_[j, k, 1] = out[k]
 
         return theta_ #should be vocab_size*vocab_size*2 currently
 
