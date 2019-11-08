@@ -33,32 +33,32 @@ data_shuffle = int(False)
 gen_init = 'normal'
 dis_init = 'uniform'
 oracle_pretrain = int(True)
-gen_pretrain = int(False)
-dis_pretrain = int(False)
+gen_pretrain = int(True)
+dis_pretrain = int(True)
 
 # =====Oracle  or Real=====
 dataset = ['image_coco',
-           'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
-           'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
+           'synthetic_dataset_1000_data_15_maxlen_4_operations_1_operands',
+           'synthetic_dataset_1000_data_31_maxlen_4_operations_2_operands']
 model_type = 'vanilla'
-loss_type = 'standard'
-vocab_size = [6613, 7, 7]
+loss_type = 'rsgan'
+vocab_size = [6613, 7, 8]
 temperature = [1, 1, 1]
 eta = [1, 1, 1]
 learn_temperature = int(True)
 learn_eta = int(True)
 
 # =====Basic Train=====
-samples_num = 10000
-MLE_train_epoch = 120
+samples_num = 1000
+MLE_train_epoch = 5
 ADV_train_epoch = 200
-batch_size = 64
-max_seq_len = [20, 3, 15]
+batch_size = 128
+max_seq_len = [20, 15, 31]
 gen_lr = 0.01
 gen_adv_lr = 0.01
 dis_lr = 1e-4
 pre_log_step = 5
-adv_log_step = 1
+adv_log_step = 10
 
 # =====Generator=====
 ADV_g_step = 1

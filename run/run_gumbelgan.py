@@ -38,25 +38,25 @@ dis_pretrain = int(False)
 
 # =====Oracle  or Real=====
 dataset = ['image_coco',
-           'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
-           'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
+           'synthetic_dataset_1000_data_15_maxlen_4_operations_1_operands',
+           'synthetic_dataset_1000_data_31_maxlen_4_operations_2_operands']
 model_type = 'vanilla'
-loss_type = 'standard'
-vocab_size = [6613, 7, 7]
+loss_type = 'rsgan'
+vocab_size = [6613, 7, 8]
 temp_adpt = 'exp'
 temperature = [100, 2, 2]  # TODO(ethanjiang) tune temperature
 
 # =====Basic Train=====
-samples_num = 10000
-MLE_train_epoch = 150
-ADV_train_epoch = 3000
+samples_num = 1000
+MLE_train_epoch = [150, 5, 5]
+ADV_train_epoch = 250
 batch_size = 64
-max_seq_len = [20, 3, 15]
+max_seq_len = [20, 15, 31]
 gen_lr = 0.01
 gen_adv_lr = 0.01
 dis_lr = 1e-4
-pre_log_step = 10
-adv_log_step = 20
+pre_log_step = 5
+adv_log_step = 10
 
 # =====Generator=====
 ADV_g_step = 1
@@ -66,7 +66,7 @@ gen_hidden_dim = 32
 # =====Discriminator=====
 d_step = 5
 d_epoch = 3
-ADV_d_step = 4
+ADV_d_step = 1
 ADV_d_epoch = 2
 dis_embed_dim = 64
 dis_hidden_dim = 64
@@ -93,7 +93,7 @@ args = [
     # Basic Train
     '--samples_num', samples_num,
     '--vocab_size', vocab_size[job_id],
-    '--mle_epoch', MLE_train_epoch,
+    '--mle_epoch', MLE_train_epoch[job_id],
     '--adv_epoch', ADV_train_epoch,
     '--batch_size', batch_size,
     '--max_seq_len', max_seq_len[job_id],
