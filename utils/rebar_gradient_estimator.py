@@ -124,7 +124,7 @@ class RebarGradientEstimator:
         mask = F.one_hot(b, cfg.vocab_size).bool()  # Shape: batch_size * seq_len * vocab_size
         softmax_z = F.softmax(z, dim=-1)  # Shape: batch_size * seq_len * vocab_size
         # TODO try theta[mask]
-        log_pb = torch.log(softmax_z[mask]).sum()  # scalar
+        log_pb = torch.log(theta[mask]).sum()  # scalar
         log_pb.backward(retain_graph=True) # We don't want z get freed.
         gradient = theta.grad.clone().detach()
         theta.grad = torch.zeros_like(theta)
