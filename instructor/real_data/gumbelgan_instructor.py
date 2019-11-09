@@ -130,7 +130,8 @@ class GumbelGANInstructor(BasicInstructor):
             d_out_fake = self.dis(gen_samples)
             g_loss, _ = get_losses(d_out_real, d_out_fake, cfg.loss_type)
 
-            self.optimize(self.gen_adv_opt, g_loss, self.gen)
+            theta_gradient = self.optimize(self.gen_adv_opt, g_loss, self.gen,
+                                           theta_gradient_fetcher=self.gen.get_theta_gradient)
             total_loss += g_loss.item()
 
         # =====Test=====
@@ -172,12 +173,14 @@ class GumbelGANInstructor(BasicInstructor):
         self.gen.temperature = get_fixed_temperature(cfg.temperature, i, N, cfg.temp_adpt)
 
     @staticmethod
-    def optimize(opt, loss, model=None, retain_graph=False):
+    def optimize(opt, loss, model=None, retain_graph=False, theta_gradient_fetcher=None):
         opt.zero_grad()
         loss.backward(retain_graph=retain_graph)
+        theta_gradient = None if theta_gradient_fetcher is None else theta_gradient_fetcher()
         if model is not None:
             torch.nn.utils.clip_grad_norm_(model.parameters(), cfg.clip_norm)
         opt.step()
+        return theta_gradient
 
     def pretrain_discriminator(self, d_step, d_epoch, phrase='MLE'):
         """
