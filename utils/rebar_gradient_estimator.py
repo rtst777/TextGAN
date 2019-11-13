@@ -60,7 +60,7 @@ class RebarGradientEstimator:
         sample.uniform_(0, 1)
         return sample
 
-    def _compute_z_tilde(self, b, theta):
+    def _compute_z_tilde(self, b, theta, eps=1e-20):
         """
         Computes z tilde under categorical distribution by using the equations in appendix C of REBAR paper.
 
@@ -75,6 +75,8 @@ class RebarGradientEstimator:
         z_tilde_k = -torch.log(- torch.log(v_k))  # Shape: batch_size * seq_len * vocab_size
         z_tilde_not_k = -torch.log(-(torch.log(v) / theta) - torch.log(v_k))  # Shape: batch_size * seq_len * vocab_size
 
+        z_tilde_k = -torch.log(- torch.log(v_k + eps) + eps)  # Shape: batch_size * seq_len * vocab_size
+        z_tilde_not_k = -torch.log(-(torch.log(v + eps) / (theta + eps)) - torch.log(v_k + eps) + eps)  # Shape: batch_size * seq_len * vocab_size
         mask = F.one_hot(b, num_classes=cfg.vocab_size).bool()  # Shape: batch_size * seq_len * vocab_size
         z_tilde = z_tilde_not_k.masked_scatter(mask, z_tilde_k[mask])  # Shape: batch_size * seq_len * vocab_size
         return z_tilde
@@ -104,7 +106,7 @@ class RebarGradientEstimator:
         theta.grad = torch.zeros_like(theta)
         return gradient
 
-    def _compute_gradient_of_theta_wrt_log_pb(self, theta, b):
+    def _compute_gradient_of_theta_wrt_log_pb(self, theta, b, eps=1e-20):
         """
         Computes the gradient of theta with respect to log p(b).
 
@@ -114,7 +116,7 @@ class RebarGradientEstimator:
         """
         mask = F.one_hot(b, cfg.vocab_size).bool()  # Shape: batch_size * seq_len * vocab_size
         # TODO try theta[mask]
-        log_pb = torch.log(theta[mask]).sum()  # scalar
+        log_pb = torch.log(theta[mask] + eps).sum()  # scalar
         log_pb.backward(retain_graph=True)
         gradient = theta.grad.clone().detach()
         theta.grad = torch.zeros_like(theta)

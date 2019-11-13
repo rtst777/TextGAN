@@ -53,12 +53,16 @@ samples_num = 10000
 MLE_train_epoch = 1 # 150
 ADV_train_epoch = 2 # 3000
 batch_size = 64
+MLE_train_epoch = 5 # 150
+ADV_train_epoch = 300 # 3000
 max_seq_len = [20, 3, 15]
 gen_lr = 0.01
 gen_adv_lr = 1e-4
 dis_lr = 1e-4
 pre_log_step = 1 # 10
 adv_log_step = 1 # 20
+pre_log_step = 10 # 10
+adv_log_step = 20 # 20
 
 # =====Generator=====
 ADV_g_step = 1
