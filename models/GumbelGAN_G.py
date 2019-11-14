@@ -50,6 +50,9 @@ class GumbelGAN_G(LSTMGenerator):
         num_batch = num_samples // batch_size + 1 if num_samples != batch_size else 1
         samples = torch.zeros(num_batch * batch_size, self.max_seq_len).long()
         self.theta = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
+        if self.gpu:
+            self.theta = self.theta.cuda()
+            
         if one_hot:
             all_preds = torch.zeros(batch_size, self.max_seq_len, self.vocab_size)
             if self.gpu:
