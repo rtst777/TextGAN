@@ -69,11 +69,12 @@ class GumbelGANInstructor(BasicInstructor):
         self.log.info('Initial generator: %s' % (self.cal_metrics(fmt_str=True)))
 
         for adv_epoch in range(cfg.ADV_train_epoch):
-            self.log.info('-----\nADV EPOCH %d\n-----' % adv_epoch)
+            if adv_epoch % cfg.adv_log_step == 0:
+                self.log.info('-----\nADV EPOCH %d\n-----' % adv_epoch)
             self.sig.update()
             if self.sig.adv_sig:
-                self.adv_train_generator(cfg.ADV_g_step)  # Generator
-                self.adv_train_discriminator(cfg.ADV_d_step)  # Discriminator
+                self.adv_train_generator(cfg.ADV_g_step, adv_epoch)  # Generator
+                self.adv_train_discriminator(cfg.ADV_d_step, adv_epoch)  # Discriminator
                 self.update_temperature(adv_epoch, cfg.ADV_train_epoch)  # update temperature
 
                 if adv_epoch % cfg.adv_log_step == 0:
@@ -111,7 +112,7 @@ class GumbelGANInstructor(BasicInstructor):
         if cfg.if_save and not cfg.if_test:
             self._save('MLE', epoch)
 
-    def adv_train_generator(self, g_step):
+    def adv_train_generator(self, g_step, adv_epoch):
         # true_ge = TrueGradientEstimator()  TODO
 
         total_loss = 0
@@ -136,11 +137,12 @@ class GumbelGANInstructor(BasicInstructor):
 
         # =====Test=====
         avg_loss = total_loss / g_step if g_step != 0 else 0
-        self.log.info('[ADV-GEN] g_loss = %.4f, temperature = %.4f, %s'
+        if adv_epoch % cfg.adv_log_step == 0:
+            self.log.info('[ADV-GEN] g_loss = %.4f, temperature = %.4f, %s'
                       % (avg_loss, self.gen.temperature, self.cal_metrics(fmt_str=True)))
 
 
-    def adv_train_discriminator(self, d_step):
+    def adv_train_discriminator(self, d_step, adv_epoch):
         total_loss = 0
         total_acc = 0
         for step in range(d_step):
@@ -166,7 +168,8 @@ class GumbelGANInstructor(BasicInstructor):
         # =====Test=====
         avg_loss = total_loss / d_step if d_step != 0 else 0
         avg_acc = total_acc / (d_step * cfg.batch_size * 2) if d_step != 0 else 0
-        self.log.info('[ADV-DIS] d_loss = %.4f, train_acc = %.4f,' % (avg_loss, avg_acc))
+        if adv_epoch % cfg.adv_log_step == 0:
+            self.log.info('[ADV-DIS] d_loss = %.4f, train_acc = %.4f,' % (avg_loss, avg_acc))
 
 
     def update_temperature(self, i, N):
