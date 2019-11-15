@@ -44,28 +44,29 @@ class RebarGAN_G(LSTMGenerator):
                 z: batch_size * max_seq_length * vocab_size
         """
         self.theta = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
-        z = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
+        gumbel = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
 
         hidden = self.init_hidden(batch_size)
         inp = torch.LongTensor([start_letter] * batch_size)
         if self.gpu:
             inp = inp.cuda()
+            self.theta = self.theta.cuda()
+            gumbel = gumbel.cuda()
 
         for i in range(self.max_seq_len):
             emb = self.embeddings(inp).unsqueeze(1)  # batch_size * 1 * embedding_dim
             out, hidden = self.lstm(emb, hidden)
             out = self.lstm2out(out.squeeze(1))  # batch_size * vocab_size
             out = F.softmax(out, dim=-1)  # batch_size * vocab_size
-            gumbel_t = self.add_gumbel(out)  # batch_size * vocab_size
+            gumbel_t, gumbel_slice = self.add_gumbel(out)  # batch_size * vocab_size
             next_token = torch.argmax(gumbel_t, dim=1).detach()  # batch_size * vocab_size
 
             self.theta[:, i, :] = out
-            z[:, i, :] = gumbel_t
+            gumbel[:, i, :] = gumbel_slice
             inp = next_token.view(-1)
 
-        if self.gpu:
-            self.theta = self.theta.cuda()
-            z = z.cuda()
+        eps = 1e-10
+        z = torch.log(self.theta + eps) + gumbel
         return self.theta, z
 
 
@@ -92,5 +93,6 @@ class RebarGAN_G(LSTMGenerator):
 
         u.uniform_(0, 1)
         # F.softmax(theta_logit, dim=-1) converts theta_logit to categorical distribution.
-        gumbel_t = torch.log(theta + eps) - torch.log(-torch.log(u + eps) + eps)
-        return gumbel_t
+        gumbel =  - torch.log(-torch.log(u + eps) + eps)
+        gumbel_t = torch.log(theta + eps) + gumbel
+        return gumbel_t, gumbel
