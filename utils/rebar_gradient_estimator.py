@@ -72,8 +72,6 @@ class RebarGradientEstimator:
 
         idx_k = b.repeat(theta.shape[2], 1, 1).permute(1, 2, 0)  # Shape: batch_size * seq_len * vocab_size
         v_k = v.gather(dim=2, index=idx_k) # Shape: batch_size * seq_len * vocab_size
-        z_tilde_k = -torch.log(- torch.log(v_k))  # Shape: batch_size * seq_len * vocab_size
-        z_tilde_not_k = -torch.log(-(torch.log(v) / theta) - torch.log(v_k))  # Shape: batch_size * seq_len * vocab_size
 
         z_tilde_k = -torch.log(- torch.log(v_k + eps) + eps)  # Shape: batch_size * seq_len * vocab_size
         z_tilde_not_k = -torch.log(-(torch.log(v + eps) / (theta + eps)) - torch.log(v_k + eps) + eps)  # Shape: batch_size * seq_len * vocab_size
