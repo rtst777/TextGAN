@@ -19,19 +19,19 @@ CUDA = True
 if_save = True
 data_shuffle = False  # False
 oracle_pretrain = True  # True
-gen_pretrain = False
-dis_pretrain = False
+gen_pretrain = True
+dis_pretrain = True
 
-run_model = 'relgan'  # seqgan, leakgan, relgan, gumbelgan, rebargan, relbargan
+run_model = 'rebargan'  # seqgan, leakgan, relgan, gumbelgan, rebargan, relbargan
 gen_init = 'normal'  # normal, uniform, truncated_normal
 dis_init = 'uniform'  # normal, uniform, truncated_normal
 
 # =====Oracle or Real, type=====
 if_real_data = False  # if use real data
-dataset = 'oracle'  # oracle, image_coco, emnlp_news
+dataset = 'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands'  # oracle, image_coco, emnlp_news
 model_type = 'vanilla'  # vanilla, noRMC, noGumbel (custom)
 loss_type = 'rsgan'  # standard, JS, KL, hinge, tv, LS, rsgan (for RelGAN) TODO(ethanjiang) decide which loss for gumbelgan, rebargan, relbargan
-vocab_size = 5000  # oracle: 5000, coco: 6613, emnlp: 5255
+vocab_size = 3  # oracle: 5000, coco: 6613, emnlp: 5255
 
 temp_adpt = 'exp'  # no, lin, exp, log, sigmoid, quad, sqrt (for RelGAN) TODO(ethanjiang) decide which temp for gumbelgan, rebargan, relbargan
 temperature = 2
@@ -45,7 +45,7 @@ MLE_train_epoch = 150  # SeqGAN-80, LeakGAN-8, RelGAN-150  TODO(ethanjiang) deci
 ADV_train_epoch = 3000  # SeqGAN, LeakGAN-200, RelGAN-3000  TODO(ethanjiang) decide the number for gumbelgan, rebargan, relbargan
 inter_epoch = 10  # LeakGAN-10
 batch_size = 64  # 64
-max_seq_len = 20  # 20
+max_seq_len = 3  # 20
 start_letter = 1
 padding_idx = 0
 start_token = 'BOS'

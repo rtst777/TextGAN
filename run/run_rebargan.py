@@ -37,14 +37,15 @@ gen_pretrain = int(False)
 dis_pretrain = int(False)
 
 # =====Oracle  or Real=====
-dataset = ['image_coco',
-           'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
-           'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
+# dataset = ['image_coco',
+#            'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
+#            'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
+dataset = ['synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands']
 model_type = 'vanilla'
 loss_type = 'standard'
-vocab_size = [6613, 7, 7]
-temperature = [1, 1, 1]
-eta = [1, 1, 1]
+vocab_size = [7]
+temperature = [1]
+eta = [1]
 learn_temperature = int(True)
 learn_eta = int(True)
 
@@ -52,8 +53,8 @@ learn_eta = int(True)
 samples_num = 10000
 MLE_train_epoch = 120
 ADV_train_epoch = 200
-batch_size = 64
-max_seq_len = [20, 3, 15]
+batch_size = 10
+max_seq_len = [3]
 gen_lr = 0.01
 gen_adv_lr = 0.01
 dis_lr = 1e-4
@@ -62,8 +63,8 @@ adv_log_step = 1
 
 # =====Generator=====
 ADV_g_step = 1
-gen_embed_dim = 32
-gen_hidden_dim = 32
+gen_embed_dim = 16
+gen_hidden_dim = 16
 
 # =====Discriminator=====
 d_step = 5

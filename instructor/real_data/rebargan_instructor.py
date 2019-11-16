@@ -22,6 +22,8 @@ class RebarGANInstructor(BasicInstructor):
         super(RebarGANInstructor, self).__init__(opt)
 
         # generator, discriminator
+        print("max_seq_len:")
+        print(cfg.max_seq_len)
         self.gen = RebarGAN_G(cfg.gen_embed_dim, cfg.gen_hidden_dim, cfg.vocab_size, cfg.max_seq_len,
                               cfg.padding_idx, cfg.temperature, cfg.eta, gpu=cfg.CUDA)
         self.dis = RebarGAN_D2(cfg.dis_embed_dim, cfg.max_seq_len, cfg.vocab_size, cfg.padding_idx, gpu=cfg.CUDA)
@@ -52,20 +54,20 @@ class RebarGANInstructor(BasicInstructor):
 
     def _run(self):
         # =====PRE-TRAINING (GENERATOR)=====
-        if not cfg.gen_pretrain:
-            self.log.info('Starting Generator MLE Training...')
-            self.pretrain_generator(cfg.MLE_train_epoch)
-            if cfg.if_save and not cfg.if_test:
-                torch.save(self.gen.state_dict(), cfg.pretrained_gen_path)
-                print('Save pre-trained generator: {}'.format(cfg.pretrained_gen_path))
+        # if not cfg.gen_pretrain:
+        #     self.log.info('Starting Generator MLE Training...')
+        #     self.pretrain_generator(cfg.MLE_train_epoch)
+        #     if cfg.if_save and not cfg.if_test:
+        #         torch.save(self.gen.state_dict(), cfg.pretrained_gen_path)
+        #         print('Save pre-trained generator: {}'.format(cfg.pretrained_gen_path))
 
         # =====PRE-TRAINING (DISCRIMINATOR)=====
-        if not cfg.dis_pretrain:
-            self.log.info('Starting Discriminator Training...')
-            self.pretrain_discriminator(cfg.d_step, cfg.d_epoch)
-            if cfg.if_save and not cfg.if_test:
-                torch.save(self.dis.state_dict(), cfg.pretrained_dis_path)
-                print('Save pretrain_generator discriminator: {}'.format(cfg.pretrained_dis_path))
+        # if not cfg.dis_pretrain:
+        #     self.log.info('Starting Discriminator Training...')
+        #     self.pretrain_discriminator(cfg.d_step, cfg.d_epoch)
+        #     if cfg.if_save and not cfg.if_test:
+        #         torch.save(self.dis.state_dict(), cfg.pretrained_dis_path)
+        #         print('Save pretrain_generator discriminator: {}'.format(cfg.pretrained_dis_path))
 
         # =====ADVERSARIAL TRAINING=====
         self.log.info('Starting Adversarial Training...')
@@ -76,7 +78,7 @@ class RebarGANInstructor(BasicInstructor):
             self.sig.update()
             if self.sig.adv_sig:
                 self.adv_train_generator(cfg.ADV_g_step)  # Generator
-                self.adv_train_discriminator(cfg.ADV_d_step)  # Discriminator
+                # self.adv_train_discriminator(cfg.ADV_d_step)  # Discriminator
 
                 if adv_epoch % cfg.adv_log_step == 0:
                     if cfg.if_save and not cfg.if_test:
@@ -127,7 +129,8 @@ class RebarGANInstructor(BasicInstructor):
             estimated_gradient, temperature_grad, eta_grad = rebar_ge.estimate_gradient(theta, z,
                                                                                         self.gen.temperature.clone().detach().requires_grad_(),
                                                                                         self.gen.eta.clone().detach().requires_grad_())
-            # vanilla_theta = self.gen.sample_vanilla_theta()
+            vanilla_theta = self.gen.sample_vanilla_theta()
+            print(vanilla_theta.shape)
             # true_ge = true_ge.estimate_gradient(vanilla_theta...)  TODO
 
             adv_loss = self.gen.computeRebarLoss(estimated_gradient)

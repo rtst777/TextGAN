@@ -84,9 +84,9 @@ class RebarGAN_G(LSTMGenerator):
         return rebar_loss
 
 
-    # For simplicity, I will assume the seq length is 2 first
+    # For simplicity, I will assume the seq length is 3 first
     def sample_vanilla_theta(self, start_letter=cfg.start_letter):
-                """
+        """
         Samples all possibility.
 
         :param start_letter: index of start_token (BOS)
@@ -95,41 +95,55 @@ class RebarGAN_G(LSTMGenerator):
         
 
         # define the size for theta_ as a list
-        the_size = []
-        for i in range(self.max_seq_length):
-            the_size.append(self.vocab_size)
-        the_size.append(self.max_seq_length)
-        theta_ = torch.zeros(the_size)
+        the_size = torch.zeros(self.max_seq_len+1)
+        the_size[:] = self.vocab_size
+        the_size[the_size.shape[0]-1] = self.max_seq_len
+
+        # for i in range(self.max_seq_length):
+        #     the_size.append(self.vocab_size)
+        # the_size.append(self.max_seq_length)
+        
+        theta_ = torch.zeros(the_size.int().tolist())
         
         # initialize
-        hidden = self.init_hidden()
-        inp = torch.LongTensor([start_letter])
+        hidden = self.init_hidden(1)
+        inp = torch.LongTensor([start_letter]*1)
         if self.gpu:
             inp = inp.cuda()
         
         # get the distribution for first word
         # and store the prob for each word
-        emb = self.embeddings(inp)  # embedding_dim
+        emb = self.embeddings(inp).unsqueeze(1)  # embedding_dim
         out, hidden = self.lstm(emb, hidden)
         out = self.lstm2out(out)  # vocab_size
         out = F.softmax(out, dim=-1)  # vocab_size
         gumbel_t = self.add_gumbel(out) # vocab_size
-        for i in range(out.shape[0]):
-            theta_[i, :, 0] = out[i]
 
-        # get the distribution for second word
-        # and store the prob for each word "based on the first word"
-        for j in range(self.vocab_size):
-            inp = torch.LongTensor([j])
-            emb = self.embeddings(inp)
+        # due to restriction of lstm, we have to finish sequence by sequence
+        def inner_embedding(n, hidden):
+            inp = torch.LongTensor([n])
+            emb = self.embeddings(inp).unsqueeze(1)
             out, hidden = self.lstm(emb, hidden)
             out = self.lstm2out(out)  # vocab_size
             out = F.softmax(out, dim=-1)  # vocab_size
             gumbel_t = self.add_gumbel(out) # vocab_size
-            for k in range(out.shape[0]):
-                theta_[j, k, 1] = out[k]
+            return out, hidden
 
-        return theta_ #should be vocab_size*vocab_size*2 currently
+        # get the distribution for second word and third word
+        # and store the prob for each word "based on the previous word"
+        for i in range(self.vocab_size):
+            out = out.reshape(1, self.vocab_size)
+            theta_[i, :, :, 0] = out[0,i]
+            out, hidden = inner_embedding(i, hidden)
+            for j in range(self.vocab_size):
+                out = out.reshape(1, self.vocab_size)
+                theta_[i,j,:,1] = out[0, j]
+                out, hidden = inner_embedding(j, hidden)
+                for k in range(self.vocab_size):
+                    out = out.reshape(1, self.vocab_size)
+                    theta_[i,j,k,2] = out[0,k]
+
+        return theta_ #should be vocab_size*vocab_size*voc_size*3 currently
 
 
 
