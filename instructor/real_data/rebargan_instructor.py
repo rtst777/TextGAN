@@ -14,7 +14,7 @@ from utils.rebar_gradient_estimator import RebarGradientEstimator
 from utils.true_gradient_estimator import TrueGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
 from utils.text_process import tensor_to_tokens
-from utils.helpers import get_losses
+from utils.helpers import get_losses, get_gradient_variance
 
 
 class RebarGANInstructor(BasicInstructor):
@@ -136,13 +136,15 @@ class RebarGANInstructor(BasicInstructor):
             eta_grad = eta_grad if cfg.learn_eta else torch.zeros_like(eta_grad)
             self.optimize(self.gen_adv_opt, adv_loss,
                           callback=functools.partial(self.gen.set_variance_loss_gradients, temperature_grad, eta_grad))
+
+            theta_gradient_log_var = get_gradient_variance(estimated_gradient)
             total_rebar_loss += adv_loss.item()
 
         # =====Test=====
         avg_rebar_loss = total_rebar_loss / g_step if g_step != 0 else 0
         if adv_epoch % cfg.adv_log_step == 0:
-            self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f, %s'
-                      % (avg_rebar_loss, old_temperature, old_eta, self.cal_metrics(fmt_str=True)))
+            self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f, theta_gradient_log_var = %.4f, %s'
+                      % (avg_rebar_loss, old_temperature, old_eta, theta_gradient_log_var, self.cal_metrics(fmt_str=True)))
 
     def adv_train_discriminator(self, d_step, adv_epoch):
         total_loss = 0

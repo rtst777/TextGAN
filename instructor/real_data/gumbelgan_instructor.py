@@ -10,7 +10,7 @@ from models.GumbelGAN_D import GumbelGAN_D, GumbelGAN_D2
 from models.GumbelGAN_G import GumbelGAN_G
 from utils.true_gradient_estimator import TrueGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
-from utils.helpers import get_fixed_temperature, get_losses
+from utils.helpers import get_fixed_temperature, get_losses, get_gradient_variance
 from utils.text_process import tensor_to_tokens
 
 
@@ -133,13 +133,14 @@ class GumbelGANInstructor(BasicInstructor):
 
             theta_gradient = self.optimize(self.gen_adv_opt, g_loss, self.gen,
                                            theta_gradient_fetcher=self.gen.get_theta_gradient)
+            theta_gradient_log_var = get_gradient_variance(theta_gradient)
             total_loss += g_loss.item()
 
         # =====Test=====
         avg_loss = total_loss / g_step if g_step != 0 else 0
         if adv_epoch % cfg.adv_log_step == 0:
-            self.log.info('[ADV-GEN] g_loss = %.4f, temperature = %.4f, %s'
-                      % (avg_loss, self.gen.temperature, self.cal_metrics(fmt_str=True)))
+            self.log.info('[ADV-GEN] g_loss = %.4f, temperature = %.4f, theta_gradient_log_var = %.4f, %s'
+                      % (avg_loss, self.gen.temperature, theta_gradient_log_var, self.cal_metrics(fmt_str=True)))
 
 
     def adv_train_discriminator(self, d_step, adv_epoch):
