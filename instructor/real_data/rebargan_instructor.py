@@ -69,7 +69,6 @@ class RebarGANInstructor(BasicInstructor):
 
         # =====ADVERSARIAL TRAINING=====
         self.log.info('Starting Adversarial Training...')
-        self.log.info('Initial generator: %s' % (self.cal_metrics(fmt_str=True)))
 
         for adv_epoch in range(cfg.ADV_train_epoch):
             if adv_epoch % cfg.adv_log_step == 0:
@@ -104,8 +103,7 @@ class RebarGANInstructor(BasicInstructor):
 
                 # =====Test=====
                 if epoch % cfg.pre_log_step == 0 or epoch == epochs - 1:
-                    self.log.info('[MLE-GEN] epoch %d : pre_loss = %.4f, %s' % (
-                        epoch, pre_loss, self.cal_metrics(fmt_str=True)))
+                    self.log.info('[MLE-GEN] epoch %d : pre_loss = %.4f' % (epoch, pre_loss))
                     if cfg.if_save and not cfg.if_test:
                         self._save('MLE', epoch)
             else:
@@ -143,8 +141,8 @@ class RebarGANInstructor(BasicInstructor):
         # =====Test=====
         avg_rebar_loss = total_rebar_loss / g_step if g_step != 0 else 0
         if adv_epoch % cfg.adv_log_step == 0:
-            self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f, theta_gradient_log_var = %.4f, %s'
-                      % (avg_rebar_loss, old_temperature, old_eta, theta_gradient_log_var, self.cal_metrics(fmt_str=True)))
+            self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f, theta_gradient_log_var = %.4f'
+                      % (avg_rebar_loss, old_temperature, old_eta, theta_gradient_log_var))
 
     def adv_train_discriminator(self, d_step, adv_epoch):
         total_loss = 0
