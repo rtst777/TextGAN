@@ -29,8 +29,10 @@ class GumbelGAN_G(LSTMGenerator):
         emb = self.embeddings(inp).unsqueeze(1)
         out, hidden = self.lstm(emb, hidden)
         out = self.lstm2out(out.squeeze(1))
-        self.theta[:, i, :] = F.softmax(out, dim=-1)
-        gumbel_t = self.add_gumbel(self.theta[:, i, :])
+        out = F.softmax(out, dim=-1)
+        out.retain_grad()
+        self.theta.append(out)
+        gumbel_t = self.add_gumbel(out)
         next_token = torch.argmax(gumbel_t, dim=1).detach()
         # next_token_onehot = F.one_hot(next_token, cfg.vocab_size).float()  # not used yet
         next_token_onehot = None
@@ -49,10 +51,8 @@ class GumbelGAN_G(LSTMGenerator):
         """
         num_batch = num_samples // batch_size + 1 if num_samples != batch_size else 1
         samples = torch.zeros(num_batch * batch_size, self.max_seq_len).long()
-        self.theta = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
-        if self.gpu:
-            self.theta = self.theta.cuda()
-            
+        self.theta = []
+
         if one_hot:
             all_preds = torch.zeros(batch_size, self.max_seq_len, self.vocab_size)
             if self.gpu:
@@ -71,15 +71,23 @@ class GumbelGAN_G(LSTMGenerator):
                     all_preds[:, i] = pred
                 inp = next_token
         samples = samples[:num_samples]  # num_samples * seq_len
-        self.theta.retain_grad()
 
         if one_hot:
             return all_preds  # batch_size * seq_len * vocab_size
         return samples
 
-    def get_theta_gradient(self):
-        assert self.theta is not None and self.theta.grad is not None, 'theta gradient is not available in GumbelGAN'
-        return self.theta.grad.clone().detach()
+    def get_theta_gradient(self, batch_size=cfg.batch_size):
+        assert self.theta is not None, 'theta gradient is not available in GumbelGAN'
+
+        theta_grad = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
+        for i, theta_i in enumerate(self.theta):
+            grad = self.theta[i].grad.clone().detach()
+            assert grad is not None, 'theta gradient is not available in GumbelGAN'
+            theta_grad[:, i, :] = grad
+
+        if self.gpu:
+            theta_grad = theta_grad.cuda()
+        return theta_grad
 
     @staticmethod
     def add_gumbel(theta, eps=1e-10, gpu=cfg.CUDA):
