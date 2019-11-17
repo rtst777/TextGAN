@@ -98,11 +98,6 @@ class RebarGAN_G(LSTMGenerator):
         the_size = torch.zeros(self.max_seq_len+1)
         the_size[:] = self.vocab_size
         the_size[the_size.shape[0]-1] = self.max_seq_len
-
-        # for i in range(self.max_seq_length):
-        #     the_size.append(self.vocab_size)
-        # the_size.append(self.max_seq_length)
-        
         theta_ = torch.zeros(the_size.int().tolist())
         
         # initialize

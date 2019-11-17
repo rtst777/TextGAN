@@ -118,7 +118,9 @@ class RebarGANInstructor(BasicInstructor):
     def adv_train_generator(self, g_step):
         rebar_ge = RebarGradientEstimator(discriminator=self.dis, batch_size=cfg.batch_size,
                                           real_samples=self.train_data.random_batch()['target'], gpu=cfg.CUDA)
-        # true_ge = TrueGradientEstimator()  TODO
+        true_ge = TrueGradientEstimator(discriminator=self.dis,real_samples=self.train_data.random_batch()['target'], 
+                                        gpu=cfg.CUDA)
+                                        
 
         total_rebar_loss = 0
         old_temperature = self.gen.temperature.item()
@@ -129,9 +131,13 @@ class RebarGANInstructor(BasicInstructor):
             estimated_gradient, temperature_grad, eta_grad = rebar_ge.estimate_gradient(theta, z,
                                                                                         self.gen.temperature.clone().detach().requires_grad_(),
                                                                                         self.gen.eta.clone().detach().requires_grad_())
+            # import pdb;pdb.set_trace()
             vanilla_theta = self.gen.sample_vanilla_theta()
-            print(vanilla_theta.shape)
-            # true_ge = true_ge.estimate_gradient(vanilla_theta...)  TODO
+            # print(vanilla_theta)
+            true_ge = true_ge.estimate_gradient(vanilla_theta)
+            # print(estimated_gradient)
+            print(true_ge)
+            print((estimated_gradient).sum(0))
 
             adv_loss = self.gen.computeRebarLoss(estimated_gradient)
             temperature_grad = temperature_grad if cfg.learn_temperature else torch.zeros_like(temperature_grad)
