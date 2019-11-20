@@ -1,0 +1,1565 @@
+====================================================================================================
+> training arguments:
+>>> if_test: 0
+>>> run_model: rebargan
+>>> dataset: synthetic_dataset_10000_data_51_maxlen_4_operations_1_operands
+>>> model_type: vanilla
+>>> loss_type: standard
+>>> if_real_data: 1
+>>> cuda: 1
+>>> device: 0
+>>> shuffle: 0
+>>> gen_init: normal
+>>> dis_init: uniform
+>>> samples_num: 10000
+>>> vocab_size: 7
+>>> mle_epoch: 5
+>>> adv_epoch: 300
+>>> inter_epoch: 10
+>>> batch_size: 64
+>>> max_seq_len: 51
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.01
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 5
+>>> adv_log_step: 1
+>>> train_data: dataset/oracle.txt
+>>> test_data: dataset/testdata/oracle_test.txt
+>>> temp_adpt: exp
+>>> temperature: 1
+>>> eta: 1
+>>> learn_temperature: 1
+>>> learn_eta: 1
+>>> ora_pretrain: 1
+>>> gen_pretrain: 0
+>>> dis_pretrain: 0
+>>> adv_g_step: 1
+>>> rollout_num: 4
+>>> gen_embed_dim: 7
+>>> gen_hidden_dim: 7
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 1
+>>> d_epoch: 1
+>>> adv_d_step: 4
+>>> adv_d_epoch: 2
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> log_file: log/log_1119_2027_44.txt
+>>> save_root: save/20191119/synthetic_dataset_10000_data_51_maxlen_4_operations_1_operands/rebargan_vanilla_lt-standard_sl51_temp1_T1/
+>>> signal_file: run_signal.txt
+>>> tips: vanilla RebarGAN
+====================================================================================================
+Starting Generator MLE Training...
+[MLE-GEN] epoch 0 : pre_loss = 0.9593
+[MLE-GEN] epoch 4 : pre_loss = 0.6812
+Starting Discriminator Training...
+[MLE-DIS] d_step 0: d_loss = 0.6949, train_acc = 0.5213,
+Starting Adversarial Training...
+-----
+ADV EPOCH 0
+-----
+[ADV-GEN] rebar_loss = 121.5906, temperature = 1.0000, eta = 1.0000, theta_gradient_log_var = -2.6641
+[ADV-DIS] d_loss = 1.3894, train_acc = 0.5234,
+-----
+ADV EPOCH 1
+-----
+[ADV-GEN] rebar_loss = 88.1299, temperature = 1.0100, eta = 1.0100, theta_gradient_log_var = -2.8472
+[ADV-DIS] d_loss = 1.3937, train_acc = 0.5020,
+-----
+ADV EPOCH 2
+-----
+[ADV-GEN] rebar_loss = 141.1477, temperature = 1.0186, eta = 1.0197, theta_gradient_log_var = -3.0561
+[ADV-DIS] d_loss = 1.4017, train_acc = 0.4648,
+-----
+ADV EPOCH 3
+-----
+[ADV-GEN] rebar_loss = 70.2311, temperature = 1.0253, eta = 1.0272, theta_gradient_log_var = -2.9112
+[ADV-DIS] d_loss = 1.3917, train_acc = 0.4824,
+-----
+ADV EPOCH 4
+-----
+[ADV-GEN] rebar_loss = 18.4665, temperature = 1.0332, eta = 1.0351, theta_gradient_log_var = -3.3148
+[ADV-DIS] d_loss = 1.3926, train_acc = 0.4961,
+-----
+ADV EPOCH 5
+-----
+[ADV-GEN] rebar_loss = 33.7802, temperature = 1.0399, eta = 1.0418, theta_gradient_log_var = -3.0732
+[ADV-DIS] d_loss = 1.3897, train_acc = 0.4824,
+-----
+ADV EPOCH 6
+-----
+[ADV-GEN] rebar_loss = 18.8589, temperature = 1.0458, eta = 1.0477, theta_gradient_log_var = -2.8330
+[ADV-DIS] d_loss = 1.3786, train_acc = 0.5137,
+-----
+ADV EPOCH 7
+-----
+[ADV-GEN] rebar_loss = 38.1648, temperature = 1.0510, eta = 1.0529, theta_gradient_log_var = -2.9161
+[ADV-DIS] d_loss = 1.3600, train_acc = 0.5938,
+-----
+ADV EPOCH 8
+-----
+[ADV-GEN] rebar_loss = 120.6212, temperature = 1.0566, eta = 1.0578, theta_gradient_log_var = -2.8105
+[ADV-DIS] d_loss = 1.3392, train_acc = 0.6348,
+-----
+ADV EPOCH 9
+-----
+[ADV-GEN] rebar_loss = 78.5622, temperature = 1.0617, eta = 1.0630, theta_gradient_log_var = -2.9904
+[ADV-DIS] d_loss = 1.3117, train_acc = 0.6543,
+-----
+ADV EPOCH 10
+-----
+[ADV-GEN] rebar_loss = 206.2371, temperature = 1.0665, eta = 1.0659, theta_gradient_log_var = -2.7230
+[ADV-DIS] d_loss = 1.2960, train_acc = 0.6562,
+-----
+ADV EPOCH 11
+-----
+[ADV-GEN] rebar_loss = 219.4402, temperature = 1.0722, eta = 1.0690, theta_gradient_log_var = -2.3196
+[ADV-DIS] d_loss = 1.2596, train_acc = 0.6953,
+-----
+ADV EPOCH 12
+-----
+[ADV-GEN] rebar_loss = 190.2439, temperature = 1.0792, eta = 1.0728, theta_gradient_log_var = -2.4840
+[ADV-DIS] d_loss = 1.2723, train_acc = 0.6660,
+-----
+ADV EPOCH 13
+-----
+[ADV-GEN] rebar_loss = 338.1632, temperature = 1.0856, eta = 1.0756, theta_gradient_log_var = -2.2195
+[ADV-DIS] d_loss = 1.2570, train_acc = 0.6504,
+-----
+ADV EPOCH 14
+-----
+[ADV-GEN] rebar_loss = 236.7114, temperature = 1.0929, eta = 1.0786, theta_gradient_log_var = -2.2388
+[ADV-DIS] d_loss = 1.2951, train_acc = 0.6133,
+-----
+ADV EPOCH 15
+-----
+[ADV-GEN] rebar_loss = 231.1183, temperature = 1.1007, eta = 1.0818, theta_gradient_log_var = -1.9809
+[ADV-DIS] d_loss = 1.3082, train_acc = 0.6211,
+-----
+ADV EPOCH 16
+-----
+[ADV-GEN] rebar_loss = 358.4027, temperature = 1.1084, eta = 1.0873, theta_gradient_log_var = -2.0286
+[ADV-DIS] d_loss = 1.4075, train_acc = 0.5645,
+-----
+ADV EPOCH 17
+-----
+[ADV-GEN] rebar_loss = 207.3538, temperature = 1.1154, eta = 1.0923, theta_gradient_log_var = -1.9572
+[ADV-DIS] d_loss = 1.4166, train_acc = 0.5566,
+-----
+ADV EPOCH 18
+-----
+[ADV-GEN] rebar_loss = 206.9476, temperature = 1.1217, eta = 1.0968, theta_gradient_log_var = -1.9122
+[ADV-DIS] d_loss = 1.4971, train_acc = 0.4707,
+-----
+ADV EPOCH 19
+-----
+[ADV-GEN] rebar_loss = 190.5791, temperature = 1.1275, eta = 1.1009, theta_gradient_log_var = -2.2394
+[ADV-DIS] d_loss = 1.4833, train_acc = 0.5098,
+-----
+ADV EPOCH 20
+-----
+[ADV-GEN] rebar_loss = 87.2786, temperature = 1.1344, eta = 1.1050, theta_gradient_log_var = -2.3162
+[ADV-DIS] d_loss = 1.4775, train_acc = 0.4609,
+-----
+ADV EPOCH 21
+-----
+[ADV-GEN] rebar_loss = -128.6093, temperature = 1.1423, eta = 1.1113, theta_gradient_log_var = -3.1764
+[ADV-DIS] d_loss = 1.4304, train_acc = 0.4844,
+-----
+ADV EPOCH 22
+-----
+[ADV-GEN] rebar_loss = -165.0658, temperature = 1.1496, eta = 1.1170, theta_gradient_log_var = -2.8381
+[ADV-DIS] d_loss = 1.3463, train_acc = 0.5820,
+-----
+ADV EPOCH 23
+-----
+[ADV-GEN] rebar_loss = -324.5884, temperature = 1.1574, eta = 1.1243, theta_gradient_log_var = -3.1949
+[ADV-DIS] d_loss = 1.3042, train_acc = 0.6367,
+-----
+ADV EPOCH 24
+-----
+[ADV-GEN] rebar_loss = -317.0950, temperature = 1.1645, eta = 1.1311, theta_gradient_log_var = -3.0842
+[ADV-DIS] d_loss = 1.2306, train_acc = 0.7246,
+-----
+ADV EPOCH 25
+-----
+[ADV-GEN] rebar_loss = -440.1606, temperature = 1.1710, eta = 1.1373, theta_gradient_log_var = -2.6412
+[ADV-DIS] d_loss = 1.1982, train_acc = 0.7051,
+-----
+ADV EPOCH 26
+-----
+[ADV-GEN] rebar_loss = -420.0114, temperature = 1.1769, eta = 1.1428, theta_gradient_log_var = -2.5364
+[ADV-DIS] d_loss = 1.1308, train_acc = 0.7383,
+-----
+ADV EPOCH 27
+-----
+[ADV-GEN] rebar_loss = -705.6689, temperature = 1.1823, eta = 1.1479, theta_gradient_log_var = -2.0635
+[ADV-DIS] d_loss = 1.1149, train_acc = 0.7441,
+-----
+ADV EPOCH 28
+-----
+[ADV-GEN] rebar_loss = -543.2146, temperature = 1.1873, eta = 1.1525, theta_gradient_log_var = -1.8328
+[ADV-DIS] d_loss = 1.0800, train_acc = 0.7520,
+-----
+ADV EPOCH 29
+-----
+[ADV-GEN] rebar_loss = -799.0909, temperature = 1.1918, eta = 1.1567, theta_gradient_log_var = -0.9561
+[ADV-DIS] d_loss = 1.0380, train_acc = 0.7637,
+-----
+ADV EPOCH 30
+-----
+[ADV-GEN] rebar_loss = -865.8724, temperature = 1.1963, eta = 1.1607, theta_gradient_log_var = -0.9981
+[ADV-DIS] d_loss = 1.0724, train_acc = 0.7422,
+-----
+ADV EPOCH 31
+-----
+[ADV-GEN] rebar_loss = -813.1506, temperature = 1.2006, eta = 1.1644, theta_gradient_log_var = -0.8342
+[ADV-DIS] d_loss = 1.0990, train_acc = 0.7148,
+-----
+ADV EPOCH 32
+-----
+[ADV-GEN] rebar_loss = -835.1005, temperature = 1.2044, eta = 1.1676, theta_gradient_log_var = -0.5406
+[ADV-DIS] d_loss = 1.1006, train_acc = 0.7188,
+-----
+ADV EPOCH 33
+-----
+[ADV-GEN] rebar_loss = -1307.7192, temperature = 1.2088, eta = 1.1695, theta_gradient_log_var = -0.4059
+[ADV-DIS] d_loss = 1.2944, train_acc = 0.6406,
+-----
+ADV EPOCH 34
+-----
+[ADV-GEN] rebar_loss = -1182.2706, temperature = 1.2126, eta = 1.1711, theta_gradient_log_var = -0.4452
+[ADV-DIS] d_loss = 1.2389, train_acc = 0.6582,
+-----
+ADV EPOCH 35
+-----
+[ADV-GEN] rebar_loss = -1069.1505, temperature = 1.2162, eta = 1.1725, theta_gradient_log_var = -0.8042
+[ADV-DIS] d_loss = 1.3367, train_acc = 0.6348,
+-----
+ADV EPOCH 36
+-----
+[ADV-GEN] rebar_loss = -911.7560, temperature = 1.2200, eta = 1.1743, theta_gradient_log_var = -0.8025
+[ADV-DIS] d_loss = 1.3388, train_acc = 0.6270,
+-----
+ADV EPOCH 37
+-----
+[ADV-GEN] rebar_loss = -807.4253, temperature = 1.2236, eta = 1.1761, theta_gradient_log_var = -1.2820
+[ADV-DIS] d_loss = 1.4401, train_acc = 0.5879,
+-----
+ADV EPOCH 38
+-----
+[ADV-GEN] rebar_loss = -782.5000, temperature = 1.2273, eta = 1.1781, theta_gradient_log_var = -1.4458
+[ADV-DIS] d_loss = 1.4359, train_acc = 0.5684,
+-----
+ADV EPOCH 39
+-----
+[ADV-GEN] rebar_loss = -723.6534, temperature = 1.2315, eta = 1.1803, theta_gradient_log_var = -1.5585
+[ADV-DIS] d_loss = 1.3283, train_acc = 0.5957,
+-----
+ADV EPOCH 40
+-----
+[ADV-GEN] rebar_loss = -613.3588, temperature = 1.2353, eta = 1.1818, theta_gradient_log_var = -2.2258
+[ADV-DIS] d_loss = 1.4022, train_acc = 0.5488,
+-----
+ADV EPOCH 41
+-----
+[ADV-GEN] rebar_loss = -771.4821, temperature = 1.2387, eta = 1.1832, theta_gradient_log_var = -2.4750
+[ADV-DIS] d_loss = 1.3186, train_acc = 0.6094,
+-----
+ADV EPOCH 42
+-----
+[ADV-GEN] rebar_loss = -645.7527, temperature = 1.2418, eta = 1.1845, theta_gradient_log_var = -2.7048
+[ADV-DIS] d_loss = 1.2867, train_acc = 0.6191,
+-----
+ADV EPOCH 43
+-----
+[ADV-GEN] rebar_loss = -491.3314, temperature = 1.2447, eta = 1.1856, theta_gradient_log_var = -2.4061
+[ADV-DIS] d_loss = 1.2072, train_acc = 0.6582,
+-----
+ADV EPOCH 44
+-----
+[ADV-GEN] rebar_loss = -423.2903, temperature = 1.2473, eta = 1.1866, theta_gradient_log_var = -2.2888
+[ADV-DIS] d_loss = 1.1487, train_acc = 0.7090,
+-----
+ADV EPOCH 45
+-----
+[ADV-GEN] rebar_loss = -120.5699, temperature = 1.2497, eta = 1.1876, theta_gradient_log_var = -2.5498
+[ADV-DIS] d_loss = 1.0860, train_acc = 0.7207,
+-----
+ADV EPOCH 46
+-----
+[ADV-GEN] rebar_loss = -376.5035, temperature = 1.2520, eta = 1.1884, theta_gradient_log_var = -2.1150
+[ADV-DIS] d_loss = 1.0419, train_acc = 0.7285,
+-----
+ADV EPOCH 47
+-----
+[ADV-GEN] rebar_loss = -85.4215, temperature = 1.2539, eta = 1.1890, theta_gradient_log_var = -2.1452
+[ADV-DIS] d_loss = 1.0572, train_acc = 0.7559,
+-----
+ADV EPOCH 48
+-----
+[ADV-GEN] rebar_loss = 141.5470, temperature = 1.2565, eta = 1.1898, theta_gradient_log_var = -1.5412
+[ADV-DIS] d_loss = 1.0994, train_acc = 0.7344,
+-----
+ADV EPOCH 49
+-----
+[ADV-GEN] rebar_loss = -216.2176, temperature = 1.2588, eta = 1.1906, theta_gradient_log_var = -1.7489
+[ADV-DIS] d_loss = 1.0360, train_acc = 0.7559,
+-----
+ADV EPOCH 50
+-----
+[ADV-GEN] rebar_loss = 565.5346, temperature = 1.2609, eta = 1.1912, theta_gradient_log_var = -1.1576
+[ADV-DIS] d_loss = 1.0501, train_acc = 0.7363,
+-----
+ADV EPOCH 51
+-----
+[ADV-GEN] rebar_loss = 436.4944, temperature = 1.2642, eta = 1.1922, theta_gradient_log_var = -1.3894
+[ADV-DIS] d_loss = 1.0034, train_acc = 0.7422,
+-----
+ADV EPOCH 52
+-----
+[ADV-GEN] rebar_loss = 154.5319, temperature = 1.2671, eta = 1.1931, theta_gradient_log_var = -1.5203
+[ADV-DIS] d_loss = 1.1064, train_acc = 0.7188,
+-----
+ADV EPOCH 53
+-----
+[ADV-GEN] rebar_loss = 411.9865, temperature = 1.2699, eta = 1.1939, theta_gradient_log_var = -1.3801
+[ADV-DIS] d_loss = 1.1160, train_acc = 0.7246,
+-----
+ADV EPOCH 54
+-----
+[ADV-GEN] rebar_loss = 72.3900, temperature = 1.2723, eta = 1.1947, theta_gradient_log_var = -1.1591
+[ADV-DIS] d_loss = 1.0807, train_acc = 0.7188,
+-----
+ADV EPOCH 55
+-----
+[ADV-GEN] rebar_loss = -32.0308, temperature = 1.2798, eta = 1.2020, theta_gradient_log_var = -1.9642
+[ADV-DIS] d_loss = 1.1983, train_acc = 0.6855,
+-----
+ADV EPOCH 56
+-----
+[ADV-GEN] rebar_loss = -138.1801, temperature = 1.2866, eta = 1.2087, theta_gradient_log_var = -1.5355
+[ADV-DIS] d_loss = 1.1622, train_acc = 0.7051,
+-----
+ADV EPOCH 57
+-----
+[ADV-GEN] rebar_loss = -21.3505, temperature = 1.2927, eta = 1.2147, theta_gradient_log_var = -1.8034
+[ADV-DIS] d_loss = 1.3500, train_acc = 0.6348,
+-----
+ADV EPOCH 58
+-----
+[ADV-GEN] rebar_loss = -86.0037, temperature = 1.2983, eta = 1.2202, theta_gradient_log_var = -1.9793
+[ADV-DIS] d_loss = 1.3454, train_acc = 0.6250,
+-----
+ADV EPOCH 59
+-----
+[ADV-GEN] rebar_loss = -392.5674, temperature = 1.3034, eta = 1.2252, theta_gradient_log_var = -1.8675
+[ADV-DIS] d_loss = 1.3757, train_acc = 0.5938,
+-----
+ADV EPOCH 60
+-----
+[ADV-GEN] rebar_loss = -113.5120, temperature = 1.3080, eta = 1.2297, theta_gradient_log_var = -2.4883
+[ADV-DIS] d_loss = 1.3813, train_acc = 0.5977,
+-----
+ADV EPOCH 61
+-----
+[ADV-GEN] rebar_loss = -388.4704, temperature = 1.3122, eta = 1.2338, theta_gradient_log_var = -2.4973
+[ADV-DIS] d_loss = 1.4563, train_acc = 0.5430,
+-----
+ADV EPOCH 62
+-----
+[ADV-GEN] rebar_loss = -491.0534, temperature = 1.3160, eta = 1.2375, theta_gradient_log_var = -3.0063
+[ADV-DIS] d_loss = 1.4157, train_acc = 0.5332,
+-----
+ADV EPOCH 63
+-----
+[ADV-GEN] rebar_loss = -726.1582, temperature = 1.3194, eta = 1.2408, theta_gradient_log_var = -2.9979
+[ADV-DIS] d_loss = 1.4463, train_acc = 0.5098,
+-----
+ADV EPOCH 64
+-----
+[ADV-GEN] rebar_loss = -700.1654, temperature = 1.3226, eta = 1.2437, theta_gradient_log_var = -3.2026
+[ADV-DIS] d_loss = 1.3882, train_acc = 0.5332,
+-----
+ADV EPOCH 65
+-----
+[ADV-GEN] rebar_loss = -758.2482, temperature = 1.3254, eta = 1.2464, theta_gradient_log_var = -3.1355
+[ADV-DIS] d_loss = 1.3350, train_acc = 0.6250,
+-----
+ADV EPOCH 66
+-----
+[ADV-GEN] rebar_loss = -767.6569, temperature = 1.3280, eta = 1.2487, theta_gradient_log_var = -3.1633
+[ADV-DIS] d_loss = 1.3019, train_acc = 0.6367,
+-----
+ADV EPOCH 67
+-----
+[ADV-GEN] rebar_loss = -958.4863, temperature = 1.3303, eta = 1.2508, theta_gradient_log_var = -3.1540
+[ADV-DIS] d_loss = 1.2257, train_acc = 0.6680,
+-----
+ADV EPOCH 68
+-----
+[ADV-GEN] rebar_loss = -1026.4407, temperature = 1.3324, eta = 1.2526, theta_gradient_log_var = -2.6973
+[ADV-DIS] d_loss = 1.1981, train_acc = 0.6953,
+-----
+ADV EPOCH 69
+-----
+[ADV-GEN] rebar_loss = -796.8053, temperature = 1.3343, eta = 1.2542, theta_gradient_log_var = -2.8153
+[ADV-DIS] d_loss = 1.1553, train_acc = 0.7070,
+-----
+ADV EPOCH 70
+-----
+[ADV-GEN] rebar_loss = -991.3000, temperature = 1.3361, eta = 1.2557, theta_gradient_log_var = -2.8280
+[ADV-DIS] d_loss = 1.1623, train_acc = 0.6973,
+-----
+ADV EPOCH 71
+-----
+[ADV-GEN] rebar_loss = -1152.7642, temperature = 1.3376, eta = 1.2569, theta_gradient_log_var = -2.4346
+[ADV-DIS] d_loss = 1.1405, train_acc = 0.6934,
+-----
+ADV EPOCH 72
+-----
+[ADV-GEN] rebar_loss = -1208.4440, temperature = 1.3391, eta = 1.2579, theta_gradient_log_var = -2.1626
+[ADV-DIS] d_loss = 1.0882, train_acc = 0.7383,
+-----
+ADV EPOCH 73
+-----
+[ADV-GEN] rebar_loss = -1167.0713, temperature = 1.3404, eta = 1.2589, theta_gradient_log_var = -2.1255
+[ADV-DIS] d_loss = 1.0726, train_acc = 0.7422,
+-----
+ADV EPOCH 74
+-----
+[ADV-GEN] rebar_loss = -1741.8413, temperature = 1.3415, eta = 1.2597, theta_gradient_log_var = -1.5826
+[ADV-DIS] d_loss = 1.1435, train_acc = 0.6992,
+-----
+ADV EPOCH 75
+-----
+[ADV-GEN] rebar_loss = -1099.3579, temperature = 1.3426, eta = 1.2604, theta_gradient_log_var = -1.8975
+[ADV-DIS] d_loss = 1.1304, train_acc = 0.6875,
+-----
+ADV EPOCH 76
+-----
+[ADV-GEN] rebar_loss = -1416.8406, temperature = 1.3437, eta = 1.2610, theta_gradient_log_var = -1.8489
+[ADV-DIS] d_loss = 1.1066, train_acc = 0.7070,
+-----
+ADV EPOCH 77
+-----
+[ADV-GEN] rebar_loss = -962.5587, temperature = 1.3447, eta = 1.2615, theta_gradient_log_var = -1.8742
+[ADV-DIS] d_loss = 1.2183, train_acc = 0.6895,
+-----
+ADV EPOCH 78
+-----
+[ADV-GEN] rebar_loss = -1021.0458, temperature = 1.3456, eta = 1.2620, theta_gradient_log_var = -1.6740
+[ADV-DIS] d_loss = 1.2003, train_acc = 0.6699,
+-----
+ADV EPOCH 79
+-----
+[ADV-GEN] rebar_loss = -1220.8511, temperature = 1.3464, eta = 1.2624, theta_gradient_log_var = -1.9214
+[ADV-DIS] d_loss = 1.1888, train_acc = 0.6738,
+-----
+ADV EPOCH 80
+-----
+[ADV-GEN] rebar_loss = -994.2036, temperature = 1.3471, eta = 1.2627, theta_gradient_log_var = -1.7420
+[ADV-DIS] d_loss = 1.3559, train_acc = 0.6211,
+-----
+ADV EPOCH 81
+-----
+[ADV-GEN] rebar_loss = -1090.5166, temperature = 1.3476, eta = 1.2628, theta_gradient_log_var = -2.3656
+[ADV-DIS] d_loss = 1.3212, train_acc = 0.6094,
+-----
+ADV EPOCH 82
+-----
+[ADV-GEN] rebar_loss = -1194.6636, temperature = 1.3481, eta = 1.2629, theta_gradient_log_var = -2.2600
+[ADV-DIS] d_loss = 1.4304, train_acc = 0.5820,
+-----
+ADV EPOCH 83
+-----
+[ADV-GEN] rebar_loss = -1071.4224, temperature = 1.3486, eta = 1.2629, theta_gradient_log_var = -2.5694
+[ADV-DIS] d_loss = 1.4203, train_acc = 0.5801,
+-----
+ADV EPOCH 84
+-----
+[ADV-GEN] rebar_loss = -1099.0957, temperature = 1.3492, eta = 1.2629, theta_gradient_log_var = -2.7940
+[ADV-DIS] d_loss = 1.4124, train_acc = 0.5547,
+-----
+ADV EPOCH 85
+-----
+[ADV-GEN] rebar_loss = -1009.6967, temperature = 1.3497, eta = 1.2628, theta_gradient_log_var = -2.5627
+[ADV-DIS] d_loss = 1.4052, train_acc = 0.5664,
+-----
+ADV EPOCH 86
+-----
+[ADV-GEN] rebar_loss = -884.3618, temperature = 1.3501, eta = 1.2627, theta_gradient_log_var = -2.8721
+[ADV-DIS] d_loss = 1.4276, train_acc = 0.5273,
+-----
+ADV EPOCH 87
+-----
+[ADV-GEN] rebar_loss = -930.3477, temperature = 1.3505, eta = 1.2628, theta_gradient_log_var = -3.0182
+[ADV-DIS] d_loss = 1.4201, train_acc = 0.5137,
+-----
+ADV EPOCH 88
+-----
+[ADV-GEN] rebar_loss = -952.8619, temperature = 1.3510, eta = 1.2628, theta_gradient_log_var = -3.2258
+[ADV-DIS] d_loss = 1.3775, train_acc = 0.5586,
+-----
+ADV EPOCH 89
+-----
+[ADV-GEN] rebar_loss = -983.3232, temperature = 1.3513, eta = 1.2628, theta_gradient_log_var = -2.9256
+[ADV-DIS] d_loss = 1.3473, train_acc = 0.6094,
+-----
+ADV EPOCH 90
+-----
+[ADV-GEN] rebar_loss = -975.3324, temperature = 1.3555, eta = 1.2546, theta_gradient_log_var = -3.3808
+[ADV-DIS] d_loss = 1.3427, train_acc = 0.6094,
+-----
+ADV EPOCH 91
+-----
+[ADV-GEN] rebar_loss = -930.3039, temperature = 1.3593, eta = 1.2472, theta_gradient_log_var = -3.3674
+[ADV-DIS] d_loss = 1.2658, train_acc = 0.6348,
+-----
+ADV EPOCH 92
+-----
+[ADV-GEN] rebar_loss = -795.2986, temperature = 1.3627, eta = 1.2404, theta_gradient_log_var = -3.5757
+[ADV-DIS] d_loss = 1.2486, train_acc = 0.6562,
+-----
+ADV EPOCH 93
+-----
+[ADV-GEN] rebar_loss = -876.7650, temperature = 1.3658, eta = 1.2344, theta_gradient_log_var = -3.1618
+[ADV-DIS] d_loss = 1.2264, train_acc = 0.6738,
+-----
+ADV EPOCH 94
+-----
+[ADV-GEN] rebar_loss = -954.6457, temperature = 1.3687, eta = 1.2288, theta_gradient_log_var = -3.1312
+[ADV-DIS] d_loss = 1.1636, train_acc = 0.7031,
+-----
+ADV EPOCH 95
+-----
+[ADV-GEN] rebar_loss = -965.6597, temperature = 1.3712, eta = 1.2239, theta_gradient_log_var = -2.7559
+[ADV-DIS] d_loss = 1.0878, train_acc = 0.7461,
+-----
+ADV EPOCH 96
+-----
+[ADV-GEN] rebar_loss = -773.9077, temperature = 1.3751, eta = 1.2172, theta_gradient_log_var = -3.2284
+[ADV-DIS] d_loss = 1.1635, train_acc = 0.6934,
+-----
+ADV EPOCH 97
+-----
+[ADV-GEN] rebar_loss = -836.4241, temperature = 1.3787, eta = 1.2112, theta_gradient_log_var = -2.8040
+[ADV-DIS] d_loss = 1.1027, train_acc = 0.7207,
+-----
+ADV EPOCH 98
+-----
+[ADV-GEN] rebar_loss = -760.0309, temperature = 1.3819, eta = 1.2057, theta_gradient_log_var = -2.6195
+[ADV-DIS] d_loss = 1.0231, train_acc = 0.7520,
+-----
+ADV EPOCH 99
+-----
+[ADV-GEN] rebar_loss = -972.1455, temperature = 1.3921, eta = 1.1949, theta_gradient_log_var = -2.8354
+[ADV-DIS] d_loss = 1.1449, train_acc = 0.7012,
+-----
+ADV EPOCH 100
+-----
+[ADV-GEN] rebar_loss = -551.2510, temperature = 1.4012, eta = 1.1850, theta_gradient_log_var = -2.3364
+[ADV-DIS] d_loss = 1.1280, train_acc = 0.7148,
+-----
+ADV EPOCH 101
+-----
+[ADV-GEN] rebar_loss = -643.0830, temperature = 1.4100, eta = 1.1779, theta_gradient_log_var = -2.7371
+[ADV-DIS] d_loss = 1.1379, train_acc = 0.6875,
+-----
+ADV EPOCH 102
+-----
+[ADV-GEN] rebar_loss = -813.2634, temperature = 1.4180, eta = 1.1714, theta_gradient_log_var = -2.4681
+[ADV-DIS] d_loss = 1.2156, train_acc = 0.6523,
+-----
+ADV EPOCH 103
+-----
+[ADV-GEN] rebar_loss = -688.6973, temperature = 1.4251, eta = 1.1656, theta_gradient_log_var = -2.8732
+[ADV-DIS] d_loss = 1.2037, train_acc = 0.6914,
+-----
+ADV EPOCH 104
+-----
+[ADV-GEN] rebar_loss = -930.0104, temperature = 1.4316, eta = 1.1604, theta_gradient_log_var = -2.7962
+[ADV-DIS] d_loss = 1.3443, train_acc = 0.5957,
+-----
+ADV EPOCH 105
+-----
+[ADV-GEN] rebar_loss = -328.1338, temperature = 1.4376, eta = 1.1556, theta_gradient_log_var = -3.2004
+[ADV-DIS] d_loss = 1.4124, train_acc = 0.5820,
+-----
+ADV EPOCH 106
+-----
+[ADV-GEN] rebar_loss = -703.7264, temperature = 1.4429, eta = 1.1512, theta_gradient_log_var = -2.7098
+[ADV-DIS] d_loss = 1.3943, train_acc = 0.5879,
+-----
+ADV EPOCH 107
+-----
+[ADV-GEN] rebar_loss = -729.6028, temperature = 1.4477, eta = 1.1473, theta_gradient_log_var = -2.9681
+[ADV-DIS] d_loss = 1.3291, train_acc = 0.5762,
+-----
+ADV EPOCH 108
+-----
+[ADV-GEN] rebar_loss = -713.4149, temperature = 1.4516, eta = 1.1416, theta_gradient_log_var = -3.6356
+[ADV-DIS] d_loss = 1.3861, train_acc = 0.5742,
+-----
+ADV EPOCH 109
+-----
+[ADV-GEN] rebar_loss = -636.0248, temperature = 1.4550, eta = 1.1365, theta_gradient_log_var = -3.2613
+[ADV-DIS] d_loss = 1.4765, train_acc = 0.5391,
+-----
+ADV EPOCH 110
+-----
+[ADV-GEN] rebar_loss = -638.9036, temperature = 1.4581, eta = 1.1318, theta_gradient_log_var = -4.0564
+[ADV-DIS] d_loss = 1.4075, train_acc = 0.5508,
+-----
+ADV EPOCH 111
+-----
+[ADV-GEN] rebar_loss = -556.9504, temperature = 1.4609, eta = 1.1275, theta_gradient_log_var = -4.3133
+[ADV-DIS] d_loss = 1.4052, train_acc = 0.5449,
+-----
+ADV EPOCH 112
+-----
+[ADV-GEN] rebar_loss = -449.0505, temperature = 1.4635, eta = 1.1237, theta_gradient_log_var = -4.2767
+[ADV-DIS] d_loss = 1.3708, train_acc = 0.5742,
+-----
+ADV EPOCH 113
+-----
+[ADV-GEN] rebar_loss = -467.7952, temperature = 1.4658, eta = 1.1201, theta_gradient_log_var = -4.4487
+[ADV-DIS] d_loss = 1.3712, train_acc = 0.5605,
+-----
+ADV EPOCH 114
+-----
+[ADV-GEN] rebar_loss = -470.5423, temperature = 1.4679, eta = 1.1169, theta_gradient_log_var = -4.6277
+[ADV-DIS] d_loss = 1.3553, train_acc = 0.5781,
+-----
+ADV EPOCH 115
+-----
+[ADV-GEN] rebar_loss = -452.9263, temperature = 1.4698, eta = 1.1140, theta_gradient_log_var = -4.3770
+[ADV-DIS] d_loss = 1.2419, train_acc = 0.6758,
+-----
+ADV EPOCH 116
+-----
+[ADV-GEN] rebar_loss = -578.0251, temperature = 1.4715, eta = 1.1114, theta_gradient_log_var = -4.6512
+[ADV-DIS] d_loss = 1.2833, train_acc = 0.6523,
+-----
+ADV EPOCH 117
+-----
+[ADV-GEN] rebar_loss = -409.0566, temperature = 1.4730, eta = 1.1090, theta_gradient_log_var = -4.4284
+[ADV-DIS] d_loss = 1.2275, train_acc = 0.6660,
+-----
+ADV EPOCH 118
+-----
+[ADV-GEN] rebar_loss = -408.4773, temperature = 1.4743, eta = 1.1063, theta_gradient_log_var = -4.2477
+[ADV-DIS] d_loss = 1.1599, train_acc = 0.7246,
+-----
+ADV EPOCH 119
+-----
+[ADV-GEN] rebar_loss = -306.6861, temperature = 1.4755, eta = 1.1039, theta_gradient_log_var = -4.1928
+[ADV-DIS] d_loss = 1.1849, train_acc = 0.6895,
+-----
+ADV EPOCH 120
+-----
+[ADV-GEN] rebar_loss = -204.7623, temperature = 1.4765, eta = 1.1017, theta_gradient_log_var = -3.7448
+[ADV-DIS] d_loss = 1.1151, train_acc = 0.7109,
+-----
+ADV EPOCH 121
+-----
+[ADV-GEN] rebar_loss = -415.6870, temperature = 1.4775, eta = 1.0998, theta_gradient_log_var = -3.8687
+[ADV-DIS] d_loss = 1.0970, train_acc = 0.7188,
+-----
+ADV EPOCH 122
+-----
+[ADV-GEN] rebar_loss = -161.0562, temperature = 1.4784, eta = 1.0980, theta_gradient_log_var = -3.1710
+[ADV-DIS] d_loss = 1.0789, train_acc = 0.7402,
+-----
+ADV EPOCH 123
+-----
+[ADV-GEN] rebar_loss = -570.8032, temperature = 1.4791, eta = 1.0964, theta_gradient_log_var = -3.4233
+[ADV-DIS] d_loss = 1.0546, train_acc = 0.7480,
+-----
+ADV EPOCH 124
+-----
+[ADV-GEN] rebar_loss = -215.4680, temperature = 1.4798, eta = 1.0949, theta_gradient_log_var = -3.1923
+[ADV-DIS] d_loss = 1.0825, train_acc = 0.7070,
+-----
+ADV EPOCH 125
+-----
+[ADV-GEN] rebar_loss = -51.2891, temperature = 1.4805, eta = 1.0935, theta_gradient_log_var = -3.5157
+[ADV-DIS] d_loss = 1.0860, train_acc = 0.7188,
+-----
+ADV EPOCH 126
+-----
+[ADV-GEN] rebar_loss = -203.1270, temperature = 1.4811, eta = 1.0924, theta_gradient_log_var = -3.0677
+[ADV-DIS] d_loss = 1.1833, train_acc = 0.6895,
+-----
+ADV EPOCH 127
+-----
+[ADV-GEN] rebar_loss = -191.1185, temperature = 1.4816, eta = 1.0913, theta_gradient_log_var = -3.0629
+[ADV-DIS] d_loss = 1.2028, train_acc = 0.6934,
+-----
+ADV EPOCH 128
+-----
+[ADV-GEN] rebar_loss = -298.9774, temperature = 1.4820, eta = 1.0903, theta_gradient_log_var = -3.2205
+[ADV-DIS] d_loss = 1.3295, train_acc = 0.6367,
+-----
+ADV EPOCH 129
+-----
+[ADV-GEN] rebar_loss = -343.4483, temperature = 1.4825, eta = 1.0894, theta_gradient_log_var = -3.2852
+[ADV-DIS] d_loss = 1.3412, train_acc = 0.6113,
+-----
+ADV EPOCH 130
+-----
+[ADV-GEN] rebar_loss = -435.7567, temperature = 1.4828, eta = 1.0886, theta_gradient_log_var = -2.9822
+[ADV-DIS] d_loss = 1.4039, train_acc = 0.5938,
+-----
+ADV EPOCH 131
+-----
+[ADV-GEN] rebar_loss = -307.4042, temperature = 1.4832, eta = 1.0879, theta_gradient_log_var = -3.4934
+[ADV-DIS] d_loss = 1.4586, train_acc = 0.5762,
+-----
+ADV EPOCH 132
+-----
+[ADV-GEN] rebar_loss = -299.4954, temperature = 1.4835, eta = 1.0873, theta_gradient_log_var = -3.3094
+[ADV-DIS] d_loss = 1.4484, train_acc = 0.5273,
+-----
+ADV EPOCH 133
+-----
+[ADV-GEN] rebar_loss = -453.1301, temperature = 1.4838, eta = 1.0871, theta_gradient_log_var = -3.9808
+[ADV-DIS] d_loss = 1.4327, train_acc = 0.5410,
+-----
+ADV EPOCH 134
+-----
+[ADV-GEN] rebar_loss = -186.5710, temperature = 1.4840, eta = 1.0870, theta_gradient_log_var = -4.1724
+[ADV-DIS] d_loss = 1.4612, train_acc = 0.5078,
+-----
+ADV EPOCH 135
+-----
+[ADV-GEN] rebar_loss = -353.2249, temperature = 1.4843, eta = 1.0868, theta_gradient_log_var = -4.8514
+[ADV-DIS] d_loss = 1.4579, train_acc = 0.5137,
+-----
+ADV EPOCH 136
+-----
+[ADV-GEN] rebar_loss = -177.6923, temperature = 1.4845, eta = 1.0867, theta_gradient_log_var = -4.6274
+[ADV-DIS] d_loss = 1.4303, train_acc = 0.5098,
+-----
+ADV EPOCH 137
+-----
+[ADV-GEN] rebar_loss = -419.7234, temperature = 1.4847, eta = 1.0866, theta_gradient_log_var = -4.9427
+[ADV-DIS] d_loss = 1.4393, train_acc = 0.5059,
+-----
+ADV EPOCH 138
+-----
+[ADV-GEN] rebar_loss = -355.7825, temperature = 1.4849, eta = 1.0865, theta_gradient_log_var = -4.6626
+[ADV-DIS] d_loss = 1.3659, train_acc = 0.5488,
+-----
+ADV EPOCH 139
+-----
+[ADV-GEN] rebar_loss = -398.2704, temperature = 1.4850, eta = 1.0864, theta_gradient_log_var = -5.1289
+[ADV-DIS] d_loss = 1.2967, train_acc = 0.6562,
+-----
+ADV EPOCH 140
+-----
+[ADV-GEN] rebar_loss = -259.7266, temperature = 1.4852, eta = 1.0864, theta_gradient_log_var = -5.0016
+[ADV-DIS] d_loss = 1.3094, train_acc = 0.6250,
+-----
+ADV EPOCH 141
+-----
+[ADV-GEN] rebar_loss = -270.4628, temperature = 1.4853, eta = 1.0863, theta_gradient_log_var = -4.7429
+[ADV-DIS] d_loss = 1.2543, train_acc = 0.6777,
+-----
+ADV EPOCH 142
+-----
+[ADV-GEN] rebar_loss = -289.8177, temperature = 1.4854, eta = 1.0862, theta_gradient_log_var = -4.9164
+[ADV-DIS] d_loss = 1.2453, train_acc = 0.6699,
+-----
+ADV EPOCH 143
+-----
+[ADV-GEN] rebar_loss = -342.1646, temperature = 1.4855, eta = 1.0862, theta_gradient_log_var = -4.7836
+[ADV-DIS] d_loss = 1.2070, train_acc = 0.6953,
+-----
+ADV EPOCH 144
+-----
+[ADV-GEN] rebar_loss = -176.0686, temperature = 1.4856, eta = 1.0861, theta_gradient_log_var = -4.9349
+[ADV-DIS] d_loss = 1.1835, train_acc = 0.6953,
+-----
+ADV EPOCH 145
+-----
+[ADV-GEN] rebar_loss = -283.3378, temperature = 1.4857, eta = 1.0861, theta_gradient_log_var = -4.4957
+[ADV-DIS] d_loss = 1.1068, train_acc = 0.7363,
+-----
+ADV EPOCH 146
+-----
+[ADV-GEN] rebar_loss = -304.9599, temperature = 1.4859, eta = 1.0856, theta_gradient_log_var = -3.7693
+[ADV-DIS] d_loss = 1.0671, train_acc = 0.7676,
+-----
+ADV EPOCH 147
+-----
+[ADV-GEN] rebar_loss = -223.6579, temperature = 1.4860, eta = 1.0850, theta_gradient_log_var = -3.7129
+[ADV-DIS] d_loss = 1.0450, train_acc = 0.7500,
+-----
+ADV EPOCH 148
+-----
+[ADV-GEN] rebar_loss = -160.3587, temperature = 1.4861, eta = 1.0844, theta_gradient_log_var = -3.8561
+[ADV-DIS] d_loss = 1.0528, train_acc = 0.7539,
+-----
+ADV EPOCH 149
+-----
+[ADV-GEN] rebar_loss = -30.1897, temperature = 1.4862, eta = 1.0839, theta_gradient_log_var = -3.2227
+[ADV-DIS] d_loss = 0.9883, train_acc = 0.7656,
+-----
+ADV EPOCH 150
+-----
+[ADV-GEN] rebar_loss = -86.4760, temperature = 1.4863, eta = 1.0834, theta_gradient_log_var = -3.5001
+[ADV-DIS] d_loss = 1.0004, train_acc = 0.7598,
+-----
+ADV EPOCH 151
+-----
+[ADV-GEN] rebar_loss = -62.2667, temperature = 1.4864, eta = 1.0830, theta_gradient_log_var = -3.4388
+[ADV-DIS] d_loss = 0.9785, train_acc = 0.7637,
+-----
+ADV EPOCH 152
+-----
+[ADV-GEN] rebar_loss = -218.3484, temperature = 1.4963, eta = 1.0928, theta_gradient_log_var = -3.2499
+[ADV-DIS] d_loss = 1.0404, train_acc = 0.7422,
+-----
+ADV EPOCH 153
+-----
+[ADV-GEN] rebar_loss = 16.2114, temperature = 1.5053, eta = 1.1016, theta_gradient_log_var = -2.8951
+[ADV-DIS] d_loss = 1.0759, train_acc = 0.7363,
+-----
+ADV EPOCH 154
+-----
+[ADV-GEN] rebar_loss = -350.6910, temperature = 1.5134, eta = 1.1096, theta_gradient_log_var = -3.1493
+[ADV-DIS] d_loss = 1.1629, train_acc = 0.6836,
+-----
+ADV EPOCH 155
+-----
+[ADV-GEN] rebar_loss = -586.9907, temperature = 1.5207, eta = 1.1169, theta_gradient_log_var = -3.5122
+[ADV-DIS] d_loss = 1.2126, train_acc = 0.6680,
+-----
+ADV EPOCH 156
+-----
+[ADV-GEN] rebar_loss = -273.6523, temperature = 1.5273, eta = 1.1234, theta_gradient_log_var = -3.0088
+[ADV-DIS] d_loss = 1.2772, train_acc = 0.6484,
+-----
+ADV EPOCH 157
+-----
+[ADV-GEN] rebar_loss = -569.4937, temperature = 1.5333, eta = 1.1293, theta_gradient_log_var = -3.4849
+[ADV-DIS] d_loss = 1.3694, train_acc = 0.6152,
+-----
+ADV EPOCH 158
+-----
+[ADV-GEN] rebar_loss = -505.0638, temperature = 1.5387, eta = 1.1346, theta_gradient_log_var = -3.4745
+[ADV-DIS] d_loss = 1.4248, train_acc = 0.5918,
+-----
+ADV EPOCH 159
+-----
+[ADV-GEN] rebar_loss = -716.4016, temperature = 1.5435, eta = 1.1394, theta_gradient_log_var = -3.7942
+[ADV-DIS] d_loss = 1.4803, train_acc = 0.5586,
+-----
+ADV EPOCH 160
+-----
+[ADV-GEN] rebar_loss = -645.7186, temperature = 1.5479, eta = 1.1438, theta_gradient_log_var = -3.9265
+[ADV-DIS] d_loss = 1.4738, train_acc = 0.5625,
+-----
+ADV EPOCH 161
+-----
+[ADV-GEN] rebar_loss = -501.5306, temperature = 1.5519, eta = 1.1477, theta_gradient_log_var = -4.2967
+[ADV-DIS] d_loss = 1.4483, train_acc = 0.5508,
+-----
+ADV EPOCH 162
+-----
+[ADV-GEN] rebar_loss = -868.8401, temperature = 1.5555, eta = 1.1513, theta_gradient_log_var = -4.4112
+[ADV-DIS] d_loss = 1.4750, train_acc = 0.4941,
+-----
+ADV EPOCH 163
+-----
+[ADV-GEN] rebar_loss = -555.6194, temperature = 1.5588, eta = 1.1545, theta_gradient_log_var = -4.9977
+[ADV-DIS] d_loss = 1.4550, train_acc = 0.5215,
+-----
+ADV EPOCH 164
+-----
+[ADV-GEN] rebar_loss = -759.1841, temperature = 1.5617, eta = 1.1574, theta_gradient_log_var = -4.6562
+[ADV-DIS] d_loss = 1.3506, train_acc = 0.5996,
+-----
+ADV EPOCH 165
+-----
+[ADV-GEN] rebar_loss = -655.0842, temperature = 1.5643, eta = 1.1600, theta_gradient_log_var = -5.3544
+[ADV-DIS] d_loss = 1.3464, train_acc = 0.5820,
+-----
+ADV EPOCH 166
+-----
+[ADV-GEN] rebar_loss = -616.7336, temperature = 1.5667, eta = 1.1624, theta_gradient_log_var = -5.4743
+[ADV-DIS] d_loss = 1.2919, train_acc = 0.6250,
+-----
+ADV EPOCH 167
+-----
+[ADV-GEN] rebar_loss = -619.8760, temperature = 1.5689, eta = 1.1645, theta_gradient_log_var = -4.7576
+[ADV-DIS] d_loss = 1.2383, train_acc = 0.6895,
+-----
+ADV EPOCH 168
+-----
+[ADV-GEN] rebar_loss = -771.9535, temperature = 1.5708, eta = 1.1665, theta_gradient_log_var = -5.1236
+[ADV-DIS] d_loss = 1.1849, train_acc = 0.7090,
+-----
+ADV EPOCH 169
+-----
+[ADV-GEN] rebar_loss = -612.3745, temperature = 1.5726, eta = 1.1682, theta_gradient_log_var = -5.0699
+[ADV-DIS] d_loss = 1.1443, train_acc = 0.7207,
+-----
+ADV EPOCH 170
+-----
+[ADV-GEN] rebar_loss = -492.0321, temperature = 1.5727, eta = 1.1618, theta_gradient_log_var = -5.3227
+[ADV-DIS] d_loss = 1.0835, train_acc = 0.7715,
+-----
+ADV EPOCH 171
+-----
+[ADV-GEN] rebar_loss = -562.9716, temperature = 1.5729, eta = 1.1561, theta_gradient_log_var = -4.9845
+[ADV-DIS] d_loss = 1.0765, train_acc = 0.7656,
+-----
+ADV EPOCH 172
+-----
+[ADV-GEN] rebar_loss = -454.6643, temperature = 1.5730, eta = 1.1510, theta_gradient_log_var = -4.8027
+[ADV-DIS] d_loss = 0.9871, train_acc = 0.7676,
+-----
+ADV EPOCH 173
+-----
+[ADV-GEN] rebar_loss = -312.2241, temperature = 1.5731, eta = 1.1463, theta_gradient_log_var = -4.7687
+[ADV-DIS] d_loss = 1.0751, train_acc = 0.7344,
+-----
+ADV EPOCH 174
+-----
+[ADV-GEN] rebar_loss = -239.7892, temperature = 1.5732, eta = 1.1421, theta_gradient_log_var = -4.1817
+[ADV-DIS] d_loss = 0.9783, train_acc = 0.7676,
+-----
+ADV EPOCH 175
+-----
+[ADV-GEN] rebar_loss = -465.2874, temperature = 1.5733, eta = 1.1383, theta_gradient_log_var = -3.9753
+[ADV-DIS] d_loss = 0.9146, train_acc = 0.7695,
+-----
+ADV EPOCH 176
+-----
+[ADV-GEN] rebar_loss = -45.4004, temperature = 1.5734, eta = 1.1348, theta_gradient_log_var = -3.2837
+[ADV-DIS] d_loss = 1.0034, train_acc = 0.7461,
+-----
+ADV EPOCH 177
+-----
+[ADV-GEN] rebar_loss = -348.1172, temperature = 1.5735, eta = 1.1317, theta_gradient_log_var = -4.4329
+[ADV-DIS] d_loss = 0.9971, train_acc = 0.7402,
+-----
+ADV EPOCH 178
+-----
+[ADV-GEN] rebar_loss = -252.8079, temperature = 1.5735, eta = 1.1289, theta_gradient_log_var = -3.6557
+[ADV-DIS] d_loss = 0.9817, train_acc = 0.7676,
+-----
+ADV EPOCH 179
+-----
+[ADV-GEN] rebar_loss = -144.8280, temperature = 1.5736, eta = 1.1264, theta_gradient_log_var = -3.9723
+[ADV-DIS] d_loss = 1.0744, train_acc = 0.7383,
+-----
+ADV EPOCH 180
+-----
+[ADV-GEN] rebar_loss = -178.3469, temperature = 1.5737, eta = 1.1241, theta_gradient_log_var = -3.3385
+[ADV-DIS] d_loss = 1.0486, train_acc = 0.7461,
+-----
+ADV EPOCH 181
+-----
+[ADV-GEN] rebar_loss = 31.0242, temperature = 1.5737, eta = 1.1221, theta_gradient_log_var = -3.9429
+[ADV-DIS] d_loss = 1.1449, train_acc = 0.7285,
+-----
+ADV EPOCH 182
+-----
+[ADV-GEN] rebar_loss = -103.2982, temperature = 1.5738, eta = 1.1202, theta_gradient_log_var = -3.9393
+[ADV-DIS] d_loss = 1.2422, train_acc = 0.6484,
+-----
+ADV EPOCH 183
+-----
+[ADV-GEN] rebar_loss = 214.0244, temperature = 1.5738, eta = 1.1185, theta_gradient_log_var = -3.5757
+[ADV-DIS] d_loss = 1.3304, train_acc = 0.6309,
+-----
+ADV EPOCH 184
+-----
+[ADV-GEN] rebar_loss = 120.7840, temperature = 1.5739, eta = 1.1171, theta_gradient_log_var = -3.9008
+[ADV-DIS] d_loss = 1.2326, train_acc = 0.6758,
+-----
+ADV EPOCH 185
+-----
+[ADV-GEN] rebar_loss = -168.3044, temperature = 1.5740, eta = 1.1158, theta_gradient_log_var = -4.2633
+[ADV-DIS] d_loss = 1.3675, train_acc = 0.6270,
+-----
+ADV EPOCH 186
+-----
+[ADV-GEN] rebar_loss = -28.1811, temperature = 1.5741, eta = 1.1146, theta_gradient_log_var = -4.3093
+[ADV-DIS] d_loss = 1.4359, train_acc = 0.6055,
+-----
+ADV EPOCH 187
+-----
+[ADV-GEN] rebar_loss = -188.2563, temperature = 1.5741, eta = 1.1135, theta_gradient_log_var = -4.2423
+[ADV-DIS] d_loss = 1.3921, train_acc = 0.5938,
+-----
+ADV EPOCH 188
+-----
+[ADV-GEN] rebar_loss = -285.9335, temperature = 1.5742, eta = 1.1125, theta_gradient_log_var = -4.7673
+[ADV-DIS] d_loss = 1.5122, train_acc = 0.5312,
+-----
+ADV EPOCH 189
+-----
+[ADV-GEN] rebar_loss = -107.0094, temperature = 1.5742, eta = 1.1116, theta_gradient_log_var = -4.5633
+[ADV-DIS] d_loss = 1.4732, train_acc = 0.5234,
+-----
+ADV EPOCH 190
+-----
+[ADV-GEN] rebar_loss = -313.1287, temperature = 1.5743, eta = 1.1108, theta_gradient_log_var = -5.1861
+[ADV-DIS] d_loss = 1.3966, train_acc = 0.5977,
+-----
+ADV EPOCH 191
+-----
+[ADV-GEN] rebar_loss = -144.0726, temperature = 1.5743, eta = 1.1101, theta_gradient_log_var = -4.9937
+[ADV-DIS] d_loss = 1.4166, train_acc = 0.5371,
+-----
+ADV EPOCH 192
+-----
+[ADV-GEN] rebar_loss = -175.4038, temperature = 1.5743, eta = 1.1094, theta_gradient_log_var = -5.1149
+[ADV-DIS] d_loss = 1.3788, train_acc = 0.5801,
+-----
+ADV EPOCH 193
+-----
+[ADV-GEN] rebar_loss = -40.7264, temperature = 1.5744, eta = 1.1088, theta_gradient_log_var = -5.7161
+[ADV-DIS] d_loss = 1.3231, train_acc = 0.6172,
+-----
+ADV EPOCH 194
+-----
+[ADV-GEN] rebar_loss = -230.2762, temperature = 1.5744, eta = 1.1082, theta_gradient_log_var = -6.0137
+[ADV-DIS] d_loss = 1.2381, train_acc = 0.6836,
+-----
+ADV EPOCH 195
+-----
+[ADV-GEN] rebar_loss = -250.8275, temperature = 1.5744, eta = 1.1077, theta_gradient_log_var = -4.9153
+[ADV-DIS] d_loss = 1.2435, train_acc = 0.6602,
+-----
+ADV EPOCH 196
+-----
+[ADV-GEN] rebar_loss = -264.8535, temperature = 1.5745, eta = 1.1073, theta_gradient_log_var = -5.5879
+[ADV-DIS] d_loss = 1.1480, train_acc = 0.7305,
+-----
+ADV EPOCH 197
+-----
+[ADV-GEN] rebar_loss = -188.0702, temperature = 1.5751, eta = 1.1054, theta_gradient_log_var = -5.3561
+[ADV-DIS] d_loss = 1.0497, train_acc = 0.7832,
+-----
+ADV EPOCH 198
+-----
+[ADV-GEN] rebar_loss = -21.2419, temperature = 1.5757, eta = 1.1037, theta_gradient_log_var = -4.9579
+[ADV-DIS] d_loss = 1.0187, train_acc = 0.7949,
+-----
+ADV EPOCH 199
+-----
+[ADV-GEN] rebar_loss = -45.3041, temperature = 1.5763, eta = 1.1022, theta_gradient_log_var = -3.8248
+[ADV-DIS] d_loss = 0.9347, train_acc = 0.7793,
+-----
+ADV EPOCH 200
+-----
+[ADV-GEN] rebar_loss = 134.2955, temperature = 1.5768, eta = 1.1008, theta_gradient_log_var = -4.7019
+[ADV-DIS] d_loss = 0.9392, train_acc = 0.7773,
+-----
+ADV EPOCH 201
+-----
+[ADV-GEN] rebar_loss = 93.9891, temperature = 1.5772, eta = 1.0995, theta_gradient_log_var = -4.2219
+[ADV-DIS] d_loss = 0.8414, train_acc = 0.8145,
+-----
+ADV EPOCH 202
+-----
+[ADV-GEN] rebar_loss = 101.6727, temperature = 1.5776, eta = 1.0984, theta_gradient_log_var = -3.7767
+[ADV-DIS] d_loss = 0.7840, train_acc = 0.8477,
+-----
+ADV EPOCH 203
+-----
+[ADV-GEN] rebar_loss = 231.3382, temperature = 1.5780, eta = 1.0974, theta_gradient_log_var = -3.7715
+[ADV-DIS] d_loss = 0.8869, train_acc = 0.7988,
+-----
+ADV EPOCH 204
+-----
+[ADV-GEN] rebar_loss = 395.5840, temperature = 1.5784, eta = 1.0965, theta_gradient_log_var = -3.2294
+[ADV-DIS] d_loss = 0.8451, train_acc = 0.7930,
+-----
+ADV EPOCH 205
+-----
+[ADV-GEN] rebar_loss = 278.8455, temperature = 1.5787, eta = 1.0957, theta_gradient_log_var = -3.4743
+[ADV-DIS] d_loss = 0.9268, train_acc = 0.7539,
+-----
+ADV EPOCH 206
+-----
+[ADV-GEN] rebar_loss = -95.4096, temperature = 1.5790, eta = 1.0950, theta_gradient_log_var = -3.4533
+[ADV-DIS] d_loss = 0.9311, train_acc = 0.7754,
+-----
+ADV EPOCH 207
+-----
+[ADV-GEN] rebar_loss = 536.0276, temperature = 1.5793, eta = 1.0943, theta_gradient_log_var = -3.4991
+[ADV-DIS] d_loss = 0.9868, train_acc = 0.7773,
+-----
+ADV EPOCH 208
+-----
+[ADV-GEN] rebar_loss = 280.3802, temperature = 1.5795, eta = 1.0938, theta_gradient_log_var = -3.3003
+[ADV-DIS] d_loss = 1.1216, train_acc = 0.7441,
+-----
+ADV EPOCH 209
+-----
+[ADV-GEN] rebar_loss = 347.2276, temperature = 1.5798, eta = 1.0933, theta_gradient_log_var = -3.7113
+[ADV-DIS] d_loss = 1.2926, train_acc = 0.6641,
+-----
+ADV EPOCH 210
+-----
+[ADV-GEN] rebar_loss = -137.4665, temperature = 1.5801, eta = 1.0928, theta_gradient_log_var = -3.0997
+[ADV-DIS] d_loss = 1.3720, train_acc = 0.6523,
+-----
+ADV EPOCH 211
+-----
+[ADV-GEN] rebar_loss = -487.9243, temperature = 1.5803, eta = 1.0924, theta_gradient_log_var = -3.4287
+[ADV-DIS] d_loss = 1.5199, train_acc = 0.5898,
+-----
+ADV EPOCH 212
+-----
+[ADV-GEN] rebar_loss = -293.9867, temperature = 1.5805, eta = 1.0920, theta_gradient_log_var = -4.1248
+[ADV-DIS] d_loss = 1.5464, train_acc = 0.5840,
+-----
+ADV EPOCH 213
+-----
+[ADV-GEN] rebar_loss = -271.2115, temperature = 1.5807, eta = 1.0916, theta_gradient_log_var = -3.7900
+[ADV-DIS] d_loss = 1.6107, train_acc = 0.5000,
+-----
+ADV EPOCH 214
+-----
+[ADV-GEN] rebar_loss = -207.9169, temperature = 1.5809, eta = 1.0913, theta_gradient_log_var = -4.3833
+[ADV-DIS] d_loss = 1.5936, train_acc = 0.5020,
+-----
+ADV EPOCH 215
+-----
+[ADV-GEN] rebar_loss = -447.7913, temperature = 1.5810, eta = 1.0910, theta_gradient_log_var = -4.6052
+[ADV-DIS] d_loss = 1.5597, train_acc = 0.4863,
+-----
+ADV EPOCH 216
+-----
+[ADV-GEN] rebar_loss = -368.3685, temperature = 1.5812, eta = 1.0908, theta_gradient_log_var = -4.9265
+[ADV-DIS] d_loss = 1.5343, train_acc = 0.4512,
+-----
+ADV EPOCH 217
+-----
+[ADV-GEN] rebar_loss = -267.3083, temperature = 1.5813, eta = 1.0905, theta_gradient_log_var = -5.4763
+[ADV-DIS] d_loss = 1.4760, train_acc = 0.4688,
+-----
+ADV EPOCH 218
+-----
+[ADV-GEN] rebar_loss = -445.4716, temperature = 1.5814, eta = 1.0903, theta_gradient_log_var = -5.6049
+[ADV-DIS] d_loss = 1.4041, train_acc = 0.5215,
+-----
+ADV EPOCH 219
+-----
+[ADV-GEN] rebar_loss = -401.5589, temperature = 1.5815, eta = 1.0902, theta_gradient_log_var = -5.6759
+[ADV-DIS] d_loss = 1.3487, train_acc = 0.5898,
+-----
+ADV EPOCH 220
+-----
+[ADV-GEN] rebar_loss = -369.9543, temperature = 1.5816, eta = 1.0900, theta_gradient_log_var = -6.6368
+[ADV-DIS] d_loss = 1.2694, train_acc = 0.7070,
+-----
+ADV EPOCH 221
+-----
+[ADV-GEN] rebar_loss = -457.7513, temperature = 1.5817, eta = 1.0898, theta_gradient_log_var = -6.4046
+[ADV-DIS] d_loss = 1.2224, train_acc = 0.7305,
+-----
+ADV EPOCH 222
+-----
+[ADV-GEN] rebar_loss = -499.9433, temperature = 1.5817, eta = 1.0897, theta_gradient_log_var = -5.9811
+[ADV-DIS] d_loss = 1.1592, train_acc = 0.7773,
+-----
+ADV EPOCH 223
+-----
+[ADV-GEN] rebar_loss = -458.3853, temperature = 1.5818, eta = 1.0896, theta_gradient_log_var = -5.9388
+[ADV-DIS] d_loss = 1.0597, train_acc = 0.8105,
+-----
+ADV EPOCH 224
+-----
+[ADV-GEN] rebar_loss = -616.1527, temperature = 1.5819, eta = 1.0895, theta_gradient_log_var = -4.9557
+[ADV-DIS] d_loss = 0.9755, train_acc = 0.8262,
+-----
+ADV EPOCH 225
+-----
+[ADV-GEN] rebar_loss = -571.3886, temperature = 1.5825, eta = 1.0878, theta_gradient_log_var = -4.8634
+[ADV-DIS] d_loss = 0.8945, train_acc = 0.8418,
+-----
+ADV EPOCH 226
+-----
+[ADV-GEN] rebar_loss = -425.5756, temperature = 1.5831, eta = 1.0863, theta_gradient_log_var = -4.1361
+[ADV-DIS] d_loss = 0.7780, train_acc = 0.8613,
+-----
+ADV EPOCH 227
+-----
+[ADV-GEN] rebar_loss = -474.6151, temperature = 1.5836, eta = 1.0850, theta_gradient_log_var = -4.4993
+[ADV-DIS] d_loss = 0.7103, train_acc = 0.8730,
+-----
+ADV EPOCH 228
+-----
+[ADV-GEN] rebar_loss = -427.1397, temperature = 1.5840, eta = 1.0838, theta_gradient_log_var = -3.8135
+[ADV-DIS] d_loss = 0.7717, train_acc = 0.8516,
+-----
+ADV EPOCH 229
+-----
+[ADV-GEN] rebar_loss = -406.0693, temperature = 1.5845, eta = 1.0827, theta_gradient_log_var = -3.1100
+[ADV-DIS] d_loss = 0.6826, train_acc = 0.8398,
+-----
+ADV EPOCH 230
+-----
+[ADV-GEN] rebar_loss = -15.2766, temperature = 1.5878, eta = 1.0801, theta_gradient_log_var = -3.3800
+[ADV-DIS] d_loss = 0.7080, train_acc = 0.8613,
+-----
+ADV EPOCH 231
+-----
+[ADV-GEN] rebar_loss = -833.8952, temperature = 1.5907, eta = 1.0777, theta_gradient_log_var = -3.4900
+[ADV-DIS] d_loss = 0.6915, train_acc = 0.8574,
+-----
+ADV EPOCH 232
+-----
+[ADV-GEN] rebar_loss = -343.0540, temperature = 1.5934, eta = 1.0756, theta_gradient_log_var = -2.7621
+[ADV-DIS] d_loss = 0.7847, train_acc = 0.8281,
+-----
+ADV EPOCH 233
+-----
+[ADV-GEN] rebar_loss = -891.2183, temperature = 1.5959, eta = 1.0736, theta_gradient_log_var = -2.6746
+[ADV-DIS] d_loss = 0.8261, train_acc = 0.8145,
+-----
+ADV EPOCH 234
+-----
+[ADV-GEN] rebar_loss = -596.2437, temperature = 1.5981, eta = 1.0718, theta_gradient_log_var = -3.1849
+[ADV-DIS] d_loss = 1.0327, train_acc = 0.7480,
+-----
+ADV EPOCH 235
+-----
+[ADV-GEN] rebar_loss = -422.1736, temperature = 1.6001, eta = 1.0703, theta_gradient_log_var = -2.7116
+[ADV-DIS] d_loss = 1.1825, train_acc = 0.7207,
+-----
+ADV EPOCH 236
+-----
+[ADV-GEN] rebar_loss = -444.0864, temperature = 1.6019, eta = 1.0688, theta_gradient_log_var = -3.3606
+[ADV-DIS] d_loss = 1.3248, train_acc = 0.6699,
+-----
+ADV EPOCH 237
+-----
+[ADV-GEN] rebar_loss = -592.4035, temperature = 1.6035, eta = 1.0675, theta_gradient_log_var = -3.1190
+[ADV-DIS] d_loss = 1.4103, train_acc = 0.6582,
+-----
+ADV EPOCH 238
+-----
+[ADV-GEN] rebar_loss = -630.4182, temperature = 1.6049, eta = 1.0664, theta_gradient_log_var = -3.5834
+[ADV-DIS] d_loss = 1.6683, train_acc = 0.5742,
+-----
+ADV EPOCH 239
+-----
+[ADV-GEN] rebar_loss = -780.7101, temperature = 1.6063, eta = 1.0653, theta_gradient_log_var = -3.7073
+[ADV-DIS] d_loss = 1.6874, train_acc = 0.5293,
+-----
+ADV EPOCH 240
+-----
+[ADV-GEN] rebar_loss = -564.0433, temperature = 1.6075, eta = 1.0643, theta_gradient_log_var = -3.8761
+[ADV-DIS] d_loss = 1.6916, train_acc = 0.4922,
+-----
+ADV EPOCH 241
+-----
+[ADV-GEN] rebar_loss = -430.6398, temperature = 1.6085, eta = 1.0635, theta_gradient_log_var = -4.5639
+[ADV-DIS] d_loss = 1.7429, train_acc = 0.4297,
+-----
+ADV EPOCH 242
+-----
+[ADV-GEN] rebar_loss = -648.3268, temperature = 1.6095, eta = 1.0627, theta_gradient_log_var = -5.0339
+[ADV-DIS] d_loss = 1.7400, train_acc = 0.3730,
+-----
+ADV EPOCH 243
+-----
+[ADV-GEN] rebar_loss = -524.0306, temperature = 1.6104, eta = 1.0620, theta_gradient_log_var = -4.7757
+[ADV-DIS] d_loss = 1.6112, train_acc = 0.3906,
+-----
+ADV EPOCH 244
+-----
+[ADV-GEN] rebar_loss = -480.9527, temperature = 1.6113, eta = 1.0612, theta_gradient_log_var = -5.7386
+[ADV-DIS] d_loss = 1.5359, train_acc = 0.3945,
+-----
+ADV EPOCH 245
+-----
+[ADV-GEN] rebar_loss = -426.7752, temperature = 1.6121, eta = 1.0604, theta_gradient_log_var = -6.0546
+[ADV-DIS] d_loss = 1.4232, train_acc = 0.4805,
+-----
+ADV EPOCH 246
+-----
+[ADV-GEN] rebar_loss = -436.1100, temperature = 1.6129, eta = 1.0597, theta_gradient_log_var = -5.9161
+[ADV-DIS] d_loss = 1.3237, train_acc = 0.5957,
+-----
+ADV EPOCH 247
+-----
+[ADV-GEN] rebar_loss = -463.0790, temperature = 1.6135, eta = 1.0591, theta_gradient_log_var = -6.2369
+[ADV-DIS] d_loss = 1.2291, train_acc = 0.7051,
+-----
+ADV EPOCH 248
+-----
+[ADV-GEN] rebar_loss = -504.2319, temperature = 1.6142, eta = 1.0583, theta_gradient_log_var = -5.3590
+[ADV-DIS] d_loss = 1.1613, train_acc = 0.7812,
+-----
+ADV EPOCH 249
+-----
+[ADV-GEN] rebar_loss = -522.6989, temperature = 1.6148, eta = 1.0576, theta_gradient_log_var = -5.6241
+[ADV-DIS] d_loss = 1.0866, train_acc = 0.8398,
+-----
+ADV EPOCH 250
+-----
+[ADV-GEN] rebar_loss = -692.3629, temperature = 1.6153, eta = 1.0570, theta_gradient_log_var = -5.3161
+[ADV-DIS] d_loss = 1.0482, train_acc = 0.7910,
+-----
+ADV EPOCH 251
+-----
+[ADV-GEN] rebar_loss = -613.9766, temperature = 1.6158, eta = 1.0564, theta_gradient_log_var = -5.2937
+[ADV-DIS] d_loss = 0.9396, train_acc = 0.8359,
+-----
+ADV EPOCH 252
+-----
+[ADV-GEN] rebar_loss = -495.3068, temperature = 1.6162, eta = 1.0559, theta_gradient_log_var = -5.1839
+[ADV-DIS] d_loss = 0.8463, train_acc = 0.8809,
+-----
+ADV EPOCH 253
+-----
+[ADV-GEN] rebar_loss = -696.1237, temperature = 1.6166, eta = 1.0554, theta_gradient_log_var = -4.8060
+[ADV-DIS] d_loss = 0.7919, train_acc = 0.8691,
+-----
+ADV EPOCH 254
+-----
+[ADV-GEN] rebar_loss = -552.9729, temperature = 1.6170, eta = 1.0549, theta_gradient_log_var = -3.6259
+[ADV-DIS] d_loss = 0.7288, train_acc = 0.8789,
+-----
+ADV EPOCH 255
+-----
+[ADV-GEN] rebar_loss = -763.8176, temperature = 1.6173, eta = 1.0545, theta_gradient_log_var = -4.0611
+[ADV-DIS] d_loss = 0.6635, train_acc = 0.8730,
+-----
+ADV EPOCH 256
+-----
+[ADV-GEN] rebar_loss = -646.6206, temperature = 1.6176, eta = 1.0541, theta_gradient_log_var = -3.7028
+[ADV-DIS] d_loss = 0.5933, train_acc = 0.8965,
+-----
+ADV EPOCH 257
+-----
+[ADV-GEN] rebar_loss = -813.6501, temperature = 1.6178, eta = 1.0538, theta_gradient_log_var = -3.4213
+[ADV-DIS] d_loss = 0.6399, train_acc = 0.8613,
+-----
+ADV EPOCH 258
+-----
+[ADV-GEN] rebar_loss = -845.6317, temperature = 1.6181, eta = 1.0534, theta_gradient_log_var = -2.7442
+[ADV-DIS] d_loss = 0.6462, train_acc = 0.8848,
+-----
+ADV EPOCH 259
+-----
+[ADV-GEN] rebar_loss = -714.6457, temperature = 1.6183, eta = 1.0531, theta_gradient_log_var = -2.8233
+[ADV-DIS] d_loss = 0.5810, train_acc = 0.8887,
+-----
+ADV EPOCH 260
+-----
+[ADV-GEN] rebar_loss = -1085.0824, temperature = 1.6183, eta = 1.0520, theta_gradient_log_var = -3.5509
+[ADV-DIS] d_loss = 0.7622, train_acc = 0.8203,
+-----
+ADV EPOCH 261
+-----
+[ADV-GEN] rebar_loss = -925.0207, temperature = 1.6182, eta = 1.0511, theta_gradient_log_var = -2.8399
+[ADV-DIS] d_loss = 0.7518, train_acc = 0.8164,
+-----
+ADV EPOCH 262
+-----
+[ADV-GEN] rebar_loss = -1154.3591, temperature = 1.6181, eta = 1.0502, theta_gradient_log_var = -2.2482
+[ADV-DIS] d_loss = 0.9550, train_acc = 0.7676,
+-----
+ADV EPOCH 263
+-----
+[ADV-GEN] rebar_loss = -934.9327, temperature = 1.6181, eta = 1.0494, theta_gradient_log_var = -3.1628
+[ADV-DIS] d_loss = 1.0593, train_acc = 0.7637,
+-----
+ADV EPOCH 264
+-----
+[ADV-GEN] rebar_loss = -367.3080, temperature = 1.6181, eta = 1.0487, theta_gradient_log_var = -2.6812
+[ADV-DIS] d_loss = 1.1578, train_acc = 0.7168,
+-----
+ADV EPOCH 265
+-----
+[ADV-GEN] rebar_loss = -1020.5280, temperature = 1.6181, eta = 1.0481, theta_gradient_log_var = -3.6491
+[ADV-DIS] d_loss = 1.2151, train_acc = 0.6992,
+-----
+ADV EPOCH 266
+-----
+[ADV-GEN] rebar_loss = -933.6326, temperature = 1.6181, eta = 1.0475, theta_gradient_log_var = -3.3656
+[ADV-DIS] d_loss = 1.4025, train_acc = 0.6289,
+-----
+ADV EPOCH 267
+-----
+[ADV-GEN] rebar_loss = -1119.7520, temperature = 1.6181, eta = 1.0469, theta_gradient_log_var = -3.4685
+[ADV-DIS] d_loss = 1.5353, train_acc = 0.6035,
+-----
+ADV EPOCH 268
+-----
+[ADV-GEN] rebar_loss = -788.8214, temperature = 1.6181, eta = 1.0464, theta_gradient_log_var = -3.6557
+[ADV-DIS] d_loss = 1.6482, train_acc = 0.5410,
+-----
+ADV EPOCH 269
+-----
+[ADV-GEN] rebar_loss = -866.4226, temperature = 1.6183, eta = 1.0463, theta_gradient_log_var = -3.6550
+[ADV-DIS] d_loss = 1.6257, train_acc = 0.5195,
+-----
+ADV EPOCH 270
+-----
+[ADV-GEN] rebar_loss = -548.0152, temperature = 1.6184, eta = 1.0462, theta_gradient_log_var = -4.0454
+[ADV-DIS] d_loss = 1.6097, train_acc = 0.5117,
+-----
+ADV EPOCH 271
+-----
+[ADV-GEN] rebar_loss = -763.6716, temperature = 1.6186, eta = 1.0461, theta_gradient_log_var = -4.0616
+[ADV-DIS] d_loss = 1.5520, train_acc = 0.5352,
+-----
+ADV EPOCH 272
+-----
+[ADV-GEN] rebar_loss = -574.2164, temperature = 1.6188, eta = 1.0460, theta_gradient_log_var = -4.8591
+[ADV-DIS] d_loss = 1.4516, train_acc = 0.5430,
+-----
+ADV EPOCH 273
+-----
+[ADV-GEN] rebar_loss = -556.8949, temperature = 1.6189, eta = 1.0459, theta_gradient_log_var = -4.4519
+[ADV-DIS] d_loss = 1.3382, train_acc = 0.6230,
+-----
+ADV EPOCH 274
+-----
+[ADV-GEN] rebar_loss = -558.6990, temperature = 1.6190, eta = 1.0458, theta_gradient_log_var = -4.6270
+[ADV-DIS] d_loss = 1.2394, train_acc = 0.6602,
+-----
+ADV EPOCH 275
+-----
+[ADV-GEN] rebar_loss = -613.4059, temperature = 1.6191, eta = 1.0458, theta_gradient_log_var = -5.2922
+[ADV-DIS] d_loss = 1.1620, train_acc = 0.6992,
+-----
+ADV EPOCH 276
+-----
+[ADV-GEN] rebar_loss = -577.7976, temperature = 1.6192, eta = 1.0457, theta_gradient_log_var = -5.3567
+[ADV-DIS] d_loss = 1.1032, train_acc = 0.7227,
+-----
+ADV EPOCH 277
+-----
+[ADV-GEN] rebar_loss = -286.7884, temperature = 1.6193, eta = 1.0457, theta_gradient_log_var = -4.8517
+[ADV-DIS] d_loss = 1.0983, train_acc = 0.7266,
+-----
+ADV EPOCH 278
+-----
+[ADV-GEN] rebar_loss = -602.5495, temperature = 1.6194, eta = 1.0457, theta_gradient_log_var = -4.6196
+[ADV-DIS] d_loss = 1.0129, train_acc = 0.7578,
+-----
+ADV EPOCH 279
+-----
+[ADV-GEN] rebar_loss = -591.3156, temperature = 1.6195, eta = 1.0456, theta_gradient_log_var = -4.6225
+[ADV-DIS] d_loss = 0.9208, train_acc = 0.7891,
+-----
+ADV EPOCH 280
+-----
+[ADV-GEN] rebar_loss = -431.7005, temperature = 1.6195, eta = 1.0456, theta_gradient_log_var = -4.8546
+[ADV-DIS] d_loss = 0.8729, train_acc = 0.8203,
+-----
+ADV EPOCH 281
+-----
+[ADV-GEN] rebar_loss = -587.0776, temperature = 1.6196, eta = 1.0456, theta_gradient_log_var = -4.5558
+[ADV-DIS] d_loss = 0.8141, train_acc = 0.8281,
+-----
+ADV EPOCH 282
+-----
+[ADV-GEN] rebar_loss = -176.2349, temperature = 1.6197, eta = 1.0456, theta_gradient_log_var = -3.9401
+[ADV-DIS] d_loss = 0.7958, train_acc = 0.8086,
+-----
+ADV EPOCH 283
+-----
+[ADV-GEN] rebar_loss = -94.0530, temperature = 1.6198, eta = 1.0456, theta_gradient_log_var = -4.0933
+[ADV-DIS] d_loss = 0.7040, train_acc = 0.8535,
+-----
+ADV EPOCH 284
+-----
+[ADV-GEN] rebar_loss = -449.3000, temperature = 1.6198, eta = 1.0456, theta_gradient_log_var = -3.8191
+[ADV-DIS] d_loss = 0.7422, train_acc = 0.8281,
+-----
+ADV EPOCH 285
+-----
+[ADV-GEN] rebar_loss = -547.9237, temperature = 1.6199, eta = 1.0456, theta_gradient_log_var = -4.0280
+[ADV-DIS] d_loss = 0.7683, train_acc = 0.8164,
+-----
+ADV EPOCH 286
+-----
+[ADV-GEN] rebar_loss = -481.0780, temperature = 1.6200, eta = 1.0456, theta_gradient_log_var = -3.2460
+[ADV-DIS] d_loss = 0.8077, train_acc = 0.8145,
+-----
+ADV EPOCH 287
+-----
+[ADV-GEN] rebar_loss = -231.0929, temperature = 1.6200, eta = 1.0457, theta_gradient_log_var = -3.3492
+[ADV-DIS] d_loss = 0.7775, train_acc = 0.8164,
+-----
+ADV EPOCH 288
+-----
+[ADV-GEN] rebar_loss = -113.2025, temperature = 1.6200, eta = 1.0457, theta_gradient_log_var = -3.6211
+[ADV-DIS] d_loss = 0.7914, train_acc = 0.8262,
+-----
+ADV EPOCH 289
+-----
+[ADV-GEN] rebar_loss = -250.5842, temperature = 1.6201, eta = 1.0457, theta_gradient_log_var = -3.7620
+[ADV-DIS] d_loss = 0.8118, train_acc = 0.8125,
+-----
+ADV EPOCH 290
+-----
+[ADV-GEN] rebar_loss = -778.6663, temperature = 1.6201, eta = 1.0457, theta_gradient_log_var = -3.3248
+[ADV-DIS] d_loss = 0.8054, train_acc = 0.8086,
+-----
+ADV EPOCH 291
+-----
+[ADV-GEN] rebar_loss = -681.4661, temperature = 1.6202, eta = 1.0457, theta_gradient_log_var = -3.2780
+[ADV-DIS] d_loss = 0.8584, train_acc = 0.7891,
+-----
+ADV EPOCH 292
+-----
+[ADV-GEN] rebar_loss = -1001.1917, temperature = 1.6202, eta = 1.0457, theta_gradient_log_var = -3.3718
+[ADV-DIS] d_loss = 0.8353, train_acc = 0.8203,
+-----
+ADV EPOCH 293
+-----
+[ADV-GEN] rebar_loss = -691.7895, temperature = 1.6203, eta = 1.0457, theta_gradient_log_var = -3.7739
+[ADV-DIS] d_loss = 0.9888, train_acc = 0.7422,
+-----
+ADV EPOCH 294
+-----
+[ADV-GEN] rebar_loss = -351.0229, temperature = 1.6203, eta = 1.0458, theta_gradient_log_var = -3.2559
+[ADV-DIS] d_loss = 0.9607, train_acc = 0.7773,
+-----
+ADV EPOCH 295
+-----
+[ADV-GEN] rebar_loss = -314.6883, temperature = 1.6203, eta = 1.0458, theta_gradient_log_var = -3.5716
+[ADV-DIS] d_loss = 0.9195, train_acc = 0.7695,
+-----
+ADV EPOCH 296
+-----
+[ADV-GEN] rebar_loss = -581.0409, temperature = 1.6204, eta = 1.0457, theta_gradient_log_var = -3.6174
+[ADV-DIS] d_loss = 0.9194, train_acc = 0.7754,
+-----
+ADV EPOCH 297
+-----
+[ADV-GEN] rebar_loss = -1149.8934, temperature = 1.6204, eta = 1.0452, theta_gradient_log_var = -2.9404
+[ADV-DIS] d_loss = 0.8746, train_acc = 0.7852,
+-----
+ADV EPOCH 298
+-----
+[ADV-GEN] rebar_loss = -722.6829, temperature = 1.6205, eta = 1.0447, theta_gradient_log_var = -2.4932
+[ADV-DIS] d_loss = 0.9071, train_acc = 0.8027,
+-----
+ADV EPOCH 299
+-----
+[ADV-GEN] rebar_loss = -475.2130, temperature = 1.6205, eta = 1.0443, theta_gradient_log_var = -3.6535
+[ADV-DIS] d_loss = 0.8892, train_acc = 0.7910,
