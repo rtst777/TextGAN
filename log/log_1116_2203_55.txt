@@ -1,0 +1,84 @@
+====================================================================================================
+> training arguments:
+>>> if_test: 0
+>>> run_model: rebargan
+>>> dataset: synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands
+>>> model_type: vanilla
+>>> loss_type: standard
+>>> if_real_data: 1
+>>> cuda: 0
+>>> device: -1
+>>> shuffle: 0
+>>> gen_init: normal
+>>> dis_init: uniform
+>>> samples_num: 10000
+>>> vocab_size: 7
+>>> mle_epoch: 120
+>>> adv_epoch: 200
+>>> inter_epoch: 10
+>>> batch_size: 10
+>>> max_seq_len: 3
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.01
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 5
+>>> adv_log_step: 1
+>>> train_data: dataset/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands.txt
+>>> test_data: dataset/testdata/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands_test.txt
+>>> temp_adpt: exp
+>>> temperature: 1
+>>> eta: 1
+>>> learn_temperature: 1
+>>> learn_eta: 1
+>>> ora_pretrain: 1
+>>> gen_pretrain: 0
+>>> dis_pretrain: 0
+>>> adv_g_step: 1
+>>> rollout_num: 4
+>>> gen_embed_dim: 7
+>>> gen_hidden_dim: 7
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 5
+>>> d_epoch: 3
+>>> adv_d_step: 4
+>>> adv_d_epoch: 2
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> log_file: log/log_1116_2203_55.txt
+>>> save_root: save/20191116/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands/rebargan_vanilla_lt-standard_sl3_temp1_T1/
+>>> signal_file: run_signal.txt
+>>> tips: vanilla RebarGAN
+====================================================================================================
+Starting Adversarial Training...
+Initial generator: BLEU-[2, 3] = [0.31, 0.192], gen_NLL = 1.8967, self_bleu = [0.85],
+-----
+ADV EPOCH 0
+-----
+[ADV-GEN] rebar_loss = -0.0855, temperature = 1.0000, eta = 1.0000, BLEU-[2, 3] = [0.309, 0.19], gen_NLL = 1.8818, self_bleu = [0.758],
+-----
+ADV EPOCH 1
+-----
+[ADV-GEN] rebar_loss = 0.1790, temperature = 1.0100, eta = 0.9900, BLEU-[2, 3] = [0.34, 0.216], gen_NLL = 1.8671, self_bleu = [0.806],
+-----
+ADV EPOCH 2
+-----
+[ADV-GEN] rebar_loss = 0.2808, temperature = 1.0168, eta = 0.9928, BLEU-[2, 3] = [0.35, 0.213], gen_NLL = 1.8603, self_bleu = [0.746],
+-----
+ADV EPOCH 3
+-----
+[ADV-GEN] rebar_loss = 0.1511, temperature = 1.0227, eta = 0.9989, BLEU-[2, 3] = [0.318, 0.199], gen_NLL = 1.8610, self_bleu = [0.785],
+-----
+ADV EPOCH 4
+-----
+[ADV-GEN] rebar_loss = -0.1894, temperature = 1.0280, eta = 1.0062, BLEU-[2, 3] = [0.334, 0.22], gen_NLL = 1.8564, self_bleu = [0.767],
+-----
+ADV EPOCH 5
+-----

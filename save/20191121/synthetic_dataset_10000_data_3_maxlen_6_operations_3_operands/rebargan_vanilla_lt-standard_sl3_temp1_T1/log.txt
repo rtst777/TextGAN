@@ -1,0 +1,292 @@
+====================================================================================================
+> training arguments:
+>>> if_test: 0
+>>> run_model: rebargan
+>>> dataset: synthetic_dataset_10000_data_3_maxlen_6_operations_3_operands
+>>> model_type: vanilla
+>>> loss_type: standard
+>>> if_real_data: 1
+>>> cuda: 0
+>>> device: -1
+>>> shuffle: 0
+>>> gen_init: normal
+>>> dis_init: uniform
+>>> samples_num: 10000
+>>> vocab_size: 11
+>>> mle_epoch: 120
+>>> adv_epoch: 200
+>>> inter_epoch: 10
+>>> batch_size: 20
+>>> max_seq_len: 3
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.01
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 5
+>>> adv_log_step: 1
+>>> train_data: dataset/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands.txt
+>>> test_data: dataset/testdata/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands_test.txt
+>>> temp_adpt: exp
+>>> temperature: 1
+>>> eta: 1
+>>> learn_temperature: 1
+>>> learn_eta: 1
+>>> ora_pretrain: 1
+>>> gen_pretrain: 0
+>>> dis_pretrain: 0
+>>> adv_g_step: 1
+>>> rollout_num: 4
+>>> gen_embed_dim: 11
+>>> gen_hidden_dim: 11
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 5
+>>> d_epoch: 3
+>>> adv_d_step: 4
+>>> adv_d_epoch: 2
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> log_file: log/log_1121_0206_58.txt
+>>> save_root: save/20191121/synthetic_dataset_10000_data_3_maxlen_6_operations_3_operands/rebargan_vanilla_lt-standard_sl3_temp1_T1/
+>>> signal_file: run_signal.txt
+>>> tips: vanilla RebarGAN
+====================================================================================================
+Starting Adversarial Training...
+Initial generator: BLEU-[2, 3] = [0.425, 0.263], gen_NLL = 2.4421, self_bleu = [0.843],
+-----
+ADV EPOCH 0
+-----
+[ADV-GEN] rebar_loss = -0.1925, temperature = 1.0000, eta = 1.0000, BLEU-[2, 3] = [0.43, 0.27], gen_NLL = 2.4259, self_bleu = [0.865],
+-----
+ADV EPOCH 1
+-----
+[ADV-GEN] rebar_loss = 0.4489, temperature = 1.0100, eta = 0.9900, BLEU-[2, 3] = [0.444, 0.276], gen_NLL = 2.4130, self_bleu = [0.845],
+-----
+ADV EPOCH 2
+-----
+[ADV-GEN] rebar_loss = 0.1696, temperature = 1.0064, eta = 0.9937, BLEU-[2, 3] = [0.408, 0.253], gen_NLL = 2.4036, self_bleu = [0.87],
+-----
+ADV EPOCH 3
+-----
+[ADV-GEN] rebar_loss = -0.1571, temperature = 1.0040, eta = 0.9986, BLEU-[2, 3] = [0.437, 0.267], gen_NLL = 2.3963, self_bleu = [0.808],
+-----
+ADV EPOCH 4
+-----
+[ADV-GEN] rebar_loss = -0.1426, temperature = 1.0041, eta = 1.0009, BLEU-[2, 3] = [0.445, 0.261], gen_NLL = 2.3931, self_bleu = [0.891],
+-----
+ADV EPOCH 5
+-----
+[ADV-GEN] rebar_loss = -0.1541, temperature = 1.0053, eta = 1.0008, BLEU-[2, 3] = [0.408, 0.252], gen_NLL = 2.3937, self_bleu = [0.897],
+-----
+ADV EPOCH 6
+-----
+[ADV-GEN] rebar_loss = -0.2843, temperature = 1.0075, eta = 0.9991, BLEU-[2, 3] = [0.452, 0.274], gen_NLL = 2.3949, self_bleu = [0.868],
+-----
+ADV EPOCH 7
+-----
+[ADV-GEN] rebar_loss = 0.1966, temperature = 1.0124, eta = 0.9954, BLEU-[2, 3] = [0.426, 0.263], gen_NLL = 2.3951, self_bleu = [0.901],
+-----
+ADV EPOCH 8
+-----
+[ADV-GEN] rebar_loss = 0.1738, temperature = 1.0168, eta = 0.9935, BLEU-[2, 3] = [0.446, 0.268], gen_NLL = 2.3995, self_bleu = [0.866],
+-----
+ADV EPOCH 9
+-----
+[ADV-GEN] rebar_loss = 0.1746, temperature = 1.0191, eta = 0.9931, BLEU-[2, 3] = [0.426, 0.246], gen_NLL = 2.4063, self_bleu = [0.884],
+-----
+ADV EPOCH 10
+-----
+[ADV-GEN] rebar_loss = -0.1235, temperature = 1.0226, eta = 0.9940, BLEU-[2, 3] = [0.404, 0.25], gen_NLL = 2.4124, self_bleu = [0.908],
+-----
+ADV EPOCH 11
+-----
+[ADV-GEN] rebar_loss = 0.1949, temperature = 1.0264, eta = 0.9941, BLEU-[2, 3] = [0.426, 0.256], gen_NLL = 2.4176, self_bleu = [0.827],
+-----
+ADV EPOCH 12
+-----
+[ADV-GEN] rebar_loss = -0.1447, temperature = 1.0266, eta = 0.9957, BLEU-[2, 3] = [0.463, 0.284], gen_NLL = 2.4229, self_bleu = [0.868],
+-----
+ADV EPOCH 13
+-----
+[ADV-GEN] rebar_loss = 0.0393, temperature = 1.0274, eta = 0.9963, BLEU-[2, 3] = [0.443, 0.268], gen_NLL = 2.4278, self_bleu = [0.877],
+-----
+ADV EPOCH 14
+-----
+[ADV-GEN] rebar_loss = -0.2804, temperature = 1.0290, eta = 0.9974, BLEU-[2, 3] = [0.441, 0.264], gen_NLL = 2.4309, self_bleu = [0.871],
+-----
+ADV EPOCH 15
+-----
+[ADV-GEN] rebar_loss = 0.0501, temperature = 1.0306, eta = 0.9969, BLEU-[2, 3] = [0.401, 0.247], gen_NLL = 2.4320, self_bleu = [0.894],
+-----
+ADV EPOCH 16
+-----
+[ADV-GEN] rebar_loss = -0.0056, temperature = 1.0322, eta = 0.9964, BLEU-[2, 3] = [0.433, 0.263], gen_NLL = 2.4297, self_bleu = [0.897],
+-----
+ADV EPOCH 17
+-----
+[ADV-GEN] rebar_loss = -0.0889, temperature = 1.0318, eta = 0.9962, BLEU-[2, 3] = [0.476, 0.271], gen_NLL = 2.4296, self_bleu = [0.89],
+-----
+ADV EPOCH 18
+-----
+[ADV-GEN] rebar_loss = 0.0571, temperature = 1.0318, eta = 0.9954, BLEU-[2, 3] = [0.424, 0.26], gen_NLL = 2.4293, self_bleu = [0.883],
+-----
+ADV EPOCH 19
+-----
+[ADV-GEN] rebar_loss = -0.0392, temperature = 1.0308, eta = 0.9953, BLEU-[2, 3] = [0.453, 0.284], gen_NLL = 2.4293, self_bleu = [0.864],
+-----
+ADV EPOCH 20
+-----
+[ADV-GEN] rebar_loss = 0.1214, temperature = 1.0306, eta = 0.9947, BLEU-[2, 3] = [0.445, 0.272], gen_NLL = 2.4267, self_bleu = [0.881],
+-----
+ADV EPOCH 21
+-----
+[ADV-GEN] rebar_loss = -0.1819, temperature = 1.0306, eta = 0.9953, BLEU-[2, 3] = [0.433, 0.266], gen_NLL = 2.4253, self_bleu = [0.865],
+-----
+ADV EPOCH 22
+-----
+[ADV-GEN] rebar_loss = -0.0845, temperature = 1.0309, eta = 0.9950, BLEU-[2, 3] = [0.42, 0.257], gen_NLL = 2.4243, self_bleu = [0.841],
+-----
+ADV EPOCH 23
+-----
+[ADV-GEN] rebar_loss = 0.0015, temperature = 1.0308, eta = 0.9948, BLEU-[2, 3] = [0.442, 0.268], gen_NLL = 2.4231, self_bleu = [0.859],
+-----
+ADV EPOCH 24
+-----
+[ADV-GEN] rebar_loss = -0.0698, temperature = 1.0291, eta = 0.9946, BLEU-[2, 3] = [0.455, 0.281], gen_NLL = 2.4238, self_bleu = [0.879],
+-----
+ADV EPOCH 25
+-----
+[ADV-GEN] rebar_loss = -0.0142, temperature = 1.0286, eta = 0.9940, BLEU-[2, 3] = [0.46, 0.271], gen_NLL = 2.4249, self_bleu = [0.886],
+-----
+ADV EPOCH 26
+-----
+[ADV-GEN] rebar_loss = -0.0656, temperature = 1.0277, eta = 0.9936, BLEU-[2, 3] = [0.47, 0.286], gen_NLL = 2.4279, self_bleu = [0.837],
+-----
+ADV EPOCH 27
+-----
+[ADV-GEN] rebar_loss = -0.0519, temperature = 1.0272, eta = 0.9935, BLEU-[2, 3] = [0.481, 0.291], gen_NLL = 2.4299, self_bleu = [0.875],
+-----
+ADV EPOCH 28
+-----
+[ADV-GEN] rebar_loss = -0.2716, temperature = 1.0271, eta = 0.9936, BLEU-[2, 3] = [0.472, 0.275], gen_NLL = 2.4334, self_bleu = [0.86],
+-----
+ADV EPOCH 29
+-----
+[ADV-GEN] rebar_loss = 0.1460, temperature = 1.0278, eta = 0.9923, BLEU-[2, 3] = [0.51, 0.326], gen_NLL = 2.4393, self_bleu = [0.88],
+-----
+ADV EPOCH 30
+-----
+[ADV-GEN] rebar_loss = 0.1748, temperature = 1.0269, eta = 0.9922, BLEU-[2, 3] = [0.445, 0.271], gen_NLL = 2.4476, self_bleu = [0.86],
+-----
+ADV EPOCH 31
+-----
+[ADV-GEN] rebar_loss = 0.0767, temperature = 1.0244, eta = 0.9943, BLEU-[2, 3] = [0.456, 0.278], gen_NLL = 2.4557, self_bleu = [0.884],
+-----
+ADV EPOCH 32
+-----
+[ADV-GEN] rebar_loss = -0.1042, temperature = 1.0204, eta = 0.9971, BLEU-[2, 3] = [0.477, 0.284], gen_NLL = 2.4627, self_bleu = [0.824],
+-----
+ADV EPOCH 33
+-----
+[ADV-GEN] rebar_loss = -0.3769, temperature = 1.0167, eta = 0.9990, BLEU-[2, 3] = [0.507, 0.312], gen_NLL = 2.4715, self_bleu = [0.845],
+-----
+ADV EPOCH 34
+-----
+[ADV-GEN] rebar_loss = -0.3174, temperature = 1.0140, eta = 0.9985, BLEU-[2, 3] = [0.444, 0.269], gen_NLL = 2.4779, self_bleu = [0.856],
+-----
+ADV EPOCH 35
+-----
+[ADV-GEN] rebar_loss = -0.0948, temperature = 1.0137, eta = 0.9958, BLEU-[2, 3] = [0.484, 0.308], gen_NLL = 2.4874, self_bleu = [0.87],
+-----
+ADV EPOCH 36
+-----
+[ADV-GEN] rebar_loss = -0.0863, temperature = 1.0130, eta = 0.9933, BLEU-[2, 3] = [0.482, 0.29], gen_NLL = 2.4971, self_bleu = [0.848],
+-----
+ADV EPOCH 37
+-----
+[ADV-GEN] rebar_loss = 0.0377, temperature = 1.0122, eta = 0.9915, BLEU-[2, 3] = [0.475, 0.296], gen_NLL = 2.5123, self_bleu = [0.833],
+-----
+ADV EPOCH 38
+-----
+[ADV-GEN] rebar_loss = 0.1024, temperature = 1.0115, eta = 0.9908, BLEU-[2, 3] = [0.448, 0.265], gen_NLL = 2.5271, self_bleu = [0.812],
+-----
+ADV EPOCH 39
+-----
+[ADV-GEN] rebar_loss = 0.0340, temperature = 1.0071, eta = 0.9919, BLEU-[2, 3] = [0.516, 0.304], gen_NLL = 2.5475, self_bleu = [0.855],
+-----
+ADV EPOCH 40
+-----
+[ADV-GEN] rebar_loss = -0.0447, temperature = 1.0031, eta = 0.9942, BLEU-[2, 3] = [0.457, 0.275], gen_NLL = 2.5690, self_bleu = [0.81],
+-----
+ADV EPOCH 41
+-----
+[ADV-GEN] rebar_loss = -0.1785, temperature = 0.9995, eta = 0.9962, BLEU-[2, 3] = [0.432, 0.273], gen_NLL = 2.5956, self_bleu = [0.825],
+-----
+ADV EPOCH 42
+-----
+[ADV-GEN] rebar_loss = -0.4623, temperature = 0.9960, eta = 0.9987, BLEU-[2, 3] = [0.501, 0.3], gen_NLL = 2.6285, self_bleu = [0.857],
+-----
+ADV EPOCH 43
+-----
+[ADV-GEN] rebar_loss = -0.5426, temperature = 0.9948, eta = 0.9991, BLEU-[2, 3] = [0.479, 0.287], gen_NLL = 2.6688, self_bleu = [0.882],
+-----
+ADV EPOCH 44
+-----
+[ADV-GEN] rebar_loss = -0.1417, temperature = 0.9990, eta = 0.9942, BLEU-[2, 3] = [0.464, 0.302], gen_NLL = 2.7158, self_bleu = [0.859],
+-----
+ADV EPOCH 45
+-----
+[ADV-GEN] rebar_loss = -0.2914, temperature = 1.0023, eta = 0.9901, BLEU-[2, 3] = [0.493, 0.293], gen_NLL = 2.7615, self_bleu = [0.879],
+-----
+ADV EPOCH 46
+-----
+[ADV-GEN] rebar_loss = 0.0981, temperature = 1.0056, eta = 0.9855, BLEU-[2, 3] = [0.505, 0.306], gen_NLL = 2.8055, self_bleu = [0.854],
+-----
+ADV EPOCH 47
+-----
+[ADV-GEN] rebar_loss = 0.5434, temperature = 1.0082, eta = 0.9818, BLEU-[2, 3] = [0.532, 0.331], gen_NLL = 2.8452, self_bleu = [0.91],
+-----
+ADV EPOCH 48
+-----
+[ADV-GEN] rebar_loss = 0.0649, temperature = 1.0056, eta = 0.9849, BLEU-[2, 3] = [0.5, 0.309], gen_NLL = 2.8790, self_bleu = [0.893],
+-----
+ADV EPOCH 49
+-----
+[ADV-GEN] rebar_loss = 0.2196, temperature = 1.0027, eta = 0.9883, BLEU-[2, 3] = [0.488, 0.296], gen_NLL = 2.9127, self_bleu = [0.89],
+-----
+ADV EPOCH 50
+-----
+[ADV-GEN] rebar_loss = -0.1648, temperature = 0.9960, eta = 0.9937, BLEU-[2, 3] = [0.484, 0.298], gen_NLL = 2.9555, self_bleu = [0.893],
+-----
+ADV EPOCH 51
+-----
+[ADV-GEN] rebar_loss = -0.3409, temperature = 0.9893, eta = 0.9997, BLEU-[2, 3] = [0.424, 0.272], gen_NLL = 2.9803, self_bleu = [0.876],
+-----
+ADV EPOCH 52
+-----
+[ADV-GEN] rebar_loss = -0.4740, temperature = 0.9800, eta = 1.0009, BLEU-[2, 3] = [0.522, 0.302], gen_NLL = 3.0122, self_bleu = [0.956],
+-----
+ADV EPOCH 53
+-----
+[ADV-GEN] rebar_loss = -0.3736, temperature = 0.9723, eta = 1.0017, BLEU-[2, 3] = [0.503, 0.312], gen_NLL = 3.0441, self_bleu = [0.94],
+-----
+ADV EPOCH 54
+-----
+[ADV-GEN] rebar_loss = -0.4658, temperature = 0.9659, eta = 1.0026, BLEU-[2, 3] = [0.509, 0.307], gen_NLL = 3.0702, self_bleu = [0.918],
+-----
+ADV EPOCH 55
+-----
+[ADV-GEN] rebar_loss = -0.4603, temperature = 0.9617, eta = 1.0012, BLEU-[2, 3] = [0.471, 0.302], gen_NLL = 3.0926, self_bleu = [0.93],
+-----
+ADV EPOCH 56
+-----
+[ADV-GEN] rebar_loss = -0.0403, temperature = 0.9668, eta = 0.9938, BLEU-[2, 3] = [0.494, 0.299], gen_NLL = 3.1089, self_bleu = [0.926],
+-----
+ADV EPOCH 57
+-----

@@ -1,0 +1,86 @@
+====================================================================================================
+> training arguments:
+>>> if_test: 0
+>>> run_model: rebargan
+>>> dataset: image_coco
+>>> model_type: vanilla
+>>> loss_type: standard
+>>> if_real_data: 1
+>>> cuda: 0
+>>> device: -1
+>>> shuffle: 0
+>>> gen_init: normal
+>>> dis_init: uniform
+>>> samples_num: 10000
+>>> vocab_size: 4683
+>>> mle_epoch: 120
+>>> adv_epoch: 200
+>>> inter_epoch: 10
+>>> batch_size: 64
+>>> max_seq_len: 37
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.01
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 5
+>>> adv_log_step: 1
+>>> train_data: dataset/oracle.txt
+>>> test_data: dataset/testdata/oracle_test.txt
+>>> temp_adpt: exp
+>>> temperature: 1
+>>> eta: 1
+>>> learn_temperature: 1
+>>> learn_eta: 1
+>>> ora_pretrain: 1
+>>> gen_pretrain: 0
+>>> dis_pretrain: 0
+>>> adv_g_step: 1
+>>> rollout_num: 4
+>>> gen_embed_dim: 32
+>>> gen_hidden_dim: 32
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 5
+>>> d_epoch: 3
+>>> adv_d_step: 4
+>>> adv_d_epoch: 2
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> log_file: log/log_1102_1622_22.txt
+>>> save_root: save/20191102/image_coco/rebargan_vanilla_lt-standard_sl37_temp1_T1/
+>>> signal_file: run_signal.txt
+>>> tips: vanilla RebarGAN
+====================================================================================================
+Starting Generator MLE Training...
+[MLE-GEN] epoch 0 : pre_loss = 2.5708, BLEU-[2, 3, 4, 5] = [0.262, 0.103, 0.059, 0.046], gen_NLL = 1.6845, self_bleu = [0.262],
+[MLE-GEN] epoch 5 : pre_loss = 1.1918, BLEU-[2, 3, 4, 5] = [0.796, 0.556, 0.322, 0.197], gen_NLL = 1.1549, self_bleu = [0.607],
+[MLE-GEN] epoch 10 : pre_loss = 1.0503, BLEU-[2, 3, 4, 5] = [0.86, 0.653, 0.416, 0.25], gen_NLL = 1.0180, self_bleu = [0.679],
+[MLE-GEN] epoch 15 : pre_loss = 0.9579, BLEU-[2, 3, 4, 5] = [0.856, 0.66, 0.453, 0.291], gen_NLL = 0.9342, self_bleu = [0.713],
+[MLE-GEN] epoch 20 : pre_loss = 0.9002, BLEU-[2, 3, 4, 5] = [0.885, 0.704, 0.493, 0.323], gen_NLL = 0.8823, self_bleu = [0.698],
+[MLE-GEN] epoch 25 : pre_loss = 0.8618, BLEU-[2, 3, 4, 5] = [0.902, 0.741, 0.534, 0.358], gen_NLL = 0.8491, self_bleu = [0.715],
+[MLE-GEN] epoch 30 : pre_loss = 0.8368, BLEU-[2, 3, 4, 5] = [0.882, 0.689, 0.481, 0.319], gen_NLL = 0.8273, self_bleu = [0.742],
+[MLE-GEN] epoch 35 : pre_loss = 0.8160, BLEU-[2, 3, 4, 5] = [0.915, 0.763, 0.574, 0.39], gen_NLL = 0.8117, self_bleu = [0.74],
+[MLE-GEN] epoch 40 : pre_loss = 0.8019, BLEU-[2, 3, 4, 5] = [0.909, 0.717, 0.508, 0.327], gen_NLL = 0.8025, self_bleu = [0.73],
+[MLE-GEN] epoch 45 : pre_loss = 0.7910, BLEU-[2, 3, 4, 5] = [0.912, 0.75, 0.555, 0.37], gen_NLL = 0.7976, self_bleu = [0.749],
+[MLE-GEN] epoch 50 : pre_loss = 0.7794, BLEU-[2, 3, 4, 5] = [0.919, 0.762, 0.568, 0.385], gen_NLL = 0.7882, self_bleu = [0.748],
+[MLE-GEN] epoch 55 : pre_loss = 0.7726, BLEU-[2, 3, 4, 5] = [0.904, 0.741, 0.537, 0.368], gen_NLL = 0.7829, self_bleu = [0.743],
+[MLE-GEN] epoch 60 : pre_loss = 0.7666, BLEU-[2, 3, 4, 5] = [0.916, 0.758, 0.552, 0.385], gen_NLL = 0.7820, self_bleu = [0.739],
+[MLE-GEN] epoch 65 : pre_loss = 0.7606, BLEU-[2, 3, 4, 5] = [0.919, 0.756, 0.557, 0.383], gen_NLL = 0.7717, self_bleu = [0.762],
+[MLE-GEN] epoch 70 : pre_loss = 0.7561, BLEU-[2, 3, 4, 5] = [0.918, 0.752, 0.558, 0.391], gen_NLL = 0.7677, self_bleu = [0.761],
+[MLE-GEN] epoch 75 : pre_loss = 0.7507, BLEU-[2, 3, 4, 5] = [0.92, 0.76, 0.565, 0.393], gen_NLL = 0.7622, self_bleu = [0.763],
+[MLE-GEN] epoch 80 : pre_loss = 0.7483, BLEU-[2, 3, 4, 5] = [0.909, 0.754, 0.558, 0.379], gen_NLL = 0.7570, self_bleu = [0.743],
+[MLE-GEN] epoch 85 : pre_loss = 0.7444, BLEU-[2, 3, 4, 5] = [0.914, 0.751, 0.559, 0.391], gen_NLL = 0.7535, self_bleu = [0.762],
+[MLE-GEN] epoch 90 : pre_loss = 0.7410, BLEU-[2, 3, 4, 5] = [0.917, 0.771, 0.592, 0.411], gen_NLL = 0.7517, self_bleu = [0.769],
+[MLE-GEN] epoch 95 : pre_loss = 0.7392, BLEU-[2, 3, 4, 5] = [0.924, 0.769, 0.576, 0.406], gen_NLL = 0.7499, self_bleu = [0.764],
+[MLE-GEN] epoch 100 : pre_loss = 0.7369, BLEU-[2, 3, 4, 5] = [0.915, 0.765, 0.569, 0.39], gen_NLL = 0.7499, self_bleu = [0.771],
+[MLE-GEN] epoch 105 : pre_loss = 0.7340, BLEU-[2, 3, 4, 5] = [0.913, 0.746, 0.548, 0.372], gen_NLL = 0.7479, self_bleu = [0.758],
+[MLE-GEN] epoch 110 : pre_loss = 0.7324, BLEU-[2, 3, 4, 5] = [0.922, 0.775, 0.594, 0.417], gen_NLL = 0.7462, self_bleu = [0.791],
+[MLE-GEN] epoch 115 : pre_loss = 0.7307, BLEU-[2, 3, 4, 5] = [0.913, 0.764, 0.577, 0.398], gen_NLL = 0.7468, self_bleu = [0.744],
+[MLE-GEN] epoch 119 : pre_loss = 0.7279, BLEU-[2, 3, 4, 5] = [0.918, 0.766, 0.561, 0.384], gen_NLL = 0.7439, self_bleu = [0.744],
+Starting Discriminator Training...

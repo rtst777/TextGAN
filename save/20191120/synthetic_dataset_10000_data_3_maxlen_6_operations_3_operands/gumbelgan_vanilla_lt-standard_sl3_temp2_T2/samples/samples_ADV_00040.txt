@@ -1,0 +1,10 @@
+x y y
+z y y
++ y y
+y + y
+y y y
+y z y
+x y x
+x x z
+y y y
+y y z

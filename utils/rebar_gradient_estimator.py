@@ -150,13 +150,14 @@ class RebarGradientEstimator:
 
         f_H_z_batch = self._environment_function(F.one_hot(b_batch, cfg.vocab_size).float())  # Shape: batch_size
         f_sigma_lambda_z_tilde_batch = self._environment_function(sigma_lambda_z_tilde_batch)  # Shape: batch_size
-        import pdb; pdb.set_trace()
+        
         gradient_wrt_log_pb_batch = self._compute_gradient_of_theta_wrt_log_pb(theta_batch, b_batch)  # Shape: batch_size * seq_len * vocab_size
         gradient_wrt_f_sigma_lambda_z_batch = self._compute_gradient_of_theta_wrt_f(theta_batch,
                                                                                     sigma_lambda_z_batch)  # Shape: batch_size * seq_len * vocab_size
         gradient_wrt_f_sigma_lambda_z_tilde_batch = self._compute_gradient_of_theta_wrt_f(theta_batch,
                                                                                           sigma_lambda_z_tilde_batch)  # Shape: batch_size * seq_len * vocab_size
 
+        # import pdb; pdb.set_trace()
         expected_theta_gradient = (f_H_z_batch - eta * f_sigma_lambda_z_tilde_batch).reshape([self.batch_size, 1, 1]) * gradient_wrt_log_pb_batch \
                                + eta * gradient_wrt_f_sigma_lambda_z_batch \
                                - eta * gradient_wrt_f_sigma_lambda_z_tilde_batch  # Shape: batch_size * seq_len * vocab_size

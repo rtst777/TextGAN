@@ -1,0 +1,10 @@
+x -
+- + BOS
+
+- *
+BOS BOS x
+- + BOS
++
+
+x
+*

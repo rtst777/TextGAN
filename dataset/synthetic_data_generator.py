@@ -53,9 +53,13 @@ def generate_synthetic_data(num_data=100, max_sequence_len=1, num_operations=4, 
 
 
 def main():
-    generate_synthetic_data(num_data=10000, max_sequence_len=3, num_operations=4, num_operands=1, early_stop=False)
-    generate_synthetic_data(num_data=10000, max_sequence_len=15, num_operations=4, num_operands=1, early_stop=False)
-    generate_synthetic_data(num_data=10000, max_sequence_len=15, num_operations=4, num_operands=1, early_stop=True)
+    # generate_synthetic_data(num_data=10000, max_sequence_len=3, num_operations=4, num_operands=1, early_stop=False)
+    # generate_synthetic_data(num_data=10000, max_sequence_len=15, num_operations=4, num_operands=1, early_stop=False)
+    # generate_synthetic_data(num_data=10000, max_sequence_len=15, num_operations=4, num_operands=1, early_stop=True)
+    # generate_synthetic_data(num_data=10000, max_sequence_len=5, num_operations=4, num_operands=1, early_stop=False)
+    # generate_synthetic_data(num_data=10000, max_sequence_len=5, num_operations=6, num_operands=3, early_stop=False)
+    generate_synthetic_data(num_data=10000, max_sequence_len=7, num_operations=4, num_operands=1, early_stop=False)
+    generate_synthetic_data(num_data=10000, max_sequence_len=7, num_operations=6, num_operands=3, early_stop=False)
 
 
 if __name__ == "__main__":

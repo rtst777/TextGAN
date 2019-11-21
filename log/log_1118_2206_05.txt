@@ -1,0 +1,84 @@
+====================================================================================================
+> training arguments:
+>>> if_test: 0
+>>> run_model: gumbelgan
+>>> dataset: synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands
+>>> model_type: vanilla
+>>> loss_type: standard
+>>> if_real_data: 1
+>>> cuda: 0
+>>> device: -1
+>>> shuffle: 0
+>>> gen_init: normal
+>>> dis_init: uniform
+>>> samples_num: 10000
+>>> vocab_size: 7
+>>> mle_epoch: 150
+>>> adv_epoch: 3000
+>>> inter_epoch: 10
+>>> batch_size: 10
+>>> max_seq_len: 3
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.01
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 10
+>>> adv_log_step: 20
+>>> train_data: dataset/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands.txt
+>>> test_data: dataset/testdata/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands_test.txt
+>>> temp_adpt: exp
+>>> temperature: 2
+>>> eta: 2
+>>> learn_temperature: True
+>>> learn_eta: True
+>>> ora_pretrain: 1
+>>> gen_pretrain: 0
+>>> dis_pretrain: 0
+>>> adv_g_step: 1
+>>> rollout_num: 4
+>>> gen_embed_dim: 7
+>>> gen_hidden_dim: 7
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 5
+>>> d_epoch: 3
+>>> adv_d_step: 4
+>>> adv_d_epoch: 2
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> log_file: log/log_1118_2206_05.txt
+>>> save_root: save/20191118/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands/gumbelgan_vanilla_lt-standard_sl3_temp2_T2/
+>>> signal_file: run_signal.txt
+>>> tips: vanilla GumbelGAN
+====================================================================================================
+Starting Adversarial Training...
+Initial generator: BLEU-[2, 3] = [0.276, 0.166], gen_NLL = 1.8222, self_bleu = [0.557],
+-----
+ADV EPOCH 0
+-----
+[ADV-GEN] g_loss = 0.6762, temperature = 1.0000, BLEU-[2, 3] = [0.277, 0.17], gen_NLL = 1.8365, self_bleu = [0.586],
+[ADV-DIS] d_loss = 1.3916, train_acc = 0.4750,
+-----
+ADV EPOCH 1
+-----
+[ADV-GEN] g_loss = 0.6677, temperature = 1.0000, BLEU-[2, 3] = [0.276, 0.158], gen_NLL = 1.8355, self_bleu = [0.603],
+[ADV-DIS] d_loss = 1.3701, train_acc = 0.5000,
+-----
+ADV EPOCH 2
+-----
+[ADV-GEN] g_loss = 0.6701, temperature = 1.0001, BLEU-[2, 3] = [0.278, 0.167], gen_NLL = 1.8278, self_bleu = [0.573],
+[ADV-DIS] d_loss = 1.3529, train_acc = 0.5000,
+-----
+ADV EPOCH 3
+-----
+[ADV-GEN] g_loss = 0.6765, temperature = 1.0003, BLEU-[2, 3] = [0.296, 0.186], gen_NLL = 1.8175, self_bleu = [0.604],
+[ADV-DIS] d_loss = 1.3338, train_acc = 0.5250,
+-----
+ADV EPOCH 4
+-----

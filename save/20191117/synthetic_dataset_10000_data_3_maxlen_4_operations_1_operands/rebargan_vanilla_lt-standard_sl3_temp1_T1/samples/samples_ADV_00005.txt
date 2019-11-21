@@ -1,0 +1,10 @@
+/ - -
+
+/ - /
+BOS x x
+* * *
+
+- BOS /
+x x x
+x BOS
+/ / x

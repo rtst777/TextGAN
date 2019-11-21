@@ -4,6 +4,8 @@ import torch.nn.functional as F
 import config as cfg
 from models.generator import LSTMGenerator
 
+from itertools import combinations_with_replacement
+
 
 class RebarGAN_G(LSTMGenerator):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, max_seq_len, padding_idx, temperature, eta, gpu=False):
@@ -126,20 +128,64 @@ class RebarGAN_G(LSTMGenerator):
 
         # get the distribution for second word and third word
         # and store the prob for each word "based on the previous word"
-        for i in range(self.vocab_size):
+
+        # Len 3
+        # for i,j,k in combinations_with_replacement([0,1,2], 3):
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,:,:,0] = out[0,i]
+        #     out, hidden = inner_embedding(i, hidden)
+            
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,:,1] = out[0, j]
+        #     out, hidden = inner_embedding(j, hidden)
+                
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,k,2] = out[0,k]
+        #should be vocab_size*vocab_size*voc_size*3 currently
+
+        # for i,j,k,l,m in combinations_with_replacement([0,1,2,3,4], 5):
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,:,:,:,:,0] = out[0,i]
+        #     out, hidden = inner_embedding(i, hidden)
+            
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,:,:,:,1] = out[0, j]
+        #     out, hidden = inner_embedding(j, hidden)
+            
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,k,:,:,2] = out[0,k]
+                    
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,k,l,:,3] = out[0,l]
+                        
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,k,l,m,4] = out[0,m]
+
+        for i,j,k,l,m,n,o in combinations_with_replacement([0,1,2,3,4,5,6], 7):
             out = out.reshape(1, self.vocab_size)
-            theta_[i, :, :, 0] = out[0,i]
+            theta_[i,:,:,:,:,:,:0] = out[0,i]
             out, hidden = inner_embedding(i, hidden)
-            for j in range(self.vocab_size):
-                out = out.reshape(1, self.vocab_size)
-                theta_[i,j,:,1] = out[0, j]
-                out, hidden = inner_embedding(j, hidden)
-                for k in range(self.vocab_size):
-                    out = out.reshape(1, self.vocab_size)
-                    theta_[i,j,k,2] = out[0,k]
+            
+            out = out.reshape(1, self.vocab_size)
+            theta_[i,j,:,:,:,:,:,1] = out[0, j]
+            out, hidden = inner_embedding(j, hidden)
+            
+            out = out.reshape(1, self.vocab_size)
+            theta_[i,j,k,:,:,:,:,2] = out[0,k]
+                    
+            out = out.reshape(1, self.vocab_size)
+            theta_[i,j,k,l,:,:,:,3] = out[0,l]
+                        
+            out = out.reshape(1, self.vocab_size)
+            theta_[i,j,k,l,m,:,:,4] = out[0,m]
 
-        return theta_ #should be vocab_size*vocab_size*voc_size*3 currently
+            out = out.reshape(1, self.vocab_size)
+            theta_[i,j,k,l,m,n,:,5] = out[0,n]
 
+            out = out.reshape(1, self.vocab_size)
+            theta_[i,j,k,l,m,n,o,6] = out[0,o]
+
+        return theta_
 
 
 

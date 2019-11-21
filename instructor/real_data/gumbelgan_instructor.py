@@ -10,7 +10,7 @@ from models.GumbelGAN_D import GumbelGAN_D, GumbelGAN_D2
 from models.GumbelGAN_G import GumbelGAN_G
 from utils.true_gradient_estimator import TrueGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
-from utils.helpers import get_fixed_temperature, get_losses
+from utils.helpers import get_fixed_temperature, get_losses, get_gradient_variance
 from utils.text_process import tensor_to_tokens
 
 
@@ -48,32 +48,32 @@ class GumbelGANInstructor(BasicInstructor):
 
     def _run(self):
         # =====PRE-TRAINING (GENERATOR)=====
-        if not cfg.gen_pretrain:
-            self.log.info('Starting Generator MLE Training...')
-            self.pretrain_generator(cfg.MLE_train_epoch)
-            if cfg.if_save and not cfg.if_test:
-                torch.save(self.gen.state_dict(), cfg.pretrained_gen_path)
-                print('Save pretrain_generator: {}'.format(cfg.pretrained_gen_path))
+        # if not cfg.gen_pretrain:
+        #     self.log.info('Starting Generator MLE Training...')
+        #     self.pretrain_generator(cfg.MLE_train_epoch)
+        #     if cfg.if_save and not cfg.if_test:
+        #         torch.save(self.gen.state_dict(), cfg.pretrained_gen_path)
+        #         print('Save pretrain_generator: {}'.format(cfg.pretrained_gen_path))
 
         # =====PRE-TRAINING (DISCRIMINATOR)=====
-        if not cfg.dis_pretrain:
-            self.log.info('Starting Discriminator Training...')
-            self.pretrain_discriminator(cfg.d_step, cfg.d_epoch)
-            if cfg.if_save and not cfg.if_test:
-                torch.save(self.dis.state_dict(), cfg.pretrained_dis_path)
-                print('Save pretrain_generator discriminator: {}'.format(cfg.pretrained_dis_path))
+        # if not cfg.dis_pretrain:
+        #     self.log.info('Starting Discriminator Training...')
+        #     self.pretrain_discriminator(cfg.d_step, cfg.d_epoch)
+        #     if cfg.if_save and not cfg.if_test:
+        #         torch.save(self.dis.state_dict(), cfg.pretrained_dis_path)
+        #         print('Save pretrain_generator discriminator: {}'.format(cfg.pretrained_dis_path))
 
 
         # =====ADVERSARIAL TRAINING=====
         self.log.info('Starting Adversarial Training...')
-        self.log.info('Initial generator: %s' % (self.cal_metrics(fmt_str=True)))
 
         for adv_epoch in range(cfg.ADV_train_epoch):
-            self.log.info('-----\nADV EPOCH %d\n-----' % adv_epoch)
+            if adv_epoch % cfg.adv_log_step == 0:
+                self.log.info('-----\nADV EPOCH %d\n-----' % adv_epoch)
             self.sig.update()
             if self.sig.adv_sig:
-                self.adv_train_generator(cfg.ADV_g_step)  # Generator
-                self.adv_train_discriminator(cfg.ADV_d_step)  # Discriminator
+                self.adv_train_generator(cfg.ADV_g_step, adv_epoch)  # Generator
+                self.adv_train_discriminator(cfg.ADV_d_step, adv_epoch)  # Discriminator
                 self.update_temperature(adv_epoch, cfg.ADV_train_epoch)  # update temperature
 
                 if adv_epoch % cfg.adv_log_step == 0:
@@ -101,8 +101,7 @@ class GumbelGANInstructor(BasicInstructor):
 
                 # =====Test=====
                 if epoch % cfg.pre_log_step == 0 or epoch == epochs - 1:
-                    self.log.info('[MLE-GEN] epoch %d : pre_loss = %.4f, %s' % (
-                        epoch, pre_loss, self.cal_metrics(fmt_str=True)))
+                    self.log.info('[MLE-GEN] epoch %d : pre_loss = %.4f' % (epoch, pre_loss))
                     if cfg.if_save and not cfg.if_test:
                         self._save('MLE', epoch)
             else:
@@ -111,8 +110,9 @@ class GumbelGANInstructor(BasicInstructor):
         if cfg.if_save and not cfg.if_test:
             self._save('MLE', epoch)
 
-    def adv_train_generator(self, g_step):
-        # true_ge = TrueGradientEstimator()  TODO
+    def adv_train_generator(self, g_step, adv_epoch):
+        true_ge = TrueGradientEstimator(discriminator=self.dis,real_samples=self.train_data.random_batch()['target'], 
+                                        gpu=cfg.CUDA)
 
         total_loss = 0
         for step in range(g_step):
@@ -123,23 +123,29 @@ class GumbelGANInstructor(BasicInstructor):
             real_samples = F.one_hot(real_samples, cfg.vocab_size).float()
 
             # =====Train=====
-            # vanilla_theta = self.gen.sample_vanilla_theta()
-            # true_ge = true_ge.estimate_gradient(vanilla_theta...)  TODO
+            vanilla_theta = self.gen.sample_vanilla_theta()
+            true_ge = true_ge.estimate_gradient(vanilla_theta)
 
             d_out_real = self.dis(real_samples)
             d_out_fake = self.dis(gen_samples)
             g_loss, _ = get_losses(d_out_real, d_out_fake, cfg.loss_type)
 
-            self.optimize(self.gen_adv_opt, g_loss, self.gen)
+            theta_gradient = self.optimize(self.gen_adv_opt, g_loss, self.gen,
+                                           theta_gradient_fetcher=self.gen.get_theta_gradient)
+
+            num_entries = true_ge.shape[0]*true_ge.shape[1]
+            print(((torch.abs(true_ge-theta_gradient)/cfg.batch_size).sum())/num_entries)
+            theta_gradient_log_var = get_gradient_variance(theta_gradient)
             total_loss += g_loss.item()
 
         # =====Test=====
         avg_loss = total_loss / g_step if g_step != 0 else 0
-        self.log.info('[ADV-GEN] g_loss = %.4f, temperature = %.4f, %s'
-                      % (avg_loss, self.gen.temperature, self.cal_metrics(fmt_str=True)))
+        if adv_epoch % cfg.adv_log_step == 0:
+            self.log.info('[ADV-GEN] g_loss = %.4f, temperature = %.4f, theta_gradient_log_var = %.4f'
+                      % (avg_loss, self.gen.temperature, theta_gradient_log_var))
 
 
-    def adv_train_discriminator(self, d_step):
+    def adv_train_discriminator(self, d_step, adv_epoch):
         total_loss = 0
         total_acc = 0
         for step in range(d_step):
@@ -165,19 +171,22 @@ class GumbelGANInstructor(BasicInstructor):
         # =====Test=====
         avg_loss = total_loss / d_step if d_step != 0 else 0
         avg_acc = total_acc / (d_step * cfg.batch_size * 2) if d_step != 0 else 0
-        self.log.info('[ADV-DIS] d_loss = %.4f, train_acc = %.4f,' % (avg_loss, avg_acc))
+        if adv_epoch % cfg.adv_log_step == 0:
+            self.log.info('[ADV-DIS] d_loss = %.4f, train_acc = %.4f,' % (avg_loss, avg_acc))
 
 
     def update_temperature(self, i, N):
         self.gen.temperature = get_fixed_temperature(cfg.temperature, i, N, cfg.temp_adpt)
 
     @staticmethod
-    def optimize(opt, loss, model=None, retain_graph=False):
+    def optimize(opt, loss, model=None, retain_graph=False, theta_gradient_fetcher=None):
         opt.zero_grad()
         loss.backward(retain_graph=retain_graph)
+        theta_gradient = None if theta_gradient_fetcher is None else theta_gradient_fetcher()
         if model is not None:
             torch.nn.utils.clip_grad_norm_(model.parameters(), cfg.clip_norm)
         opt.step()
+        return theta_gradient
 
     def pretrain_discriminator(self, d_step, d_epoch, phrase='MLE'):
         """

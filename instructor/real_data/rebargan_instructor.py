@@ -133,11 +133,10 @@ class RebarGANInstructor(BasicInstructor):
                                                                                         self.gen.eta.clone().detach().requires_grad_())
             # import pdb;pdb.set_trace()
             vanilla_theta = self.gen.sample_vanilla_theta()
-            # print(vanilla_theta)
+            # print(vanilla_theta.shape)
             true_ge = true_ge.estimate_gradient(vanilla_theta)
-            # print(estimated_gradient)
-            print(true_ge)
-            print((estimated_gradient).sum(0))
+            num_entries = true_ge.shape[0]*true_ge.shape[1]
+            print(((torch.abs(true_ge-estimated_gradient)/cfg.batch_size).sum())/num_entries)
 
             adv_loss = self.gen.computeRebarLoss(estimated_gradient)
             temperature_grad = temperature_grad if cfg.learn_temperature else torch.zeros_like(temperature_grad)

@@ -37,21 +37,22 @@ gen_pretrain = int(False)
 dis_pretrain = int(False)
 
 # =====Oracle  or Real=====
-dataset = ['image_coco',
-           'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
-           'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
+# dataset = ['image_coco',
+#            'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
+#            'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
+dataset = ['synthetic_dataset_10000_data_7_maxlen_4_operations_1_operands']
 model_type = 'vanilla'
 loss_type = 'standard'
-vocab_size = [6613, 7, 7]
+vocab_size = [7]
 temp_adpt = 'exp'
-temperature = [100, 2, 2]  # TODO(ethanjiang) tune temperature
+temperature = [1]  # TODO(ethanjiang) tune temperature
 
 # =====Basic Train=====
 samples_num = 10000
 MLE_train_epoch = 150
 ADV_train_epoch = 3000
-batch_size = 64
-max_seq_len = [20, 3, 15]
+batch_size = 20
+max_seq_len = [7]
 gen_lr = 0.01
 gen_adv_lr = 0.01
 dis_lr = 1e-4

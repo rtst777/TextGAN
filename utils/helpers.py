@@ -171,3 +171,10 @@ def truncated_normal_(tensor, mean=0, std=1):
     tensor.data.copy_(tmp.gather(-1, ind).squeeze(-1))
     tensor.data.mul_(std).add_(mean)
     return tensor
+
+def get_gradient_variance(gradient):
+    assert gradient.dim() == 3, "Gradient should have 3 dimensions: batch_size * seq_len * vocab_size"
+    grad_variance = gradient.var(dim=0)
+    grad_log_variance = torch.log(grad_variance)
+    grad_log_variance_mean = grad_log_variance.mean()
+    return grad_log_variance_mean
