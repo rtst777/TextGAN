@@ -63,7 +63,8 @@ class TrueGradientEstimator:
         # gradients = torch.zeros(theta_size[5], theta_size[0])
         # gradients = torch.zeros(theta_size[6], theta_size[0])
         
-
+        # Estimate gradient for max length 3
+        ############################################################################################################
         for i,j,k in combinations_with_replacement([0,1,2], 3):
 
             theta_.retain_grad()
@@ -87,7 +88,11 @@ class TrueGradientEstimator:
             gradients[0,i] += gradient[i,j,k,0]
             gradients[1,j] += gradient[i,j,k,1]
             gradients[2,k] += gradient[i,j,k,2]
+        ############################################################################################################
 
+        
+        # Estimate gradient for max length 5
+        ############################################################################################################
         # for i,j,k,l,m in combinations_with_replacement([0,1,2,3,4], 5):
 
         #     theta_.retain_grad()
@@ -114,7 +119,11 @@ class TrueGradientEstimator:
         #     gradients[2,k] += gradient[i,j,k,l,m,2]
         #     gradients[3,l] += gradient[i,j,k,l,m,3]
         #     gradients[4,m] += gradient[i,j,k,l,m,4]
+        ############################################################################################################
 
+        
+        # Estimate gradient for max length 6
+        ############################################################################################################
         # for i,j,k,l,m,n in combinations_with_replacement([0,1,2,3,4,5], 6):
 
         #     theta_.retain_grad()
@@ -144,5 +153,6 @@ class TrueGradientEstimator:
         #     gradients[3,l] += gradient[i,j,k,l,m,n,3]
         #     gradients[4,m] += gradient[i,j,k,l,m,n,4]
         #     gradients[5,n] += gradient[i,j,k,l,m,n,5]
+        ############################################################################################################
 
         return gradients
