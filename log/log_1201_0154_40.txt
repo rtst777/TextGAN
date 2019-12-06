@@ -1,0 +1,488 @@
+====================================================================================================
+> training arguments:
+>>> if_test: 0
+>>> run_model: rebargan
+>>> dataset: synthetic_dataset_10000_data_3_maxlen_6_operations_3_operands
+>>> model_type: vanilla
+>>> loss_type: standard
+>>> if_real_data: 1
+>>> cuda: 0
+>>> device: -1
+>>> shuffle: 0
+>>> gen_init: normal
+>>> dis_init: uniform
+>>> samples_num: 10000
+>>> vocab_size: 11
+>>> mle_epoch: 120
+>>> adv_epoch: 200
+>>> inter_epoch: 10
+>>> batch_size: 20
+>>> max_seq_len: 3
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.01
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 5
+>>> adv_log_step: 1
+>>> train_data: dataset/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands.txt
+>>> test_data: dataset/testdata/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands_test.txt
+>>> temp_adpt: exp
+>>> temperature: 1
+>>> eta: 1
+>>> learn_temperature: 1
+>>> learn_eta: 1
+>>> ora_pretrain: 1
+>>> gen_pretrain: 0
+>>> dis_pretrain: 0
+>>> adv_g_step: 1
+>>> rollout_num: 4
+>>> gen_embed_dim: 11
+>>> gen_hidden_dim: 11
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 5
+>>> d_epoch: 3
+>>> adv_d_step: 4
+>>> adv_d_epoch: 2
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> log_file: log/log_1201_0154_40.txt
+>>> save_root: save/20191201/synthetic_dataset_10000_data_3_maxlen_6_operations_3_operands/rebargan_vanilla_lt-standard_sl3_temp1_T1/
+>>> signal_file: run_signal.txt
+>>> tips: vanilla RebarGAN
+====================================================================================================
+Starting Adversarial Training...
+Initial generator: BLEU-[2, 3] = [0.362, 0.235], gen_NLL = 2.3876, self_bleu = [0.856],
+-----
+ADV EPOCH 0
+-----
+[ADV-GEN] rebar_loss = 0.0126, temperature = 1.0000, eta = 1.0000
+-----
+ADV EPOCH 1
+-----
+[ADV-GEN] rebar_loss = -0.5777, temperature = 0.9900, eta = 1.0100
+-----
+ADV EPOCH 2
+-----
+[ADV-GEN] rebar_loss = -0.2639, temperature = 0.9817, eta = 1.0026
+-----
+ADV EPOCH 3
+-----
+[ADV-GEN] rebar_loss = 0.0580, temperature = 0.9802, eta = 0.9947
+-----
+ADV EPOCH 4
+-----
+[ADV-GEN] rebar_loss = 0.6321, temperature = 0.9763, eta = 0.9890
+-----
+ADV EPOCH 5
+-----
+[ADV-GEN] rebar_loss = 0.4726, temperature = 0.9700, eta = 0.9895
+-----
+ADV EPOCH 6
+-----
+[ADV-GEN] rebar_loss = 0.3593, temperature = 0.9627, eta = 0.9927
+-----
+ADV EPOCH 7
+-----
+[ADV-GEN] rebar_loss = 0.1833, temperature = 0.9566, eta = 0.9971
+-----
+ADV EPOCH 8
+-----
+[ADV-GEN] rebar_loss = -0.0519, temperature = 0.9493, eta = 1.0019
+-----
+ADV EPOCH 9
+-----
+[ADV-GEN] rebar_loss = -0.4593, temperature = 0.9432, eta = 1.0060
+-----
+ADV EPOCH 10
+-----
+[ADV-GEN] rebar_loss = -0.2524, temperature = 0.9399, eta = 1.0077
+-----
+ADV EPOCH 11
+-----
+[ADV-GEN] rebar_loss = -0.3431, temperature = 0.9379, eta = 1.0079
+-----
+ADV EPOCH 12
+-----
+[ADV-GEN] rebar_loss = -0.5061, temperature = 0.9375, eta = 1.0073
+-----
+ADV EPOCH 13
+-----
+[ADV-GEN] rebar_loss = -0.6102, temperature = 0.9379, eta = 1.0046
+-----
+ADV EPOCH 14
+-----
+[ADV-GEN] rebar_loss = 0.0929, temperature = 0.9395, eta = 1.0006
+-----
+ADV EPOCH 15
+-----
+[ADV-GEN] rebar_loss = 0.1303, temperature = 0.9424, eta = 0.9974
+-----
+ADV EPOCH 16
+-----
+[ADV-GEN] rebar_loss = 0.0735, temperature = 0.9459, eta = 0.9948
+-----
+ADV EPOCH 17
+-----
+[ADV-GEN] rebar_loss = 0.4704, temperature = 0.9494, eta = 0.9923
+-----
+ADV EPOCH 18
+-----
+[ADV-GEN] rebar_loss = 0.4657, temperature = 0.9509, eta = 0.9916
+-----
+ADV EPOCH 19
+-----
+[ADV-GEN] rebar_loss = 0.5782, temperature = 0.9547, eta = 0.9928
+-----
+ADV EPOCH 20
+-----
+[ADV-GEN] rebar_loss = 0.1532, temperature = 0.9567, eta = 0.9956
+-----
+ADV EPOCH 21
+-----
+[ADV-GEN] rebar_loss = 0.0317, temperature = 0.9584, eta = 0.9987
+-----
+ADV EPOCH 22
+-----
+[ADV-GEN] rebar_loss = -0.1693, temperature = 0.9622, eta = 1.0015
+-----
+ADV EPOCH 23
+-----
+[ADV-GEN] rebar_loss = -0.2683, temperature = 0.9643, eta = 1.0037
+-----
+ADV EPOCH 24
+-----
+[ADV-GEN] rebar_loss = -0.1812, temperature = 0.9677, eta = 1.0047
+-----
+ADV EPOCH 25
+-----
+[ADV-GEN] rebar_loss = -0.4662, temperature = 0.9699, eta = 1.0052
+-----
+ADV EPOCH 26
+-----
+[ADV-GEN] rebar_loss = -0.2803, temperature = 0.9702, eta = 1.0041
+-----
+ADV EPOCH 27
+-----
+[ADV-GEN] rebar_loss = -0.0455, temperature = 0.9703, eta = 1.0023
+-----
+ADV EPOCH 28
+-----
+[ADV-GEN] rebar_loss = -0.1512, temperature = 0.9704, eta = 1.0005
+-----
+ADV EPOCH 29
+-----
+[ADV-GEN] rebar_loss = 0.2481, temperature = 0.9707, eta = 0.9980
+-----
+ADV EPOCH 30
+-----
+[ADV-GEN] rebar_loss = 0.2794, temperature = 0.9701, eta = 0.9965
+-----
+ADV EPOCH 31
+-----
+[ADV-GEN] rebar_loss = 0.1384, temperature = 0.9700, eta = 0.9964
+-----
+ADV EPOCH 32
+-----
+[ADV-GEN] rebar_loss = -0.0556, temperature = 0.9693, eta = 0.9964
+-----
+ADV EPOCH 33
+-----
+[ADV-GEN] rebar_loss = -0.2080, temperature = 0.9686, eta = 0.9961
+-----
+ADV EPOCH 34
+-----
+[ADV-GEN] rebar_loss = 0.0434, temperature = 0.9683, eta = 0.9953
+-----
+ADV EPOCH 35
+-----
+[ADV-GEN] rebar_loss = 0.0364, temperature = 0.9698, eta = 0.9941
+-----
+ADV EPOCH 36
+-----
+[ADV-GEN] rebar_loss = 0.3466, temperature = 0.9717, eta = 0.9930
+-----
+ADV EPOCH 37
+-----
+[ADV-GEN] rebar_loss = 0.4657, temperature = 0.9729, eta = 0.9928
+-----
+ADV EPOCH 38
+-----
+[ADV-GEN] rebar_loss = 0.3176, temperature = 0.9735, eta = 0.9934
+-----
+ADV EPOCH 39
+-----
+[ADV-GEN] rebar_loss = 0.4856, temperature = 0.9742, eta = 0.9948
+-----
+ADV EPOCH 40
+-----
+[ADV-GEN] rebar_loss = 0.0696, temperature = 0.9746, eta = 0.9970
+-----
+ADV EPOCH 41
+-----
+[ADV-GEN] rebar_loss = 0.0534, temperature = 0.9742, eta = 0.9991
+-----
+ADV EPOCH 42
+-----
+[ADV-GEN] rebar_loss = -0.4393, temperature = 0.9760, eta = 1.0010
+-----
+ADV EPOCH 43
+-----
+[ADV-GEN] rebar_loss = -0.1801, temperature = 0.9767, eta = 1.0013
+-----
+ADV EPOCH 44
+-----
+[ADV-GEN] rebar_loss = -0.0848, temperature = 0.9772, eta = 1.0010
+-----
+ADV EPOCH 45
+-----
+[ADV-GEN] rebar_loss = -0.0716, temperature = 0.9772, eta = 1.0005
+-----
+ADV EPOCH 46
+-----
+[ADV-GEN] rebar_loss = -0.1954, temperature = 0.9758, eta = 0.9996
+-----
+ADV EPOCH 47
+-----
+[ADV-GEN] rebar_loss = 0.0879, temperature = 0.9753, eta = 0.9983
+-----
+ADV EPOCH 48
+-----
+[ADV-GEN] rebar_loss = 0.0706, temperature = 0.9750, eta = 0.9973
+-----
+ADV EPOCH 49
+-----
+[ADV-GEN] rebar_loss = 0.1873, temperature = 0.9749, eta = 0.9966
+-----
+ADV EPOCH 50
+-----
+[ADV-GEN] rebar_loss = -0.0581, temperature = 0.9742, eta = 0.9966
+-----
+ADV EPOCH 51
+-----
+[ADV-GEN] rebar_loss = -0.0020, temperature = 0.9729, eta = 0.9961
+-----
+ADV EPOCH 52
+-----
+[ADV-GEN] rebar_loss = 0.1577, temperature = 0.9729, eta = 0.9953
+-----
+ADV EPOCH 53
+-----
+[ADV-GEN] rebar_loss = 0.0174, temperature = 0.9722, eta = 0.9948
+-----
+ADV EPOCH 54
+-----
+[ADV-GEN] rebar_loss = 0.1572, temperature = 0.9714, eta = 0.9943
+-----
+ADV EPOCH 55
+-----
+[ADV-GEN] rebar_loss = 0.2776, temperature = 0.9709, eta = 0.9946
+-----
+ADV EPOCH 56
+-----
+[ADV-GEN] rebar_loss = 0.2309, temperature = 0.9714, eta = 0.9960
+-----
+ADV EPOCH 57
+-----
+[ADV-GEN] rebar_loss = 0.0778, temperature = 0.9731, eta = 0.9976
+-----
+ADV EPOCH 58
+-----
+[ADV-GEN] rebar_loss = -0.2370, temperature = 0.9736, eta = 0.9994
+-----
+ADV EPOCH 59
+-----
+[ADV-GEN] rebar_loss = -0.0436, temperature = 0.9734, eta = 1.0003
+-----
+ADV EPOCH 60
+-----
+[ADV-GEN] rebar_loss = -0.0258, temperature = 0.9730, eta = 1.0011
+-----
+ADV EPOCH 61
+-----
+[ADV-GEN] rebar_loss = -0.0948, temperature = 0.9715, eta = 1.0019
+-----
+ADV EPOCH 62
+-----
+[ADV-GEN] rebar_loss = -0.0250, temperature = 0.9713, eta = 1.0024
+-----
+ADV EPOCH 63
+-----
+[ADV-GEN] rebar_loss = -0.3144, temperature = 0.9706, eta = 1.0028
+-----
+ADV EPOCH 64
+-----
+[ADV-GEN] rebar_loss = -0.1717, temperature = 0.9690, eta = 1.0018
+-----
+ADV EPOCH 65
+-----
+[ADV-GEN] rebar_loss = 0.0973, temperature = 0.9682, eta = 1.0003
+-----
+ADV EPOCH 66
+-----
+[ADV-GEN] rebar_loss = 0.0617, temperature = 0.9681, eta = 1.0001
+-----
+ADV EPOCH 67
+-----
+[ADV-GEN] rebar_loss = -0.1661, temperature = 0.9677, eta = 1.0002
+-----
+ADV EPOCH 68
+-----
+[ADV-GEN] rebar_loss = 0.1952, temperature = 0.9653, eta = 0.9999
+-----
+ADV EPOCH 69
+-----
+[ADV-GEN] rebar_loss = -0.0344, temperature = 0.9611, eta = 1.0003
+-----
+ADV EPOCH 70
+-----
+[ADV-GEN] rebar_loss = -0.1970, temperature = 0.9565, eta = 1.0007
+-----
+ADV EPOCH 71
+-----
+[ADV-GEN] rebar_loss = -0.1832, temperature = 0.9549, eta = 0.9990
+-----
+ADV EPOCH 72
+-----
+[ADV-GEN] rebar_loss = -0.1191, temperature = 0.9531, eta = 0.9961
+-----
+ADV EPOCH 73
+-----
+[ADV-GEN] rebar_loss = 0.0995, temperature = 0.9528, eta = 0.9927
+-----
+ADV EPOCH 74
+-----
+[ADV-GEN] rebar_loss = 0.4263, temperature = 0.9527, eta = 0.9898
+-----
+ADV EPOCH 75
+-----
+[ADV-GEN] rebar_loss = 0.4015, temperature = 0.9485, eta = 0.9891
+-----
+ADV EPOCH 76
+-----
+[ADV-GEN] rebar_loss = 0.2131, temperature = 0.9435, eta = 0.9898
+-----
+ADV EPOCH 77
+-----
+[ADV-GEN] rebar_loss = 0.2055, temperature = 0.9378, eta = 0.9915
+-----
+ADV EPOCH 78
+-----
+[ADV-GEN] rebar_loss = 0.1504, temperature = 0.9324, eta = 0.9941
+-----
+ADV EPOCH 79
+-----
+[ADV-GEN] rebar_loss = -0.0931, temperature = 0.9271, eta = 0.9975
+-----
+ADV EPOCH 80
+-----
+[ADV-GEN] rebar_loss = -0.0774, temperature = 0.9226, eta = 1.0006
+-----
+ADV EPOCH 81
+-----
+[ADV-GEN] rebar_loss = -0.3367, temperature = 0.9180, eta = 1.0028
+-----
+ADV EPOCH 82
+-----
+[ADV-GEN] rebar_loss = -0.3522, temperature = 0.9136, eta = 1.0038
+-----
+ADV EPOCH 83
+-----
+[ADV-GEN] rebar_loss = -0.3318, temperature = 0.9108, eta = 1.0035
+-----
+ADV EPOCH 84
+-----
+[ADV-GEN] rebar_loss = 0.0179, temperature = 0.9087, eta = 1.0022
+-----
+ADV EPOCH 85
+-----
+[ADV-GEN] rebar_loss = -0.2760, temperature = 0.9068, eta = 1.0011
+-----
+ADV EPOCH 86
+-----
+[ADV-GEN] rebar_loss = -0.1311, temperature = 0.9055, eta = 0.9996
+-----
+ADV EPOCH 87
+-----
+[ADV-GEN] rebar_loss = -0.0851, temperature = 0.9055, eta = 0.9975
+-----
+ADV EPOCH 88
+-----
+[ADV-GEN] rebar_loss = -0.0033, temperature = 0.9070, eta = 0.9958
+-----
+ADV EPOCH 89
+-----
+[ADV-GEN] rebar_loss = 0.0322, temperature = 0.9084, eta = 0.9937
+-----
+ADV EPOCH 90
+-----
+[ADV-GEN] rebar_loss = 0.3154, temperature = 0.9101, eta = 0.9924
+-----
+ADV EPOCH 91
+-----
+[ADV-GEN] rebar_loss = 0.0061, temperature = 0.9115, eta = 0.9906
+-----
+ADV EPOCH 92
+-----
+[ADV-GEN] rebar_loss = 0.4408, temperature = 0.9137, eta = 0.9895
+-----
+ADV EPOCH 93
+-----
+[ADV-GEN] rebar_loss = 0.3671, temperature = 0.9139, eta = 0.9903
+-----
+ADV EPOCH 94
+-----
+[ADV-GEN] rebar_loss = 0.3303, temperature = 0.9122, eta = 0.9928
+-----
+ADV EPOCH 95
+-----
+[ADV-GEN] rebar_loss = 0.2008, temperature = 0.9101, eta = 0.9974
+-----
+ADV EPOCH 96
+-----
+[ADV-GEN] rebar_loss = -0.3570, temperature = 0.9084, eta = 1.0028
+-----
+ADV EPOCH 97
+-----
+[ADV-GEN] rebar_loss = -0.3485, temperature = 0.9069, eta = 1.0056
+-----
+ADV EPOCH 98
+-----
+[ADV-GEN] rebar_loss = -0.4218, temperature = 0.9069, eta = 1.0062
+-----
+ADV EPOCH 99
+-----
+[ADV-GEN] rebar_loss = -0.4566, temperature = 0.9085, eta = 1.0049
+-----
+ADV EPOCH 100
+-----
+[ADV-GEN] rebar_loss = -0.2089, temperature = 0.9107, eta = 1.0025
+-----
+ADV EPOCH 101
+-----
+[ADV-GEN] rebar_loss = -0.0598, temperature = 0.9097, eta = 1.0006
+-----
+ADV EPOCH 102
+-----
+[ADV-GEN] rebar_loss = 0.1022, temperature = 0.9094, eta = 0.9987
+-----
+ADV EPOCH 103
+-----
+[ADV-GEN] rebar_loss = 0.1553, temperature = 0.9097, eta = 0.9979
+-----
+ADV EPOCH 104
+-----
+[ADV-GEN] rebar_loss = -0.2473, temperature = 0.9097, eta = 0.9984
+-----
+ADV EPOCH 105
+-----
+[ADV-GEN] rebar_loss = -0.1212, temperature = 0.9101, eta = 0.9982
+-----
+ADV EPOCH 106
+-----

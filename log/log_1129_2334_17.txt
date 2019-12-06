@@ -1,0 +1,100 @@
+====================================================================================================
+> training arguments:
+>>> if_test: 0
+>>> run_model: gumbelgan
+>>> dataset: synthetic_dataset_10000_data_5_maxlen_7_operations_7_operands
+>>> model_type: vanilla
+>>> loss_type: standard
+>>> if_real_data: 1
+>>> cuda: 0
+>>> device: -1
+>>> shuffle: 0
+>>> gen_init: normal
+>>> dis_init: uniform
+>>> samples_num: 10000
+>>> vocab_size: 16
+>>> mle_epoch: 150
+>>> adv_epoch: 3000
+>>> inter_epoch: 10
+>>> batch_size: 20
+>>> max_seq_len: 5
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.01
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 10
+>>> adv_log_step: 20
+>>> train_data: dataset/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands.txt
+>>> test_data: dataset/testdata/synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands_test.txt
+>>> temp_adpt: exp
+>>> temperature: 1
+>>> eta: 2
+>>> learn_temperature: True
+>>> learn_eta: True
+>>> ora_pretrain: 1
+>>> gen_pretrain: 0
+>>> dis_pretrain: 0
+>>> adv_g_step: 1
+>>> rollout_num: 4
+>>> gen_embed_dim: 16
+>>> gen_hidden_dim: 16
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 5
+>>> d_epoch: 3
+>>> adv_d_step: 4
+>>> adv_d_epoch: 2
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> log_file: log/log_1129_2334_17.txt
+>>> save_root: save/20191129/synthetic_dataset_10000_data_5_maxlen_7_operations_7_operands/gumbelgan_vanilla_lt-standard_sl5_temp1_T2/
+>>> signal_file: run_signal.txt
+>>> tips: vanilla GumbelGAN
+====================================================================================================
+Starting Adversarial Training...
+-----
+ADV EPOCH 0
+-----
+[ADV-GEN] g_loss = 0.6796, temperature = 1.0000, theta_gradient_log_var = -16.2881
+[ADV-DIS] d_loss = 1.3750, train_acc = 0.4813,
+-----
+ADV EPOCH 20
+-----
+[ADV-GEN] g_loss = 0.9102, temperature = 1.0000, theta_gradient_log_var = -10.4822
+[ADV-DIS] d_loss = 0.7688, train_acc = 0.9688,
+-----
+ADV EPOCH 40
+-----
+[ADV-GEN] g_loss = 2.8703, temperature = 1.0000, theta_gradient_log_var = -7.2917
+[ADV-DIS] d_loss = 0.1015, train_acc = 0.9875,
+-----
+ADV EPOCH 60
+-----
+[ADV-GEN] g_loss = 5.2956, temperature = 1.0000, theta_gradient_log_var = -5.4514
+[ADV-DIS] d_loss = 0.0486, train_acc = 1.0000,
+-----
+ADV EPOCH 80
+-----
+[ADV-GEN] g_loss = 3.4301, temperature = 1.0000, theta_gradient_log_var = -2.4688
+[ADV-DIS] d_loss = 0.2444, train_acc = 0.9625,
+-----
+ADV EPOCH 100
+-----
+[ADV-GEN] g_loss = 4.9384, temperature = 1.0000, theta_gradient_log_var = -2.1466
+[ADV-DIS] d_loss = 0.0445, train_acc = 1.0000,
+-----
+ADV EPOCH 120
+-----
+[ADV-GEN] g_loss = 4.6062, temperature = 1.0000, theta_gradient_log_var = -1.9853
+[ADV-DIS] d_loss = 0.0371, train_acc = 1.0000,
+-----
+ADV EPOCH 140
+-----
+[ADV-GEN] g_loss = 6.9221, temperature = 1.0000, theta_gradient_log_var = -1.6976
+[ADV-DIS] d_loss = 0.0196, train_acc = 1.0000,

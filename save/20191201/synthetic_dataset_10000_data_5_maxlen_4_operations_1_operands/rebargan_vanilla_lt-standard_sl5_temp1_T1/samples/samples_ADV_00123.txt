@@ -1,0 +1,20 @@
+
++ + * x +
+
+BOS x * x x
+
+* x /
+
+/ / x
+* * / x +
+*
+x
+* + + x *
+
+BOS BOS - * BOS
+-
+* x / BOS
+x / *
+/ * x
+- x
+/ BOS + * /

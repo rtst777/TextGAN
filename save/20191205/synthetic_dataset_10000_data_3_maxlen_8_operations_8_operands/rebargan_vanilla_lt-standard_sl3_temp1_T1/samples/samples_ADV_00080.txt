@@ -1,0 +1,20 @@
+x m m
+^ ^ m
+- m ^
+* m m
+m - x
+m + m
++ m +
+^
+p
+m + q
+m m +
+m + m
+% ^ ^
+x m +
+m
+q * +
+m +
++ + -
+m + m
+m + m

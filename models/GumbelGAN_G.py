@@ -133,17 +133,17 @@ class GumbelGAN_G(LSTMGenerator):
             return out, hidden
 
         # Len 3
-        # for i,j,k in combinations_with_replacement([0,1,2], 3):
-        #     out = out.reshape(1, self.vocab_size)
-        #     theta_[i,:,:,0] = out[0,i]
-        #     out, hidden = inner_embedding(i, hidden)
+        for i,j,k in combinations_with_replacement([0,1,2], 3):
+            out = out.reshape(1, self.vocab_size)
+            theta_[i,:,:,0] = out[0,i]
+            out, hidden = inner_embedding(i, hidden)
             
-        #     out = out.reshape(1, self.vocab_size)
-        #     theta_[i,j,:,1] = out[0, j]
-        #     out, hidden = inner_embedding(j, hidden)
+            out = out.reshape(1, self.vocab_size)
+            theta_[i,j,:,1] = out[0, j]
+            out, hidden = inner_embedding(j, hidden)
                 
-        #     out = out.reshape(1, self.vocab_size)
-        #     theta_[i,j,k,2] = out[0,k]
+            out = out.reshape(1, self.vocab_size)
+            theta_[i,j,k,2] = out[0,k]
 
 
         # for i,j,k,l,m in combinations_with_replacement([0,1,2,3,4], 5):
@@ -164,29 +164,26 @@ class GumbelGAN_G(LSTMGenerator):
         #     out = out.reshape(1, self.vocab_size)
         #     theta_[i,j,k,l,m,4] = out[0,m]
 
-        for i,j,k,l,m,n,o in combinations_with_replacement([0,1,2,3,4,5,6], 7):
-            out = out.reshape(1, self.vocab_size)
-            theta_[i,:,:,:,:,:,:0] = out[0,i]
-            out, hidden = inner_embedding(i, hidden)
+        # for i,j,k,l,m,n in combinations_with_replacement([0,1,2,3,4,5], 6):
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,:,:,:,:,:,0] = out[0,i]
+        #     out, hidden = inner_embedding(i, hidden)
             
-            out = out.reshape(1, self.vocab_size)
-            theta_[i,j,:,:,:,:,:,1] = out[0, j]
-            out, hidden = inner_embedding(j, hidden)
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,:,:,:,:,1] = out[0, j]
+        #     out, hidden = inner_embedding(j, hidden)
             
-            out = out.reshape(1, self.vocab_size)
-            theta_[i,j,k,:,:,:,:,2] = out[0,k]
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,k,:,:,:,2] = out[0,k]
                     
-            out = out.reshape(1, self.vocab_size)
-            theta_[i,j,k,l,:,:,:,3] = out[0,l]
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,k,l,:,:,3] = out[0,l]
                         
-            out = out.reshape(1, self.vocab_size)
-            theta_[i,j,k,l,m,:,:,4] = out[0,m]
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,k,l,m,:,4] = out[0,m]
 
-            out = out.reshape(1, self.vocab_size)
-            theta_[i,j,k,l,m,n,:,5] = out[0,n]
-
-            out = out.reshape(1, self.vocab_size)
-            theta_[i,j,k,l,m,n,o,6] = out[0,o]
+        #     out = out.reshape(1, self.vocab_size)
+        #     theta_[i,j,k,l,m,n,5] = out[0,n]
 
         return theta_ 
 

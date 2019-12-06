@@ -1,0 +1,20 @@
+/ / k
+p / BOS
+p * p
++ k |
+p + BOS
+
+y ^ p
+- BOS y
+x BOS ^
+x p -
+k | |
+BOS BOS k
+/ / +
+^ n /
+| x x
+n / +
+p % |
+- x BOS
+p BOS ^
+| + %

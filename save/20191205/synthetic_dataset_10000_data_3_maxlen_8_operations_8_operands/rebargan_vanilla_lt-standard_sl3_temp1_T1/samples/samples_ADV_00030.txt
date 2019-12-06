@@ -1,0 +1,20 @@
+/ + n
+% ^ p
+BOS ^ z
+% m m
+BOS q m
+x q BOS
+q + |
+m ^ x
+q * m
+* m *
+| k z
+p
+& p -
+x k BOS
+- x q
+z z ^
+- n m
+y p
+q n x
+- n ^

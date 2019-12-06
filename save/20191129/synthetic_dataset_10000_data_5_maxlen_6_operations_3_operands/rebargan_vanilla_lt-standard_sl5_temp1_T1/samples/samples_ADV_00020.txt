@@ -1,0 +1,20 @@
+y + - +
++
+* - BOS x y
+* *
+
+% BOS + x -
+BOS y - * +
+% BOS / + x
+BOS BOS BOS - *
+
+x y
+y - % z %
+* / x + *
+* % x z x
+* z %
+
+z x
+z z % BOS y
+* ^ / % ^
++ BOS +

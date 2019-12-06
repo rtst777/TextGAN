@@ -1,0 +1,20 @@
+x z n n ^
+/ z x z n
+z z y n n
+/ ^ % / n
+n x y n *
+z z n z m
+^ x y * ^
+| / / % n
+n * z / n
+z / y ^ /
+z - + | ^
+| z / z +
+y z | n
++ n ^ n n
+| + % m z
+z % / | |
+m m + | ^
+- x ^ + ^
++ + z m z
+y z | * +

@@ -1,0 +1,20 @@
+* / x
+p n +
+p * /
+k BOS ^
+k * n
+x % k
+* - +
+n n n
+z z n
+| p
+
+
+z x k
+/ + p
+p y +
+n + x
+BOS | y
+| n p
+BOS / /
+x x n

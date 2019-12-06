@@ -1,0 +1,20 @@
+| + n m -
+
+% - n n n
++ m n p n
+p / p + n
+n + n n n
+% % n k *
+y + y % p
+% ^ % n k
+n - n p n
+n % n % %
+n % n y m
+| n % p +
+
+n + % p n
+- p y y y
+n m n n
+% * n p %
+n n n n %
+x n n % n

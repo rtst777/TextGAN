@@ -1,0 +1,20 @@
+* x n n n
+/
+
++ n n n n
+n n n m -
+n x n n +
+- p % n x
+p y - - z
+y + m n x
+- * n m n
+n - y m n
+z m n k n
+% | k n n
+% % m n p
+% | m
+k n % | y
+% n y n n
+k z / n BOS
+- * n % y
+BOS n y BOS %

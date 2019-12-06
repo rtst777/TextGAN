@@ -1,0 +1,20 @@
+n ^ n | |
+n n + k n
+z n n x *
+- n n n n
+y k n n
+n BOS m n n
+| n n n +
+% n n z -
+y n ^ n x
+n
+m n n n n
+n p * n n
++ y n n n
+m n n p n
+
+n z * x n
+n n n n p
+n % + % n
+n y n - n
+BOS n

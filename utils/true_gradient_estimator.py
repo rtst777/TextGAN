@@ -59,34 +59,34 @@ class TrueGradientEstimator:
         :return gradient: the gradient matrix respct to every theta 
         """
         theta_size = theta_.shape;
-        # gradients = torch.zeros(theta_size[3], theta_size[0])
+        gradients = torch.zeros(theta_size[3], theta_size[0])
         # gradients = torch.zeros(theta_size[5], theta_size[0])
-        gradients = torch.zeros(theta_size[7], theta_size[0])
+        # gradients = torch.zeros(theta_size[6], theta_size[0])
         
 
-        # for i,j,k in combinations_with_replacement([0,1,2], 3):
+        for i,j,k in combinations_with_replacement([0,1,2], 3):
 
-        #     theta_.retain_grad()
-        #     Db = self._environment_function(F.one_hot(torch.tensor([i,j,k]).reshape(1,3), 
-        #          cfg.vocab_size).float()) 
-        #     # Db = self.discriminator(F.one_hot(torch.tensor([i,j,k]).reshape(1,3), 
-        #     #      cfg.vocab_size).float())                          
+            theta_.retain_grad()
+            Db = self._environment_function(F.one_hot(torch.tensor([i,j,k]).reshape(1,3), 
+                 cfg.vocab_size).float()) 
+            # Db = self.discriminator(F.one_hot(torch.tensor([i,j,k]).reshape(1,3), 
+            #      cfg.vocab_size).float())                          
             
-        #     log_pb = torch.log(theta_[i,j,k,0]+eps)+torch.log(theta_[i,j,k,1]+eps)\
-        #                 +torch.log(theta_[i,j,k,2]+eps) # scalar
-        #     log_pb.backward(retain_graph=True)
+            log_pb = torch.log(theta_[i,j,k,0]+eps)+torch.log(theta_[i,j,k,1]+eps)\
+                        +torch.log(theta_[i,j,k,2]+eps) # scalar
+            log_pb.backward(retain_graph=True)
             
-        #     # import pdb; pdb.set_trace()
-        #     a = theta_[i,j,k,0]
-        #     b = theta_[i,j,k,1]
-        #     c = theta_[i,j,k,2]
+            # import pdb; pdb.set_trace()
+            a = theta_[i,j,k,0]
+            b = theta_[i,j,k,1]
+            c = theta_[i,j,k,2]
 
-        #     pb = a*b*c
-        #     gradient = (theta_.grad.clone().detach())*pb*Db
+            pb = a*b*c
+            gradient = (theta_.grad.clone().detach())*pb*Db
 
-        #     gradients[0,i] += gradient[i,j,k,0]
-        #     gradients[1,j] += gradient[i,j,k,1]
-        #     gradients[2,k] += gradient[i,j,k,2]
+            gradients[0,i] += gradient[i,j,k,0]
+            gradients[1,j] += gradient[i,j,k,1]
+            gradients[2,k] += gradient[i,j,k,2]
 
         # for i,j,k,l,m in combinations_with_replacement([0,1,2,3,4], 5):
 
@@ -115,36 +115,34 @@ class TrueGradientEstimator:
         #     gradients[3,l] += gradient[i,j,k,l,m,3]
         #     gradients[4,m] += gradient[i,j,k,l,m,4]
 
-        for i,j,k,l,m,n,o in combinations_with_replacement([0,1,2,3,4,5,6], 7):
+        # for i,j,k,l,m,n in combinations_with_replacement([0,1,2,3,4,5], 6):
 
-            theta_.retain_grad()
-            Db = self._environment_function(F.one_hot(torch.tensor([i,j,k,l,m,n,o]).reshape(1,7), 
-                 cfg.vocab_size).float())                         
+        #     theta_.retain_grad()
+        #     Db = self._environment_function(F.one_hot(torch.tensor([i,j,k,l,m,n]).reshape(1,6), 
+        #          cfg.vocab_size).float())                         
             
-            log_pb = torch.log(theta_[i,j,k,l,m,n,o,0]+eps)+torch.log(theta_[i,j,k,l,m,n,o,1]+eps)\
-                        +torch.log(theta_[i,j,k,l,m,n,o,2]+eps)+torch.log(theta_[i,j,k,l,m,n,o,3]+eps)\
-                        +torch.log(theta_[i,j,k,l,m,n,o,4]+eps)+torch.log(theta_[i,j,k,l,m,n,o,5]+eps)\
-                        +torch.log(theta_[i,j,k,l,m,n,o,6]+eps)# scalar
-            log_pb.backward(retain_graph=True)
+        #     log_pb = torch.log(theta_[i,j,k,l,m,n,0]+eps)+torch.log(theta_[i,j,k,l,m,n,1]+eps)\
+        #                 +torch.log(theta_[i,j,k,l,m,n,2]+eps)+torch.log(theta_[i,j,k,l,m,n,3]+eps)\
+        #                 +torch.log(theta_[i,j,k,l,m,n,4]+eps)+torch.log(theta_[i,j,k,l,m,n,5]+eps)#scaler
+                        
+        #     log_pb.backward(retain_graph=True)
             
-            # import pdb; pdb.set_trace()
-            a = theta_[i,j,k,l,m,n,o,0]
-            b = theta_[i,j,k,l,m,n,o,1]
-            c = theta_[i,j,k,l,m,n,o,2]
-            d = theta_[i,j,k,l,m,n,o,3]
-            e = theta_[i,j,k,l,m,n,o,4]
-            f = theta_[i,j,k,l,m,n,o,5]
-            g = theta_[i,j,k,l,m,n,o,6]
+        #     # import pdb; pdb.set_trace()
+        #     a = theta_[i,j,k,l,m,n,0]
+        #     b = theta_[i,j,k,l,m,n,1]
+        #     c = theta_[i,j,k,l,m,n,2]
+        #     d = theta_[i,j,k,l,m,n,3]
+        #     e = theta_[i,j,k,l,m,n,4]
+        #     f = theta_[i,j,k,l,m,n,5]
 
-            pb = a*b*c*d*e*f*g
-            gradient = (theta_.grad.clone().detach())*pb*Db
+        #     pb = a*b*c*d*e*f
+        #     gradient = (theta_.grad.clone().detach())*pb*Db
 
-            gradients[0,i] += gradient[i,j,k,l,m,n,o,0]
-            gradients[1,j] += gradient[i,j,k,l,m,n,o,1]
-            gradients[2,k] += gradient[i,j,k,l,m,n,o,2]
-            gradients[3,l] += gradient[i,j,k,l,m,n,o,3]
-            gradients[4,m] += gradient[i,j,k,l,m,n,o,4]
-            gradients[5,n] += gradient[i,j,k,l,m,n,o,5]
-            gradients[6,o] += gradient[i,j,k,l,m,n,o,6]
+        #     gradients[0,i] += gradient[i,j,k,l,m,n,0]
+        #     gradients[1,j] += gradient[i,j,k,l,m,n,1]
+        #     gradients[2,k] += gradient[i,j,k,l,m,n,2]
+        #     gradients[3,l] += gradient[i,j,k,l,m,n,3]
+        #     gradients[4,m] += gradient[i,j,k,l,m,n,4]
+        #     gradients[5,n] += gradient[i,j,k,l,m,n,5]
 
         return gradients

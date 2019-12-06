@@ -1,0 +1,10000 @@
+x * z * z EOS
+y EOS
+y % x - y EOS
+x / y - y EOS
+y - z EOS
+z ^ z EOS
+z ^ x / z EOS
+y ^ z * z EOS
+y * z * z EOS
+x ^ x - y EOS
+x * z EOS
+z EOS
+z ^ x ^ y EOS
+z / y / y EOS
+x ^ z - y EOS
+x * y ^ y EOS
+y % y EOS
+y - x + y EOS
+x % x - y EOS
+y - z + x EOS
+y % y % y EOS
+y / y + y EOS
+z % y * x EOS
+x * z EOS
+x % z ^ x EOS
+z EOS
+y ^ x * z EOS
+x + x + z EOS
+x % y - x EOS
+z - x - y EOS
+x - x + z EOS
+z + z + x EOS
+z + y EOS
+z EOS
+x * y + x EOS
+y % z * z EOS
+y * z % x EOS
+y % y % y EOS
+z EOS
+x + z EOS
+x - z - x EOS
+x EOS
+z EOS
+y EOS
+z * x EOS
+z % y % y EOS
+z + z - x EOS
+x % y % z EOS
+y ^ z / z EOS
+y * x EOS
+x / z * z EOS
+y * z - x EOS
+y % y % z EOS
+x % z * z EOS
+x * y - z EOS
+x % x EOS
+z - z + x EOS
+z / z % y EOS
+x EOS
+x % z % y EOS
+z / y ^ z EOS
+x ^ x - x EOS
+x EOS
+y / z EOS
+x ^ x / x EOS
+x / y * y EOS
+x / y / x EOS
+y / x + x EOS
+z * y - y EOS
+z - z / z EOS
+z * z + y EOS
+y + x + y EOS
+x % y EOS
+y ^ x - z EOS
+z * y * x EOS
+x ^ y % x EOS
+y * y / y EOS
+y / z ^ z EOS
+z EOS
+y / y EOS
+z * z * x EOS
+y * y - z EOS
+x ^ x ^ x EOS
+y * y + z EOS
+y EOS
+y + x EOS
+x EOS
+y * y / z EOS
+y * y + z EOS
+y ^ z ^ z EOS
+z / x / x EOS
+z % x / y EOS
+x EOS
+x * y / x EOS
+x EOS
+y * x - y EOS
+y + x % y EOS
+z ^ x EOS
+z - x - y EOS
+y + y / y EOS
+y - y / z EOS
+y EOS
+y * z - x EOS
+y EOS
+z EOS
+z + z + x EOS
+y - x / y EOS
+z % y / y EOS
+x ^ y * x EOS
+x EOS
+z - z / z EOS
+y ^ z * y EOS
+z / z * z EOS
+z - y + y EOS
+z * x * z EOS
+y + z % z EOS
+y * x * z EOS
+x ^ z - y EOS
+z % x EOS
+x ^ y + z EOS
+y % y - x EOS
+y - z ^ x EOS
+z EOS
+z ^ x * x EOS
+y / x - y EOS
+x EOS
+y % y + y EOS
+x % x - z EOS
+y ^ y + x EOS
+x + x ^ y EOS
+z % z EOS
+z - x + x EOS
+x EOS
+z - z % x EOS
+x ^ z % z EOS
+y + y / z EOS
+y * z - z EOS
+x ^ z ^ x EOS
+z + x / y EOS
+z * y % x EOS
+x * y EOS
+y % x + x EOS
+y EOS
+x / y - y EOS
+x / y - x EOS
+y * x ^ z EOS
+y / z % x EOS
+y % x EOS
+y + x % z EOS
+x % z / z EOS
+z EOS
+z ^ z / x EOS
+y ^ x - x EOS
+x % z + x EOS
+z EOS
+x / y EOS
+y % y + y EOS
+y * z - z EOS
+x ^ z ^ z EOS
+y % y * y EOS
+z % x EOS
+y - y EOS
+z / z % x EOS
+z EOS
+x EOS
+z * y ^ z EOS
+z % x - x EOS
+z EOS
+z EOS
+x % z / z EOS
+z - x % z EOS
+x * x / x EOS
+z EOS
+x * x EOS
+x + x * x EOS
+y ^ z * z EOS
+z * y / y EOS
+x / x * z EOS
+y / x / y EOS
+y - z / y EOS
+x / y - x EOS
+x + z - z EOS
+z * y + y EOS
+z - y EOS
+z ^ x / x EOS
+z + y - x EOS
+y - z ^ z EOS
+x / x / x EOS
+y % y / z EOS
+y / x * x EOS
+z - x EOS
+y + y / y EOS
+y * y ^ y EOS
+y - z - y EOS
+z + x * y EOS
+x + y ^ x EOS
+z ^ z - x EOS
+x ^ x * z EOS
+y - z - z EOS
+y - y + x EOS
+x + y % y EOS
+y * z / y EOS
+y ^ y / x EOS
+z ^ x * x EOS
+z * x % z EOS
+x + z EOS
+y + y / x EOS
+z * y - z EOS
+y - y ^ z EOS
+z EOS
+z EOS
+x - z + y EOS
+x / z % y EOS
+y / y * y EOS
+y % x + x EOS
+x % y ^ x EOS
+z EOS
+x * x * z EOS
+y % y EOS
+x + x ^ x EOS
+x % x / z EOS
+x - x + z EOS
+z * z + z EOS
+x + x ^ y EOS
+x EOS
+y EOS
+z - y - z EOS
+z % y * x EOS
+z / x ^ y EOS
+x - z % x EOS
+y - z - z EOS
+y / z - y EOS
+y - z * y EOS
+z % y - y EOS
+z + y EOS
+x EOS
+y + z ^ y EOS
+y EOS
+x % x * x EOS
+x + y / x EOS
+y / y ^ y EOS
+z ^ x * z EOS
+y - z + x EOS
+y * z / y EOS
+y / y * x EOS
+x - z + y EOS
+x ^ x ^ z EOS
+y ^ y % x EOS
+x ^ y % x EOS
+z % x * z EOS
+y * x - y EOS
+x % y * y EOS
+x ^ z / y EOS
+y + y ^ y EOS
+z / z - y EOS
+x ^ z ^ x EOS
+z + x * x EOS
+x EOS
+x + z ^ z EOS
+x ^ y ^ z EOS
+z ^ y EOS
+y ^ y ^ y EOS
+y + z + z EOS
+x * z * z EOS
+y - z % z EOS
+z + x * y EOS
+x * x / x EOS
+x EOS
+x * z - z EOS
+y ^ y + y EOS
+z + x ^ y EOS
+z % z % z EOS
+z ^ z - x EOS
+x ^ y - x EOS
+y ^ z - z EOS
+z % x EOS
+y % z + x EOS
+x * y + z EOS
+x * y ^ x EOS
+y ^ y * z EOS
+y % x - x EOS
+x - x / x EOS
+y * z - y EOS
+z + z % x EOS
+z / z % y EOS
+y ^ z % y EOS
+z / y + z EOS
+y ^ x EOS
+z * y EOS
+x + y * x EOS
+x ^ z - x EOS
+z + x - y EOS
+y / x % y EOS
+x % z + x EOS
+x - x / z EOS
+y * z + x EOS
+z - y * y EOS
+y EOS
+z / y % y EOS
+y / y EOS
+x ^ x * z EOS
+z / z / z EOS
+z * y EOS
+y % x * y EOS
+y * x / y EOS
+y + z / x EOS
+y + z % x EOS
+z ^ z + y EOS
+x + x / z EOS
+y - x * z EOS
+y + x / x EOS
+x - x ^ x EOS
+x / x / x EOS
+y EOS
+y + z * z EOS
+x - z - z EOS
+z + x / z EOS
+z EOS
+x - x * z EOS
+x + z EOS
+y / z / y EOS
+z % y / z EOS
+z % z + x EOS
+y EOS
+z / x % z EOS
+y * y ^ y EOS
+y EOS
+y EOS
+y EOS
+z + z ^ x EOS
+x + z EOS
+z - z / z EOS
+z * y % y EOS
+x * z ^ x EOS
+y / y EOS
+z / x ^ z EOS
+x EOS
+z ^ y / z EOS
+y / x + x EOS
+z + x * z EOS
+z / x + x EOS
+z + x * x EOS
+z ^ x * y EOS
+y + z + y EOS
+y ^ y * y EOS
+x % y ^ y EOS
+x % x * x EOS
+z % x / z EOS
+x - x ^ z EOS
+z / z - x EOS
+x + y - x EOS
+y * x - y EOS
+x / x + z EOS
+y / z ^ z EOS
+x % y + y EOS
+y + y ^ x EOS
+z EOS
+y * z * z EOS
+x % y EOS
+y + y * y EOS
+z ^ x EOS
+z / y / y EOS
+y - y - y EOS
+y - x - z EOS
+x * x ^ x EOS
+z * z / x EOS
+z ^ y % x EOS
+z % x ^ x EOS
+y / x / x EOS
+z % y / z EOS
+y * y * y EOS
+x / z % y EOS
+z / z EOS
+y - y % y EOS
+z EOS
+y / z ^ x EOS
+y * y ^ y EOS
+z * y EOS
+z - z ^ x EOS
+y EOS
+y - y * y EOS
+y EOS
+y * z - z EOS
+z - z / x EOS
+x * y ^ y EOS
+y EOS
+y % x - y EOS
+x - z % z EOS
+x * y EOS
+x ^ z ^ y EOS
+z - z EOS
+x / y EOS
+z - z - z EOS
+z + z - x EOS
+z - y + z EOS
+y * y EOS
+z EOS
+y / y / x EOS
+x - x * x EOS
+x / y ^ z EOS
+x / x EOS
+x / z ^ z EOS
+x + y * x EOS
+y EOS
+y + x + x EOS
+z * y % z EOS
+y + y * y EOS
+y + x - y EOS
+x / x - y EOS
+x / z % x EOS
+z EOS
+z % y + y EOS
+x ^ y % y EOS
+y + z + y EOS
+x ^ y / z EOS
+y ^ y - y EOS
+x + y * z EOS
+z * y * y EOS
+x % z % x EOS
+y EOS
+y / z % x EOS
+x * z % y EOS
+x % y / z EOS
+z * z % x EOS
+x / z EOS
+y / z / y EOS
+y EOS
+z - z * x EOS
+x - z / x EOS
+y * z / x EOS
+z / y ^ y EOS
+z - y EOS
+x % x * y EOS
+y + z EOS
+z - z EOS
+x + y ^ x EOS
+y + x * z EOS
+y EOS
+y % x EOS
+x EOS
+z % x / y EOS
+z % x / z EOS
+y + z EOS
+z ^ y ^ z EOS
+y + x - y EOS
+y + y ^ x EOS
+x ^ z EOS
+x - y * z EOS
+y % x / z EOS
+y * x ^ x EOS
+x ^ y ^ z EOS
+z - y + y EOS
+y * y % x EOS
+z EOS
+x + x * x EOS
+y ^ x - x EOS
+z * x * z EOS
+z % z % x EOS
+z * z % z EOS
+x EOS
+x / x + z EOS
+z % x % x EOS
+y + x - z EOS
+z % z % x EOS
+z / z ^ y EOS
+y + z - x EOS
+z / z - z EOS
+y ^ x + y EOS
+z ^ x * y EOS
+z EOS
+x + y % x EOS
+x / z - z EOS
+x EOS
+y ^ x * x EOS
+z % z / z EOS
+z ^ y / y EOS
+x - x ^ y EOS
+y * z * z EOS
+y ^ y + x EOS
+x + y - x EOS
+y + x * z EOS
+y * z / z EOS
+z + x * z EOS
+y * x + y EOS
+y + x EOS
+y ^ x EOS
+y / x EOS
+x * y - x EOS
+z + y % y EOS
+y % z EOS
+y EOS
+z % x + y EOS
+y ^ y + y EOS
+z / y * z EOS
+y * z - z EOS
+y EOS
+x + z % y EOS
+x % z ^ z EOS
+y * z / z EOS
+z * z + y EOS
+z EOS
+y + z / x EOS
+x ^ x ^ x EOS
+y * z + z EOS
+x EOS
+z / z ^ y EOS
+x ^ z EOS
+y - y / x EOS
+z EOS
+x % z - z EOS
+y ^ x * z EOS
+z EOS
+y ^ y + x EOS
+x ^ z * z EOS
+z EOS
+x % y / x EOS
+z + y - x EOS
+y - x * x EOS
+y ^ x + x EOS
+z EOS
+x + y - y EOS
+z EOS
+y % z / z EOS
+y % x + x EOS
+x + y - z EOS
+x EOS
+z * z EOS
+y EOS
+z EOS
+y ^ z / x EOS
+y % y / z EOS
+z * x % y EOS
+x EOS
+x * y * x EOS
+x + z ^ y EOS
+y * y * z EOS
+z + z + y EOS
+z / x - z EOS
+x * y * x EOS
+y - z EOS
+z ^ x - x EOS
+z * x * x EOS
+x + z / y EOS
+y EOS
+z ^ z + y EOS
+y % z % x EOS
+y % y + x EOS
+x + y - y EOS
+x - x + x EOS
+z * x EOS
+y - x - y EOS
+y / y EOS
+x EOS
+z % z - x EOS
+z * y % x EOS
+x EOS
+y + y - x EOS
+z * y / y EOS
+z / x + x EOS
+z % x / z EOS
+x ^ x ^ z EOS
+x % x EOS
+y ^ x EOS
+z ^ x ^ z EOS
+x / x + x EOS
+y * x % x EOS
+y ^ z - z EOS
+z % x + y EOS
+x ^ y ^ x EOS
+y - y * z EOS
+y + y * y EOS
+y - y - y EOS
+x + x + z EOS
+y / z EOS
+y * z EOS
+z % y / z EOS
+z / y / z EOS
+z - z EOS
+y / z - z EOS
+y + y / z EOS
+z / x / x EOS
+x * y / x EOS
+x + z * z EOS
+y * x % y EOS
+z EOS
+z + z ^ z EOS
+x * x - y EOS
+x EOS
+y - z EOS
+y - z - y EOS
+z EOS
+x % x ^ z EOS
+z / x / x EOS
+z ^ y + y EOS
+y EOS
+x % x / y EOS
+z EOS
+y + z EOS
+z ^ x * z EOS
+z EOS
+y EOS
+z % z ^ z EOS
+y + y / x EOS
+x % y * y EOS
+y - z % x EOS
+y EOS
+z * x / z EOS
+y % z + y EOS
+z EOS
+y * x % z EOS
+x EOS
+x % z % z EOS
+z - x - z EOS
+y / y / y EOS
+z + z - y EOS
+z + x - z EOS
+z * z / y EOS
+z * x ^ z EOS
+z ^ y ^ z EOS
+z % x % x EOS
+x EOS
+y - z - x EOS
+z + z * z EOS
+z EOS
+y / x / x EOS
+x / z - y EOS
+x - x - z EOS
+z / y EOS
+z * z ^ z EOS
+y EOS
+x EOS
+z % y * y EOS
+z / z + z EOS
+z ^ y - y EOS
+x + x * x EOS
+x ^ y - y EOS
+z * x EOS
+x - y * y EOS
+y EOS
+x ^ x ^ x EOS
+x - x - z EOS
+y ^ y - x EOS
+y / y / y EOS
+y * y % z EOS
+z * x - y EOS
+y + y - x EOS
+x ^ z ^ z EOS
+z % z EOS
+y + x - x EOS
+x - y - z EOS
+x % z * x EOS
+y ^ z ^ y EOS
+y * y EOS
+z EOS
+z ^ z / y EOS
+y * z + y EOS
+y / x % x EOS
+x ^ y ^ x EOS
+y EOS
+x ^ x - y EOS
+z ^ x % y EOS
+z EOS
+z - x + z EOS
+y EOS
+z ^ y % z EOS
+y + z * z EOS
+z * z + z EOS
+z / z - x EOS
+z * x ^ x EOS
+z - y - z EOS
+x % z * y EOS
+z ^ y % y EOS
+x * y - x EOS
+z % y ^ z EOS
+z EOS
+z / y + z EOS
+z / y / z EOS
+x % x ^ x EOS
+y - z * y EOS
+y + y EOS
+x EOS
+z / y * y EOS
+x + x EOS
+z ^ z * x EOS
+z EOS
+x - y * z EOS
+z EOS
+x * y EOS
+z + y ^ x EOS
+z + z - x EOS
+x - y / y EOS
+z * x EOS
+z EOS
+y * x EOS
+z % z * z EOS
+x + x / y EOS
+z / y / y EOS
+y EOS
+x - x / y EOS
+x - y - x EOS
+z - x - z EOS
+x - z ^ z EOS
+z - y EOS
+y + x - y EOS
+x * z % z EOS
+z - x ^ z EOS
+y + y ^ z EOS
+y / z / y EOS
+z ^ z % z EOS
+y + x % y EOS
+y / y % x EOS
+y - y - x EOS
+y + z + y EOS
+x / y / y EOS
+y % y + x EOS
+y / z / y EOS
+z % y - z EOS
+y ^ x / z EOS
+x + y / z EOS
+y ^ x ^ x EOS
+z ^ x ^ x EOS
+y + z + x EOS
+z + y % x EOS
+z - z * z EOS
+x - x * z EOS
+x EOS
+z / x EOS
+z - z ^ x EOS
+y + y % z EOS
+x EOS
+z ^ z % y EOS
+x EOS
+y / x + y EOS
+z EOS
+z * y ^ z EOS
+z * z * z EOS
+z EOS
+x / x % x EOS
+y - z ^ z EOS
+y + z % x EOS
+x + y % x EOS
+z EOS
+y + z / y EOS
+z EOS
+y EOS
+x EOS
+x - x / x EOS
+z * z - z EOS
+x - x * y EOS
+z - z ^ z EOS
+y * y - z EOS
+x * x + z EOS
+z - z % x EOS
+x % z % x EOS
+y / y + y EOS
+x + z % y EOS
+y ^ y ^ y EOS
+y % x % y EOS
+x / y / y EOS
+x EOS
+x - z / x EOS
+x - x / y EOS
+x + y - x EOS
+x + y % z EOS
+x % y ^ x EOS
+x EOS
+z / y - y EOS
+x + x EOS
+x + y + y EOS
+z + x / y EOS
+x - x % y EOS
+x ^ x + y EOS
+z % y + z EOS
+x + z % y EOS
+y - y - y EOS
+y ^ y / z EOS
+z % x - x EOS
+y / x ^ x EOS
+x ^ x % y EOS
+y % z ^ x EOS
+z EOS
+z EOS
+z + y - x EOS
+x ^ y * y EOS
+y - x / x EOS
+y ^ z ^ x EOS
+x EOS
+x ^ x % x EOS
+y - x ^ y EOS
+x % z * x EOS
+z ^ x % z EOS
+z - z ^ y EOS
+y / y EOS
+x * z / x EOS
+x EOS
+z * y ^ y EOS
+z + x + z EOS
+y / y + z EOS
+z - y / y EOS
+y + x / x EOS
+x ^ x - y EOS
+x % z % y EOS
+y / z * y EOS
+x EOS
+z * y EOS
+x - z - z EOS
+z * y + z EOS
+y EOS
+y EOS
+y ^ z * z EOS
+y ^ z % z EOS
+z - x / y EOS
+y % y / x EOS
+y - y / y EOS
+x ^ x - z EOS
+y % y * y EOS
+x EOS
+y ^ y % y EOS
+y ^ x % z EOS
+x % z * y EOS
+x % y * y EOS
+y % y * z EOS
+x + x - z EOS
+y * z * x EOS
+z + y * x EOS
+z * z - x EOS
+z * z + y EOS
+z + y EOS
+y / y ^ z EOS
+y * x / x EOS
+z * x - y EOS
+z ^ z * y EOS
+y EOS
+y EOS
+y ^ x % x EOS
+x / y * x EOS
+z - x EOS
+y / z + z EOS
+x % z + z EOS
+z ^ x - x EOS
+x % x * x EOS
+x EOS
+x * x % z EOS
+z + x + z EOS
+y - y - z EOS
+y * y - z EOS
+x + z + z EOS
+y + z - z EOS
+z % z + x EOS
+x ^ z + y EOS
+z % x EOS
+y * z % z EOS
+y % x * z EOS
+z + x / z EOS
+z + x * x EOS
+x + z + y EOS
+z / z * x EOS
+y ^ y % x EOS
+z + z % z EOS
+y ^ x - x EOS
+x ^ z % x EOS
+z * z - z EOS
+y ^ z EOS
+y EOS
+y EOS
+x / z + x EOS
+z EOS
+y - x / z EOS
+z ^ x + x EOS
+x EOS
+z EOS
+z * x * x EOS
+x - y ^ y EOS
+y + y ^ y EOS
+z * y ^ z EOS
+x / x ^ y EOS
+z EOS
+y ^ y / x EOS
+z / z - z EOS
+z EOS
+y / x - z EOS
+x EOS
+x + z % z EOS
+x - y - y EOS
+y % z % x EOS
+x + x ^ y EOS
+z + z EOS
+x ^ y + x EOS
+x + z EOS
+y ^ z EOS
+z / z + y EOS
+x - x EOS
+y % z EOS
+z ^ x ^ y EOS
+y + x + z EOS
+z * z * x EOS
+z / z ^ y EOS
+y - y * x EOS
+z - y / z EOS
+x * z * x EOS
+z EOS
+z - y % x EOS
+y - y / z EOS
+y % x * y EOS
+z + y EOS
+y EOS
+x ^ y / x EOS
+z / x + z EOS
+x ^ y + z EOS
+y + x / z EOS
+y % y EOS
+x ^ x * y EOS
+x ^ x ^ x EOS
+y / z / z EOS
+y - x % x EOS
+z / y EOS
+x * z * z EOS
+x - z + y EOS
+y % x + x EOS
+y + x EOS
+x + x + z EOS
+x % z - y EOS
+x + y / z EOS
+x - y - y EOS
+z - z / y EOS
+y % z / y EOS
+z * z / x EOS
+x ^ y - y EOS
+z + z ^ y EOS
+y * x + y EOS
+y ^ z - x EOS
+x EOS
+y + y / x EOS
+x / y % x EOS
+x + z % x EOS
+y % y + y EOS
+z ^ y % x EOS
+y % y EOS
+y + z / y EOS
+z + x EOS
+y - z / z EOS
+x / z % y EOS
+x + y * z EOS
+x + y * x EOS
+y EOS
+y * y EOS
+x + x * z EOS
+y - z + z EOS
+z - x + y EOS
+y * x / x EOS
+z EOS
+z EOS
+x ^ y / y EOS
+z - y * z EOS
+z ^ x + z EOS
+z - z * x EOS
+x % y % x EOS
+z ^ x / y EOS
+x EOS
+y % y - z EOS
+x EOS
+x ^ y ^ x EOS
+y * z % z EOS
+z * y ^ y EOS
+z / y / x EOS
+z - y + y EOS
+y - z / y EOS
+z EOS
+y + z - x EOS
+x / z ^ z EOS
+x + z * z EOS
+y * y + z EOS
+y / y * y EOS
+z % z + z EOS
+z / z EOS
+y - y - x EOS
+z % y % x EOS
+y % y + y EOS
+z * y - x EOS
+y - x ^ x EOS
+y + z ^ y EOS
+y ^ x - z EOS
+y / x % y EOS
+y % y - z EOS
+y + z * x EOS
+x - z / z EOS
+z % y * x EOS
+z / x ^ x EOS
+x + y % x EOS
+z - y * z EOS
+z - y / x EOS
+x / x + y EOS
+z EOS
+z * x * x EOS
+z * y / z EOS
+z + x - x EOS
+z - z - x EOS
+z EOS
+x % z / z EOS
+x EOS
+z + y EOS
+z % x + y EOS
+z - x - y EOS
+y EOS
+y - x EOS
+x % y * y EOS
+y * z / z EOS
+z % x % z EOS
+z EOS
+z % z EOS
+z + y - x EOS
+x EOS
+z + y % z EOS
+x - z % z EOS
+y + z EOS
+y + y / y EOS
+y - x % y EOS
+y % y % y EOS
+z - y % y EOS
+x * z - z EOS
+x % x EOS
+z % x EOS
+x EOS
+y EOS
+x - z % x EOS
+x / y * z EOS
+z - z % x EOS
+z + x / z EOS
+y * x % y EOS
+x - x + y EOS
+y - y EOS
+z % x + z EOS
+y - y * y EOS
+y EOS
+y EOS
+y % z EOS
+x + x EOS
+y EOS
+x + y EOS
+z % x ^ x EOS
+x ^ z - z EOS
+y * x % y EOS
+z % x % x EOS
+y + z % x EOS
+y / z * x EOS
+x % y EOS
+y EOS
+y - z - z EOS
+y ^ z % y EOS
+z / z EOS
+z ^ z ^ y EOS
+y ^ z % z EOS
+y % x / x EOS
+x % z / x EOS
+z % y ^ x EOS
+z / y ^ y EOS
+x * x * x EOS
+x + z ^ x EOS
+x - z EOS
+z EOS
+y % y - y EOS
+y * z - z EOS
+y ^ y - z EOS
+x ^ z - z EOS
+x * x ^ z EOS
+y % z ^ x EOS
+x EOS
+z ^ z / x EOS
+z - x % y EOS
+x + y + z EOS
+y + y + y EOS
+z + x * z EOS
+y ^ x ^ x EOS
+x % z EOS
+y ^ x / x EOS
+y EOS
+x - z / z EOS
+y ^ x % y EOS
+y - x % z EOS
+y + z - z EOS
+z - y * z EOS
+y % z - z EOS
+z / x ^ y EOS
+x * y ^ x EOS
+y ^ x + z EOS
+z ^ x + x EOS
+z % z / x EOS
+x ^ y / y EOS
+y EOS
+y - z + x EOS
+y ^ y EOS
+x EOS
+x / y ^ y EOS
+x ^ x * y EOS
+z EOS
+x + y / x EOS
+y + z / x EOS
+z * z % x EOS
+x - x * x EOS
+y % y - y EOS
+y EOS
+x % y ^ y EOS
+x % z - z EOS
+x EOS
+y / y - z EOS
+y EOS
+x EOS
+x ^ y % y EOS
+y ^ z + z EOS
+y / x / y EOS
+x / y EOS
+y * y EOS
+y + y ^ y EOS
+z ^ x + x EOS
+x * y + z EOS
+x * y EOS
+z * x / y EOS
+z - z % z EOS
+y - x + z EOS
+z / z * x EOS
+z ^ y ^ z EOS
+x - x + x EOS
+y * z EOS
+y ^ y - x EOS
+y % x ^ y EOS
+z EOS
+y * x % y EOS
+z % y / x EOS
+y EOS
+x + x * x EOS
+y EOS
+x % z ^ y EOS
+y * z EOS
+y - z % y EOS
+z % z + x EOS
+x * y * z EOS
+y + z + y EOS
+x - z ^ z EOS
+z / x % x EOS
+y ^ x / z EOS
+z / x ^ z EOS
+x % y ^ y EOS
+z + y EOS
+x * z * x EOS
+z EOS
+z - x - z EOS
+x % x + y EOS
+z % y + x EOS
+x - x * z EOS
+x / y EOS
+y ^ y - y EOS
+y / x * x EOS
+y + x * x EOS
+z / y EOS
+y * y + y EOS
+x * x * z EOS
+z EOS
+y % x * z EOS
+z ^ x * x EOS
+x % y % z EOS
+x EOS
+y - z * y EOS
+x ^ z ^ z EOS
+y ^ y / z EOS
+x ^ z - y EOS
+y + y EOS
+x / x ^ z EOS
+x + y EOS
+x * z EOS
+z + x ^ z EOS
+z EOS
+z / z ^ x EOS
+z * y EOS
+y EOS
+y ^ x / y EOS
+z - z - x EOS
+z * y * x EOS
+z ^ z EOS
+z - x ^ x EOS
+z * z * z EOS
+z EOS
+x - y EOS
+y ^ x - y EOS
+z % x ^ y EOS
+x % y % x EOS
+y % y EOS
+x + x + y EOS
+x + y EOS
+y - z % x EOS
+y + z + x EOS
+z + y + y EOS
+y + z ^ x EOS
+z - x * y EOS
+z / x - y EOS
+x - y - y EOS
+y ^ z EOS
+x + z % y EOS
+y * z / z EOS
+x EOS
+z EOS
+y EOS
+z * y ^ x EOS
+y ^ z / z EOS
+y - y EOS
+z + x + z EOS
+y % y + z EOS
+z - z + z EOS
+z + y * z EOS
+z + z % x EOS
+z * z + x EOS
+y + z % z EOS
+y EOS
+z ^ z * y EOS
+z + y EOS
+z EOS
+z - y ^ x EOS
+x EOS
+z ^ y - x EOS
+x EOS
+y % x * x EOS
+x + x / y EOS
+x % y * y EOS
+x - x / y EOS
+x / y + y EOS
+y EOS
+z + y + z EOS
+y - y / x EOS
+y + z - x EOS
+x / z * y EOS
+z * z * z EOS
+x % z - x EOS
+y * y ^ y EOS
+y + y + x EOS
+z - x / y EOS
+x + x % z EOS
+x * y + z EOS
+x ^ y + z EOS
+x / y ^ y EOS
+z ^ y % z EOS
+z ^ x EOS
+y - y + z EOS
+y * z * z EOS
+y EOS
+x ^ x - x EOS
+y / z EOS
+y / x - z EOS
+x * z * z EOS
+x ^ z EOS
+y - x EOS
+x * y % x EOS
+z / x EOS
+x + x + y EOS
+y + z / x EOS
+z + z - z EOS
+z / z EOS
+x ^ z * z EOS
+z * y + z EOS
+y ^ x ^ x EOS
+x ^ z + z EOS
+z - x % y EOS
+x % y EOS
+z EOS
+z + z % y EOS
+z - x * z EOS
+y EOS
+z EOS
+x % z ^ x EOS
+y + x EOS
+y + x ^ z EOS
+x - z / x EOS
+x % y ^ x EOS
+z + x + z EOS
+x - x + z EOS
+z % x EOS
+z - y / y EOS
+z EOS
+y % x % y EOS
+y - z / x EOS
+x EOS
+x / x - y EOS
+z - x / z EOS
+x - x * z EOS
+y / z ^ z EOS
+x / z - x EOS
+z EOS
+x - x EOS
+z EOS
+x ^ y * z EOS
+x / z % z EOS
+y + y + y EOS
+x + y ^ y EOS
+z EOS
+x + z EOS
+z / y - y EOS
+z / x - y EOS
+x + y * x EOS
+y / y * y EOS
+y EOS
+y + z % x EOS
+z * z ^ z EOS
+z - z / x EOS
+x ^ y + x EOS
+z * x % x EOS
+x * z * z EOS
+y * y * z EOS
+x - y % x EOS
+x - z / z EOS
+x - y % x EOS
+z + z / x EOS
+y EOS
+z - x % x EOS
+y + z ^ y EOS
+y / z * y EOS
+z - z - z EOS
+z + x ^ x EOS
+z / y / y EOS
+z % x EOS
+y + x % x EOS
+x - y / z EOS
+y / z + x EOS
+y % y / x EOS
+y + z + z EOS
+z % z ^ y EOS
+x ^ x % x EOS
+x / x / x EOS
+y - x / x EOS
+x % y + x EOS
+x EOS
+x EOS
+y * z + z EOS
+z + x ^ x EOS
+y * x - x EOS
+z - y - y EOS
+z / y ^ z EOS
+x ^ z ^ y EOS
+z % x ^ x EOS
+x EOS
+y EOS
+z ^ x % x EOS
+y - y - y EOS
+x % z + z EOS
+z * x ^ x EOS
+x EOS
+x / y % y EOS
+y ^ y + z EOS
+z ^ y ^ y EOS
+x / x + z EOS
+z / x % x EOS
+x + y / y EOS
+x % y % x EOS
+x + y - y EOS
+y / z * y EOS
+y / x - y EOS
+y + x + x EOS
+z - x % x EOS
+x + y - x EOS
+y % z * x EOS
+z ^ y / x EOS
+y EOS
+x + z - x EOS
+y EOS
+z * x * z EOS
+x - z - x EOS
+z % y / y EOS
+y + x / y EOS
+x * y * y EOS
+x - z ^ z EOS
+y - y % y EOS
+z EOS
+x / z - y EOS
+z + z % y EOS
+x % x % z EOS
+x - y * y EOS
+z / y ^ x EOS
+z + x % x EOS
+x EOS
+z - z ^ x EOS
+x + z - y EOS
+x % y ^ z EOS
+x - y % z EOS
+z + y * y EOS
+y + y - y EOS
+z - y - x EOS
+y % z + x EOS
+z - z + z EOS
+z + y EOS
+x EOS
+x * y + z EOS
+x EOS
+x + x % z EOS
+x + x EOS
+x + z + y EOS
+z + x - x EOS
+z - y / x EOS
+z % y * z EOS
+y ^ z ^ y EOS
+z * y ^ x EOS
+y % x - y EOS
+x + x % y EOS
+z % x EOS
+x + z - y EOS
+y - y - z EOS
+z / x % x EOS
+y - z ^ z EOS
+y * z + x EOS
+y % z EOS
+z - z + y EOS
+z - y / y EOS
+y * x - z EOS
+y / x ^ z EOS
+x / z / x EOS
+x % x % x EOS
+y - z % x EOS
+z ^ x / z EOS
+x * x - x EOS
+z EOS
+y + x - y EOS
+z * z EOS
+z * y ^ x EOS
+z - x - z EOS
+z * x + y EOS
+x EOS
+x + z + x EOS
+x % y EOS
+x + x / x EOS
+z % y % z EOS
+y - y EOS
+y - y % x EOS
+y % y / y EOS
+y % x + x EOS
+y * x * y EOS
+x EOS
+x * z + x EOS
+x % x - z EOS
+x - y - x EOS
+x - y - x EOS
+z ^ z EOS
+y EOS
+x % z - y EOS
+x EOS
+x + x EOS
+z ^ z * z EOS
+x + x - x EOS
+x - z * y EOS
+x % x - y EOS
+x * y + x EOS
+x - y % y EOS
+x / y ^ y EOS
+z ^ z ^ x EOS
+x % y * z EOS
+x / z EOS
+y + y - y EOS
+x ^ y + z EOS
+z + x ^ z EOS
+z % z EOS
+y % z * z EOS
+y - x / z EOS
+y - y * y EOS
+x / z * z EOS
+x - z % z EOS
+x / z ^ y EOS
+y % y % z EOS
+y % z ^ z EOS
+y EOS
+x * z ^ x EOS
+x * z + y EOS
+x EOS
+x + y + x EOS
+y * z / x EOS
+y + z EOS
+z EOS
+x / z * y EOS
+z % x ^ z EOS
+y EOS
+z EOS
+z EOS
+y EOS
+x % x + z EOS
+y % z EOS
+x % x / x EOS
+y * x / z EOS
+y EOS
+x + z / z EOS
+x * x - x EOS
+y % x + y EOS
+z EOS
+y ^ y ^ x EOS
+z - x + x EOS
+z EOS
+y * x + z EOS
+y - x % z EOS
+x + z * x EOS
+z EOS
+y ^ z - y EOS
+x + x + x EOS
+x / x EOS
+z + z ^ z EOS
+y ^ z EOS
+y % x ^ y EOS
+x ^ y * x EOS
+z EOS
+z ^ x % x EOS
+z / x * x EOS
+y + x % z EOS
+x EOS
+y - y / z EOS
+x % x + y EOS
+z ^ x + x EOS
+z ^ x + z EOS
+z % x EOS
+y EOS
+y + z * y EOS
+z EOS
+z / y EOS
+z * x + x EOS
+x ^ x - y EOS
+z - y / z EOS
+y - y - y EOS
+z + y ^ x EOS
+x + x ^ z EOS
+y EOS
+y / y ^ y EOS
+y ^ x ^ x EOS
+z - z - z EOS
+x % y ^ x EOS
+z EOS
+x EOS
+x + z % z EOS
+x EOS
+z % z % x EOS
+x / y - x EOS
+y - x % z EOS
+x EOS
+y + y % z EOS
+y - y EOS
+y ^ y + x EOS
+x ^ y ^ x EOS
+x * x + y EOS
+x / x / y EOS
+x ^ x + z EOS
+x ^ z ^ z EOS
+y + y * y EOS
+x ^ z * z EOS
+y / x ^ y EOS
+y - z / x EOS
+y % z EOS
+z % y ^ z EOS
+y - x % x EOS
+z ^ y + y EOS
+y % z ^ x EOS
+x / z EOS
+x / x EOS
+z + y * z EOS
+x % x ^ x EOS
+x + x - y EOS
+z EOS
+y EOS
+y EOS
+z % x / y EOS
+z EOS
+z / x EOS
+x % y + z EOS
+z ^ z % z EOS
+z + y % z EOS
+z % z * x EOS
+y / x EOS
+z % x % x EOS
+x / y % z EOS
+z EOS
+y + z * z EOS
+y / x % z EOS
+x / y % z EOS
+x + y * z EOS
+x + x EOS
+x % z ^ y EOS
+x * x * y EOS
+x * x ^ y EOS
+z * z + z EOS
+x EOS
+y % x / y EOS
+y * x / y EOS
+y / z EOS
+x + y % z EOS
+x * y + x EOS
+z + z - z EOS
+z / x * y EOS
+y - y ^ z EOS
+y ^ y % x EOS
+z * x EOS
+z + y * y EOS
+y + y - z EOS
+z % x ^ z EOS
+y % y % x EOS
+x % z + z EOS
+x - z % y EOS
+y / z * x EOS
+y * x EOS
+x % z % z EOS
+x - x % y EOS
+z / y / z EOS
+y % y EOS
+x % y % z EOS
+z / x EOS
+y + z EOS
+z * y / y EOS
+y EOS
+y % y + z EOS
+z ^ x % x EOS
+x / z EOS
+x * x / y EOS
+z - x - z EOS
+z / z % x EOS
+x + y / z EOS
+z / y / x EOS
+x * x - z EOS
+x - x * y EOS
+z / x EOS
+x ^ y / y EOS
+x / y * x EOS
+z + z ^ z EOS
+x * y ^ x EOS
+y - y / x EOS
+y ^ y EOS
+x EOS
+z - y * z EOS
+z - x ^ x EOS
+y * z ^ y EOS
+x / x EOS
+x EOS
+x EOS
+z ^ x ^ z EOS
+y - z ^ y EOS
+z + x * x EOS
+y * z + x EOS
+y * z - y EOS
+x / y ^ y EOS
+y EOS
+x ^ z % y EOS
+z % z % x EOS
+x - x * z EOS
+z + z ^ y EOS
+y + z - z EOS
+z EOS
+y % x / x EOS
+y % z / y EOS
+x / y ^ y EOS
+z / z / y EOS
+x - z EOS
+x - z * x EOS
+z / z ^ x EOS
+x % x + z EOS
+x % z EOS
+y EOS
+y * y + y EOS
+x % z * x EOS
+y * z % z EOS
+x % y + z EOS
+z EOS
+y / x - z EOS
+z EOS
+y EOS
+y ^ y ^ y EOS
+y % x - z EOS
+x / z - z EOS
+x * x EOS
+y - x * y EOS
+z / y * z EOS
+y % x ^ x EOS
+z % z EOS
+y * y EOS
+x % z + z EOS
+y - x ^ y EOS
+z ^ z - y EOS
+z - y ^ z EOS
+z ^ x / x EOS
+x * x EOS
+z % x ^ z EOS
+x EOS
+z EOS
+x / x / y EOS
+x % z EOS
+y * x / x EOS
+x + z / z EOS
+y % x EOS
+z / z * z EOS
+y - x + y EOS
+x + z + x EOS
+y / y ^ y EOS
+z EOS
+y - y - x EOS
+x / y % z EOS
+y / z + x EOS
+z % x % y EOS
+z / z / x EOS
+z ^ x EOS
+x ^ z - x EOS
+z * x EOS
+y ^ y % z EOS
+z + y / z EOS
+y * z / x EOS
+x ^ z ^ x EOS
+y % z ^ z EOS
+x ^ x + z EOS
+y - x EOS
+y / z * z EOS
+x + x + x EOS
+z ^ y / z EOS
+x - x EOS
+x + y - y EOS
+z EOS
+x + y ^ x EOS
+x ^ y - z EOS
+y + y % x EOS
+y + y / y EOS
+x EOS
+z / y / z EOS
+z - x % x EOS
+x * x * z EOS
+z % y ^ x EOS
+z + z / y EOS
+x - x EOS
+z + y EOS
+z / y / x EOS
+z + x % z EOS
+y + y / x EOS
+z * y - x EOS
+z - x - x EOS
+y / x ^ x EOS
+y % x % z EOS
+x * z - x EOS
+y * x EOS
+z % z * z EOS
+z + x * x EOS
+y ^ z - y EOS
+z % x % y EOS
+y % y ^ z EOS
+x ^ x - x EOS
+z ^ y * y EOS
+z - y + x EOS
+x EOS
+y * y ^ x EOS
+y / x ^ z EOS
+x ^ x * z EOS
+z EOS
+x / y ^ z EOS
+x EOS
+y % y * x EOS
+x EOS
+z - y / y EOS
+z ^ z / z EOS
+x ^ y EOS
+y % z EOS
+z - z - y EOS
+y / x + y EOS
+y - z % y EOS
+z EOS
+y ^ x + x EOS
+z - y EOS
+x EOS
+x EOS
+z + y * y EOS
+x / z ^ z EOS
+x * x % y EOS
+y - y ^ z EOS
+z / y / y EOS
+x * y / z EOS
+x EOS
+x + x - z EOS
+x EOS
+z + z * y EOS
+z % y % x EOS
+y % z * y EOS
+y EOS
+y ^ z - z EOS
+y + x + y EOS
+y / z % x EOS
+y + y - x EOS
+z EOS
+y ^ x % y EOS
+x % y ^ z EOS
+x / x ^ x EOS
+x ^ y EOS
+z + y + z EOS
+x ^ x ^ z EOS
+z + x % z EOS
+y ^ z EOS
+z + y * x EOS
+y - y % x EOS
+x * y ^ y EOS
+y % z / x EOS
+z / y - y EOS
+z EOS
+x * x - z EOS
+x ^ y EOS
+z EOS
+z / y EOS
+z / z ^ y EOS
+x * z * z EOS
+z % x / y EOS
+z EOS
+z * y * z EOS
+z * x % z EOS
+y EOS
+z EOS
+z ^ z EOS
+z * y * y EOS
+y ^ x ^ x EOS
+x EOS
+y EOS
+z * x - z EOS
+z / x EOS
+y ^ y ^ z EOS
+z - x / x EOS
+z - z EOS
+z / y ^ z EOS
+z EOS
+x / x - z EOS
+y * x EOS
+x EOS
+y EOS
+x + x * z EOS
+y ^ z % z EOS
+z + z / z EOS
+y ^ x * x EOS
+z % x EOS
+z / x + z EOS
+x % x - z EOS
+y * x * x EOS
+x - y % z EOS
+z % z % x EOS
+z EOS
+x ^ x / z EOS
+y EOS
+y - x EOS
+y EOS
+x % z - x EOS
+y * y - z EOS
+x * x / z EOS
+z + x * x EOS
+y * y % x EOS
+z - y % y EOS
+z ^ y - y EOS
+x / y % z EOS
+x / z + y EOS
+x EOS
+z % x - z EOS
+z ^ x * y EOS
+x ^ y EOS
+y - z - x EOS
+y ^ y % z EOS
+z + x % y EOS
+x / y ^ y EOS
+z % z % x EOS
+x ^ x EOS
+x ^ x - z EOS
+y / x % z EOS
+x - z ^ y EOS
+y / y EOS
+x * y - x EOS
+x EOS
+x - z / y EOS
+z * y EOS
+z * x ^ y EOS
+x ^ y / x EOS
+x + x * y EOS
+z ^ z ^ y EOS
+x EOS
+y * x % y EOS
+z EOS
+y EOS
+z / y / z EOS
+z / z / y EOS
+x EOS
+z % x ^ x EOS
+z - y ^ x EOS
+z - y ^ x EOS
+y * y ^ z EOS
+x - z + y EOS
+z / z ^ x EOS
+x EOS
+y + x ^ y EOS
+z / z * y EOS
+z EOS
+z - x ^ y EOS
+z + y % x EOS
+x % z + x EOS
+z / x * z EOS
+x EOS
+y ^ y EOS
+x / z EOS
+x EOS
+z - x + z EOS
+y % x ^ z EOS
+z EOS
+y ^ x % z EOS
+x - y / x EOS
+x + z - y EOS
+z / y - x EOS
+y % y + x EOS
+z + z * z EOS
+z - z + z EOS
+y EOS
+y EOS
+z * z + z EOS
+z / x % y EOS
+x EOS
+x % z - y EOS
+y / x * x EOS
+y EOS
+z % z % z EOS
+x * y - y EOS
+y * y / x EOS
+x EOS
+x EOS
+x + z / y EOS
+z ^ z * x EOS
+x + x / x EOS
+y ^ z - z EOS
+x * y * y EOS
+x EOS
+x EOS
+x * y ^ z EOS
+z EOS
+z EOS
+z % y * x EOS
+x - z + x EOS
+y + y + z EOS
+y ^ z * y EOS
+y EOS
+x EOS
+x EOS
+z ^ y ^ y EOS
+y % z * x EOS
+y % y * z EOS
+x ^ x % x EOS
+z / z - y EOS
+y - z EOS
+x ^ z ^ y EOS
+y / z / x EOS
+z / z * z EOS
+z % x EOS
+x - z + z EOS
+z - x + y EOS
+y - z % z EOS
+y ^ z * z EOS
+y * z / z EOS
+x * z EOS
+y - y / y EOS
+y + y * z EOS
+z * z * y EOS
+x % x / x EOS
+x / y % z EOS
+x * y * x EOS
+z / x + y EOS
+y + z EOS
+y - y % y EOS
+x % y + x EOS
+z EOS
+z EOS
+x EOS
+z EOS
+x * z / x EOS
+y / z ^ y EOS
+y EOS
+z EOS
+x % z - x EOS
+z ^ z EOS
+y % y * y EOS
+z ^ x / z EOS
+z % y % y EOS
+z * x / z EOS
+y * x + x EOS
+x ^ x - x EOS
+z * y - x EOS
+x % z - z EOS
+y * z % z EOS
+y - z % x EOS
+y - y + z EOS
+z - y + x EOS
+x ^ x ^ z EOS
+z % y % x EOS
+x * z + y EOS
+x EOS
+x * z * z EOS
+y ^ x % y EOS
+x ^ x / x EOS
+z * z + x EOS
+x ^ y / x EOS
+x * y ^ y EOS
+z / z * y EOS
+z / y + z EOS
+x - y * x EOS
+z + x * x EOS
+z % y EOS
+x * x / y EOS
+y + y + x EOS
+y ^ x % x EOS
+x % x / x EOS
+y EOS
+y % z + z EOS
+z * x - y EOS
+z EOS
+y ^ y EOS
+z * z * y EOS
+y + z % y EOS
+x ^ x + x EOS
+x * y - y EOS
+x ^ y % z EOS
+x EOS
+y - x EOS
+x EOS
+z + x * z EOS
+z / y % z EOS
+y % y + z EOS
+z EOS
+x / z + x EOS
+z - z ^ y EOS
+x * x % z EOS
+x + x % z EOS
+x - z / x EOS
+z % y EOS
+x % x + x EOS
+y EOS
+x * x * y EOS
+y EOS
+x % y % y EOS
+z + z - x EOS
+y ^ x * z EOS
+x / z / z EOS
+x EOS
+z - z EOS
+y + y ^ z EOS
+z / y ^ x EOS
+y - x - x EOS
+x - z + z EOS
+x ^ y + y EOS
+y EOS
+y / y EOS
+y + y - z EOS
+y * y - y EOS
+x + x + z EOS
+y + z - x EOS
+y + x % y EOS
+z / x + z EOS
+y * x / x EOS
+y - z - x EOS
+z + x EOS
+z % x / x EOS
+x * x EOS
+z ^ y ^ z EOS
+y - y ^ y EOS
+y / z / z EOS
+z EOS
+z % y - y EOS
+y + x - z EOS
+y - x + x EOS
+x % y EOS
+y * y EOS
+x ^ x ^ z EOS
+z EOS
+x * y * y EOS
+x * z % x EOS
+x EOS
+z * x EOS
+x - y + x EOS
+x * z + y EOS
+x % z / z EOS
+z - x % y EOS
+x + z / x EOS
+z + y % x EOS
+x / x / x EOS
+y * y ^ y EOS
+z / x + x EOS
+z ^ x / y EOS
+x + x ^ y EOS
+x / x + x EOS
+z ^ y / x EOS
+z / y ^ z EOS
+x - x * x EOS
+x / x / x EOS
+y * x EOS
+y + y * x EOS
+y * x EOS
+x / y * z EOS
+z - y * x EOS
+z ^ y - y EOS
+y - z * z EOS
+y + x EOS
+y * z % x EOS
+z EOS
+z + z + y EOS
+y EOS
+x EOS
+y EOS
+x - y ^ y EOS
+y - z * y EOS
+y % y ^ x EOS
+z ^ x + x EOS
+z + x ^ z EOS
+z * x - y EOS
+z ^ y * z EOS
+y % y / x EOS
+y ^ z % z EOS
+x * x ^ x EOS
+x / x ^ x EOS
+y * x * z EOS
+x - z - z EOS
+x + x * y EOS
+x EOS
+y ^ x + z EOS
+z * z - x EOS
+z - y EOS
+x * y - y EOS
+y * z ^ y EOS
+z ^ x EOS
+y / x + x EOS
+y EOS
+x - z % z EOS
+z EOS
+x EOS
+z - y EOS
+x % x ^ x EOS
+z / y + x EOS
+x / x + y EOS
+z / x EOS
+y * z + z EOS
+z % z / x EOS
+z / x % y EOS
+x ^ z - x EOS
+x - x * z EOS
+y - x + x EOS
+x % z * z EOS
+z % z * y EOS
+y * y * x EOS
+z - y + z EOS
+z EOS
+y / x ^ z EOS
+z ^ y - z EOS
+x ^ z - x EOS
+y EOS
+z % x - x EOS
+z - y ^ y EOS
+y * x * x EOS
+z - z * z EOS
+x % x * y EOS
+z - z + z EOS
+z / y EOS
+x * y * y EOS
+x + y * y EOS
+x - y / x EOS
+y EOS
+y * x * x EOS
+x / x + z EOS
+z * x * y EOS
+x + x % y EOS
+z / y * y EOS
+x ^ y / y EOS
+z * x - x EOS
+y * x EOS
+z + z + z EOS
+z EOS
+y * y - x EOS
+x * z * y EOS
+z ^ z - y EOS
+z + y + z EOS
+x EOS
+y - y - y EOS
+z * y % x EOS
+x EOS
+x / z * x EOS
+x / z / y EOS
+x * x EOS
+z * z ^ z EOS
+z / z / z EOS
+z % z % x EOS
+z * x + z EOS
+z EOS
+x / x EOS
+x / x * y EOS
+x * y ^ x EOS
+y ^ z - y EOS
+z * z / x EOS
+x * y / z EOS
+y % x + y EOS
+x + y * y EOS
+x % z % z EOS
+z ^ x + x EOS
+x - x EOS
+z % z * x EOS
+y * y % z EOS
+z ^ z ^ z EOS
+x EOS
+z % z ^ z EOS
+z * y % z EOS
+z EOS
+z ^ y % x EOS
+y - x ^ y EOS
+z + y EOS
+z EOS
+y * y / y EOS
+z * x ^ y EOS
+z - x / z EOS
+y * y / y EOS
+z % x * y EOS
+z EOS
+x * x EOS
+z - z * y EOS
+x % x * x EOS
+y EOS
+x ^ y + z EOS
+x EOS
+x * z ^ z EOS
+x EOS
+z * x EOS
+z / y + x EOS
+z / z ^ x EOS
+z ^ y * y EOS
+z * y + x EOS
+z + y + x EOS
+x + z EOS
+z % y * x EOS
+x - x - z EOS
+y - y ^ z EOS
+x ^ x % z EOS
+y + x EOS
+y + y ^ y EOS
+y - x % y EOS
+y EOS
+z / z * x EOS
+x / z * x EOS
+y - x * z EOS
+x EOS
+z * x EOS
+y * y ^ z EOS
+x - y + x EOS
+z + x - x EOS
+x ^ z EOS
+x % x / x EOS
+y % x ^ z EOS
+y EOS
+y + y + x EOS
+y * z - y EOS
+y % y EOS
+y + z - y EOS
+z - z % z EOS
+z % y - y EOS
+y % x - z EOS
+z ^ z * y EOS
+z ^ z - x EOS
+z * x + z EOS
+x - z EOS
+y EOS
+z % x ^ z EOS
+x + z - x EOS
+z + y - y EOS
+x % x + x EOS
+y ^ y + y EOS
+x * y EOS
+z / y % x EOS
+y EOS
+z EOS
+y + y + z EOS
+z * x + z EOS
+z - x EOS
+z ^ z % z EOS
+y ^ x EOS
+y EOS
+x % z % y EOS
+x + z % y EOS
+z - z % y EOS
+y + z EOS
+x % y / y EOS
+y / z EOS
+x ^ y + z EOS
+z ^ x + z EOS
+x % x * x EOS
+x * y % z EOS
+x ^ z / y EOS
+y / x / y EOS
+x + y % x EOS
+z ^ y * z EOS
+y ^ y * z EOS
+x / z ^ x EOS
+x + z ^ x EOS
+z + z * z EOS
+y - x / z EOS
+y + y EOS
+z EOS
+z - y - z EOS
+y EOS
+y EOS
+y / z ^ z EOS
+z * x / y EOS
+z ^ z EOS
+z * z / z EOS
+z + z ^ x EOS
+x + y % y EOS
+z ^ y % z EOS
+x EOS
+y % z % y EOS
+y - y + y EOS
+z ^ x ^ x EOS
+y ^ y * x EOS
+y + z - x EOS
+y / y EOS
+x * y + x EOS
+x * x / x EOS
+x * z EOS
+y / y % y EOS
+x % z EOS
+x + y + y EOS
+y ^ z / z EOS
+x * y - z EOS
+y - z ^ y EOS
+z - x EOS
+x % x - z EOS
+x + y * y EOS
+z EOS
+z ^ z ^ x EOS
+y / z % z EOS
+y - x / x EOS
+y + y ^ x EOS
+y + x EOS
+x / x - z EOS
+z EOS
+x + x * y EOS
+x EOS
+z - x / x EOS
+z + y + z EOS
+z + z EOS
+x ^ z EOS
+y ^ x % z EOS
+y EOS
+z ^ z EOS
+z ^ y - z EOS
+x + z EOS
+x + y / z EOS
+z % z EOS
+y + x - z EOS
+y * x - y EOS
+x EOS
+z % z + y EOS
+y % x - z EOS
+z EOS
+z EOS
+y - x % z EOS
+x / z % z EOS
+y * x + y EOS
+z - x + y EOS
+y + z + z EOS
+z ^ z - y EOS
+x * y / x EOS
+x ^ y / z EOS
+z + x % y EOS
+y + z + z EOS
+y + y EOS
+x / x - z EOS
+y % x - z EOS
+y - y % y EOS
+z + x - x EOS
+z - x / y EOS
+y ^ x - y EOS
+y EOS
+z + z + z EOS
+y + x EOS
+x ^ x EOS
+z + z ^ y EOS
+x - z % x EOS
+y ^ x ^ z EOS
+z / z - x EOS
+z % z / x EOS
+y % z * z EOS
+x % z + x EOS
+y * z ^ x EOS
+z / z EOS
+z EOS
+x % z / y EOS
+x * x - y EOS
+y * x / z EOS
+z - y % x EOS
+x / y EOS
+y % x * x EOS
+x - y * z EOS
+y EOS
+y EOS
+x - z ^ x EOS
+y / z * x EOS
+y * x - z EOS
+z + z + x EOS
+z EOS
+z * y * y EOS
+z * y * y EOS
+y EOS
+x + x ^ y EOS
+z % x + z EOS
+y * y - x EOS
+x * x ^ z EOS
+x / y + y EOS
+x % z - z EOS
+y / z EOS
+z ^ x % y EOS
+x EOS
+x + z + x EOS
+y EOS
+x * y + z EOS
+z * z - y EOS
+y + x * z EOS
+x * z + z EOS
+y / y % y EOS
+z % z - y EOS
+x % z / x EOS
+x + z * x EOS
+x + z / z EOS
+y * z + z EOS
+y ^ z ^ z EOS
+x % y - z EOS
+z * y + y EOS
+x EOS
+x + x * x EOS
+y ^ y + y EOS
+x / y + y EOS
+y / z * x EOS
+y ^ x / x EOS
+z * x ^ x EOS
+z * x % y EOS
+z ^ z ^ z EOS
+y - y / x EOS
+z + y + z EOS
+z EOS
+x * z - z EOS
+z / x * z EOS
+z / y % y EOS
+z - x * x EOS
+y % x - y EOS
+y EOS
+z + y - z EOS
+z EOS
+x EOS
+z EOS
+z - z % z EOS
+y % z % z EOS
+z + z EOS
+x ^ x ^ y EOS
+z / x * z EOS
+z / z / z EOS
+x ^ z * y EOS
+x + y ^ z EOS
+x / z + x EOS
+z - z + x EOS
+x * y % x EOS
+y / y + z EOS
+y ^ y + x EOS
+y - y ^ z EOS
+x % x ^ z EOS
+z ^ y % x EOS
+z * x + z EOS
+y + z - y EOS
+y + y % x EOS
+x * y * z EOS
+x / x + x EOS
+y * z ^ x EOS
+x ^ y % y EOS
+z / y % y EOS
+y * x EOS
+y * x + x EOS
+z % y * z EOS
+x % z - x EOS
+x + x + y EOS
+z % y ^ x EOS
+z - x / z EOS
+z + x ^ x EOS
+x % y ^ y EOS
+z % x EOS
+y - y + z EOS
+z * y % y EOS
+x * y * x EOS
+x ^ x ^ z EOS
+x - y / y EOS
+z ^ x * x EOS
+y / y / z EOS
+z EOS
+z EOS
+y - y * y EOS
+x EOS
+x ^ x / z EOS
+y * y / y EOS
+z ^ y - x EOS
+x ^ y % y EOS
+x EOS
+y * z * y EOS
+y - y * z EOS
+y * x - z EOS
+y EOS
+z - y % x EOS
+z * y EOS
+z % z * z EOS
+z EOS
+x % y / y EOS
+x EOS
+z * y % y EOS
+x / y / y EOS
+x + y ^ x EOS
+x - z ^ x EOS
+x - y % z EOS
+x + z - x EOS
+y / y + x EOS
+z ^ z ^ y EOS
+z % z + y EOS
+z - x / y EOS
+z EOS
+z / y / z EOS
+y % z / z EOS
+z / z EOS
+y ^ x + y EOS
+y EOS
+y - y * z EOS
+z % z + y EOS
+x * y / y EOS
+x + x ^ z EOS
+x * z + z EOS
+z * z * z EOS
+y EOS
+z EOS
+x + z + z EOS
+y + y - z EOS
+y - x - x EOS
+y EOS
+z * z + y EOS
+x % x * y EOS
+y * y ^ x EOS
+z + z - y EOS
+x / x + z EOS
+x % x / x EOS
+x ^ z % y EOS
+z * x + y EOS
+x / z ^ x EOS
+z / z * y EOS
+x EOS
+z - z * y EOS
+x - z + y EOS
+x / x + z EOS
+x ^ x + y EOS
+z / y ^ y EOS
+x - z * x EOS
+z + z + x EOS
+z * x * x EOS
+y - x ^ z EOS
+z - x - z EOS
+y - x % y EOS
+x / y EOS
+z ^ x * z EOS
+y ^ y EOS
+y * y ^ x EOS
+z + z / x EOS
+x % y + y EOS
+y - x - z EOS
+x % y % z EOS
+x * z - z EOS
+x - y - x EOS
+x + y ^ x EOS
+x % x EOS
+x ^ y + y EOS
+z ^ z / z EOS
+y % z - y EOS
+y EOS
+z ^ y ^ x EOS
+z + z % z EOS
+x EOS
+x EOS
+y EOS
+z EOS
+y - x EOS
+z EOS
+y + x / x EOS
+y * y + z EOS
+z / z ^ y EOS
+y / y + y EOS
+z % y - y EOS
+x EOS
+z / x EOS
+y + z - y EOS
+x ^ z * x EOS
+y ^ y ^ z EOS
+x ^ x ^ z EOS
+z ^ y / z EOS
+x / z % x EOS
+x / z * x EOS
+y ^ x / x EOS
+z - z EOS
+y * x + z EOS
+z / x + z EOS
+y - y + x EOS
+y ^ x ^ z EOS
+z + y - x EOS
+z ^ y + x EOS
+z + x * y EOS
+y % x % z EOS
+z ^ y % y EOS
+z + y / z EOS
+x - z * x EOS
+z * y * z EOS
+z / x * z EOS
+y - y ^ z EOS
+z / x % x EOS
+y + z % z EOS
+x + z EOS
+x + y ^ x EOS
+z * z / x EOS
+z + y ^ x EOS
+z + x / x EOS
+z ^ z - z EOS
+z - z % x EOS
+z * y EOS
+y % y ^ x EOS
+z * y EOS
+y ^ z ^ y EOS
+x + y % y EOS
+y * y * z EOS
+z ^ x / y EOS
+y EOS
+x + z EOS
+z / x / y EOS
+y * z EOS
+y + x * z EOS
+x * x / z EOS
+z - y - x EOS
+z * z * z EOS
+x / z + y EOS
+y % x + y EOS
+z / y - y EOS
+z / y EOS
+y - z ^ x EOS
+x / x / z EOS
+y / z ^ z EOS
+x / x - z EOS
+y % x - x EOS
+z / x * y EOS
+z EOS
+x * x / x EOS
+x + z * z EOS
+z * z / y EOS
+y % x * z EOS
+x EOS
+y + z * x EOS
+x % z / y EOS
+y ^ z % z EOS
+y / y + z EOS
+z % x * x EOS
+y % x EOS
+z * z - x EOS
+x EOS
+y * x / z EOS
+z * x + x EOS
+y + z EOS
+y - z ^ y EOS
+z * y / z EOS
+y - y % y EOS
+x * x EOS
+z EOS
+x / x EOS
+z + z + z EOS
+x / y EOS
+z * x - x EOS
+y / z + y EOS
+y EOS
+z * x * z EOS
+y ^ x - y EOS
+x / y EOS
+x * z ^ x EOS
+z + z * x EOS
+z * x % y EOS
+x - y % z EOS
+y * z - x EOS
+z * y % x EOS
+y * x - y EOS
+x ^ z + y EOS
+x / x EOS
+x ^ z EOS
+x / z ^ z EOS
+y EOS
+z % x ^ y EOS
+z EOS
+z ^ x - x EOS
+z ^ x % x EOS
+x * y - x EOS
+z * y / z EOS
+y % x EOS
+z ^ z ^ y EOS
+y ^ z * x EOS
+z - y ^ y EOS
+y % y + y EOS
+x EOS
+y - x EOS
+x + z ^ y EOS
+z / z % z EOS
+x / z * x EOS
+z * y * y EOS
+z + y * z EOS
+x EOS
+x ^ z ^ x EOS
+z * y ^ y EOS
+y ^ y - x EOS
+z + y * x EOS
+y * z % x EOS
+x * x / y EOS
+x + z + x EOS
+x % y ^ y EOS
+z - z - y EOS
+z ^ z EOS
+y % y / x EOS
+x + z + x EOS
+x - x * z EOS
+z + y EOS
+y - z - z EOS
+y EOS
+y EOS
+y * x / x EOS
+y + z - x EOS
+y ^ z % y EOS
+y - y - z EOS
+x - x / x EOS
+x ^ y % x EOS
+z ^ y ^ z EOS
+y ^ z ^ z EOS
+z EOS
+z + x + y EOS
+x % z * x EOS
+x + y ^ z EOS
+z % z ^ y EOS
+z * x % y EOS
+x + y EOS
+y % z ^ y EOS
+y ^ z EOS
+z - y * z EOS
+x + z * x EOS
+z / y / y EOS
+z % z * z EOS
+z ^ x ^ z EOS
+z / y / x EOS
+y % z / z EOS
+y EOS
+y / x + y EOS
+z % y * x EOS
+y * x EOS
+y - z * x EOS
+y EOS
+y ^ y / x EOS
+y - x % z EOS
+z * z - y EOS
+x EOS
+y % z ^ z EOS
+x - x * x EOS
+x - y * z EOS
+x / z % x EOS
+x + z EOS
+z - y * z EOS
+z + y % y EOS
+y EOS
+x % x / y EOS
+y % z * y EOS
+x - z EOS
+x ^ x - y EOS
+x * x * z EOS
+y - z * x EOS
+z EOS
+x + y * z EOS
+z EOS
+y - y ^ x EOS
+x EOS
+y + y / x EOS
+z - y * z EOS
+z ^ z ^ y EOS
+y ^ z ^ z EOS
+z * z % z EOS
+z ^ x % z EOS
+y + z * z EOS
+x - x % z EOS
+z * z + y EOS
+z % y / z EOS
+z + x + x EOS
+z * y - y EOS
+x / y * z EOS
+y - x % y EOS
+y - z - z EOS
+x / z ^ x EOS
+x % y * z EOS
+x / y + x EOS
+y * x - y EOS
+x ^ y / x EOS
+x * y - y EOS
+y * y + y EOS
+y % y EOS
+z EOS
+x % z * x EOS
+x + x * y EOS
+y + z EOS
+z ^ x + y EOS
+x ^ z + y EOS
+y - y % x EOS
+y EOS
+z ^ x * y EOS
+z ^ x ^ x EOS
+y EOS
+x ^ y - x EOS
+z + y EOS
+x ^ z % y EOS
+x % y / y EOS
+x * y - y EOS
+x EOS
+z + y ^ y EOS
+y / z * z EOS
+z ^ x / x EOS
+x EOS
+z * y ^ z EOS
+y ^ y % z EOS
+y / x / y EOS
+y / y / x EOS
+z % y / y EOS
+z - z * y EOS
+y / z ^ z EOS
+x / x + y EOS
+x EOS
+x EOS
+y EOS
+x ^ y / z EOS
+z * x * y EOS
+y % x + z EOS
+y - z + z EOS
+y EOS
+y + x - y EOS
+x ^ x / y EOS
+z ^ z ^ z EOS
+x / x + z EOS
+z + x + x EOS
+z EOS
+y * y + y EOS
+x + y ^ z EOS
+x ^ y ^ z EOS
+z / x - x EOS
+y % y / z EOS
+z % z EOS
+z + z - x EOS
+x ^ x EOS
+y % z - y EOS
+z EOS
+x * x / x EOS
+z ^ x ^ z EOS
+x * z % z EOS
+x % y EOS
+z - y + z EOS
+y + z / z EOS
+x ^ y / z EOS
+x / y - x EOS
+x / z + x EOS
+y % y EOS
+x / x / x EOS
+x % y ^ y EOS
+x + z + z EOS
+z * z - x EOS
+x + y + z EOS
+x - z / x EOS
+x % z * z EOS
+z % x % x EOS
+y ^ y ^ x EOS
+z + z ^ x EOS
+z / x - y EOS
+z ^ z / z EOS
+y / z EOS
+y ^ y * x EOS
+z - x ^ x EOS
+z EOS
+y % y / y EOS
+z - y / z EOS
+x - y - x EOS
+z * y * x EOS
+y EOS
+y + z EOS
+x + y / x EOS
+x * z + x EOS
+y % y * z EOS
+y * z ^ y EOS
+z EOS
+x % y / x EOS
+x / z - z EOS
+x ^ x - z EOS
+x / z + x EOS
+z % z + x EOS
+x - y - x EOS
+x ^ y * x EOS
+z % y * y EOS
+y % x / z EOS
+x / y - z EOS
+x / z + z EOS
+y * z * y EOS
+y / y * z EOS
+x / x + z EOS
+z EOS
+z + z + y EOS
+z - z - x EOS
+y * y ^ z EOS
+y ^ y - y EOS
+x EOS
+y * x + x EOS
+z * z ^ y EOS
+z + z ^ x EOS
+x * y / z EOS
+z - z + y EOS
+y EOS
+y % x EOS
+y + z / y EOS
+x - z EOS
+z ^ y * x EOS
+z + x * z EOS
+z * y % x EOS
+z ^ z - z EOS
+x + x ^ z EOS
+y - y + y EOS
+x ^ x ^ x EOS
+z / x ^ x EOS
+x + z ^ z EOS
+z / y EOS
+x / z * y EOS
+y - z ^ x EOS
+z ^ y EOS
+x * z % z EOS
+x * y - z EOS
+y * z ^ y EOS
+y - z EOS
+y EOS
+y ^ y EOS
+x ^ y + y EOS
+z * y % z EOS
+y EOS
+x EOS
+z % z * z EOS
+x % y - y EOS
+y - y + y EOS
+x * z % z EOS
+z % z EOS
+y - x - x EOS
+x - x * x EOS
+y / y / x EOS
+z / x / x EOS
+y - x / x EOS
+z + z EOS
+z % z % y EOS
+x EOS
+x * z / z EOS
+z % y - x EOS
+x EOS
+z EOS
+y / y + y EOS
+y ^ x EOS
+x EOS
+z + x ^ x EOS
+y + y / z EOS
+y * z + x EOS
+y - y ^ x EOS
+x ^ y / z EOS
+z + z / y EOS
+x ^ x % y EOS
+x EOS
+y * y / x EOS
+y ^ y EOS
+x % z + y EOS
+x ^ x % z EOS
+y % x ^ x EOS
+y EOS
+y * x * x EOS
+y + x + x EOS
+z % z + x EOS
+x % x + x EOS
+y * y - x EOS
+x EOS
+z EOS
+z % x % z EOS
+y EOS
+x ^ x * z EOS
+z * x EOS
+z % x % z EOS
+x - z - z EOS
+y - y EOS
+y % y - z EOS
+x % z - y EOS
+z - x % x EOS
+y - z * x EOS
+z % x - x EOS
+z % y * y EOS
+x + x ^ z EOS
+y / z / z EOS
+x EOS
+y EOS
+y EOS
+y / y / x EOS
+z % x EOS
+z / y EOS
+x * z * z EOS
+z - y - x EOS
+z / x EOS
+z - x ^ z EOS
+y - x % z EOS
+x ^ y + y EOS
+z EOS
+y ^ z EOS
+z / z * x EOS
+y % x EOS
+x + y + z EOS
+y + z + x EOS
+z % z ^ x EOS
+y - y + x EOS
+z - y - x EOS
+z % x / x EOS
+x * x + z EOS
+x % x EOS
+y % x / x EOS
+z % z % x EOS
+y % y / x EOS
+x * x ^ z EOS
+y % z % x EOS
+z % z / x EOS
+z % x - x EOS
+x - y % x EOS
+y % z - y EOS
+z - y - x EOS
+z * y ^ z EOS
+x ^ x + z EOS
+z + z - y EOS
+z + x / z EOS
+y EOS
+z * z / z EOS
+z EOS
+z + x / x EOS
+y + z * x EOS
+x * z * z EOS
+x / y ^ x EOS
+y EOS
+z EOS
+y * x + x EOS
+y / x + z EOS
+y % z ^ x EOS
+y / x / x EOS
+x + x % x EOS
+y - y % z EOS
+x - x + x EOS
+z - x - y EOS
+y EOS
+z - x - z EOS
+z % x ^ z EOS
+x ^ x * z EOS
+y EOS
+y / y / y EOS
+y EOS
+x EOS
+z + y * y EOS
+z - x + x EOS
+x ^ z % x EOS
+z % x * y EOS
+y - z ^ x EOS
+z % y / x EOS
+x % z ^ y EOS
+y EOS
+y * y * z EOS
+z * y / z EOS
+z * x - z EOS
+y * x EOS
+z ^ x % y EOS
+y % z EOS
+x - z EOS
+z ^ z ^ x EOS
+x / y ^ z EOS
+x ^ x EOS
+z % z * z EOS
+x % x - z EOS
+y * y / x EOS
+z * y % y EOS
+z * y EOS
+z + y ^ x EOS
+z EOS
+x * x + z EOS
+z / y * y EOS
+y % z ^ y EOS
+y + y - y EOS
+x / x * z EOS
+x / x * y EOS
+z - x EOS
+x ^ x % z EOS
+y EOS
+z ^ x / z EOS
+z / x EOS
+z ^ x ^ z EOS
+y / y ^ x EOS
+y * z / y EOS
+z + x % z EOS
+y % z - z EOS
+x % y / x EOS
+y + x - z EOS
+y * y ^ x EOS
+y % x ^ z EOS
+y / z + y EOS
+y ^ z * y EOS
+y ^ x * z EOS
+z * y * y EOS
+z / z EOS
+z + x % x EOS
+z EOS
+z * x + z EOS
+z / x - y EOS
+y * z ^ x EOS
+y ^ y EOS
+x % y ^ z EOS
+z EOS
+z ^ z / y EOS
+x % x EOS
+z EOS
+y + y * x EOS
+z / x + y EOS
+y + y - x EOS
+z EOS
+y / z + z EOS
+y * z / x EOS
+z + z ^ x EOS
+x - y % x EOS
+y + y * y EOS
+x / z / x EOS
+x ^ z - z EOS
+y + x / x EOS
+y + y + y EOS
+z % z + y EOS
+z - x * x EOS
+x * y EOS
+z EOS
+z + y - z EOS
+x EOS
+z + x EOS
+z / y - z EOS
+z + y EOS
+y % z - x EOS
+x * x ^ y EOS
+x + y % y EOS
+x - z % y EOS
+x % x * x EOS
+y * y ^ z EOS
+y / z / y EOS
+x % z EOS
+y * x - y EOS
+z * y EOS
+y EOS
+z ^ z * x EOS
+z / x EOS
+z ^ z / x EOS
+x / z - x EOS
+y / x + x EOS
+y ^ y + y EOS
+x % x ^ x EOS
+z * x % x EOS
+z ^ y - y EOS
+y + y EOS
+y EOS
+x ^ y EOS
+y ^ x ^ x EOS
+z - y + y EOS
+x - z ^ y EOS
+x ^ y ^ y EOS
+x / z - z EOS
+z ^ x ^ z EOS
+z / z % y EOS
+y - z * z EOS
+x EOS
+y % z EOS
+x - z + x EOS
+y / y EOS
+y + z % z EOS
+x EOS
+y % z % z EOS
+z EOS
+z * x ^ y EOS
+x ^ x * y EOS
+x / x - z EOS
+y / y - y EOS
+x ^ x ^ z EOS
+x % x % y EOS
+x + x EOS
+x % z EOS
+y % x EOS
+x / y / z EOS
+y EOS
+z + y * z EOS
+x - z % z EOS
+z + z + z EOS
+y - x + x EOS
+y % z * z EOS
+x / y - y EOS
+z * y % y EOS
+x / y / y EOS
+z + y / z EOS
+x + z * y EOS
+x * y * x EOS
+z / y + x EOS
+y EOS
+y * x EOS
+z * x * x EOS
+x - y EOS
+x ^ x + z EOS
+x % x EOS
+z - x * y EOS
+y EOS
+z * x + z EOS
+y + x EOS
+z EOS
+y EOS
+y * x * x EOS
+x + y / x EOS
+x + y ^ y EOS
+y / x EOS
+z - x + x EOS
+y EOS
+z / x EOS
+x ^ y - y EOS
+z ^ z - z EOS
+x EOS
+x / y + z EOS
+y - x + x EOS
+y % x * z EOS
+z / x % x EOS
+z / z + y EOS
+x * x + z EOS
+x + x EOS
+z - y + y EOS
+x ^ x - z EOS
+x - z ^ z EOS
+x ^ z - x EOS
+y * x - x EOS
+y ^ z % z EOS
+y % x EOS
+y ^ z - z EOS
+y ^ z + x EOS
+z + y % z EOS
+y / y + x EOS
+x EOS
+z - z + y EOS
+x - z + x EOS
+z % y ^ y EOS
+z / y ^ y EOS
+z * z % y EOS
+z ^ y % y EOS
+z ^ x / z EOS
+y * x + x EOS
+x - x / y EOS
+y % y % z EOS
+z / x EOS
+x EOS
+z + z + z EOS
+y + z - x EOS
+x EOS
+y + y - y EOS
+z EOS
+z - z * z EOS
+z - z * x EOS
+z EOS
+z + y EOS
+x EOS
+x EOS
+y % y * x EOS
+x - z * y EOS
+z % z + y EOS
+x % y EOS
+y EOS
+y / y ^ x EOS
+z ^ z - y EOS
+y % x EOS
+y * x ^ z EOS
+z * y ^ z EOS
+x - y ^ y EOS
+z ^ x ^ x EOS
+x * y - z EOS
+x + z - z EOS
+z * z + z EOS
+z ^ z - z EOS
+x - x % z EOS
+x * z % x EOS
+z * z EOS
+z EOS
+x * x - x EOS
+x EOS
+y EOS
+y % y % x EOS
+x * y % y EOS
+z / z % y EOS
+y EOS
+z * y + x EOS
+z * x + x EOS
+z * x EOS
+z * x % x EOS
+z + y % z EOS
+z EOS
+y % y * y EOS
+x EOS
+y EOS
+y / z ^ x EOS
+x EOS
+z % y - z EOS
+y + y % z EOS
+x EOS
+z / z + z EOS
+x + y + x EOS
+y + z ^ y EOS
+y % y / z EOS
+x + y * y EOS
+x + z + x EOS
+x % y / y EOS
+z * x - z EOS
+x - y / y EOS
+y EOS
+x EOS
+z / y + y EOS
+x ^ y EOS
+x ^ y % z EOS
+y - y ^ x EOS
+z / y / x EOS
+y % y * x EOS
+x % z * z EOS
+x / x EOS
+x EOS
+x EOS
+x ^ z ^ z EOS
+z * x + x EOS
+z * z EOS
+z - z * x EOS
+z / y * x EOS
+y ^ y EOS
+z - z % x EOS
+y % y % y EOS
+y + z * z EOS
+z * z EOS
+y * y + x EOS
+x + z + x EOS
+y EOS
+y - z ^ z EOS
+x ^ y * z EOS
+x / z ^ y EOS
+y * x * y EOS
+x + y - y EOS
+z + z / y EOS
+y % x / x EOS
+y - y - x EOS
+x EOS
+y EOS
+z + y - y EOS
+x EOS
+y % z + x EOS
+y * y % x EOS
+y - x + z EOS
+z % x * x EOS
+z % z - y EOS
+z * x ^ x EOS
+x EOS
+z % y ^ x EOS
+x / x EOS
+x EOS
+z % x ^ x EOS
+x EOS
+z EOS
+z - y * z EOS
+x * z + z EOS
+z EOS
+x % y * y EOS
+y EOS
+x * x / z EOS
+x + z / z EOS
+z * y + z EOS
+z EOS
+y EOS
+y % z - y EOS
+y * z ^ y EOS
+z % z EOS
+z * y % y EOS
+z ^ x ^ y EOS
+z ^ z - z EOS
+x % y ^ x EOS
+z % x * x EOS
+x - y EOS
+x / y / z EOS
+z * x EOS
+x - y % z EOS
+y % x + x EOS
+z EOS
+y ^ x EOS
+y / z EOS
+x * y + x EOS
+z * x % z EOS
+z * y - x EOS
+x % y - y EOS
+x EOS
+y - z % y EOS
+y * x EOS
+y EOS
+x EOS
+z + x ^ x EOS
+z % z - y EOS
+x - z ^ x EOS
+y - z % z EOS
+y * y % x EOS
+z % x ^ x EOS
+x * x + y EOS
+y + y - x EOS
+x ^ x * y EOS
+y * x / y EOS
+y + y * z EOS
+y ^ z ^ y EOS
+z / z EOS
+z ^ x / y EOS
+z ^ z / x EOS
+z - z % x EOS
+z + y - z EOS
+y - z / x EOS
+z / z - x EOS
+z / y * x EOS
+x - z % y EOS
+x % x EOS
+y + x / z EOS
+x % y - z EOS
+y ^ z EOS
+x + y - x EOS
+y ^ z + x EOS
+z + x / x EOS
+z % y / y EOS
+x ^ z / y EOS
+z * x / x EOS
+z - z / x EOS
+z % y / z EOS
+y + y - y EOS
+z % x - y EOS
+y / x + x EOS
+y - x EOS
+z / y - y EOS
+z + z % x EOS
+x ^ z / y EOS
+y - y * x EOS
+z * y + x EOS
+x / z - x EOS
+x % y EOS
+y ^ z ^ y EOS
+x - y % z EOS
+z + y EOS
+y % x EOS
+z ^ x - x EOS
+x + z + y EOS
+z % z ^ z EOS
+y % z * z EOS
+y * z EOS
+z ^ y ^ z EOS
+y ^ x % y EOS
+y * y % x EOS
+z % x ^ x EOS
+y + x * z EOS
+x * x ^ z EOS
+z / z ^ y EOS
+y - y EOS
+y + x / y EOS
+y + y - x EOS
+x % z ^ x EOS
+y ^ x / z EOS
+y / y + z EOS
+x EOS
+x EOS
+z - y % y EOS
+y % y ^ z EOS
+z % z / x EOS
+z - x ^ z EOS
+z ^ y / y EOS
+z EOS
+y - y - z EOS
+y + z EOS
+z % x / x EOS
+y * y / y EOS
+z % z % x EOS
+y EOS
+y * z ^ x EOS
+x % y * z EOS
+z % y ^ x EOS
+y * y + z EOS
+x + x + y EOS
+x ^ x - z EOS
+y - x * x EOS
+x ^ y EOS
+z / z - y EOS
+z * x + z EOS
+x % z % x EOS
+z + x ^ x EOS
+x - z + z EOS
+z / z EOS
+x ^ z + y EOS
+x - x * x EOS
+x / x - y EOS
+z + y / y EOS
+z * y + x EOS
+y * x ^ y EOS
+y EOS
+x * x ^ y EOS
+x ^ x ^ y EOS
+z / y + x EOS
+x / y ^ z EOS
+z ^ x % y EOS
+z + z - z EOS
+y - z + x EOS
+z * z ^ x EOS
+z % z + x EOS
+y + y ^ x EOS
+y + z + y EOS
+y EOS
+y * z + z EOS
+y + y ^ y EOS
+x * x % z EOS
+z % x - z EOS
+y ^ x ^ x EOS
+z - z + y EOS
+y ^ z EOS
+x EOS
+y + z ^ z EOS
+z * y / x EOS
+z * y % y EOS
+z * x - z EOS
+y % z ^ z EOS
+y % z / x EOS
+z / y + z EOS
+x + y - z EOS
+z % x / x EOS
+y / y ^ z EOS
+z EOS
+y + x + y EOS
+x * z EOS
+z EOS
+x ^ z * y EOS
+z / z EOS
+x + z * z EOS
+x - y EOS
+y / z - y EOS
+z + x * x EOS
+z - x - y EOS
+y / x + z EOS
+x ^ y - x EOS
+y / y EOS
+z - y EOS
+x % z % z EOS
+z % x ^ x EOS
+x / y ^ y EOS
+z * z / y EOS
+z EOS
+x - z ^ x EOS
+z ^ x / y EOS
+x % z + y EOS
+y / z - x EOS
+y - z EOS
+x EOS
+y + y EOS
+x - x ^ z EOS
+x ^ x % y EOS
+x / y / y EOS
+z + y / z EOS
+y EOS
+z EOS
+x - z / x EOS
+x EOS
+y % z / z EOS
+x / y - z EOS
+z * z + x EOS
+x % z % y EOS
+x + z / z EOS
+z - z % z EOS
+x EOS
+z % y / x EOS
+y * x ^ z EOS
+y * x % y EOS
+z EOS
+y % z % x EOS
+x ^ y % z EOS
+x - x % z EOS
+x ^ y - y EOS
+y + x % x EOS
+y - y / z EOS
+z ^ x * y EOS
+z ^ x % y EOS
+y % z + y EOS
+z * x EOS
+z ^ z % y EOS
+x - y / x EOS
+y * y * y EOS
+y * y + x EOS
+y + x ^ x EOS
+x EOS
+y + y EOS
+z % z + y EOS
+z + x + z EOS
+z EOS
+z + z / z EOS
+z + y / z EOS
+x / y ^ z EOS
+z EOS
+z % y - x EOS
+x / y - y EOS
+y * y EOS
+y ^ z % z EOS
+y / x % x EOS
+x + z + z EOS
+z + z * x EOS
+z ^ y % z EOS
+z * y + x EOS
+z EOS
+x * y ^ y EOS
+y ^ x - x EOS
+x + x % y EOS
+x % z + x EOS
+z - y % x EOS
+z ^ y - y EOS
+z % y / y EOS
+x / x + y EOS
+y EOS
+z * x / z EOS
+z * x - y EOS
+y ^ z / z EOS
+y + z + y EOS
+y % x * x EOS
+x - x - y EOS
+y + x * x EOS
+z / x / x EOS
+z - z EOS
+z EOS
+z / x / x EOS
+y - z * x EOS
+y - z - y EOS
+y ^ y ^ x EOS
+y % z % x EOS
+z * x * y EOS
+z + y - y EOS
+x % x ^ x EOS
+z ^ y ^ y EOS
+z EOS
+z - y - y EOS
+x - z * y EOS
+y - y / y EOS
+x % z ^ z EOS
+y ^ z - y EOS
+z / y + z EOS
+y - y + z EOS
+x * z + y EOS
+x EOS
+x - y ^ z EOS
+y / y * y EOS
+x + z - y EOS
+z ^ z * x EOS
+z * z % x EOS
+x - z + y EOS
+z + x - x EOS
+y - y ^ z EOS
+y EOS
+x - y EOS
+x / x / y EOS
+z EOS
+y / z / z EOS
+y * y + z EOS
+z / x + z EOS
+y % y EOS
+y * y - z EOS
+z * x ^ y EOS
+z * z % y EOS
+x ^ z EOS
+z / y * z EOS
+y / y % y EOS
+x - y % z EOS
+z ^ x ^ z EOS
+z * z % y EOS
+x EOS
+z / y EOS
+y ^ x * x EOS
+z EOS
+z / x % y EOS
+y - y - y EOS
+x + x EOS
+x - z * z EOS
+y + z / y EOS
+y / x % y EOS
+y * y / x EOS
+y EOS
+z EOS
+y - z + y EOS
+z EOS
+x + x % x EOS
+z + y * y EOS
+z * z EOS
+x / y - z EOS
+z EOS
+y / y / z EOS
+y ^ x * z EOS
+y ^ x + z EOS
+x % x EOS
+y / z / y EOS
+x ^ z + z EOS
+x ^ y - x EOS
+z % z - x EOS
+x EOS
+y % z / y EOS
+x + x EOS
+z % y * z EOS
+z - x ^ z EOS
+z - x EOS
+z % z EOS
+z / z / z EOS
+z * y * y EOS
+y / y % y EOS
+x + z / y EOS
+y * x % x EOS
+z ^ z * y EOS
+z % z / z EOS
+y / x % y EOS
+y * z EOS
+z + x - x EOS
+x - x ^ y EOS
+y % z + x EOS
+x + x - x EOS
+y EOS
+x ^ y ^ y EOS
+x EOS
+x % x * z EOS
+z - z EOS
+z * y % y EOS
+z EOS
+z % x * x EOS
+x - y * x EOS
+z % z - x EOS
+x / x + z EOS
+z % y EOS
+y % x / z EOS
+x - x + y EOS
+y ^ y ^ z EOS
+z EOS
+z % x + y EOS
+z % y * z EOS
+z - x % z EOS
+z - z / y EOS
+x * x + x EOS
+x - y - x EOS
+x - z EOS
+z ^ z + x EOS
+x * x % y EOS
+y % y * y EOS
+y / y % z EOS
+z + z EOS
+z % x / y EOS
+x % z - y EOS
+y * x % z EOS
+y / x ^ z EOS
+z EOS
+x * x EOS
+x % y ^ x EOS
+x EOS
+y / z % z EOS
+y / x + x EOS
+y % x % x EOS
+z + x - y EOS
+x + z + y EOS
+z + y ^ y EOS
+z EOS
+y % y + z EOS
+y * z / y EOS
+y / x - y EOS
+x / x / x EOS
+z EOS
+y EOS
+z / z % x EOS
+x / y + x EOS
+y EOS
+x * y * z EOS
+x EOS
+y / z - z EOS
+y - x - z EOS
+x / x + z EOS
+z ^ x - z EOS
+z * z EOS
+x - z / y EOS
+y EOS
+z + x - x EOS
+z + z - x EOS
+y % z / y EOS
+x EOS
+x EOS
+x - y EOS
+x ^ y ^ z EOS
+x EOS
+y ^ y / x EOS
+x EOS
+z ^ z % y EOS
+x / z - z EOS
+y / z ^ z EOS
+x / x - x EOS
+x * y * z EOS
+x ^ y EOS
+x % x - y EOS
+x + y ^ x EOS
+z + y + z EOS
+y ^ x / z EOS
+z + x - y EOS
+y EOS
+x EOS
+y - z / x EOS
+z / z / y EOS
+z / y EOS
+x EOS
+z - x % y EOS
+z - x - y EOS
+x - y % x EOS
+y - x * y EOS
+z EOS
+x - x * y EOS
+y EOS
+z ^ z / z EOS
+x * z % z EOS
+y EOS
+x ^ x % x EOS
+y ^ z * y EOS
+x ^ x EOS
+z * y % y EOS
+x ^ z * y EOS
+y / x ^ y EOS
+z % z / y EOS
+z / y % y EOS
+z ^ y + y EOS
+x ^ x - y EOS
+y / x ^ x EOS
+y EOS
+x ^ y * y EOS
+z EOS
+y + z - y EOS
+z - y EOS
+z + x % y EOS
+y - z - x EOS
+y + x EOS
+z EOS
+x ^ y + y EOS
+y / y + z EOS
+x + x % y EOS
+z / z * y EOS
+x / z / x EOS
+y * z * z EOS
+y / z EOS
+y + y EOS
+x % x * x EOS
+y + z - z EOS
+x ^ z * x EOS
+z % y * y EOS
+z ^ x + y EOS
+z - x + z EOS
+x EOS
+y + y * y EOS
+y - y / y EOS
+z * x % x EOS
+z * z + y EOS
+x + z EOS
+y ^ x EOS
+z - y ^ y EOS
+z EOS
+y / y / y EOS
+y * y % y EOS
+x EOS
+z * x + y EOS
+y % z / z EOS
+z EOS
+x - x * x EOS
+x - y / y EOS
+y + y * x EOS
+x - x / y EOS
+y % x % z EOS
+x * z % y EOS
+z + z ^ y EOS
+y ^ z * x EOS
+y * y % z EOS
+x EOS
+y ^ x - z EOS
+x - z * z EOS
+y EOS
+y + y % x EOS
+y EOS
+z / z % x EOS
+z ^ x / x EOS
+z % y / y EOS
+z ^ z ^ x EOS
+x - y * x EOS
+z ^ z - z EOS
+z - z * x EOS
+z % y ^ x EOS
+z - z / y EOS
+y + y EOS
+z / y EOS
+x - z % y EOS
+y EOS
+x EOS
+z EOS
+x % y EOS
+z + x + y EOS
+y / y ^ y EOS
+z + x % z EOS
+z + z * y EOS
+z / y - x EOS
+z % y * z EOS
+z ^ y / x EOS
+y * y * y EOS
+y ^ z EOS
+x + z ^ x EOS
+y % y EOS
+x * z ^ z EOS
+x % y EOS
+z EOS
+z EOS
+x * y + y EOS
+z ^ z ^ y EOS
+x EOS
+x - x % x EOS
+z * x ^ z EOS
+x - y ^ z EOS
+y EOS
+y % z / x EOS
+x * x - z EOS
+x % z + z EOS
+z % x % y EOS
+y + z - x EOS
+x ^ y / y EOS
+z - x + y EOS
+y ^ z ^ y EOS
+y % x - z EOS
+y - x EOS
+x EOS
+y / z ^ y EOS
+z * x + x EOS
+x + y / y EOS
+z ^ z EOS
+z / y EOS
+z - y - z EOS
+y ^ x EOS
+y + y % x EOS
+y * z + x EOS
+x * z EOS
+y % y ^ y EOS
+z EOS
+x % y - z EOS
+x * y / z EOS
+z * x + y EOS
+x * z * z EOS
+z ^ z ^ y EOS
+y - x - y EOS
+y % x ^ x EOS
+y - z ^ z EOS
+z - z * x EOS
+y EOS
+y / z * y EOS
+x EOS
+y ^ y EOS
+z + x * x EOS
+x % x / z EOS
+y ^ x % y EOS
+y / y * x EOS
+z % z ^ z EOS
+z EOS
+y EOS
+x * y / x EOS
+z EOS
+z - z * z EOS
+y - y - y EOS
+y / x % z EOS
+y % y ^ z EOS
+x % x + y EOS
+z - z + z EOS
+x % z / x EOS
+z + x - x EOS
+x / z / y EOS
+y % x + y EOS
+z - x + z EOS
+z EOS
+y % z ^ y EOS
+y + y % z EOS
+y - z ^ x EOS
+z ^ y ^ y EOS
+x / x / z EOS
+z EOS
+y * x / y EOS
+x % y ^ x EOS
+x / z * y EOS
+y EOS
+z + x - x EOS
+y EOS
+z EOS
+z - x % z EOS
+y - y EOS
+y ^ y ^ x EOS
+z - x - y EOS
+z EOS
+y + z + y EOS
+y ^ z * z EOS
+z + z / x EOS
+z % x + x EOS
+y * y % y EOS
+z EOS
+x / z % z EOS
+z / x / y EOS
+z ^ y / x EOS
+y ^ x % z EOS
+z * x EOS
+x * z - y EOS
+y * x * y EOS
+z / x - x EOS
+z ^ z - x EOS
+x % y * y EOS
+y + x / x EOS
+z ^ y + y EOS
+x / x + y EOS
+x * z ^ z EOS
+y * y ^ y EOS
+y - x * x EOS
+x - x + x EOS
+z / x / y EOS
+x * y ^ y EOS
+y EOS
+z + x * y EOS
+x + x ^ y EOS
+z ^ y - z EOS
+z / x * y EOS
+y / x * x EOS
+x + x - y EOS
+z * z EOS
+z - y + x EOS
+x * y ^ x EOS
+y EOS
+x ^ z % x EOS
+y / y + x EOS
+y - y ^ x EOS
+z % z / y EOS
+x + z % z EOS
+z * z % y EOS
+z EOS
+x ^ y - y EOS
+z - x ^ y EOS
+y * z - y EOS
+x - z ^ x EOS
+y + y + y EOS
+y % y ^ z EOS
+z ^ y EOS
+x EOS
+y / y - y EOS
+x EOS
+z - x + y EOS
+x ^ y ^ y EOS
+x / y ^ y EOS
+y / y / y EOS
+y - z EOS
+z - z + x EOS
+z + y ^ y EOS
+x - z / z EOS
+z % x % y EOS
+z % x ^ z EOS
+x - z % y EOS
+x % x - x EOS
+y ^ z / x EOS
+y EOS
+z EOS
+y % z % x EOS
+z EOS
+z ^ z - z EOS
+y EOS
+z EOS
+x / z ^ x EOS
+z EOS
+z * x * z EOS
+z ^ x EOS
+z / y ^ z EOS
+x + x + x EOS
+z + y + x EOS
+y + y * z EOS
+y * x % y EOS
+x EOS
+y / y - z EOS
+x * y - y EOS
+y + x + x EOS
+y % z % y EOS
+z / y - x EOS
+x + y % y EOS
+x * x - z EOS
+y * z % y EOS
+z ^ y - y EOS
+y % y + z EOS
+x - x + x EOS
+y ^ y % z EOS
+y * x * z EOS
+z / z + z EOS
+z / z EOS
+x + y % x EOS
+x / z + z EOS
+y * y * x EOS
+x EOS
+y + z % z EOS
+y ^ x * y EOS
+y ^ z % y EOS
+x % x / x EOS
+x - y / y EOS
+y EOS
+y ^ x + y EOS
+x - y % y EOS
+x ^ x ^ x EOS
+y ^ y * x EOS
+x - y / x EOS
+z / z * x EOS
+y * z ^ y EOS
+y * y + z EOS
+y * x % z EOS
+y / z + x EOS
+x ^ x - x EOS
+y - y % x EOS
+z EOS
+x / y EOS
+z / x + y EOS
+y * x + x EOS
+y EOS
+x ^ z / z EOS
+z * z % x EOS
+z / z ^ y EOS
+y / z EOS
+x ^ z % z EOS
+x + y + y EOS
+y - y / y EOS
+x / y EOS
+z ^ x ^ x EOS
+z - z - z EOS
+z * y * y EOS
+y * x EOS
+y * y EOS
+y EOS
+y % x * y EOS
+x ^ y ^ y EOS
+z % y - x EOS
+x - z + x EOS
+y - z + z EOS
+z + y % x EOS
+z EOS
+y / z % x EOS
+y ^ x * y EOS
+x * x * z EOS
+z * z - z EOS
+y + x EOS
+y - z EOS
+y ^ y + x EOS
+z / x - x EOS
+x / z * x EOS
+z % z / x EOS
+y - y % y EOS
+y + z * y EOS
+z - y ^ z EOS
+y - x EOS
+x * y ^ z EOS
+z ^ x / y EOS
+y % x - z EOS
+y - y EOS
+y % y EOS
+x * y ^ z EOS
+z + y % x EOS
+z EOS
+z / y / x EOS
+z / y ^ x EOS
+z - z - x EOS
+z - x / y EOS
+y - x / y EOS
+z EOS
+x EOS
+y * y + x EOS
+z ^ x - y EOS
+z * x ^ y EOS
+z ^ y - y EOS
+y ^ x + z EOS
+y / x % y EOS
+z % y % x EOS
+x * y - z EOS
+z / z * x EOS
+x % y * z EOS
+z + y / z EOS
+z + z ^ y EOS
+x * y % x EOS
+z * y ^ y EOS
+z ^ y % y EOS
+z % x * x EOS
+z / y % z EOS
+x + z ^ z EOS
+x * y EOS
+y + z EOS
+z EOS
+z ^ y / z EOS
+x - y - x EOS
+x EOS
+x - y ^ z EOS
+y / y / y EOS
+y * y + x EOS
+y ^ z - z EOS
+x / x / z EOS
+y EOS
+z ^ y * x EOS
+z * z EOS
+x EOS
+x ^ y ^ x EOS
+z ^ y * y EOS
+x * x % z EOS
+y - x / y EOS
+y - x % x EOS
+z - z - x EOS
+x / x / z EOS
+y ^ y * z EOS
+z ^ x + y EOS
+x % x ^ z EOS
+z % x EOS
+z % z EOS
+z - z / y EOS
+x - z ^ x EOS
+z ^ x EOS
+x / y EOS
+x EOS
+y + y - x EOS
+z * x ^ z EOS
+z + y % z EOS
+z ^ x EOS
+y ^ y ^ z EOS
+z + y * x EOS
+x / y EOS
+y * z % z EOS
+x EOS
+z ^ y + x EOS
+z + z - z EOS
+x ^ z - z EOS
+z ^ y * y EOS
+z ^ z ^ y EOS
+x % x EOS
+z + y + y EOS
+z * y - x EOS
+x ^ z ^ y EOS
+z * y % x EOS
+z % z - z EOS
+y % z * z EOS
+y / x ^ y EOS
+z / y EOS
+z * x EOS
+z / x * z EOS
+x % z - x EOS
+x % y EOS
+y + z - y EOS
+z + y - x EOS
+y * y - x EOS
+y * y + y EOS
+x * z - z EOS
+z / z EOS
+x / x - x EOS
+z ^ z + x EOS
+x * y - y EOS
+y / y % z EOS
+y EOS
+y - y % y EOS
+x EOS
+y EOS
+z ^ z + y EOS
+y ^ y / z EOS
+y % x + y EOS
+y / z / z EOS
+z / x EOS
+z ^ y - z EOS
+z / y / x EOS
+y / z % z EOS
+z % y / y EOS
+z / z - x EOS
+x % y EOS
+z - x EOS
+z * z - y EOS
+x EOS
+z - z EOS
+x - x ^ y EOS
+x ^ z ^ x EOS
+x ^ x + z EOS
+z / x - y EOS
+y % x ^ z EOS
+y % y / y EOS
+z / y / z EOS
+y - y + x EOS
+x ^ z % z EOS
+z * z EOS
+z / z + x EOS
+x + y + y EOS
+z / x - y EOS
+x ^ z / y EOS
+x % y ^ z EOS
+y / x ^ x EOS
+x / y * x EOS
+x * y - x EOS
+x + x + x EOS
+x EOS
+y * x EOS
+x * y % y EOS
+z / z EOS
+y / z - z EOS
+x + x + x EOS
+z + z - y EOS
+y * x * x EOS
+y / x ^ y EOS
+y % z - y EOS
+y * y / x EOS
+y % y / y EOS
+x % z - y EOS
+x EOS
+x - y - x EOS
+z - x % y EOS
+y - x / x EOS
+y + x * y EOS
+z * x ^ y EOS
+x EOS
+x % x % x EOS
+y / y ^ x EOS
+x * z - x EOS
+y EOS
+y - y - z EOS
+z % x % z EOS
+y / z * y EOS
+x - z + z EOS
+z ^ x - x EOS
+z EOS
+x - y * x EOS
+x + z - y EOS
+x % y * z EOS
+y EOS
+z ^ z * z EOS
+y - y / y EOS
+x + z ^ z EOS
+y + y EOS
+z % z / x EOS
+z EOS
+z % z - y EOS
+y - y % z EOS
+x ^ z % z EOS
+z ^ z - z EOS
+z EOS
+y / x ^ y EOS
+z % z EOS
+y EOS
+z EOS
+y + z / y EOS
+x % z % y EOS
+x EOS
+z ^ x - z EOS
+y ^ z ^ y EOS
+z % y ^ y EOS
+y + z + z EOS
+z - y - x EOS
+x EOS
+y + y % z EOS
+y / z EOS
+z + z - y EOS
+x % z % z EOS
+x % z / z EOS
+y EOS
+x - y % x EOS
+x ^ z * x EOS
+z % x - y EOS
+y / x * y EOS
+y % x EOS
+z - y % x EOS
+x % x % z EOS
+y + y % z EOS
+x EOS
+y EOS
+y EOS
+z / y * z EOS
+x - y + z EOS
+x % y EOS
+x / x EOS
+z % x ^ z EOS
+z % y * z EOS
+x ^ x / y EOS
+x * y % y EOS
+z ^ z / z EOS
+y / x EOS
+z + z - z EOS
+x - z ^ x EOS
+y ^ y - y EOS
+x ^ y - z EOS
+z EOS
+x * z / z EOS
+z + x - x EOS
+y ^ x * z EOS
+z * x * x EOS
+x % x % x EOS
+y - x ^ y EOS
+y / z / y EOS
+x ^ y * x EOS
+z EOS
+y * z % y EOS
+x / x EOS
+x * x / z EOS
+x * x ^ z EOS
+x - y * z EOS
+x + z ^ y EOS
+y % y EOS
+z / z EOS
+x % z - y EOS
+y * y EOS
+x EOS
+z % y % z EOS
+y * x - z EOS
+y EOS
+x % y * x EOS
+z % y * z EOS
+x % y ^ y EOS
+x - z - y EOS
+z + z ^ z EOS
+z / z + z EOS
+x / y + y EOS
+z * y EOS
+y * y EOS
+x / y ^ x EOS
+y % z EOS
+z + z EOS
+x ^ y + x EOS
+y * z EOS
+z ^ z * x EOS
+z / x * y EOS
+y % z % x EOS
+y EOS
+z * y EOS
+y ^ y EOS
+x * y ^ z EOS
+z - x * z EOS
+y + y EOS
+x ^ y EOS
+y * y % x EOS
+x EOS
+z * y ^ x EOS
+z * x / y EOS
+z - y EOS
+y + y ^ x EOS
+y / z % y EOS
+y EOS
+z ^ x ^ z EOS
+z EOS
+y % x EOS
+z % z - z EOS
+x % y - x EOS
+x / z + x EOS
+x * y * y EOS
+y * x + y EOS
+y - y EOS
+y / z EOS
+z / z EOS
+x + x + x EOS
+x + z / z EOS
+x - x * x EOS
+y % z EOS
+y EOS
+y / x - y EOS
+z EOS
+x ^ z ^ y EOS
+x * y ^ x EOS
+y / y EOS
+y EOS
+x / y ^ x EOS
+y / y + z EOS
+x / y EOS
+y + z % x EOS
+x + x - z EOS
+z * y % x EOS
+y EOS
+y * z - x EOS
+x - x ^ y EOS
+y % z + x EOS
+y - x - x EOS
+y / y ^ x EOS
+x - y + x EOS
+z * z EOS
+y * x + z EOS
+y ^ y ^ x EOS
+y * y / y EOS
+x EOS
+z EOS
+x EOS
+z * y / x EOS
+z ^ x - x EOS
+y + x % z EOS
+y / z - y EOS
+z % y EOS
+y + x / z EOS
+x % z * z EOS
+y + y % y EOS
+y ^ y - z EOS
+x + z EOS
+x - y % x EOS
+x % x * z EOS
+x + z % z EOS
+y + x ^ x EOS
+x + y - x EOS
+y * y % y EOS
+y - z % y EOS
+x EOS
+x % z ^ y EOS
+x * y + x EOS
+y ^ x - z EOS
+z EOS
+z % z * z EOS
+z + y * y EOS
+x + y + x EOS
+x + y EOS
+z EOS
+y * y * x EOS
+x % z EOS
+z EOS
+z % z + y EOS
+x + z + x EOS
+y % x EOS
+x % z EOS
+x - y / z EOS
+y ^ y % x EOS
+y - y ^ z EOS
+x % y ^ z EOS
+x * x ^ x EOS
+y * z ^ y EOS
+y EOS
+z ^ y * y EOS
+z * x / y EOS
+z - y / y EOS
+x ^ y * x EOS
+x ^ y EOS
+y / x * x EOS
+z + y / y EOS
+z EOS
+x - z % x EOS
+x % y / y EOS
+z % y % y EOS
+z EOS
+z * z / y EOS
+z ^ z * x EOS
+y % z ^ z EOS
+y ^ z + z EOS
+z % z EOS
+y + y EOS
+x % y EOS
+x + y % x EOS
+y ^ y - z EOS
+y + z EOS
+y + z % x EOS
+x * x - z EOS
+x + z EOS
+z ^ y % y EOS
+y ^ y % y EOS
+y - z ^ z EOS
+x - z EOS
+y * y ^ z EOS
+z + z EOS
+y ^ x + x EOS
+x + x * z EOS
+x ^ y * z EOS
+y + y * x EOS
+y - y - y EOS
+z % x EOS
+x EOS
+x * y + x EOS
+z + x + y EOS
+y - y + x EOS
+z - x - z EOS
+x % y + x EOS
+z * y - x EOS
+y EOS
+x EOS
+z ^ z ^ z EOS
+y * y ^ x EOS
+x + z EOS
+x / x - z EOS
+z * y / y EOS
+y ^ y % x EOS
+z - x - z EOS
+z - x / x EOS
+y / x % z EOS
+z - z ^ z EOS
+y * x + y EOS
+y + z / x EOS
+x + x - y EOS
+x * x + y EOS
+y % y EOS
+x EOS
+z / x + z EOS
+z ^ x - y EOS
+y / y * x EOS
+y EOS
+z EOS
+x - y - z EOS
+y % x EOS
+z EOS
+x + y + z EOS
+z * x + z EOS
+x / z + y EOS
+z / z + y EOS
+y - z * x EOS
+z + x EOS
+y * y / x EOS
+z EOS
+x % z EOS
+x % x - z EOS
+y EOS
+y - y / y EOS
+z % x EOS
+y - z ^ z EOS
+x * y EOS
+y ^ y + x EOS
+y * y / x EOS
+z % z % y EOS
+y % x ^ y EOS
+x EOS
+y - x + x EOS
+y / y ^ z EOS
+z + z ^ z EOS
+y + x % x EOS
+x * x / y EOS
+z - y + y EOS
+y / x ^ y EOS
+x EOS
+z / y / x EOS
+x EOS
+z ^ z % z EOS
+z - y % z EOS
+y % x EOS
+x ^ x + y EOS
+y ^ y - x EOS
+x / z / y EOS
+z ^ z EOS
+x EOS
+x EOS
+x * z EOS
+x % z % x EOS
+y * x % x EOS
+x * x * z EOS
+z / x EOS
+x * x + y EOS
+z % y * y EOS
+y ^ y EOS
+x * x * x EOS
+x + z * y EOS
+z ^ y + z EOS
+z EOS
+x ^ x - x EOS
+z * x + x EOS
+y - x % x EOS
+z * y EOS
+z + z - x EOS
+z + y + z EOS
+y / x + z EOS
+z + y - z EOS
+y ^ z % z EOS
+x + y ^ y EOS
+y EOS
+z - y EOS
+y ^ y / x EOS
+x + z + y EOS
+x EOS
+y % y - y EOS
+x + y + z EOS
+z - z EOS
+x / x * y EOS
+x ^ y - z EOS
+y ^ z % z EOS
+y ^ x - y EOS
+y EOS
+z * z / y EOS
+z / y * z EOS
+x - y EOS
+y * z EOS
+z EOS
+y - x + z EOS
+z * z + z EOS
+z + x % z EOS
+z * z - y EOS
+y + z * y EOS
+x ^ y + y EOS
+z % z / z EOS
+x + z - z EOS
+z - y * y EOS
+z / z - y EOS
+x ^ x EOS
+z % z - x EOS
+x + x / x EOS
+x - y ^ z EOS
+y % y % y EOS
+z % x + y EOS
+y * y ^ z EOS
+y % z / z EOS
+x + z - z EOS
+x * z ^ z EOS
+x - x * z EOS
+y + z / z EOS
+y % z EOS
+x + z + x EOS
+y EOS
+y / x / y EOS
+y ^ x - y EOS
+x % x EOS
+x * y + z EOS
+x % x / z EOS
+y - x * x EOS
+y ^ z ^ z EOS
+y / z ^ x EOS
+y ^ x % x EOS
+z / y + x EOS
+x * x * z EOS
+z + y / z EOS
+y / x - y EOS
+y + z + x EOS
+x / z - y EOS
+x - x - z EOS
+z / x % z EOS
+z / z ^ z EOS
+y * y * z EOS
+z / y % y EOS
+y / y % y EOS
+x % z EOS
+z ^ x ^ y EOS
+y / y ^ x EOS
+x * y + z EOS
+z / x % y EOS
+z * z * x EOS
+y * x % x EOS
+z / x + z EOS
+x * x - x EOS
+y ^ z * y EOS
+y % y ^ y EOS
+x ^ y % x EOS
+x ^ y ^ z EOS
+x / y ^ z EOS
+z % x - y EOS
+x % y + z EOS
+x / y ^ z EOS
+z EOS
+x EOS
+y / z * x EOS
+x / x / z EOS
+x ^ x EOS
+x - z / y EOS
+y - y ^ y EOS
+y % y % z EOS
+x - z + x EOS
+z ^ x EOS
+y EOS
+z ^ y / y EOS
+x + y EOS
+z - x ^ z EOS
+x % z + z EOS
+y % y + z EOS
+x + y EOS
+y - z EOS
+y * z % z EOS
+y % y - x EOS
+z ^ y ^ y EOS
+x + x ^ x EOS
+x ^ y + z EOS
+z ^ y - x EOS
+x / x - y EOS
+z EOS
+x % y ^ z EOS
+z + x + x EOS
+y ^ x EOS
+x / x * y EOS
+z ^ y - y EOS
+y - x - z EOS
+z ^ z EOS
+z / z * y EOS
+y * x + y EOS
+x + y ^ y EOS
+x EOS
+x * y - y EOS
+y + z EOS
+z ^ x + y EOS
+y + x % y EOS
+z EOS
+x % z + y EOS
+z % x * x EOS
+y + y / y EOS
+z + y EOS
+z % x - z EOS
+z EOS
+z EOS
+y - z ^ x EOS
+x ^ z EOS
+z + z + z EOS
+y + z EOS
+x EOS
+y + x EOS
+y EOS
+z * y / x EOS
+z + y % z EOS
+x * x EOS
+z + z + y EOS
+z * z % z EOS
+y * z + z EOS
+x % z - z EOS
+z / y / z EOS
+z * y / z EOS
+x % y / y EOS
+y + z ^ x EOS
+z - x * x EOS
+x / z * z EOS
+y ^ y - z EOS
+x % z * y EOS
+x % x + y EOS
+y - z * z EOS
+z % x * z EOS
+y % x + y EOS
+y * y / x EOS
+z EOS
+z ^ y EOS
+y - x * z EOS
+y % y % x EOS
+x * z / z EOS
+x + z / z EOS
+z * z ^ z EOS
+y ^ y / z EOS
+z / x EOS
+z % x ^ y EOS
+y - y - z EOS
+x / z EOS
+x + z * z EOS
+z % y - x EOS
+x ^ y * z EOS
+y + x + x EOS
+z % z ^ x EOS
+y / z % z EOS
+y * x * y EOS
+z + y * y EOS
+x EOS
+y % z % y EOS
+z - z * x EOS
+x + z + y EOS
+y + x % x EOS
+z * x - x EOS
+z - x / z EOS
+z / z + x EOS
+z + y % x EOS
+z - z - z EOS
+x / z * y EOS
+y / z ^ y EOS
+x ^ y ^ y EOS
+z / z - z EOS
+x % y / x EOS
+z EOS
+z % y EOS
+z ^ z - x EOS
+y + x * y EOS
+y % y * z EOS
+z * z ^ x EOS
+x / y % x EOS
+x ^ y / x EOS
+z * z / z EOS
+x - x % x EOS
+x / x / z EOS
+y - x EOS
+y % x * z EOS
+y - z ^ x EOS
+z * z EOS
+y * z / y EOS
+y ^ z * z EOS
+x / y * x EOS
+x % x + z EOS
+z ^ y - z EOS
+y % z % x EOS
+x ^ x + y EOS
+y * y % z EOS
+x ^ y EOS
+z % z - y EOS
+x % y / y EOS
+x % y + x EOS
+z % z EOS
+y / z % z EOS
+x ^ z + y EOS
+y / y EOS
+z + z % x EOS
+z * z - x EOS
+y + x EOS
+x / z * x EOS
+z ^ y % z EOS
+z * x + x EOS
+y * z + z EOS
+z * y EOS
+y EOS
+y - y - x EOS
+z * x % y EOS
+y % y EOS
+x + z * y EOS
+y * z + x EOS
+z EOS
+y + y + x EOS
+y % x + x EOS
+y * y - x EOS
+y EOS
+x - z - x EOS
+x EOS
+x / y * y EOS
+z - y ^ x EOS
+x % y * z EOS
+z - z ^ y EOS
+y % y * z EOS
+x / x + x EOS
+x EOS
+y % z + z EOS
+x * z % x EOS
+x - z - z EOS
+y + x % x EOS
+z * x + y EOS
+z EOS
+y EOS
+y ^ y EOS
+y + z EOS
+x % z + z EOS
+x * z / y EOS
+x / y % x EOS
+y % x EOS
+z / x ^ x EOS
+z + y * x EOS
+x / y * y EOS
+y / y ^ x EOS
+y ^ x * x EOS
+x - x / y EOS
+x + x - x EOS
+x ^ z EOS
+z / x * y EOS
+z % z EOS
+x ^ x % x EOS
+z / z % x EOS
+z ^ y ^ z EOS
+x - z ^ y EOS
+y * y ^ z EOS
+x EOS
+x / x * y EOS
+y % x + x EOS
+y EOS
+y + z % y EOS
+z % z - x EOS
+y - z % z EOS
+x / y ^ x EOS
+x - z EOS
+y + z * x EOS
+y - x * y EOS
+y EOS
+y + x + z EOS
+z - y * y EOS
+x + x % z EOS
+x % y - x EOS
+x ^ x - x EOS
+z % z % y EOS
+x ^ z * z EOS
+z % z * x EOS
+x + z EOS
+x - x - x EOS
+z ^ z - z EOS
+z EOS
+y EOS
+y / y * y EOS
+y ^ y + z EOS
+x - y + z EOS
+z EOS
+y EOS
+y ^ x / z EOS
+z EOS
+z * y * x EOS
+z ^ z % x EOS
+x ^ z - x EOS
+y * z % y EOS
+x * z - y EOS
+x - x - x EOS
+z % x EOS
+y + z % z EOS
+z - y / z EOS
+z + x ^ x EOS
+x / x % z EOS
+z * y - z EOS
+y - x % y EOS
+z * x EOS
+y ^ y % y EOS
+z EOS
+y EOS
+x % y EOS
+y - y EOS
+z / y * z EOS
+y - x ^ y EOS
+x - x / z EOS
+z - z / y EOS
+x ^ y / x EOS
+z / x EOS
+x * x - z EOS
+z % y EOS
+z / z % y EOS
+z - y * y EOS
+y ^ x - z EOS
+x + z * z EOS
+y - y EOS
+z * z ^ z EOS
+x EOS
+z + x / x EOS
+z ^ z % z EOS
+y ^ y - x EOS
+z EOS
+z + z - z EOS
+y - y % x EOS
+y / y - x EOS
+x * y * y EOS
+x EOS
+x * z * z EOS
+z - z % x EOS
+y - z / y EOS
+y - y + x EOS
+x EOS
+y ^ x * y EOS
+x EOS
+y % y ^ z EOS
+x ^ x EOS
+y / x + z EOS
+y / y / x EOS
+x EOS
+x - z % y EOS
+x ^ x + x EOS
+x * z EOS
+y % y / z EOS
+x EOS
+z * y - y EOS
+z - y % y EOS
+x % x / z EOS
+z * z - y EOS
+y + y EOS
+z - z % y EOS
+x + y % x EOS
+y * z / z EOS
+y EOS
+z EOS
+z + y / x EOS
+z + z - z EOS
+x EOS
+z / y + y EOS
+x / y / x EOS
+x + z / y EOS
+y + z % z EOS
+y / x % y EOS
+y - x + x EOS
+z * y / z EOS
+y EOS
+x + x / y EOS
+y * y / y EOS
+y ^ z % x EOS
+z / x * y EOS
+x ^ y * z EOS
+y + y - z EOS
+y + z ^ x EOS
+z % x EOS
+x * y % z EOS
+y - z * z EOS
+x / x / x EOS
+y - z % x EOS
+x + y % y EOS
+x EOS
+x EOS
+x / y ^ y EOS
+z EOS
+z ^ x / z EOS
+x - y % x EOS
+x + z ^ y EOS
+z / z / x EOS
+y + z * x EOS
+z - y EOS
+x % y ^ x EOS
+z EOS
+x EOS
+y % z % y EOS
+y / x / x EOS
+z + x % z EOS
+x - y / x EOS
+x % z * z EOS
+x * z - y EOS
+y ^ z % y EOS
+x EOS
+y EOS
+z * x / y EOS
+z * y % z EOS
+x - y EOS
+x - x + z EOS
+x + x % z EOS
+z / x EOS
+y / y / x EOS
+z EOS
+y + y * x EOS
+z / x * x EOS
+y - y % z EOS
+z * y + y EOS
+z - z * y EOS
+z - y - z EOS
+z * y - z EOS
+y / x EOS
+x / x * z EOS
+x ^ x * y EOS
+y / x - x EOS
+x EOS
+y ^ x * y EOS
+x ^ x + x EOS
+x EOS
+z % x / z EOS
+z EOS
+z / z * x EOS
+z - x - z EOS
+x + y EOS
+y / x ^ z EOS
+z * x EOS
+z - x EOS
+y - z ^ y EOS
+y * x EOS
+y + z / x EOS
+x + y + y EOS
+z * z EOS
+z * x / x EOS
+z ^ z - y EOS
+z ^ x % z EOS
+x EOS
+z / x ^ z EOS
+y / z / z EOS
+z + x ^ y EOS
+z - y - y EOS
+y / z * z EOS
+z + x + z EOS
+y + y / z EOS
+z ^ z + z EOS
+z * x EOS
+y / y - y EOS
+y + y EOS
+y - x + x EOS
+x % x - x EOS
+x ^ z % z EOS
+z * z + z EOS
+z EOS
+z EOS
+z / z + z EOS
+y - z ^ z EOS
+y * y * x EOS
+x ^ z ^ z EOS
+y ^ x / x EOS
+x % x * y EOS
+z ^ x % z EOS
+x + y - y EOS
+y / y + y EOS
+x / x % x EOS
+x EOS
+y % z % z EOS
+z + x % x EOS
+y / z * y EOS
+x + x % z EOS
+x / x * x EOS
+x / x * y EOS
+y EOS
+z % x EOS
+y / x % x EOS
+z % z + x EOS
+z / z / y EOS
+x EOS
+y EOS
+x ^ z / y EOS
+z ^ z % y EOS
+z ^ z * x EOS
+z - x ^ x EOS
+z % z EOS
+z - z - z EOS
+z % y - z EOS
+y ^ z EOS
+y + x * x EOS
+z - z + x EOS
+x + z / z EOS
+x / y % x EOS
+y EOS
+z / z % x EOS
+x - y + y EOS
+z - z EOS
+y % y / x EOS
+x * z ^ y EOS
+y - y EOS
+y / z EOS
+y / z - y EOS
+z EOS
+y ^ x + y EOS
+z % y % y EOS
+x + x % y EOS
+z - x % x EOS
+x ^ y / y EOS
+z + x * z EOS
+x % y - x EOS
+y ^ z + z EOS
+y + z ^ y EOS
+z % y % z EOS
+z / y % x EOS
+y EOS
+z EOS
+y EOS
+x + z - y EOS
+z % z EOS
+z + y * y EOS
+x ^ z EOS
+x * z - z EOS
+x / x EOS
+x ^ x / z EOS
+x * z ^ y EOS
+z + z EOS
+z + x EOS
+x EOS
+y % z % y EOS
+z - x / y EOS
+y / z / y EOS
+x - x % x EOS
+y + y EOS
+y - z + x EOS
+x ^ y EOS
+z % y + y EOS
+x % z + y EOS
+x ^ y % z EOS
+y + x % y EOS
+x + y ^ y EOS
+y % x * y EOS
+x % x * y EOS
+z ^ z % y EOS
+z + z - x EOS
+z - x + z EOS
+z - x % z EOS
+x % y * z EOS
+y / y + z EOS
+z / x + y EOS
+x EOS
+x ^ x * x EOS
+x - z ^ z EOS
+z + x * x EOS
+z - z / z EOS
+x + y + y EOS
+y + x EOS
+z / z / x EOS
+z + y - x EOS
+x - y / z EOS
+x EOS
+z % z EOS
+z EOS
+y ^ x - z EOS
+x EOS
+y ^ x % y EOS
+y * x - x EOS
+x % y + y EOS
+z * y * z EOS
+x % y + y EOS
+x EOS
+y - z * z EOS
+z - x + x EOS
+z / x EOS
+z EOS
+x * z ^ y EOS
+z ^ x / z EOS
+x + x ^ z EOS
+x / y % z EOS
+x + x ^ z EOS
+x - z * z EOS
+y % y - z EOS
+z EOS
+x - y + x EOS
+y + z * x EOS
+x * z ^ x EOS
+y EOS
+z + x ^ x EOS
+y EOS
+z / x - z EOS
+y EOS
+z * x ^ x EOS
+x % x % x EOS
+x % z - y EOS
+z EOS
+y % y * z EOS
+x + z ^ z EOS
+z ^ y - x EOS
+z / x / y EOS
+y * y EOS
+x - z * z EOS
+y * x + x EOS
+z + x / x EOS
+y * y * z EOS
+x / z - z EOS
+z ^ z * z EOS
+z EOS
+x ^ y ^ y EOS
+x % z % x EOS
+y * y - z EOS
+y EOS
+y ^ x - y EOS
+z + z * z EOS
+y - z / y EOS
+y - z ^ z EOS
+y ^ z / x EOS
+y ^ z * x EOS
+y + y / z EOS
+x / z * y EOS
+x + x ^ y EOS
+y * z ^ z EOS
+x - z + y EOS
+y + x * y EOS
+z EOS
+y + y - x EOS
+z % z / x EOS
+x * x / z EOS
+y EOS
+x ^ z % x EOS
+x % y + y EOS
+y * z / z EOS
+z * z - y EOS
+x - x EOS
+y / z / x EOS
+y EOS
+y / y % x EOS
+z + y - z EOS
+y ^ x + x EOS
+x EOS
+x / y % z EOS
+x / x % z EOS
+x + z / x EOS
+y / z % z EOS
+y - y * y EOS
+z EOS
+x * x * x EOS
+z - x / z EOS
+y + z % y EOS
+z ^ y + z EOS
+z ^ x % z EOS
+y EOS
+x + y - y EOS
+x - y / x EOS
+z ^ y * y EOS
+x EOS
+z % y ^ y EOS
+x % z / y EOS
+y EOS
+x + z + x EOS
+y ^ x + x EOS
+x EOS
+y / z * z EOS
+z - z EOS
+z % y ^ y EOS
+y * y EOS
+y / z EOS
+z - y ^ z EOS
+y EOS
+z / y % z EOS
+x - z - y EOS
+z + y EOS
+y / z EOS
+y + z / z EOS
+y ^ y / x EOS
+x / y * z EOS
+x EOS
+y % z / y EOS
+x + z % y EOS
+z % y * y EOS
+y EOS
+x * z / x EOS
+x ^ z ^ x EOS
+z - z + y EOS
+y * z % x EOS
+x * x * y EOS
+x / y % x EOS
+z / x * x EOS
+x EOS
+x * z + y EOS
+y ^ z ^ z EOS
+y ^ y + z EOS
+z + z ^ y EOS
+z - x % x EOS
+y - y + x EOS
+y / x / y EOS
+z ^ x ^ x EOS
+y - x % x EOS
+x % x / x EOS
+y % x ^ x EOS
+x / y * y EOS
+z % x / z EOS
+z - y % x EOS
+y EOS
+y - y - y EOS
+x + z % x EOS
+z % z * x EOS
+x - z ^ y EOS
+y ^ y + x EOS
+x + z ^ x EOS
+x ^ z % y EOS
+x + z / z EOS
+z + y ^ z EOS
+z * y EOS
+y / z EOS
+z * z - x EOS
+x / y * z EOS
+y ^ x % x EOS
+x * y * y EOS
+x % z / x EOS
+y + y / x EOS
+x * z EOS
+x / x * x EOS
+x ^ y ^ z EOS
+z - y EOS
+z / z / y EOS
+y + y EOS
+y * x % x EOS
+x * x EOS
+y EOS
+y % z - y EOS
+x EOS
+y % x ^ z EOS
+z % x % z EOS
+x % y - x EOS
+x EOS
+z EOS
+z / x EOS
+z * y EOS
+x / z + x EOS
+y ^ x ^ x EOS
+z - x / x EOS
+x * y * y EOS
+x % x EOS
+x - y EOS
+y EOS
+y ^ z ^ x EOS
+y ^ x * y EOS
+y EOS
+x + z * z EOS
+x + x % z EOS
+z / x / z EOS
+y + x ^ x EOS
+y + z / y EOS
+x EOS
+y * y EOS
+z / z - x EOS
+y * x - z EOS
+x EOS
+y ^ x % z EOS
+x % z EOS
+x + x - z EOS
+x - y * x EOS
+y - z / y EOS
+x * y EOS
+y ^ z % y EOS
+y - x ^ y EOS
+y % z + y EOS
+y % x + x EOS
+y + x - x EOS
+y EOS
+z / y % x EOS
+y ^ z - z EOS
+x * x + x EOS
+y / x / y EOS
+y - y ^ z EOS
+y * z % x EOS
+y - y - y EOS
+x - z - z EOS
+y ^ z / y EOS
+y % x * y EOS
+y ^ z % x EOS
+y EOS
+x * z - x EOS
+y - x - y EOS
+x + y - x EOS
+y ^ z * y EOS
+y ^ y EOS
+y % x + x EOS
+y * x * z EOS
+z - z - x EOS
+y % z ^ x EOS
+x ^ z % y EOS
+x ^ y % z EOS
+x * z * y EOS
+y + x - z EOS
+z / z EOS
+z % z EOS
+z EOS
+x / y - z EOS
+z EOS
+x * y % y EOS
+y + z ^ y EOS
+x - z * x EOS
+y / z % z EOS
+x / y / x EOS
+y + z + y EOS
+y + z * y EOS
+z - z * z EOS
+y % z / x EOS
+x EOS
+z EOS
+x % y * x EOS
+x + y * y EOS
+z + x - y EOS
+x ^ y / x EOS
+z + z EOS
+y + x - x EOS
+z * y % x EOS
+x / x ^ x EOS
+y EOS
+y / y % x EOS
+y EOS
+x ^ y ^ y EOS
+y ^ y - y EOS
+x / y - z EOS
+y * y / x EOS
+x + x * x EOS
+z - y - x EOS
+z - y % x EOS
+x - x * y EOS
+z - x ^ z EOS
+z ^ y / x EOS
+z + z / z EOS
+z - z / y EOS
+x * x ^ x EOS
+x + z EOS
+y + y / z EOS
+x * y * z EOS
+x * x % y EOS
+y / z ^ z EOS
+y / z / y EOS
+z * z / y EOS
+z - y * x EOS
+x EOS
+x % z - z EOS
+x + x * x EOS
+z * y + z EOS
+x EOS
+z EOS
+z - x % x EOS
+z * x EOS
+y / z - x EOS
+x EOS
+x * z + y EOS
+x * z % z EOS
+y % z ^ z EOS
+z - z ^ z EOS
+x ^ y - x EOS
+x * x ^ x EOS
+x / x * y EOS
+x EOS
+z / z ^ x EOS
+x ^ z EOS
+x % z / x EOS
+y + y + x EOS
+y - y % y EOS
+z ^ x EOS
+x - z % z EOS
+y / z ^ x EOS
+y % y ^ z EOS
+x / y / x EOS
+x ^ z - x EOS
+z - y / z EOS
+y EOS
+x ^ y % y EOS
+z ^ y % y EOS
+z ^ y + y EOS
+x EOS
+x + z % x EOS
+z - z ^ z EOS
+z ^ z - x EOS
+y - x / x EOS
+x / z - x EOS
+y * x / y EOS
+x * y ^ y EOS
+x EOS
+y / z - z EOS
+z * y / y EOS
+z % x EOS
+y % x ^ y EOS
+z + y / y EOS
+z % z * z EOS
+y / z - y EOS
+z + z EOS
+y EOS
+x ^ z / y EOS
+z + x + x EOS
+z EOS
+x % z % x EOS
+y - y / x EOS
+x ^ y * x EOS
+x * z ^ x EOS
+y - x / z EOS
+y * y % x EOS
+z * y - y EOS
+z EOS
+y / x / x EOS
+z ^ z * z EOS
+x + x * x EOS
+z - x + x EOS
+y + y - z EOS
+x ^ y / z EOS
+x % z - z EOS
+z ^ x - x EOS
+z - y * y EOS
+x / z * x EOS
+y * z / y EOS
+y + z * z EOS
+x ^ z - x EOS
+x + z - x EOS
+z ^ x / z EOS
+y + x + z EOS
+z * x EOS
+y - z EOS
+z + y * y EOS
+y % z % z EOS
+x EOS
+x - z EOS
+x / x / z EOS
+z ^ y ^ x EOS
+z / y + x EOS
+y ^ x - y EOS
+z EOS
+x / y % z EOS
+z ^ y * z EOS
+y ^ z / x EOS
+x ^ z - z EOS
+y % x % y EOS
+x ^ y / x EOS
+x * x ^ z EOS
+y + y + x EOS
+x % x ^ y EOS
+z ^ x + x EOS
+z / y * x EOS
+y % x / y EOS
+x / z ^ y EOS
+y ^ x ^ z EOS
+x + x EOS
+z + y / y EOS
+z EOS
+z * y + x EOS
+y * z % z EOS
+x * x - z EOS
+z ^ x + z EOS
+x EOS
+x % x + x EOS
+x EOS
+y * y ^ z EOS
+z / z EOS
+y - x ^ y EOS
+x % x ^ y EOS
+z EOS
+y + z ^ y EOS
+y * y % x EOS
+y + x - y EOS
+y * z + y EOS
+z - y EOS
+y + x - x EOS
+x + z * y EOS
+z % y / y EOS
+x * z * x EOS
+z * z ^ x EOS
+y ^ x + y EOS
+x * z ^ y EOS
+y % z EOS
+y EOS
+z / z - y EOS
+z - y % z EOS
+y / z * x EOS
+y + z + y EOS
+y + x % z EOS
+x + z % x EOS
+y % x * y EOS
+y % y / z EOS
+z EOS
+z % y * y EOS
+x / y ^ x EOS
+z * y EOS
+z / z - x EOS
+x % z - x EOS
+z ^ x + y EOS
+z + z + x EOS
+x ^ x / z EOS
+z ^ x + x EOS
+y % z EOS
+y + z EOS
+z EOS
+y - y * z EOS
+y ^ z * y EOS
+x / z - y EOS
+x EOS
+x ^ y % y EOS
+y ^ y ^ y EOS
+x - z - z EOS
+z / z % y EOS
+z EOS
+y * y ^ x EOS
+x / y EOS
+y ^ x - z EOS
+z % x EOS
+z + x ^ x EOS
+x % y - z EOS
+y EOS
+z / y ^ y EOS
+y EOS
+z EOS
+y + x + y EOS
+y EOS
+y EOS
+z ^ x EOS
+y + z / z EOS
+y - z % y EOS
+x - x EOS
+z EOS
+z % z + y EOS
+y * x % x EOS
+y - x * y EOS
+x EOS
+y + x + z EOS
+z * x - y EOS
+z * x + z EOS
+y * x ^ y EOS
+y % z ^ y EOS
+y - y EOS
+x % y - y EOS
+y % z ^ z EOS
+y EOS
+x EOS
+y EOS
+x + x % x EOS
+z % z - z EOS
+z ^ y - x EOS
+y EOS
+z * z EOS
+y ^ x / x EOS
+y / y EOS
+y * z + y EOS
+y - z * z EOS
+z ^ x % z EOS
+y % x ^ y EOS
+z + x * z EOS
+y ^ z + x EOS
+x * z / z EOS
+z % x / y EOS
+z ^ y - z EOS
+z + x - x EOS
+z * z - y EOS
+y - y * y EOS
+z / x / y EOS
+y ^ y / y EOS
+z / y EOS
+y - x - x EOS
+z ^ z * y EOS
+x * z % z EOS
+z + x - x EOS
+y % x * z EOS
+x - z % x EOS
+z / z EOS
+x % x / y EOS
+z EOS
+x * y ^ x EOS
+z - z EOS
+x + x + z EOS
+x / y % x EOS
+y ^ z ^ y EOS
+x % y * x EOS
+z + y - z EOS
+x % z + x EOS
+z % x - x EOS
+x * x + z EOS
+z * y + y EOS
+z % z % x EOS
+x % z EOS
+y * x + z EOS
+x ^ y / y EOS
+y % z % y EOS
+x ^ x + x EOS
+z + y - y EOS
+y * y - z EOS
+z - z ^ x EOS
+y * z EOS
+x + x * y EOS
+z ^ x - z EOS
+z ^ x * y EOS
+y EOS
+x * x EOS
+z - x + y EOS
+z + x % x EOS
+y - x % y EOS
+y EOS
+x EOS
+x / y EOS
+y + x % z EOS
+y ^ x * x EOS
+y EOS
+y / x - x EOS
+z - z EOS
+z ^ z - x EOS
+z % y - z EOS
+z / x EOS
+z - z - z EOS
+y EOS
+y EOS
+y ^ y / z EOS
+y ^ z + y EOS
+y - y + z EOS
+y + x - x EOS
+y - y % z EOS
+z EOS
+z * y - y EOS
+y + x EOS
+z / z + x EOS
+x - y EOS
+z EOS
+z + z / y EOS
+z ^ x + y EOS
+z - x % y EOS
+x EOS
+z % z + x EOS
+x EOS
+x - y * x EOS
+x * z / x EOS
+y - x ^ z EOS
+x / z - y EOS
+z - x % x EOS
+z * y - x EOS
+z % y EOS
+x / y ^ x EOS
+x + z * z EOS
+z / z * z EOS
+x * x * y EOS
+z + x / z EOS
+x - x / x EOS
+x * y / z EOS
+x / x / x EOS
+x / x - y EOS
+x * x + x EOS
+y / y + y EOS
+z - z + z EOS
+z EOS
+z % x * z EOS
+x EOS
+z % y ^ y EOS
+y ^ z EOS
+y ^ z - y EOS
+y + x / z EOS
+x - z ^ y EOS
+y / y ^ z EOS
+z / x + z EOS
+y * x + z EOS
+x * x + y EOS
+x + y * x EOS
+y - y ^ z EOS
+x + y ^ z EOS
+y + y * x EOS
+x % x EOS
+z / y ^ x EOS
+x ^ z % z EOS
+z * y * z EOS
+x ^ y * z EOS
+z EOS
+z + z * z EOS
+z ^ x * x EOS
+x EOS
+z + z + y EOS
+z + z / x EOS
+x - z / z EOS
+x - z * z EOS
+z EOS
+y ^ z * x EOS
+z * z - x EOS
+y - z + x EOS
+x + z / y EOS
+y + x / y EOS
+y EOS
+z / z / x EOS
+x % x % z EOS
+z - y + z EOS
+x % x EOS
+z + y / z EOS
+y EOS
+z EOS
+y EOS
+x % y + y EOS
+z EOS
+z - y - y EOS
+x % y + x EOS
+z % y - y EOS
+y / x ^ x EOS
+z + z + z EOS
+x - x - y EOS
+y % z / x EOS
+x + z EOS
+y ^ z - x EOS
+x - y % x EOS
+z * y / x EOS
+y EOS
+y - y ^ y EOS
+x % y / x EOS
+y - y + z EOS
+z % x % z EOS
+y - z + x EOS
+z EOS
+z % z ^ y EOS
+y EOS
+x * x * z EOS
+y * x + x EOS
+x / z ^ z EOS
+x * y + y EOS
+x / z EOS
+y % y % z EOS
+x / z EOS
+z * y EOS
+x * z / x EOS
+y * y - x EOS
+x - y + x EOS
+z EOS
+y + z * x EOS
+x % x % x EOS
+y + z ^ x EOS
+z + x - z EOS
+y / y - x EOS
+x ^ y ^ y EOS
+y ^ y / y EOS
+z EOS
+z * x EOS
+z % z ^ x EOS
+x - z + x EOS
+y * y EOS
+y % x - z EOS
+y - z + x EOS
+y - y % z EOS
+y * y * y EOS
+z + x ^ x EOS
+y ^ x - y EOS
+z / y + y EOS
+x + y % z EOS
+z + x + y EOS
+y % x + z EOS
+x - x + x EOS
+y * y / z EOS
+x * z * x EOS
+z + x % x EOS
+y % x % x EOS
+x - z + z EOS
+z + z / y EOS
+z + y / x EOS
+y * z EOS
+z + y + x EOS
+x * z / y EOS
+x - y - x EOS
+x % y + x EOS
+y % x EOS
+z / x * z EOS
+z ^ z + y EOS
+y EOS
+x * y % y EOS
+z ^ z / y EOS
+y ^ x - x EOS
+z - y * z EOS
+x / y * y EOS
+x EOS
+z % z / x EOS
+x % y EOS
+z + z / z EOS
+y / y / z EOS
+x - x EOS
+x * x / x EOS
+y % z - x EOS
+x % y EOS
+x ^ z / y EOS
+z ^ y * z EOS
+z - z EOS
+z % x EOS
+y + z % y EOS
+x - x % y EOS
+z / x + z EOS
+x EOS
+z - x + z EOS
+y ^ x % x EOS
+x ^ y - y EOS
+x / z + z EOS
+z / z - y EOS
+y / z - x EOS
+y ^ y EOS
+y ^ x - x EOS
+x + x + y EOS
+x % z EOS
+z - z * y EOS
+z * z % y EOS
+x / x - z EOS
+y % z ^ x EOS
+y * y + x EOS
+z * y - x EOS
+z - y EOS
+x + y ^ x EOS
+z % x % x EOS
+y % z * x EOS
+z / y EOS
+y ^ y - y EOS
+z - z % z EOS
+x % y % z EOS
+x % x ^ z EOS
+x % y EOS
+y / z + z EOS
+z + y * z EOS
+z / z + y EOS
+x * y - z EOS
+z - y ^ x EOS
+x - y * x EOS
+z % y EOS
+x % x + z EOS
+y EOS
+z * z - z EOS
+x - z EOS
+x - y % x EOS
+x * x - z EOS
+y EOS
+y EOS
+y * y - x EOS
+z / y ^ y EOS
+y * y EOS
+z ^ z / y EOS
+x + x EOS
+x + y % x EOS
+y - z % y EOS
+y * y % z EOS
+x ^ x * y EOS
+x EOS
+z / z ^ x EOS
+y % x * z EOS
+z ^ x EOS
+x - x EOS
+z EOS
+z * y % x EOS
+x % y - z EOS
+z % x EOS
+y % x + y EOS
+y ^ z / x EOS
+z - z ^ x EOS
+y * y ^ x EOS
+x / z % z EOS
+x % y ^ y EOS
+x ^ z * z EOS
+x EOS
+z * x % z EOS
+y + x - y EOS
+x / z / x EOS
+y / x * y EOS
+z + y EOS
+z EOS
+y - z % x EOS
+y EOS
+z * x EOS
+x ^ y % z EOS
+x / x EOS
+x EOS
+z ^ x % y EOS
+y / x / y EOS
+y + x * y EOS
+y / x ^ z EOS
+z EOS
+x - z ^ x EOS
+y + x * x EOS
+y EOS
+y - y - z EOS
+y ^ x / y EOS
+z % y / z EOS
+x - z % y EOS
+z % y * y EOS
+x - z + z EOS
+z - z * z EOS
+y - x / z EOS
+z ^ x ^ x EOS
+z ^ z % z EOS
+y - y - y EOS
+x + z * x EOS
+x % x ^ z EOS
+x ^ z - z EOS
+y - x / y EOS
+z ^ z * x EOS
+z / z + x EOS
+z - x * x EOS
+x - y % y EOS
+y - y % y EOS
+x + x + z EOS
+z ^ x EOS
+z * y * z EOS
+y / z % y EOS
+y / y - z EOS
+y ^ x ^ y EOS
+x + z ^ z EOS
+y - y % y EOS
+x - z ^ z EOS
+z ^ z + z EOS
+y ^ x * y EOS
+x / x / z EOS
+z ^ z % x EOS
+x - z ^ x EOS
+x EOS
+z EOS
+z - z / y EOS
+x EOS
+z / y % x EOS
+z * z - z EOS
+x % z - z EOS
+x EOS
+x + y ^ y EOS
+z % z ^ x EOS
+z + x EOS
+z * z % x EOS
+y EOS
+x - y ^ x EOS
+y EOS
+z % y + x EOS
+z + y + z EOS
+z EOS
+x + z ^ z EOS
+x - y EOS
+y * y + y EOS
+z - x / y EOS
+z + x ^ x EOS
+z - z * y EOS
+y * x - z EOS
+y % x % y EOS
+y EOS
+z / z - x EOS
+z EOS
+x / y * x EOS
+y EOS
+z + z % y EOS
+x / z * z EOS
+z + z % y EOS
+y % x + x EOS
+y / x ^ x EOS
+x EOS
+y ^ y / z EOS
+y / x EOS
+z EOS
+x / x * z EOS
+z EOS
+z / y ^ y EOS
+z - x - x EOS
+x % x - y EOS
+z ^ y ^ x EOS
+x - x / x EOS
+y + z * y EOS
+z EOS
+x % z + y EOS
+z EOS
+x % x * x EOS
+y * x / x EOS
+y * x + y EOS
+y * y - y EOS
+z EOS
+z EOS
+y * y + x EOS
+z % y + z EOS
+y % x EOS
+z ^ z % y EOS
+x - x / y EOS
+z * x EOS
+z % y ^ z EOS
+y ^ x + y EOS
+x - z EOS
+x ^ y EOS
+y / z - x EOS
+z % x ^ z EOS
+x / y ^ x EOS
+x / z / x EOS
+z + x * x EOS
+x % z * y EOS
+z * z ^ y EOS
+z - z - y EOS
+y / y ^ x EOS
+y * y EOS
+x ^ x + x EOS
+y * z / y EOS
+y * x % x EOS
+z * x EOS
+y ^ y % z EOS
+z * z % y EOS
+z / y - y EOS
+z + z * z EOS
+z - z EOS
+x * z / y EOS
+y / z - z EOS
+z % x ^ y EOS
+y * x / x EOS
+y ^ z EOS
+x + x ^ y EOS
+y * z * z EOS
+z EOS
+y ^ z + y EOS
+z - y EOS
+y % x / z EOS
+x * y / y EOS
+y + z ^ x EOS
+z - y + z EOS
+z EOS
+x - x * x EOS
+x % y + z EOS
+y - z + y EOS
+x % x EOS
+y % z - x EOS
+z * x + z EOS
+y + x EOS
+x EOS
+y / y - x EOS
+y EOS
+z * y % x EOS
+x + z * x EOS
+y ^ z / y EOS
+z - y % y EOS
+y / z + x EOS
+y - y EOS
+z ^ y + x EOS
+y - z + y EOS
+y % x * z EOS
+y ^ z ^ z EOS
+z + y ^ x EOS
+z + y % x EOS
+y + z ^ z EOS
+z EOS
+x - z - y EOS
+z ^ x - z EOS
+x + z ^ z EOS
+y * x / z EOS
+z ^ x / y EOS
+z / z * y EOS
+x EOS
+z * z EOS
+z % x * y EOS
+y / y - x EOS
+x EOS
+y ^ x - z EOS
+z * y / x EOS
+y * y + x EOS
+y / y % x EOS
+z / x + x EOS
+x % x % y EOS
+z ^ x * z EOS
+y % x / z EOS
+z - z ^ x EOS
+z EOS
+y + z - y EOS
+x - y * y EOS
+z / x EOS
+y + x / y EOS
+z EOS
+y / y / x EOS
+z ^ z + z EOS
+x % z EOS
+z / y EOS
+x / z % x EOS
+y EOS
+x * z - z EOS
+y + x ^ x EOS
+y - z ^ y EOS
+x ^ y EOS
+x EOS
+y - x * x EOS
+y - x / z EOS
+x * z / x EOS
+z % x EOS
+y % y - x EOS
+x / z EOS
+y EOS
+x ^ y % y EOS
+y * x EOS
+y * y % x EOS
+z * x * x EOS
+y % x - y EOS
+z / z + z EOS
+x - z ^ x EOS
+z % x - y EOS
+y EOS
+x ^ x + z EOS
+z + x EOS
+y + y + x EOS
+z EOS
+y / y - x EOS
+x - y - y EOS
+y ^ z EOS
+x ^ z % y EOS
+y ^ x ^ y EOS
+y - z ^ x EOS
+z ^ x % y EOS
+y + x * y EOS
+z EOS
+y + z - y EOS
+x / y * x EOS
+x / x % z EOS
+y * x + x EOS
+z ^ x % x EOS
+y EOS
+x ^ z EOS
+x - y EOS
+x - z - z EOS
+y + y / z EOS
+x EOS
+z EOS
+x % x EOS
+z - y EOS
+z % x % z EOS
+y + z + x EOS
+z % y / y EOS
+y ^ x + x EOS
+x / y / y EOS
+x ^ y EOS
+x / y - y EOS
+y + z % x EOS
+x + y + z EOS
+x - x % z EOS
+y - z % y EOS
+y * x * x EOS
+z ^ x ^ x EOS
+z - x - x EOS
+x ^ z + z EOS
+z % x EOS
+x * z % y EOS
+x ^ z + y EOS
+z + x ^ z EOS
+x - x ^ y EOS
+x % x / y EOS
+x ^ y % x EOS
+z % z + y EOS
+x + z % z EOS
+z % z * y EOS
+x + y % y EOS
+z * z * y EOS
+y * z ^ z EOS
+y * y * x EOS
+y + z + x EOS
+z / z EOS
+x % z % z EOS
+z * y * z EOS
+x EOS
+y * z EOS
+y * z ^ z EOS
+z - x % y EOS
+x % x EOS
+y / y % y EOS
+z * z * y EOS
+x - y EOS
+z + z ^ z EOS
+x * x ^ y EOS
+y EOS
+z / x % z EOS
+z - z * y EOS
+y - y / z EOS
+z * y ^ y EOS
+x EOS
+x % x / y EOS
+z - x ^ x EOS
+x / x * z EOS
+z EOS
+y ^ y EOS
+x % x + z EOS
+y / y EOS
+y / y * x EOS
+y + x % x EOS
+y * x + z EOS
+z + x - z EOS
+x / z - y EOS
+y * y * y EOS
+z * z / z EOS
+z - z / z EOS
+y + x % x EOS
+y / x % z EOS
+x EOS
+y ^ y / z EOS
+x * z - x EOS
+x + y + x EOS
+y ^ x + y EOS
+x / y - z EOS
+z EOS
+z % x / z EOS
+x % z ^ x EOS
+y % x - z EOS
+x EOS
+x * z % x EOS
+x + x * x EOS
+y - z % z EOS
+y EOS
+x - y * y EOS
+z - z % y EOS
+z / x ^ z EOS
+z + x % z EOS
+x EOS
+y ^ x + y EOS
+x + x + z EOS
+y / y % x EOS
+x ^ y % y EOS
+x EOS
+y % z - z EOS
+x - z % y EOS
+y * x % z EOS
+x - z / z EOS
+z * z * y EOS
+z + z / z EOS
+x * y * y EOS
+z / z * z EOS
+z - x EOS
+y + z - y EOS
+x EOS
+x EOS
+y / z EOS
+x + z ^ z EOS
+x ^ z + z EOS
+z * x % x EOS
+x * z + x EOS
+x ^ x % z EOS
+y ^ x / x EOS
+z EOS
+y EOS
+y / x - y EOS
+y - y % z EOS
+x ^ y EOS
+y + z ^ z EOS
+y / x + y EOS
+z - y % z EOS
+z - z % x EOS
+x + x % z EOS
+y * x EOS
+y EOS
+y / x EOS
+x - x EOS
+y * z % x EOS
+y / z ^ y EOS
+z - y EOS
+y % y ^ y EOS
+x * x % z EOS
+z / z / x EOS
+x * y + z EOS
+y % x * x EOS
+z + x % y EOS
+x + x % z EOS
+x + x * z EOS
+y / y / y EOS
+y + y * x EOS
+z ^ y EOS
+y EOS
+y * x - y EOS
+z / y ^ z EOS
+x + y + z EOS
+x - z ^ z EOS
+z % y + y EOS
+x + x ^ x EOS
+z + z % x EOS
+x - y EOS
+x % x EOS
+y * z / z EOS
+y + y - x EOS
+x + z + z EOS
+y ^ x ^ x EOS
+y % x * z EOS
+z - z % z EOS
+x - x * z EOS
+y % x + x EOS
+z / y % x EOS
+z + x % y EOS
+x EOS
+z + x EOS
+z / x ^ z EOS
+z * z ^ y EOS
+y / z % x EOS
+x EOS
+z EOS
+z - y % y EOS
+y EOS
+z % x / y EOS
+z EOS
+x ^ y ^ z EOS
+x / x + x EOS
+z / x ^ x EOS
+y * z ^ y EOS
+x * y EOS
+x * z / y EOS
+x + y - y EOS
+y EOS
+x ^ z - x EOS
+y / z - x EOS
+z / y EOS
+x ^ z ^ x EOS
+x % z % x EOS
+y + x - z EOS
+z ^ y + z EOS
+z + x * x EOS
+y EOS
+y ^ y / z EOS
+y - x / x EOS
+z ^ x + z EOS
+y % x - x EOS
+y + x / x EOS
+x - y * y EOS
+y + z % x EOS
+x % y EOS
+x / x * z EOS
+y - y / y EOS
+y ^ x EOS
+z % x % x EOS
+z / x - x EOS
+x - x - y EOS
+z - x * x EOS
+x + z * x EOS
+z / x / z EOS
+z ^ x % z EOS
+z * z + z EOS
+y / y / y EOS
+z % y % z EOS
+x * y + z EOS
+x * x * z EOS
+z ^ y + x EOS
+z ^ z - x EOS
+z * z ^ z EOS
+y * y * y EOS
+z ^ x EOS
+x / z * z EOS
+x ^ y * z EOS
+z / z / x EOS
+z / z + z EOS
+z * y / z EOS
+y + y % x EOS
+x EOS
+y - z - y EOS
+z ^ y / y EOS
+z * x ^ y EOS
+z EOS
+y ^ x ^ z EOS
+x ^ z - z EOS
+z * y ^ y EOS
+z - z + y EOS
+z * x ^ x EOS
+x % z / y EOS
+z % x - x EOS
+z ^ x % z EOS
+y / z % y EOS
+x - x - x EOS
+y - x - x EOS
+y % x * x EOS
+z * x / z EOS
+x ^ z + x EOS
+x - z % z EOS
+x % x EOS
+x / y ^ z EOS
+y - x + y EOS
+x - z + y EOS
+z + z % y EOS
+x * y % x EOS
+x % z % x EOS
+x EOS
+x - z % x EOS
+x ^ x EOS
+z ^ y % y EOS
+x + z - x EOS
+y EOS
+y + y + z EOS
+y ^ x * x EOS
+z - y * x EOS
+y / y EOS
+z - x * y EOS
+y ^ y + z EOS
+y * x * y EOS
+x / x - y EOS
+z ^ z % y EOS
+x - x % y EOS
+y / z / x EOS
+x / y * z EOS
+z + y * z EOS
+y / y / z EOS
+x % z EOS
+z - x EOS
+z / x + z EOS
+x - z EOS
+z * x / x EOS
+x + x + z EOS
+x * z + y EOS
+y * y ^ y EOS
+z % y % y EOS
+z % z + y EOS
+y ^ y - z EOS
+y - z ^ z EOS
+y + y ^ y EOS
+x * y / y EOS
+y - z + x EOS
+x ^ z + x EOS
+z EOS
+y EOS
+x + z % y EOS
+y / x + x EOS
+z / z % y EOS
+z / y ^ x EOS
+x EOS
+y % y EOS
+x + z EOS
+z ^ x * z EOS
+x * x / z EOS
+z * x ^ y EOS
+y * x + x EOS
+z % x ^ y EOS
+y * x * y EOS
+x EOS
+x ^ y + x EOS
+z ^ y / x EOS
+x - x ^ z EOS
+z * x * x EOS
+x - z - x EOS
+x - x EOS
+y ^ z * y EOS
+z % y ^ x EOS
+x / z + x EOS
+z % y * z EOS
+y / z EOS
+y % z EOS
+x % y / z EOS
+y * y EOS
+y * z + z EOS
+y EOS
+z - y % x EOS
+x - z - z EOS
+y * x ^ z EOS
+z EOS
+y ^ z EOS
+z * z % z EOS
+y % y % y EOS
+z EOS
+z - z + z EOS
+x ^ x + x EOS
+y * x / z EOS
+y % z % x EOS
+z % z - x EOS
+z ^ x / x EOS
+x EOS
+y % z % y EOS
+z + z - z EOS
+z ^ z - x EOS
+y ^ y / x EOS
+y EOS
+y - x % z EOS
+y / y / x EOS
+x / y * x EOS
+x ^ y - x EOS
+y EOS
+z + y - z EOS
+z - y + y EOS
+x / x + x EOS
+z + z + x EOS
+y % z - y EOS
+x * y / y EOS
+y * y - x EOS
+z / z * z EOS
+x / x * z EOS
+z - x / y EOS
+x + y EOS
+y ^ z + y EOS
+x - x % z EOS
+y * y EOS
+x EOS
+y % z % z EOS
+y EOS
+z * z ^ y EOS
+x * x EOS
+z ^ z EOS
+x % x ^ x EOS
+z ^ x ^ y EOS
+y % x % y EOS
+y % z + z EOS
+x ^ z ^ x EOS
+z EOS
+z % y % z EOS
+y EOS
+y ^ x EOS
+y EOS
+z % x / y EOS
+y / z + x EOS
+x / y % x EOS
+x % z + y EOS
+z EOS
+z % z ^ z EOS
+y % y * x EOS
+z ^ y * y EOS
+y * z EOS
+z EOS
+y ^ x / x EOS
+z % y / y EOS
+y ^ y * z EOS
+z EOS
+z - y % z EOS
+z * y + x EOS
+x + x + y EOS
+y + x EOS
+y / x / z EOS
+y EOS
+y + y % y EOS
+y - y EOS
+z EOS
+z + y % x EOS
+y - y * z EOS
+x % z / y EOS
+z ^ x / z EOS
+y ^ x / y EOS
+z - y - x EOS
+z * y * z EOS
+x - x % y EOS
+x % y * z EOS
+y EOS
+y / z * y EOS
+y + z * z EOS
+z ^ x * z EOS
+y / y % x EOS
+y % y % z EOS
+z EOS
+x ^ x * z EOS
+y * x % y EOS
+y ^ y * y EOS
+y EOS
+z - x % x EOS
+y - z / z EOS
+y + y / x EOS
+y - x * x EOS
+y / z * y EOS
+x % x + x EOS
+z % x / y EOS
+y + z - z EOS
+z - x / z EOS
+z * z ^ z EOS
+z EOS
+y - y ^ y EOS
+y + y + z EOS
+z % y - z EOS
+z - y + z EOS
+x * y * x EOS
+x EOS
+x % x ^ z EOS
+y - z + x EOS
+y - x - z EOS
+x % y - x EOS
+z / x % z EOS
+y + z + z EOS
+y / z % y EOS
+x EOS
+z - x + z EOS
+y EOS
+y * z % y EOS
+z - x / x EOS
+y ^ y * y EOS
+x - y EOS
+x EOS
+x ^ y - x EOS
+z ^ z ^ y EOS
+z - x * z EOS
+z EOS
+y + x ^ z EOS
+z * y + z EOS
+z - y % z EOS
+x / z - y EOS
+y / z * z EOS
+z - y % y EOS
+z EOS
+y % y % z EOS
+z - x ^ x EOS
+y ^ x - x EOS
+x * x EOS
+x ^ x + x EOS
+z ^ z EOS
+y ^ x * z EOS
+y / y / x EOS
+z * x + x EOS
+x ^ y - y EOS
+y ^ z ^ y EOS
+z / x ^ y EOS
+z / x EOS
+z % y % x EOS
+z + z + x EOS
+z EOS
+z % y * x EOS
+z EOS
+z ^ y ^ y EOS
+x EOS
+z ^ y - x EOS
+x EOS
+x - x / x EOS
+x ^ y ^ z EOS
+y EOS
+y % y * y EOS
+z / z * y EOS
+z ^ y + y EOS
+z / y % x EOS
+z ^ x / x EOS
+y EOS
+y - y EOS
+y EOS
+z ^ z / y EOS
+z / x - x EOS
+z % x / y EOS
+x - y ^ x EOS
+z % y EOS
+x / z EOS
+x ^ z + z EOS
+x + z ^ z EOS
+y + z ^ x EOS
+x ^ z / z EOS
+y * x * z EOS
+x - z / z EOS
+z - y EOS
+x / y EOS
+y ^ y % y EOS
+x * x * y EOS
+z / x * y EOS
+x - y ^ z EOS
+x EOS
+x + y / x EOS
+z - y + z EOS
+y ^ x EOS
+z EOS
+x / y / z EOS
+y / x ^ y EOS
+z EOS
+y - x - y EOS
+y ^ y * x EOS
+z ^ y + z EOS
+x - x - y EOS
+z * x ^ z EOS
+z * z + x EOS
+z ^ z % y EOS
+y * x * y EOS
+z % x * x EOS
+y * x - y EOS
+y EOS
+x / y EOS
+y % x - z EOS
+x / z - y EOS
+z - y ^ y EOS
+y * z / z EOS
+y EOS
+y * x ^ y EOS
+z / z ^ z EOS
+z / x * x EOS
+x - y % z EOS
+x % x ^ y EOS
+y / x * z EOS
+z EOS
+x + x * z EOS
+z EOS
+z % z / z EOS
+x - x * y EOS
+y - x + x EOS
+y EOS
+z % z EOS
+y * y EOS
+z + z EOS
+z * z * x EOS
+y * y / z EOS
+x * y % z EOS
+y * y ^ y EOS
+x / z + x EOS
+z * y / y EOS
+z - z ^ x EOS
+x EOS
+x % y % y EOS
+y + x * z EOS
+x / z * x EOS
+x * y ^ y EOS
+y EOS
+x / x + z EOS
+x EOS
+y + y * z EOS
+y / y EOS
+x * z + x EOS
+z * y / x EOS
+x % y % y EOS
+y * x * y EOS
+z ^ z EOS
+y ^ y * x EOS
+x % y ^ z EOS
+x EOS
+z % y / y EOS
+y - y - y EOS
+z - x / z EOS
+x % y % x EOS
+z * z EOS
+y % z ^ x EOS
+z / y ^ y EOS
+z - z % y EOS
+y / y * z EOS
+z + z - z EOS
+z + z ^ x EOS
+z ^ y % z EOS
+z EOS
+x + z - y EOS
+y - y / z EOS
+x ^ z / x EOS
+y + z ^ x EOS
+z / z EOS
+x ^ x EOS
+y / y - z EOS
+y / z / x EOS
+y / z % z EOS
+y EOS
+x - y EOS
+z EOS
+z + x / x EOS
+x % x + y EOS
+y - x ^ x EOS
+y / z / z EOS
+x + x / y EOS
+z + x * y EOS
+y - x EOS
+y + y EOS
+x EOS
+y * z * x EOS
+x - y / z EOS
+z + y * z EOS
+z * y / x EOS
+x EOS
+z - y + z EOS
+x % z % x EOS
+x * z EOS
+y * z + z EOS
+z - y + x EOS
+z / x / z EOS
+z + y ^ z EOS
+y * y + y EOS
+x EOS
+x - x EOS
+z * y ^ z EOS
+x - z EOS
+x * z / y EOS
+z % x / x EOS
+x - z / y EOS
+x ^ z + z EOS
+z % z * y EOS
+z - x - x EOS
+z % x / z EOS
+z * z EOS
+z EOS
+y ^ x - y EOS
+z + y - x EOS
+x EOS
+z + z % x EOS
+x - z / z EOS
+y + y ^ z EOS
+x * z - y EOS
+z + x EOS
+x - z - x EOS
+z ^ y / x EOS
+x % x % z EOS
+z % z % y EOS
+x EOS
+x % y / x EOS
+x * x + x EOS
+z / z % y EOS
+x / x % x EOS
+z % x EOS
+y / z * y EOS
+z ^ y EOS
+z + x + z EOS
+x - y - x EOS
+x EOS
+z % x + x EOS
+y ^ x EOS
+z % y - x EOS
+x + z * y EOS
+z EOS
+z - y - x EOS
+x * y * z EOS
+z / x * y EOS
+y * z % y EOS
+z % z ^ z EOS
+z - x EOS
+x ^ z - x EOS
+y - x ^ y EOS
+z - y ^ z EOS
+y * z ^ x EOS
+y EOS
+y - y EOS
+z ^ z % z EOS
+y - z - y EOS
+x ^ y % x EOS
+z EOS
+x EOS
+z * y * z EOS
+x / x EOS
+z / x ^ x EOS
+y EOS
+x + y / y EOS
+x * x - x EOS
+z * z / z EOS
+x EOS
+y % x EOS
+x - z / y EOS
+y - z EOS
+z % y + z EOS
+z ^ x EOS
+z - z EOS
+z / z ^ y EOS
+x ^ y + x EOS
+y + y - x EOS
+z / z % z EOS
+x - z EOS
+y + y % z EOS
+z * y % x EOS
+y / x - z EOS
+y - y ^ z EOS
+x / y EOS
+z + x % z EOS
+z / z / z EOS
+x + y * x EOS
+x ^ y * y EOS
+y - y - z EOS
+z - y * y EOS
+x * z EOS
+z - z - z EOS
+x + z EOS
+z + y % x EOS
+z * z / z EOS
+z ^ x + x EOS
+z * z ^ y EOS
+y EOS
+y ^ z EOS
+x EOS
+y / y EOS
+y % y * y EOS
+y % z / x EOS
+y + x % z EOS
+x ^ z * y EOS
+y / x % x EOS
+x + y EOS
+y / x + x EOS
+x EOS
+z + x % x EOS
+x / z - y EOS
+x + z * x EOS
+x + x % y EOS
+y ^ z - y EOS
+x % y + x EOS
+x ^ y + z EOS
+z * z EOS
+x / y + x EOS
+x / x % z EOS
+x % z EOS
+y - x / x EOS
+z EOS
+y % z - x EOS
+x % z * x EOS
+z * x ^ z EOS
+z ^ z - x EOS
+z ^ z - x EOS
+y EOS
+z * y ^ z EOS
+y % y / z EOS
+x ^ y + z EOS
+y - x / y EOS
+y % y ^ z EOS
+z / z * z EOS
+x + x EOS
+y / y - y EOS
+z + x / x EOS
+y + x / y EOS
+x / z / x EOS
+y EOS
+x * z ^ y EOS
+x + y EOS
+z EOS
+x ^ y * x EOS
+x EOS
+x / z / z EOS
+y - x EOS
+y / z * z EOS
+x % z - y EOS
+x % z / y EOS
+x / y * x EOS
+y * y / z EOS
+z * x ^ x EOS
+y ^ y EOS
+z - z + y EOS
+x % x + z EOS
+x * z - z EOS
+z / z - z EOS
+x * y EOS
+z ^ x / x EOS
+y EOS
+y + z ^ x EOS
+z ^ y EOS
+x EOS
+x % z ^ z EOS
+z % x * z EOS
+z - y - y EOS
+y / x EOS
+x * y % x EOS
+y / y EOS
+y + x % x EOS
+x + y EOS
+x % z % z EOS
+y / y ^ y EOS
+z - x EOS
+x + x / z EOS
+y * y - x EOS
+z - y - x EOS
+z ^ y + y EOS
+x ^ z / x EOS
+y ^ z EOS
+x + z ^ y EOS
+y + x * z EOS
+y + x % z EOS
+y / z + x EOS
+z % z / x EOS
+x * x % y EOS
+y * z ^ y EOS
+z * x ^ y EOS
+y - x * y EOS
+z % y * z EOS
+x EOS
+x + y ^ x EOS
+x % x * y EOS
+z / y - z EOS
+z / z + z EOS
+x ^ y * x EOS
+y / x - y EOS
+z / z / y EOS
+y - x % x EOS
+y ^ z % z EOS
+y EOS
+y ^ x EOS
+y % x + z EOS
+z / x EOS
+x ^ z / x EOS
+z / x + y EOS
+y ^ x + z EOS
+z + z % x EOS
+y EOS
+z EOS
+z + y - y EOS
+x EOS
+x * y % z EOS
+z EOS
+z * z EOS
+x EOS
+z / z % x EOS
+x * x + z EOS
+x * z % x EOS
+x + z / z EOS
+z EOS
+z ^ z % y EOS
+z - z * x EOS
+x / x ^ z EOS
+y - x EOS
+z * y ^ x EOS
+z % z EOS
+y / x EOS
+y % z * x EOS
+x / z + y EOS
+x % y / x EOS
+y / y * x EOS
+x + z ^ x EOS
+z ^ z - y EOS
+x % x ^ y EOS
+y % x / y EOS
+y EOS
+z % y * y EOS
+x ^ z % z EOS
+z * y EOS
+x * y ^ z EOS
+y ^ y + y EOS
+y / z % z EOS
+y + y - y EOS
+z * y + y EOS
+x % x + y EOS
+x + y % y EOS
+z / z EOS
+y - y % y EOS
+z % z EOS
+x / z * z EOS
+z / z - x EOS
+z / x / y EOS
+x - x EOS
+y % y % x EOS
+y * x + x EOS
+x / y % y EOS
+y + x / x EOS
+x - z EOS
+y EOS
+x EOS
+y EOS
+z + x - y EOS
+z EOS
+x * x EOS
+x ^ x / x EOS
+y ^ x / y EOS
+y EOS
+x EOS
+z / z % x EOS
+y + y - y EOS
+x * y - x EOS
+x - x ^ y EOS
+x / x ^ z EOS
+z % x + x EOS
+y - x * z EOS
+y * z * x EOS
+x + x / y EOS
+y EOS
+z ^ x + y EOS
+y EOS
+y + z + z EOS
+y / z - x EOS
+z ^ z ^ z EOS
+x + z - y EOS
+z ^ x / z EOS
+y % x ^ z EOS
+y EOS
+z / y - x EOS
+x EOS
+x EOS
+y EOS
+z + y + z EOS
+z ^ z + y EOS
+x % y EOS
+y - y - z EOS
+z - z + z EOS
+x EOS
+z * y + x EOS
+x ^ z / z EOS
+z + y EOS
+z + y + x EOS
+z % y % z EOS
+y * x * x EOS
+x * z ^ x EOS
+x + x * y EOS
+x ^ z * z EOS
+y % x % x EOS
+x EOS
+y / x % z EOS
+z - x - y EOS
+z % z % z EOS
+y % x + z EOS
+y % x EOS
+x ^ z EOS
+x + x + y EOS
+x EOS
+y ^ x ^ z EOS
+y - z EOS
+y - y % x EOS
+z % z + x EOS
+x + y / z EOS
+x - y ^ z EOS
+z * x % x EOS
+y % z % y EOS
+x * z % z EOS
+z / x + y EOS
+x EOS
+x * z - y EOS
+x * z ^ x EOS
+z ^ x + z EOS
+z ^ y ^ y EOS
+x % x + y EOS
+z % x / z EOS
+z - x / z EOS
+y * x * x EOS
+x ^ y ^ x EOS
+y / z + y EOS
+y % x ^ z EOS
+x ^ z * x EOS
+y % x % x EOS
+y EOS
+z / y % x EOS
+y * z * y EOS
+y ^ z % x EOS
+x + y EOS
+y * y + z EOS
+x / z + y EOS
+y EOS
+x / z % z EOS
+x - x EOS
+y * y EOS
+x EOS
+z * z % y EOS
+z ^ y ^ y EOS
+y * x - x EOS
+z + z + x EOS
+x / y / y EOS
+x + x ^ y EOS
+y - x % x EOS
+x - z % y EOS
+z - z + y EOS
+z EOS
+z / x ^ z EOS
+x ^ z / x EOS
+x * z * x EOS
+x % y % y EOS
+z / y ^ z EOS
+y % z % x EOS
+y ^ y EOS
+z / y ^ y EOS
+x EOS
+y + y ^ z EOS
+z / y EOS
+y / x % x EOS
+x ^ x / x EOS
+x + z EOS
+z ^ y EOS
+y * z % z EOS
+x % z + z EOS
+x ^ x EOS
+z ^ z - y EOS
+y % x % y EOS
+x % x EOS
+z * y - x EOS
+x EOS
+x ^ y / z EOS
+x / x - x EOS
+z EOS
+x % x - x EOS
+z EOS
+z + z % z EOS
+y % x + y EOS
+y + x ^ y EOS
+z ^ y ^ x EOS
+x % x - z EOS
+y - z % z EOS
+y % y EOS
+y + x / x EOS
+y ^ z / x EOS
+y % x EOS
+x + x % y EOS
+z EOS
+y * z * x EOS
+x + z EOS
+z EOS
+x * x * x EOS
+y ^ z / z EOS
+x - x EOS
+x - z / y EOS
+z / y ^ z EOS
+x / x / x EOS
+y ^ y + y EOS
+y / y + z EOS
+z + z - y EOS
+x ^ x ^ x EOS
+z EOS
+x * x / y EOS
+y ^ z * z EOS
+x + y % y EOS
+y - x * x EOS
+x EOS
+y ^ y + z EOS
+y ^ x * y EOS
+z % y - x EOS
+y / x ^ z EOS
+x * z / x EOS
+z * y EOS
+z ^ y % y EOS
+y + x * y EOS
+x ^ z EOS
+x + x ^ x EOS
+y % x EOS
+y * z + y EOS
+y ^ y ^ z EOS
+z - y EOS
+y + z - x EOS
+y ^ z % y EOS
+y ^ y % z EOS
+z * z EOS
+y / z + y EOS
+x ^ z + y EOS
+z / z * y EOS
+x * z / y EOS
+y / x ^ z EOS
+z - z + x EOS
+x * z % z EOS
+x EOS
+x * x - x EOS
+z * x - z EOS
+y - z / z EOS
+y / x + x EOS
+z ^ x / x EOS
+x / x * y EOS
+x + x * x EOS
+y + x + y EOS
+x / z % x EOS
+z ^ y / y EOS
+z * x * y EOS
+y * x % y EOS
+z * z / x EOS
+y % y % x EOS
+x EOS
+y ^ x % z EOS
+x % y + z EOS
+x % z / x EOS
+y + x + x EOS
+x / x + y EOS
+z % y ^ z EOS
+x / x EOS
+x / x ^ y EOS
+z - y EOS
+y EOS
+z % y % x EOS
+z % x ^ x EOS
+y + x % x EOS
+x % z * x EOS
+x ^ z EOS
+y / x + z EOS
+y EOS
+y * x ^ z EOS
+y EOS
+y EOS
+x / z % y EOS
+y ^ z + y EOS
+y * z - x EOS
+z / x EOS
+y EOS
+y / z * x EOS
+y / z / z EOS
+y % z % y EOS
+x + y EOS
+y ^ z + x EOS
+z ^ z % x EOS
+y ^ x % x EOS
+z / z EOS
+y - y + z EOS
+y + x ^ x EOS
+y / x + z EOS
+z / x ^ z EOS
+z ^ y % z EOS
+y - y - y EOS
+x EOS
+x % z EOS
+y EOS
+z % z EOS
+x * z / x EOS
+y + x - y EOS
+z * x / y EOS
+y EOS
+z - z / y EOS
+x EOS
+z % y / x EOS
+y * x + x EOS
+y - y ^ z EOS
+x % x - y EOS
+y ^ z % z EOS
+z EOS
+z ^ z * y EOS
+z / z / z EOS
+x - y / z EOS
+z + z EOS
+x - y + y EOS
+x - y * z EOS
+y ^ z + z EOS
+x * x % z EOS
+x + z * x EOS
+y ^ y ^ z EOS
+y EOS
+y ^ z - z EOS
+z - x * x EOS
+z ^ z / z EOS
+y ^ x - z EOS
+z + y - y EOS
+z / y % z EOS
+y - x EOS
+z * z EOS
+y EOS
+y / z - y EOS
+y % z - x EOS
+x / y % y EOS
+y + x EOS
+z EOS
+z * y ^ y EOS
+x / y + z EOS
+y / y + z EOS
+x % x + z EOS
+x EOS
+y / z + x EOS
+z % z + z EOS
+y ^ z * y EOS
+y / x / z EOS
+z EOS
+x + x / x EOS
+y EOS
+z - x EOS
+z + z + y EOS
+z ^ y EOS
+z / y * x EOS
+x ^ z + x EOS
+y / y - x EOS
+x / x ^ y EOS
+z EOS
+x * z % z EOS
+x % x + x EOS
+z ^ z + y EOS
+z ^ z % x EOS
+z - z / z EOS
+z / y % x EOS
+z EOS
+y + x EOS
+x / x / x EOS
+z - x * y EOS
+z ^ y ^ z EOS
+y ^ z - y EOS
+y / y / x EOS
+y * z % y EOS
+y / z / x EOS
+x % z % z EOS
+x - y EOS
+y EOS
+z * y / x EOS
+y EOS
+y * y / y EOS
+y EOS
+y / z - y EOS
+y / y % y EOS
+z - z EOS
+y % y / y EOS
+z EOS
+z + x + z EOS
+y / y ^ x EOS
+y - x ^ x EOS
+z % y ^ y EOS
+y - z % z EOS
+x EOS
+x ^ x % z EOS
+y / x EOS
+y / z + x EOS
+z - z % z EOS
+x EOS
+y ^ y * y EOS
+z ^ z - z EOS
+z % x / x EOS
+z % y % x EOS
+z + x - z EOS
+x / y ^ y EOS
+z / y % x EOS
+y - y % y EOS
+x + y EOS
+y + y ^ x EOS
+z ^ x EOS
+z % y / x EOS
+z EOS
+x - x EOS
+z / z / x EOS
+z * z % x EOS
+y + y % y EOS
+z + y % y EOS
+x + z - y EOS
+x * z * y EOS
+z / y EOS
+y % y ^ z EOS
+x - x - y EOS
+x EOS
+z + y EOS
+y EOS
+x ^ x % y EOS
+z ^ y - x EOS
+y ^ z - y EOS
+z / z ^ x EOS
+x * z EOS
+y % x EOS
+x EOS
+y EOS
+z + y * x EOS
+z / y + y EOS
+x ^ y + x EOS
+z - x ^ z EOS
+x % z - y EOS
+y ^ y / x EOS
+z * x * x EOS
+y / z ^ x EOS
+x EOS
+y EOS
+x + x * x EOS
+z % z % y EOS
+z + y EOS
+x / y - x EOS
+x / z - z EOS
+z ^ x * z EOS
+y - x / x EOS
+x EOS
+z * y - z EOS
+y + z ^ z EOS
+z EOS
+x / z + z EOS
+z EOS
+z EOS
+x + y / x EOS
+x EOS
+y * x / z EOS
+z - z % z EOS
+y - y - x EOS
+x % z % x EOS
+z EOS
+z EOS
+z / y EOS
+x EOS
+x / x - z EOS
+y * y % x EOS
+x / y EOS
+z - z ^ y EOS
+z * z EOS
+y % x * x EOS
+x % x + z EOS
+y ^ y EOS
+z * y * z EOS
+z / x % x EOS
+z + x % x EOS
+y EOS
+z * y * z EOS
+y * x % y EOS
+z / x * z EOS
+y EOS
+z EOS
+z % z EOS
+z ^ x + x EOS
+z * y ^ z EOS
+z EOS
+x - y % x EOS
+x % y + x EOS
+x / x ^ x EOS
+z EOS
+x ^ z - y EOS
+x / z + y EOS
+z / z EOS
+z / z + z EOS
+z % y * z EOS
+y ^ z % x EOS
+y ^ z - y EOS
+y / x + y EOS
+z ^ x ^ x EOS
+y / x - z EOS
+z EOS
+z EOS
+x * y - y EOS
+z % x - x EOS
+y EOS
+x ^ x EOS
+z * x % x EOS
+y / x - y EOS
+z / y - y EOS
+y * z EOS
+x EOS
+z + y * x EOS
+y / x ^ x EOS
+z / z % z EOS
+y - x - x EOS
+y / z + x EOS
+y - x * x EOS
+z ^ z / x EOS
+y - x - y EOS
+y + z % y EOS
+z ^ y % y EOS
+z - x * x EOS
+z - x % z EOS
+y * y ^ z EOS
+x % x % z EOS
+z % x ^ x EOS
+x - z * x EOS
+y % y EOS
+z * z EOS
+y ^ y ^ x EOS
+y - x + z EOS
+z ^ x + z EOS
+x ^ z EOS
+y ^ z EOS
+x EOS
+z / z / z EOS
+y + y * y EOS
+z EOS
+x % z + y EOS
+y EOS
+x + x EOS
+x EOS
+z - x + x EOS
+x / x % x EOS
+x * y * y EOS
+x + x + y EOS
+x / y ^ x EOS
+x + y EOS
+x * z % x EOS
+y / y % z EOS
+y EOS
+y EOS
+y / y * x EOS
+x % y ^ x EOS
+x / y ^ z EOS
+z ^ x * y EOS
+x / x ^ y EOS
+x ^ z EOS
+x - x + z EOS
+y / x % y EOS
+z / x * z EOS
+y + x * y EOS
+z + x EOS
+x + z * y EOS
+y + x EOS
+z ^ z - z EOS
+z EOS
+x * x / y EOS
+z - x - y EOS
+x + x EOS
+x - y ^ y EOS
+z ^ y - z EOS
+y * z EOS
+y / x ^ x EOS
+z - x * x EOS
+y % y * z EOS
+x - x % z EOS
+y / z - x EOS
+z * z + z EOS
+x - x / z EOS
+x - z ^ y EOS
+x + x / y EOS
+z EOS
+z ^ y * x EOS
+z + x % x EOS
+y % y + z EOS
+x EOS
+z / z * x EOS
+x / x * x EOS
+z ^ z EOS
+z % z - z EOS
+y * x * x EOS
+x - y / y EOS
+x * z + x EOS
+z EOS
+z * x * x EOS
+y EOS
+y / y * z EOS
+x * z + z EOS
+z - z EOS
+z % x * z EOS
+y ^ y - x EOS
+y * x - y EOS
+z / y ^ x EOS
+x / y / z EOS
+y EOS
+x % y ^ z EOS
+x - z / z EOS
+x / z % z EOS
+x / x EOS
+x - x + y EOS
+y / z + z EOS
+y % x ^ y EOS
+y + y / z EOS
+y ^ x + y EOS
+z ^ y / y EOS
+x * z - z EOS
+x / y + x EOS
+y EOS
+x - x + x EOS
+x * y * x EOS
+y / z % y EOS
+x EOS
+x - z - x EOS
+x + y ^ z EOS
+z EOS
+y / y - y EOS
+y % z ^ x EOS
+y - x EOS
+y EOS
+z + z * x EOS
+z - z + y EOS
+y % x - y EOS
+y + z ^ y EOS
+x ^ z EOS
+x / x ^ y EOS
+x % y % x EOS
+y - y ^ y EOS
+z ^ x - x EOS
+x EOS
+x - y * z EOS
+x - z + z EOS
+z / x % z EOS
+x - z * z EOS
+x * y + y EOS
+x EOS
+z / z % x EOS
+x % y ^ x EOS
+z - x + z EOS
+y - z EOS
+y - x / z EOS
+x / y * y EOS
+y * x / z EOS
+x * y - y EOS
+z + y ^ x EOS
+z ^ x + y EOS
+y / z * x EOS
+z / y + y EOS
+z EOS
+y EOS
+y % z + z EOS
+z ^ y * z EOS
+x * y % x EOS
+y % x EOS
+z + x - z EOS
+z EOS
+y * z / x EOS
+x ^ y EOS
+y / x - y EOS
+z % z % y EOS
+y * z * y EOS
+y EOS
+z ^ y * x EOS
+y ^ y ^ x EOS
+z * x + x EOS
+x * y ^ y EOS
+x ^ z + x EOS
+y + z + x EOS
+y * x + y EOS
+z ^ y ^ x EOS
+y - y * y EOS
+z / y - z EOS
+z % y % y EOS
+x % x % y EOS
+z * z + z EOS
+z * z ^ y EOS
+y * y % x EOS
+x % z % y EOS
+x - x ^ x EOS
+z + x % y EOS
+x / x EOS
+y - y % x EOS
+x - y EOS
+y % z + y EOS
+y + y EOS
+x / y ^ x EOS
+x + y - z EOS
+x * y * x EOS
+y % y ^ y EOS
+x % y EOS
+z * z + x EOS
+y / z - z EOS
+x - z ^ y EOS
+y + y / x EOS
+z EOS
+x + z % y EOS
+x + z * x EOS
+x % x / x EOS
+x * x * y EOS
+z * x / x EOS
+z + y ^ z EOS
+x ^ x + z EOS
+z / x - z EOS
+y * x / x EOS
+z ^ z - x EOS
+z + y % x EOS
+y / z / y EOS
+x * y % x EOS
+x + y % y EOS
+z ^ x % z EOS
+y EOS
+y - y ^ z EOS
+z ^ x EOS
+z + x - z EOS
+z - z - x EOS
+x ^ z - z EOS
+y EOS
+y - x - x EOS
+y - z * x EOS
+y * z ^ y EOS
+x - y ^ z EOS
+y + z EOS
+z * x * x EOS
+x / x % z EOS
+z EOS
+z / x ^ x EOS
+x + y + y EOS
+z * x * x EOS
+z - x * z EOS
+y * z % y EOS
+y / y - y EOS
+y ^ x - y EOS
+x ^ y * y EOS
+z EOS
+z ^ x - z EOS
+y - y ^ x EOS
+y + y / z EOS
+y EOS
+y * y ^ x EOS
+x - y ^ z EOS
+x ^ z % z EOS
+z % x + z EOS
+z + z ^ z EOS
+z + x - z EOS
+z ^ x * y EOS
+x ^ y * x EOS
+y EOS
+z EOS
+x % z EOS
+x / y EOS
+x % z % y EOS
+y * x ^ x EOS
+x % z ^ z EOS
+x * y + x EOS
+y / z / y EOS
+z ^ y EOS
+x ^ y + y EOS
+x - y / y EOS
+z / y / y EOS
+y % z EOS
+y - y * y EOS
+z % x * x EOS
+x EOS
+y + x EOS
+x - y - y EOS
+x EOS
+x + y - z EOS
+x EOS
+x / x - z EOS
+x % x * z EOS
+y * x + z EOS
+y * x - y EOS
+y / x % x EOS
+x / y / z EOS
+y ^ y * y EOS
+z % x EOS
+y * y * z EOS
+z / y - x EOS
+x - z / x EOS
+x ^ y EOS
+x EOS
+z + z ^ z EOS
+y EOS
+y % z / z EOS
+z * x - z EOS
+y ^ y * x EOS
+y * x / y EOS
+x EOS
+y * x / x EOS
+z / z / z EOS
+y * z % y EOS
+x / z * z EOS
+x - y EOS
+y ^ x % z EOS
+y EOS
+y / y / z EOS
+z EOS
+x ^ y + y EOS
+x - z * x EOS
+x ^ z / z EOS
+x * y / y EOS
+z / x ^ z EOS
+y + x / y EOS
+z % z ^ x EOS
+x * y ^ x EOS
+z * z EOS
+x EOS
+z / x - x EOS
+x / y EOS
+y / z ^ y EOS
+x * x / x EOS
+y + x + z EOS
+x - z % z EOS
+z % y EOS
+z - z ^ y EOS
+z * y ^ x EOS
+x + x ^ y EOS
+x ^ z % x EOS
+z - z ^ y EOS
+z % z EOS
+z % x + y EOS
+z * x % z EOS
+z EOS
+x EOS
+y * x EOS
+x EOS
+x + z / x EOS
+y EOS
+x / y / z EOS
+z EOS
+x - x / y EOS
+x % x - z EOS
+x + x % z EOS
+y + x * y EOS
+x / x - z EOS
+z EOS
+z - z EOS
+y EOS
+y + x * z EOS
+z ^ z + x EOS
+z EOS
+x / z EOS
+x EOS
+x EOS
+z - y ^ y EOS
+y / z EOS
+x + z - z EOS
+z * z / y EOS
+x % z EOS
+x * y % y EOS
+z EOS
+y ^ z - z EOS
+z + y + z EOS
+y - y * z EOS
+y * x / z EOS
+z * y % y EOS
+z * y * z EOS
+y ^ z EOS
+z % y / x EOS
+x % z ^ y EOS
+y - y - z EOS
+y % y % z EOS
+x % y + y EOS
+y - y % y EOS
+z - z - z EOS
+x + x * x EOS
+y / z * x EOS
+x % z / y EOS
+z EOS
+y / z EOS
+y + y EOS
+z / z ^ y EOS
+z ^ y / x EOS
+z * x ^ x EOS
+z ^ x + z EOS
+z * z ^ x EOS
+y - z - z EOS
+x % y / y EOS
+y EOS
+z - z - z EOS
+x * x - y EOS
+y ^ y % z EOS
+x - x * y EOS
+z / x % x EOS
+x / z % x EOS
+z - y + x EOS
+z * y EOS
+y - x EOS
+x + x % x EOS
+z + y EOS
+x * y - z EOS
+x * z - y EOS
+z + x ^ x EOS
+z * x - y EOS
+z EOS
+x % x ^ y EOS
+z ^ x - z EOS
+z / y / y EOS
+z + x / z EOS
+x + x + z EOS
+z - y + z EOS
+y / y - z EOS
+z EOS
+z ^ x * z EOS
+x + z EOS
+z * x / x EOS
+y ^ z % z EOS
+y - y EOS
+z ^ x - x EOS
+x * x EOS
+x % z / y EOS
+y % x ^ x EOS
+y * z * y EOS
+x - y ^ z EOS
+y / x + y EOS
+x + x * z EOS
+y / y - y EOS
+z ^ x * z EOS
+z * x - x EOS
+y ^ x / y EOS
+z / x EOS
+x * y * x EOS
+z - z + z EOS
+y ^ x EOS
+y * z * x EOS
+z EOS
+z / x - x EOS
+y - x * y EOS
+y ^ x EOS
+z + z EOS
+z ^ y + x EOS
+y EOS
+x - y - y EOS
+z / y + x EOS
+z % x / z EOS
+z + y % x EOS
+z % x + y EOS
+y EOS
+x / y EOS
+x % z ^ z EOS
+z ^ y * y EOS
+x - x % x EOS
+y - z ^ x EOS
+z * x - y EOS
+z / x / z EOS
+y EOS
+y * y * x EOS
+x + x / z EOS
+y EOS
+x / x - x EOS
+x * z + x EOS
+x - z - y EOS
+y / x * x EOS
+x EOS
+z * x - y EOS
+z * z % y EOS
+x / y EOS
+x * y - x EOS
+x / x EOS
+x EOS
+z % x / z EOS
+x % z + y EOS
+x - y ^ z EOS
+z + y EOS
+y % z % z EOS
+x + x % y EOS
+x ^ x - y EOS
+z * y * x EOS
+y / z EOS
+z - x / x EOS
+x EOS
+x EOS
+y % z / x EOS
+z - y - z EOS
+x - y * y EOS
+y - y * y EOS
+y ^ z + y EOS
+x ^ y / x EOS
+y ^ z * z EOS
+x + y - x EOS
+z * z ^ y EOS
+x EOS
+z % x * z EOS
+x + z % y EOS
+z / y * z EOS
+x % z % z EOS
+x / x % y EOS
+x / z ^ z EOS
+z + y / z EOS
+y * z ^ y EOS
+z EOS
+x % y - z EOS
+z * x % z EOS
+z * y * z EOS
+z / x + y EOS
+x / x % z EOS
+y - z ^ x EOS
+x - y * x EOS
+z / y - x EOS
+z + z ^ x EOS
+x % x * z EOS
+z - z EOS
+x ^ z - z EOS
+x - x ^ z EOS
+x + z % z EOS
+y * x / x EOS
+z % x * y EOS
+y EOS
+z + z / y EOS
+x * x / z EOS
+x + x * x EOS
+z ^ y % x EOS
+x EOS
+x EOS
+z ^ z * z EOS
+x / x - z EOS
+z / y EOS
+z / x EOS
+y / y % y EOS
+y - z EOS
+z ^ z * z EOS
+x + x + z EOS
+z % x / z EOS
+y EOS
+z - z - z EOS
+y * y % x EOS
+x ^ x * z EOS
+y % z EOS
+y EOS
+y EOS
+x EOS
+x % y - y EOS
+z - z * y EOS
+z * x % y EOS
+y * x + y EOS
+x - x / y EOS
+x + y % y EOS
+z * z % z EOS
+z % x EOS
+z + y / y EOS
+x - x + x EOS
+y * x + z EOS
+x + y + x EOS
+y + x + y EOS
+y / y - y EOS
+y ^ z + z EOS
+y EOS
+z EOS
+x - y / y EOS
+y EOS
+z + x EOS
+y ^ y ^ z EOS
+z EOS
+x / y / y EOS
+z - y % z EOS
+y * x / y EOS
+x - z ^ y EOS
+y / x / z EOS
+x + x + y EOS
+x - x / y EOS
+z % x % y EOS
+x - x ^ x EOS
+y * y EOS
+y ^ x ^ x EOS
+y + x / y EOS
+z EOS
+x - y + x EOS
+z EOS
+x EOS
+x EOS
+y ^ y / x EOS
+x - z EOS
+y EOS
+y / y * z EOS
+y EOS
+x + z EOS
+x - y EOS
+y EOS
+y EOS
+x * x % z EOS
+z - y EOS
+z - x + x EOS
+y EOS
+y + z ^ z EOS
+x EOS
+x ^ z EOS
+z % x * x EOS
+y ^ z / x EOS
+z + y + x EOS
+y EOS
+y EOS
+z ^ x ^ x EOS
+z - z % x EOS
+z EOS
+x % z / y EOS
+z / z ^ y EOS
+y EOS
+z - z * z EOS
+y / z * x EOS
+z + y - z EOS
+y * y ^ z EOS
+y * x / x EOS
+z EOS
+y / x ^ y EOS
+z * y - x EOS
+z / y * z EOS
+x * z EOS
+z % x / z EOS
+z + z / x EOS
+x / x % y EOS
+x + z / y EOS
+y ^ y % y EOS
+x ^ y / x EOS
+x ^ z ^ x EOS
+x ^ z EOS
+y % x - y EOS
+y ^ z EOS
+y - x EOS
+y + y / y EOS
+z % x * y EOS
+x EOS
+y % x - z EOS
+y - y / z EOS
+x ^ y * y EOS
+x / z % y EOS
+x + x * z EOS
+z - z + y EOS
+x EOS
+y - x % y EOS
+z % y EOS
+z EOS
+z + y - y EOS
+y - y * y EOS
+y * y + z EOS
+x * y - x EOS
+x * y + z EOS
+z + z * z EOS
+x EOS
+z + x - y EOS
+y - x / z EOS
+x EOS
+z / y % x EOS
+y % y ^ z EOS
+y EOS
+z / x / y EOS
+x + y - z EOS
+x - y / z EOS
+x ^ x / z EOS
+x ^ x * z EOS
+z * x EOS
+z / y - z EOS
+z * y * z EOS
+x ^ z + x EOS
+z / z % z EOS
+x EOS
+z % z * z EOS
+y + y * y EOS
+y - x - z EOS
+z % y + y EOS
+z ^ z - x EOS
+x * y ^ y EOS
+x % z + x EOS
+z * x * y EOS
+z + x ^ y EOS
+z EOS
+z ^ y + z EOS
+y % x ^ z EOS
+y EOS
+y % z % x EOS
+x * y % z EOS
+y - x % z EOS
+z EOS
+z / y ^ y EOS
+y + y - x EOS
+y ^ x ^ y EOS
+z * x - y EOS
+x % x EOS
+z * z + z EOS
+z + x - x EOS
+x EOS
+x % x - x EOS
+y ^ z * z EOS
+x / y * z EOS
+z EOS
+y + y - y EOS
+x - z + x EOS
+z - x ^ z EOS
+x % z / z EOS
+y EOS
+x - z % x EOS
+y EOS
+y % y + z EOS
+x + y + y EOS
+y + z % x EOS
+x + z ^ x EOS
+x + x * z EOS
+z % x ^ x EOS
+z + z % x EOS
+z % y * z EOS
+y * y - x EOS
+z + x + x EOS
+x % y * x EOS
+z ^ x ^ x EOS
+z % x / y EOS
+x % x + y EOS
+y EOS
+y EOS
+z EOS
+z * z EOS
+y + z / y EOS
+z + z EOS
+x - x ^ x EOS
+y % y % y EOS
+y + y + x EOS
+x EOS
+y % y EOS
+y + z * x EOS
+x ^ z EOS
+y * x - y EOS
+x EOS
+x + y ^ x EOS
+x - x + y EOS
+y EOS
+y % x * y EOS
+y * z * z EOS
+z - z / z EOS
+z + z - z EOS
+y % z / y EOS
+z * y - z EOS
+x / z EOS
+x + y ^ y EOS
+x / x * z EOS
+x % x % y EOS
+y EOS
+x + z EOS
+x / x EOS
+y * x EOS
+y * x % x EOS
+y ^ y EOS
+x % y EOS
+y / y / z EOS
+z % y * x EOS
+y + x EOS
+x ^ z ^ x EOS
+x / z * x EOS
+y / z EOS
+x + y % z EOS
+z / x * y EOS
+y - z - y EOS
+y EOS
+x % x * x EOS
+z ^ y / y EOS
+x / x / x EOS
+x * x - x EOS
+z % z EOS
+x EOS
+y * y EOS
+y * z - x EOS
+y * y - z EOS
+x * z + z EOS
+y * y / x EOS
+x % y ^ y EOS
+y EOS
+x / z + y EOS
+z + x % x EOS
+x % x ^ z EOS
+x ^ z ^ z EOS
+y % z - z EOS
+x ^ y EOS
+y % y EOS
+z - z EOS
+y - z EOS
+y EOS
+x ^ y - x EOS
+x ^ z - z EOS
+y - z - z EOS
+y + z % z EOS
+y ^ x - z EOS
+y % x * x EOS
+x ^ y - z EOS
+x EOS
+y % z * z EOS
+x % x / z EOS
+z ^ z % z EOS
+x + y + y EOS
+x / y + z EOS
+z + z EOS
+z - y / y EOS
+x + z ^ x EOS
+x / x ^ x EOS
+z * z / x EOS
+y % x * x EOS
+y EOS
+z % y EOS
+z / x + x EOS
+z + z + z EOS
+y % y EOS
+x EOS
+z ^ x / y EOS
+z % z ^ z EOS
+y - y - y EOS
+x EOS
+y ^ y - x EOS
+x + y % y EOS
+x * x / x EOS
+y ^ x / x EOS
+z * x + z EOS
+x - x - y EOS
+x EOS
+x % z ^ x EOS
+x ^ y % x EOS
+x + x % x EOS
+y EOS
+y % y + z EOS
+y - x EOS
+y - y - z EOS
+y % x + x EOS
+z EOS
+z * x * z EOS
+x * z + z EOS
+x * z * z EOS
+z EOS
+x % x - y EOS
+y / z EOS
+x * y + x EOS
+x % y % x EOS
+z / z + x EOS
+x ^ z + x EOS
+y - x EOS
+z - y % y EOS
+y - x EOS
+z * z - x EOS
+z / x + y EOS
+x / x EOS
+z + y - y EOS
+y EOS
+x ^ y - y EOS
+y + y EOS
+y EOS
+y + z ^ x EOS
+x - y ^ x EOS
+y + x ^ z EOS
+x / z - y EOS
+x * y ^ z EOS
+z + z % y EOS
+y % z / y EOS
+x * y ^ z EOS
+x + x * y EOS
+z + y - z EOS
+z * y EOS
+y * z EOS
+z - y + z EOS
+z % z % z EOS
+z % x - z EOS
+z / x % z EOS
+z + x * x EOS
+y / y % z EOS
+y % y - z EOS
+z ^ x - x EOS
+y ^ z + x EOS
+z / x + x EOS
+z / z - x EOS
+x / z / z EOS
+z + x % x EOS
+z % z * y EOS
+z EOS
+y + x * x EOS
+z EOS
+z / z ^ z EOS
+z % y EOS
+y / x % x EOS
+y - z ^ z EOS
+x ^ y * z EOS
+z * z % y EOS
+y / y % x EOS
+x EOS
+y * x EOS
+x / y EOS
+z + x * x EOS
+z EOS
+z ^ z % x EOS
+z - y EOS
+x / x % z EOS
+x % z + z EOS
+x % z * z EOS
+y + x - x EOS
+z % x EOS
+y EOS
+y - x * y EOS
+x EOS
+y % x ^ x EOS
+y - z - x EOS
+z EOS
+y - y / y EOS
+x + z + z EOS
+x % x EOS
+x * y / y EOS
+z % y / x EOS
+z EOS
+z + z - x EOS
+x - x + x EOS
+x - x - y EOS
+z ^ z % y EOS
+y / y / x EOS
+y - y - z EOS
+x ^ x * z EOS
+y - x - y EOS
+y + y - y EOS
+y ^ y - z EOS
+z - y * z EOS
+y + y / x EOS
+y - y % z EOS
+x * x EOS
+y - x % x EOS
+y + x % z EOS
+z - y + y EOS
+z * x % z EOS
+z EOS
+x + z / x EOS
+x % z * y EOS
+x EOS
+x + z - y EOS
+z + x ^ y EOS
+z % z * z EOS
+z * x EOS
+x / x % x EOS
+y ^ y / y EOS
+z - z % x EOS
+z / z % y EOS
+x + z * x EOS
+z * x ^ x EOS
+z - y * x EOS
+y - z % x EOS
+z % x ^ z EOS
+x EOS
+z / z - y EOS
+z - y ^ x EOS
+z EOS
+z * y - z EOS
+x / z - y EOS
+z + x EOS
+x EOS
+x EOS
+y % z / z EOS
+z EOS
+z % z * x EOS
+z - y - y EOS
+z ^ x EOS
+z ^ y * x EOS
+y / x + z EOS
+z * y - x EOS
+z % x + y EOS
+y + y / x EOS
+z % y - x EOS
+y - x * x EOS
+y + x ^ z EOS
+y EOS
+x EOS
+y * x ^ y EOS
+z * y + x EOS
+z + y + z EOS
+z ^ x - y EOS
+y + y / x EOS
+y ^ x + y EOS
+z / y * x EOS
+x ^ x * x EOS
+y + z / x EOS
+z + x + z EOS
+z EOS
+y ^ z / x EOS
+z - x * x EOS
+x EOS
+x / y ^ x EOS
+x * z - z EOS
+y - x EOS
+y * y / y EOS
+y / y - y EOS
+y ^ y / z EOS
+z EOS
+z - x EOS
+z ^ y EOS
+x + y ^ x EOS
+y % x - y EOS
+z * z - x EOS
+x EOS
+x / x + x EOS
+z - y ^ x EOS
+x * x * y EOS
+y % y % x EOS
+x / y - z EOS
+y EOS
+x - x EOS
+z ^ z % y EOS
+y EOS
+y - y EOS
+x / y ^ x EOS
+x EOS
+y * y * z EOS
+x + z * z EOS
+z / y + y EOS
+x EOS
+z * x % y EOS
+y - y % z EOS
+z * z % y EOS
+z * z ^ y EOS
+x / x + z EOS
+x + x % y EOS
+z ^ x / x EOS
+x ^ z ^ y EOS
+y + x EOS
+z + z + x EOS
+y + x % x EOS
+x * x + z EOS
+z - x / y EOS
+y % y % z EOS
+x / x / y EOS
+x / y % y EOS
+y % z ^ y EOS
+x + x - z EOS
+z + x - y EOS
+x - z EOS
+z - z ^ y EOS
+y * x + x EOS
+y + y / y EOS
+z % z - x EOS
+x / y % z EOS
+z + y % y EOS
+y + x ^ y EOS
+z + z - z EOS
+x * x + z EOS
+y EOS
+y % x - y EOS
+y * x % z EOS
+y / z % z EOS
+z / z - y EOS
+y * y ^ y EOS
+y % x % x EOS
+y * x - z EOS
+x % y * x EOS
+x + z % z EOS
+y % z ^ y EOS
+y / x / x EOS
+y + x + z EOS
+x / y * z EOS
+y - x EOS
+y * x EOS
+y + x EOS
+y % y + z EOS
+y - y + z EOS
+y EOS
+x * y - z EOS
+y / x * x EOS
+y EOS
+x % x / z EOS
+x * z ^ x EOS
+z + y + x EOS
+z - x + y EOS
+x + y / y EOS
+z % y - x EOS
+z / x - y EOS
+x / z - z EOS
+z + z EOS
+y % x ^ x EOS
+z * x % z EOS
+x EOS
+y EOS
+y - y / y EOS
+y * y EOS
+x + z ^ y EOS
+x % z + x EOS
+z ^ z - y EOS
+z / y * x EOS
+x - z % z EOS
+z + x - y EOS
+y + z / z EOS
+y ^ x + x EOS
+y ^ z EOS
+z - y * y EOS
+z EOS
+z - y EOS
+x + y ^ y EOS
+y - x ^ x EOS
+z * x % x EOS
+x - z % z EOS
+y % y % y EOS
+z ^ y % y EOS
+z * z EOS
+z + z / y EOS
+y ^ y / y EOS
+x / y + z EOS
+y / z + y EOS
+x * z ^ y EOS
+y + z * y EOS
+z - z * z EOS
+y - x + z EOS
+y + x * x EOS
+y - y + x EOS
+x ^ y / y EOS
+x % y - y EOS
+x - x % x EOS
+x + y EOS
+y EOS
+y / y / y EOS
+y + x * y EOS
+y + z / x EOS
+y EOS
+x * z * z EOS
+z EOS
+x * z EOS
+z % x * y EOS
+z % y - z EOS
+x + z * z EOS
+y ^ z + z EOS
+z ^ z - y EOS
+x / x ^ x EOS
+y + y ^ x EOS
+y / z ^ y EOS
+z * y + x EOS
+x - y / y EOS
+z EOS
+x ^ z * z EOS
+y ^ y ^ x EOS
+z / y * x EOS
+x / y EOS
+y / x EOS
+z ^ x * y EOS
+z ^ z / z EOS
+y * y ^ x EOS
+z ^ y - z EOS
+y / x + y EOS
+z + y ^ z EOS
+x + y EOS
+y * z * y EOS
+x % x % z EOS
+y ^ x / x EOS
+x * z / z EOS
+z - x * z EOS
+y % z EOS
+x EOS
+x EOS
+z EOS
+z * y / x EOS
+z / z EOS
+z % x / y EOS
+x ^ x EOS
+z + z ^ y EOS
+x * x - y EOS
+z - x / x EOS
+x EOS
+x EOS
+z - y % z EOS
+z - y / z EOS
+y % y % x EOS
+x + x / x EOS
+x ^ z / x EOS
+y / y / x EOS
+y - y + y EOS
+y / x ^ y EOS
+x ^ y / z EOS
+y EOS
+x + z / y EOS
+y + y / x EOS
+z ^ y EOS
+x EOS
+y EOS
+z * z + y EOS
+y - y EOS
+x EOS
+z ^ y EOS
+y + x ^ y EOS
+x / z + y EOS
+z ^ z * y EOS
+z / y * x EOS
+y * y + x EOS
+z ^ x / x EOS
+x % y EOS
+y EOS
+z * y - x EOS
+z - x + y EOS
+x / z % z EOS
+y EOS
+x % z - y EOS
+x - z * y EOS
+y ^ x + z EOS
+y + z + x EOS
+x * x ^ y EOS
+x ^ x + z EOS
+z - x - y EOS
+z EOS
+y * x + y EOS
+x EOS
+x EOS
+y + z % x EOS
+z - x % x EOS
+x EOS
+z / y + z EOS
+z * x * y EOS
+x - x % z EOS
+z ^ x + y EOS
+x % z / y EOS
+y - x * z EOS
+x + z + z EOS
+x % y % x EOS
+z / y / z EOS
+x % z EOS
+z EOS
+z - x / z EOS
+z * x - z EOS
+z * z / x EOS
+y EOS
+y EOS
+z % x ^ y EOS
+y / y ^ x EOS
+y / x * y EOS
+z % z - z EOS
+x EOS
+x EOS
+x + y / y EOS
+z / z / y EOS
+x / z - z EOS
+x % x - x EOS
+x % y EOS
+z / x / y EOS
+y ^ y / y EOS
+y % x / x EOS
+z + y EOS
+x EOS
+z / x - y EOS
+y + z * y EOS
+x / z - y EOS
+z EOS
+x * x / y EOS
+z - y / x EOS
+x / y + z EOS
+x - z EOS
+x ^ x - x EOS
+z - x ^ x EOS
+z * z * x EOS
+y % y EOS
+y ^ x % x EOS
+x + z / x EOS
+x * z / z EOS
+y - z EOS
+x - x / z EOS
+z EOS
+z + y + z EOS
+z ^ z EOS
+z + z ^ y EOS
+x * y % y EOS
+x % y + z EOS
+y EOS
+z ^ z / z EOS
+x EOS
+y / x / x EOS
+z - y EOS
+y - y + y EOS
+z * y ^ x EOS
+x - z + y EOS
+x EOS
+x + z ^ y EOS
+z * z * y EOS
+z EOS
+x % y % z EOS
+z - z - z EOS
+z * y % y EOS
+x - y EOS
+x EOS
+x - z / x EOS
+x EOS
+x EOS
+y + x EOS
+z EOS
+y + x % y EOS
+z ^ x EOS
+x ^ z / x EOS
+y * y / y EOS
+y + y % z EOS
+x / y EOS
+x % x % z EOS
+z / x * x EOS
+z + x ^ x EOS
+z % y * x EOS
+y + z - z EOS
+y / x / y EOS
+x EOS
+x - x + x EOS
+x EOS
+x + x / z EOS
+z * y EOS
+x - y % z EOS
+y % y EOS
+z - z - z EOS
+z - x / z EOS
+z % y EOS
+y EOS
+x % z * x EOS
+z % y ^ z EOS
+x ^ y / y EOS
+y / x * y EOS
+x ^ z + x EOS
+x ^ y % y EOS
+y * x * z EOS
+z / z EOS
+y / x / x EOS
+y ^ z ^ y EOS
+x ^ z * y EOS
+x * x ^ z EOS
+x + y - y EOS
+y * x % y EOS
+y / z * z EOS
+x EOS
+x - y * z EOS
+y * z - z EOS
+x - y - z EOS
+z * z * x EOS
+x - x % y EOS
+y % y / x EOS
+z / y EOS
+z + x + z EOS
+x % x % y EOS
+z ^ y * z EOS
+y - y EOS
+y / y * y EOS
+x * z - y EOS
+z EOS
+x - y EOS
+y EOS
+y * z * z EOS
+z - z - x EOS
+y EOS
+y EOS
+z + x * x EOS
+z ^ z + z EOS
+z - x + x EOS
+z EOS
+x / z ^ z EOS
+y ^ z - z EOS
+y * y ^ z EOS
+z / y * z EOS
+y EOS
+y EOS
+y / x % x EOS
+z EOS
+z * z ^ z EOS
+x ^ z * z EOS
+x ^ z EOS
+z EOS
+z + z ^ x EOS
+x + y - z EOS
+y EOS
+z + x EOS
+z ^ y EOS
+x + z ^ x EOS
+x * z - x EOS
+x / x % z EOS
+y / x - x EOS
+z - z + y EOS
+x + y - x EOS
+z % y ^ z EOS
+z % x * y EOS
+y * x - z EOS
+x % y % y EOS
+z - x EOS
+x / z % y EOS
+x + y - z EOS
+y % y * x EOS
+y ^ x - z EOS
+x + z - y EOS
+y % y / x EOS
+x % z ^ x EOS
+z - z + z EOS
+z EOS
+y * y / z EOS
+z ^ y + y EOS
+x / x ^ x EOS
+y ^ z ^ z EOS
+y * z - x EOS
+y + z * x EOS
+y + z + y EOS
+z % y ^ y EOS
+z EOS
+z * z - y EOS
+x - x / x EOS
+y % z - x EOS
+y / x % z EOS
+x EOS
+y EOS
+z + y EOS
+y ^ z * x EOS
+y * z ^ z EOS
+y - x - z EOS
+y % z / z EOS
+y ^ y % x EOS
+x EOS
+z ^ z % z EOS
+x - x EOS
+z EOS
+y % x + z EOS
+y / y - y EOS
+x % x / y EOS
+z EOS
+x % z * x EOS
+y / y - z EOS
+z * y ^ y EOS
+y * z / x EOS
+z % z * y EOS
+x + z / y EOS
+y EOS
+y % x * z EOS
+y - y / y EOS
+x / z + x EOS
+x * y % y EOS
+z + y % y EOS
+z EOS
+y - y / z EOS
+x % x * x EOS
+x / x + y EOS
+y + x / y EOS
+y * y ^ y EOS
+y ^ y ^ x EOS
+y / y EOS
+y * z + z EOS
+z - z ^ y EOS
+z + z / z EOS
+x * z + z EOS
+x - x + x EOS
+x % z - z EOS
+y % y EOS
+z - z % z EOS
+y * y % x EOS
+z - z * x EOS
+z - x + z EOS
+x EOS
+z - x / y EOS
+z - z % y EOS
+y % z % y EOS
+x / x % x EOS
+y % y % x EOS
+z / x + z EOS
+z % y ^ y EOS
+y - y / z EOS
+x + x ^ y EOS
+y ^ z EOS
+x + z * y EOS
+x % x / z EOS
+z / z ^ z EOS
+z * x ^ y EOS
+y / x ^ z EOS
+z ^ x / y EOS
+y % y / z EOS
+y + x EOS
+y % z % y EOS
+y + z EOS
+x % y - z EOS
+x % x - y EOS
+z * z ^ z EOS
+z % x * x EOS
+z * y - y EOS
+x * y % y EOS
+z EOS
+x EOS
+y * z + z EOS
+x / x EOS
+x ^ z EOS
+x - x % z EOS
+y * x ^ z EOS
+x - z * y EOS
+y ^ x ^ z EOS
+y % y ^ x EOS
+y % x % z EOS
+y ^ y % z EOS
+y - x * x EOS
+z / z * z EOS
+y + y - y EOS
+x + x % z EOS
+y % y * z EOS
+z % x * z EOS
+x EOS
+y + y + x EOS
+z % x + x EOS
+y EOS
+z + z + y EOS
+y - y * x EOS
+z / z + x EOS
+z * z ^ x EOS
+x ^ z - x EOS
+z / x / z EOS
+x % y ^ x EOS
+y - y ^ y EOS
+z / x % z EOS
+x EOS
+y / z / y EOS
+x % z / z EOS
+y - x * x EOS
+y ^ x + x EOS
+y + z / z EOS
+x * z - y EOS
+y * x * x EOS
+z / x - z EOS
+y EOS
+x / y % z EOS
+y * x - x EOS
+y - x - y EOS
+x + x % x EOS
+z EOS
+x ^ x * x EOS
+y + y / z EOS
+x ^ y / x EOS
+z % z ^ z EOS
+x EOS
+x / x * y EOS
+x * z * z EOS
+z / x ^ z EOS
+y + z + z EOS
+z - z + x EOS
+y * z * z EOS
+z EOS
+y + x - x EOS
+y / z - x EOS
+x ^ x + x EOS
+z * y * z EOS
+y ^ x - y EOS
+y + x / x EOS
+x / x / x EOS
+y / y * z EOS
+y + z + z EOS
+x EOS
+z ^ x ^ y EOS
+y * x * y EOS
+z EOS
+x / z * y EOS
+y - y % y EOS
+x * y * z EOS
+z / x ^ y EOS
+y + y % z EOS
+y / y + z EOS
+y ^ x - x EOS
+y EOS
+x + x % z EOS
+y * y / z EOS
+x * x - z EOS
+y * x * x EOS
+z - x * z EOS
+z - y EOS
+z % x - y EOS
+z + z * x EOS
+y / y - x EOS
+y * x EOS
+y * x - z EOS
+y EOS
+z EOS
+y / x EOS
+y - z / y EOS
+y % z % x EOS
+z % z EOS
+z ^ x + x EOS
+y / y / z EOS
+y / x ^ z EOS
+x + y EOS
+y % y + x EOS
+y ^ x / x EOS
+y EOS
+x % z / z EOS
+y - x EOS
+z / y EOS
+x % y EOS
+y % z ^ y EOS
+y EOS
+z % y EOS
+x % z / y EOS
+y / z EOS
+y ^ y EOS
+z - z ^ y EOS
+y / y ^ z EOS
+z * z + z EOS
+y - z / x EOS
+z - z - z EOS
+x % x - y EOS
+x - y ^ y EOS
+z ^ x + y EOS
+y % y * x EOS
+y ^ x % z EOS
+z / x / y EOS
+y EOS
+z + z % y EOS
+x EOS
+y - y * x EOS
+y - x * y EOS
+y * y % x EOS
+y * y EOS
+z % x ^ y EOS
+x / x + x EOS
+z % y EOS
+y / y EOS
+z EOS
+y * x + y EOS
+y + y * x EOS
+z - z % z EOS
+x / y % x EOS
+z + x / y EOS
+x / x * z EOS
+x * y % y EOS
+x % y / y EOS
+y / x * z EOS
+y ^ y * x EOS
+z % z / z EOS
+x * x EOS
+x % y ^ y EOS
+y % x - z EOS
+y EOS
+x EOS
+y EOS
+x EOS
+x + z ^ z EOS
+z ^ z % x EOS
+x % z / z EOS
+y - z EOS
+x - x + x EOS
+y - z / z EOS
+x EOS
+z / z EOS
+z EOS
+z / z + x EOS
+z / y + y EOS
+z - y EOS
+x % x + x EOS
+x ^ z ^ y EOS
+z - z * x EOS
+z - x ^ x EOS
+z ^ x % y EOS
+x EOS
+x EOS
+y / y EOS
+x % z % y EOS
+x - z EOS
+z EOS
+y % y % z EOS
+y - x EOS
+y EOS
+z % y % x EOS
+z EOS
+x - x * x EOS
+x / x % x EOS
+x - y ^ y EOS
+x * z * y EOS
+y EOS
+x EOS
+z ^ x % z EOS
+y * y EOS
+x ^ y + x EOS
+x - z + y EOS
+z * y - x EOS
+y / z EOS
+y % x % x EOS
+x + x EOS
+x + x ^ z EOS
+x % y * y EOS
+z - x * x EOS
+x - y ^ y EOS
+z % z * x EOS
+z % z EOS
+y * z + z EOS
+x EOS
+z + x / y EOS
+y - y ^ z EOS
+x / z EOS
+x ^ x EOS
+x + z ^ x EOS
+y + z EOS
+x / x + z EOS
+x * x / x EOS
+x * y ^ y EOS
+x EOS
+y + y - z EOS
+x / z EOS
+y EOS
+y * z / y EOS
+z EOS
+y % x / z EOS
+y / x EOS
+y % z / y EOS
+x ^ y / y EOS
+z ^ y + z EOS
+x ^ y * y EOS
+y * z + x EOS
+z EOS
+z - y * z EOS
+x ^ y - y EOS
+x ^ y - y EOS
+z + y + y EOS
+y + z + x EOS
+x / y % z EOS
+z * z ^ y EOS
+z ^ z % y EOS
+y / z - x EOS
+z % y - z EOS
+z / x * z EOS
+y ^ y * y EOS
+y - z * y EOS
+x - z / z EOS
+y EOS
+y ^ x % z EOS
+x + y + y EOS
+y % y - x EOS
+z EOS
+y + x * z EOS
+y EOS
+z - y * x EOS
+y / z ^ x EOS
+y EOS
+z ^ x - y EOS
+z EOS
+x % x / y EOS
+x ^ z * y EOS
+y / y % z EOS
+x EOS
+y + z + x EOS
+x * z * x EOS
+y * y * x EOS
+y % z - x EOS
+y - y / y EOS
+x % y * x EOS
+z EOS
+x EOS
+z * z * z EOS
+x ^ x EOS
+y + y ^ y EOS
+x / y % y EOS
+x % x ^ y EOS
+y + x / z EOS
+z % x % x EOS
+z % z * y EOS
+y % x EOS
+x / z / z EOS
+z + y EOS
+x * z * x EOS
+x ^ y EOS
+z - y + x EOS
+y % x * y EOS
+y EOS
+x EOS
+z ^ x ^ x EOS
+z ^ y + y EOS
+z ^ y ^ x EOS
+y % z - z EOS
+x ^ x EOS
+x - z ^ x EOS
+x ^ y / z EOS
+x + x * x EOS
+y + y + y EOS
+z ^ z - x EOS
+z * y - z EOS
+x / x / y EOS
+x * y / x EOS
+x EOS
+y EOS
+z % z * x EOS
+y ^ y EOS
+y * y EOS
+z EOS
+x ^ y - z EOS
+x + y / x EOS
+y ^ x EOS
+y + z EOS
+x * y - z EOS
+x / x - z EOS
+y EOS
+x + y / z EOS
+y % y + z EOS
+x ^ x / x EOS
+y / z - x EOS
+x % z + x EOS
+z ^ y EOS
+y + z / y EOS
+y * y - x EOS
+x / z % z EOS
+x % y - x EOS
+x - z - x EOS
+z EOS
+z / y * x EOS
+x % y - y EOS
+x / y + x EOS
+z % x * z EOS
+y * x EOS
+y ^ z % y EOS
+y / z * z EOS
+y ^ z + z EOS
+x * x / y EOS
+x - y * z EOS
+x EOS
+y EOS
+z / x ^ z EOS
+z % z % y EOS
+x / x + y EOS
+y - y / x EOS
+y + z * z EOS
+x EOS
+x - y ^ x EOS
+y % y % x EOS
+x / x + y EOS
+y EOS
+y - z / x EOS
+y / y EOS
+z % x ^ x EOS
+z + y ^ y EOS
+x * z - x EOS
+z % y + x EOS
+z * x - z EOS
+y EOS
+z + x % z EOS
+x - z EOS
+x - z * z EOS
+z EOS
+x EOS
+z ^ z % z EOS
+z ^ x - y EOS
+y EOS
+x * y % y EOS
+z * x EOS
+y - x EOS
+x ^ y / y EOS
+y + y % z EOS
+z / y - x EOS
+y ^ y - z EOS
+y + y - x EOS
+x + z EOS
+y % z - x EOS
+x * z / x EOS
+x + x % z EOS
+x % x / y EOS
+y EOS
+z EOS
+y % z - z EOS
+y - x - y EOS
+x % z EOS
+y - z EOS
+x + x / y EOS
+y + y * z EOS
+x EOS
+x * z - y EOS
+z / y % z EOS
+z ^ x % y EOS
+z + x + z EOS
+z * x % x EOS
+y - z + z EOS
+y - y - x EOS
+z EOS
+z + y * z EOS
+z / y * z EOS
+y EOS
+z - x EOS
+y EOS
+y - z - x EOS
+y / y + y EOS
+x * x - x EOS
+x / z * z EOS
+y + x + z EOS
+x + y - x EOS
+z - x * z EOS
+x + z EOS
+y ^ y * y EOS
+y * z * z EOS
+x * x ^ x EOS
+z / z * z EOS
+y + y / z EOS
+y - z % x EOS
+x + y * y EOS
+z % x - x EOS
+z - y * y EOS
+y - y / y EOS
+y * y - x EOS
+y EOS
+z + y ^ x EOS
+z ^ x * y EOS
+x EOS
+y ^ y EOS
+z * x + y EOS
+y - y % x EOS
+y / y EOS
+z % y ^ x EOS
+x EOS
+x ^ y - x EOS
+x - y + x EOS
+x ^ x * y EOS
+y - y * y EOS
+y * y * y EOS
+x * y * z EOS
+x - y + x EOS
+z % y * z EOS
+y % y * y EOS
+z % z ^ x EOS
+x / x / y EOS
+z * y * z EOS
+z ^ x * z EOS
+x EOS
+z ^ z - x EOS
+z EOS
+y % x EOS
+z % z ^ y EOS
+z % z * z EOS
+y / y EOS
+y / z * x EOS
+x + y + x EOS
+x * z % z EOS
+x EOS
+z * z ^ y EOS
+x ^ x + z EOS
+x + x / x EOS
+y * z % y EOS
+z % y - y EOS
+x - x * z EOS
+x ^ z % x EOS
+y * x % z EOS
+z ^ x - x EOS
+y EOS
+x + z EOS
+x EOS
+z ^ z / z EOS
+z ^ y ^ x EOS
+z + z ^ z EOS
+z * x ^ y EOS
+x - x * z EOS
+y / y EOS
+z ^ y * z EOS
+x - x / y EOS
+y / z - z EOS
+z * x % x EOS
+z EOS
+y % z EOS
+z / x - y EOS
+z * y * z EOS
+y + z % z EOS
+x ^ y EOS
+z * y * z EOS
+y - x + x EOS
+z / x % x EOS
+x % x + x EOS
+x - x % z EOS
+y % z EOS
+y % z % z EOS
+y % x / z EOS
+z - z * z EOS
+y / y * x EOS
+z ^ z / y EOS
+x - z / z EOS
+z % y * y EOS
+y EOS
+z ^ y ^ y EOS
+y EOS
+z + x - y EOS
+z ^ x % y EOS
+x + x EOS
+x / x - x EOS
+x * z ^ y EOS
+y / z ^ y EOS
+y * z ^ y EOS
+y / z + z EOS
+y * y ^ y EOS
+x EOS
+y ^ z / x EOS
+z + z ^ y EOS
+x / x ^ z EOS
+y + x * z EOS
+y / x * x EOS
+y - y EOS
+y - z % y EOS
+y EOS
+y ^ z + z EOS
+x % y / y EOS
+y * y ^ x EOS
+y * x * y EOS
+y + z + x EOS
+z * x EOS
+z ^ y ^ x EOS
+z * x ^ z EOS
+y - x ^ z EOS
+x ^ z - x EOS
+y + x % x EOS
+x + z % y EOS
+z ^ y % x EOS
+y % z * x EOS
+x ^ x ^ y EOS
+x / z % y EOS
+x - y % x EOS
+z ^ y + z EOS
+x EOS
+z % y % y EOS
+x EOS
+x / y EOS
+z EOS
+z EOS
+z * x EOS
+y + y / x EOS
+z ^ x EOS
+x ^ y * y EOS
+x + z / z EOS
+x * y % x EOS
+x ^ z / z EOS
+z / y * y EOS
+x / x / x EOS
+z + y % z EOS
+z ^ y / x EOS
+z / x * x EOS
+x + x + z EOS
+z EOS
+y / y EOS
+z EOS
+z * y + x EOS
+y + y EOS
+y ^ z EOS
+x + x + x EOS
+z - z - x EOS
+z ^ y / z EOS
+y - y + x EOS
+z % y % y EOS
+y ^ y - y EOS
+y EOS
+y ^ z % z EOS
+x + x - x EOS
+x EOS
+x + z * x EOS
+z - y + y EOS
+z + x / z EOS
+z EOS
+y * x / x EOS
+x * z EOS
+y % y ^ z EOS
+y EOS
+y - z + x EOS
+y - y / x EOS
+y * z EOS
+x + z - x EOS
+x EOS
+x - z / z EOS
+z % y EOS
+z ^ x ^ x EOS
+z / y / x EOS
+y - y * x EOS
+z % x / y EOS
+z * z * z EOS
+y EOS
+y / x % x EOS
+y % z - z EOS
+z + x * z EOS
+y EOS
+z - y - y EOS
+y - x - x EOS
+y EOS
+y / x % x EOS
+x + x / x EOS
+x / x + z EOS
+y % z * x EOS
+y EOS
+x - z * y EOS
+y EOS
+z EOS
+z ^ z - z EOS
+y ^ z EOS
+x + y + y EOS
+z * x EOS
+y + x + z EOS
+x ^ x EOS
+y + x EOS
+x % x / x EOS
+x / x % z EOS
+y % z EOS
+x ^ x * x EOS
+x EOS
+x % x + y EOS
+y / y % z EOS
+y % y / x EOS
+y % z - x EOS
+z * x ^ y EOS
+y ^ x EOS
+z EOS
+z * z + z EOS
+x ^ z % x EOS
+y % x + z EOS
+z EOS
+y / x ^ y EOS
+y % z * x EOS
+y / x / z EOS
+y % z % x EOS
+y + y + y EOS
+y EOS
+y * y + z EOS
+z % z % x EOS
+y / z EOS
+x % z - y EOS
+z * z ^ y EOS
+y % z - y EOS
+x / z % x EOS
+x * y % y EOS
+x / x ^ z EOS
+z % y - x EOS
+y ^ y ^ z EOS
+y / z * x EOS
+x ^ z ^ z EOS
+y + x EOS
+y EOS
+x - x % x EOS
+z % x * z EOS
+z EOS
+z * x EOS
+x - y EOS
+x + z EOS
+x EOS
+x % x + z EOS
+y EOS
+x EOS
+z - z % z EOS
+y / y / x EOS
+y / z + x EOS
+z % x + y EOS
+x EOS
+y % z + y EOS
+y EOS
+z / z * z EOS
+y ^ y / y EOS
+y % x % z EOS
+x - z - z EOS
+x - x + z EOS
+x - y / x EOS
+y ^ z / y EOS
+y + z EOS
+y % x / z EOS
+x ^ y ^ x EOS
+x + x % z EOS
+y + y % y EOS
+z + x % z EOS
+z * y EOS
+y + z * z EOS
+x EOS
+y - y EOS
+x ^ x EOS
+y * z % x EOS
+z EOS
+z EOS
+x % x - x EOS
+z % x - z EOS
+z * y - y EOS
+z + x - y EOS
+y / z - x EOS
+z EOS
+y ^ x ^ y EOS
+z - y + y EOS
+x EOS
+z ^ x EOS
+y ^ x + y EOS
+x / z ^ z EOS
+z / y ^ z EOS
+z ^ x - y EOS
+y ^ z ^ y EOS
+x + x EOS
+z - x + z EOS
+z + x * z EOS
+y % x + x EOS
+x / x / x EOS
+z % x / z EOS
+x / z / x EOS
+y EOS
+y EOS
+x - x + y EOS
+y - y + x EOS
+z EOS
+y % x - z EOS
+z EOS
+y - z % z EOS
+x / y % z EOS
+x % y EOS
+y EOS
+y ^ z * y EOS
+x EOS
+y EOS
+x / y * x EOS
+y + x + y EOS
+x ^ x - x EOS
+x - z EOS
+z EOS
+z ^ z + x EOS
+z + z % x EOS
+y - x / z EOS
+z ^ z / y EOS
+z / z ^ y EOS
+z ^ z * y EOS
+y * z % z EOS
+y % z - x EOS
+x EOS
+x EOS
+x EOS
+x ^ y - y EOS
+z % x + z EOS
+x % z % y EOS
+z EOS
+x ^ y % y EOS
+x % y - x EOS
+y / z ^ x EOS
+y ^ z * z EOS
+z * z - z EOS
+y + x / x EOS
+y / x + y EOS
+x % y ^ z EOS
+x * y ^ z EOS
+y - y + y EOS
+z EOS
+x ^ y * x EOS
+x + x - y EOS
+x EOS
+y % y * y EOS
+x / x % z EOS
+x + z EOS
+z + y ^ z EOS
+y * y % z EOS
+x + y * z EOS
+z / z - y EOS
+y * y EOS
+x % y ^ y EOS
+x + z / z EOS
+y % z + x EOS
+x EOS
+z + x ^ x EOS
+y + x + y EOS
+z - z + y EOS
+y / x / z EOS
+x * z / y EOS
+y / y / x EOS
+z ^ y / x EOS
+z ^ z * x EOS
+x / x - z EOS
+y * y * z EOS
+z / x ^ x EOS
+z EOS
+y ^ z % z EOS
+y % x + y EOS
+z ^ x - z EOS
+y EOS
+x * y + z EOS
+y + z + y EOS
+z - x + y EOS
+y - y + z EOS
+y / x - z EOS
+x % y EOS
+y + x + z EOS
+z % z * z EOS
+x - y / z EOS
+x - x + z EOS
+x / y EOS
+y / y / y EOS
+y % z EOS
+x / z * x EOS
+x % y - y EOS
+y ^ y EOS
+y / x / y EOS
+x ^ x ^ z EOS
+y * x * x EOS
+y / z + x EOS
+y * x / x EOS
+z EOS
+x ^ y EOS
+x * z * x EOS
+y + x % z EOS
+y / x ^ z EOS
+x * z + x EOS
+y * x ^ y EOS
+y ^ x EOS
+x - x ^ z EOS
+y ^ x % z EOS
+x % y + x EOS
+x - y + x EOS
+z / z + y EOS
+y % y / z EOS
+z % y / z EOS
+y + z / z EOS
+y ^ y % x EOS
+z - x EOS
+x * y ^ x EOS
+x / x + z EOS
+y / x / z EOS
+x EOS
+y / x * y EOS
+y EOS
+x EOS
+y - x - z EOS
+y / x ^ z EOS
+z EOS
+y % z % y EOS
+z + z EOS
+y ^ x - z EOS
+z + z + y EOS
+z % z + z EOS
+z + z ^ z EOS
+z - y % y EOS
+z + y * x EOS
+y / z EOS
+z * z + y EOS
+z EOS
+y - y ^ y EOS
+x ^ y * z EOS
+z * x % x EOS
+y ^ y / y EOS
+z / x EOS
+y * x - y EOS
+x - z * x EOS
+z + y * y EOS
+x EOS
+z EOS
+y / y + z EOS
+x - y - z EOS
+y ^ x ^ z EOS
+y % z ^ z EOS
+z ^ z - x EOS
+y ^ x + z EOS
+y / z - x EOS
+z / x + x EOS
+y % x + z EOS
+y - z ^ z EOS
+y ^ y % z EOS
+y EOS
+x * x ^ y EOS
+x + y % z EOS
+z * z - y EOS
+z / y / z EOS
+z ^ z * z EOS
+y * y / y EOS
+y * x ^ x EOS
+z * x - z EOS
+z / z ^ x EOS
+z - x ^ z EOS
+z * x - z EOS
+y - y % y EOS
+x + x ^ y EOS
+z * y % y EOS
+x ^ x * z EOS
+y EOS
+y - z % z EOS
+x - y ^ z EOS
+y + z * y EOS
+x EOS
+x ^ x % z EOS
+z + y ^ z EOS
+z + z * y EOS
+y % y * y EOS
+x + z / y EOS
+x + z * z EOS
+x ^ y / y EOS
+z % z % z EOS
+y + y + y EOS
+x ^ x EOS
+y + z + z EOS
+z % z EOS
+y ^ y % x EOS
+y EOS
+x / z * x EOS
+x EOS
+x ^ z EOS
+y + z % x EOS
+y EOS
+x + x ^ x EOS
+z EOS
+x EOS
+z / y ^ z EOS
+x % y % x EOS
+x EOS
+x + z % z EOS
+z + z EOS
+x ^ z / x EOS
+y - x ^ z EOS
+z / z + y EOS
+y EOS
+y - x + y EOS
+x + x - x EOS
+x - z ^ y EOS
+x * z * x EOS
+z / y * z EOS

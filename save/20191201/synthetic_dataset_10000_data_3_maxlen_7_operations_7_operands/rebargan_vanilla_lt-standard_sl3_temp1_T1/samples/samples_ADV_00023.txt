@@ -1,0 +1,20 @@
+% / n
+p | k
++ y +
+% / BOS
+BOS BOS /
+/ / ^
+z | ^
+x /
+p - -
+n |
++ - m
+% k ^
+| | z
+% BOS k
+BOS | %
+/ n |
+BOS x p
+x + /
+/ - z
+/ | z

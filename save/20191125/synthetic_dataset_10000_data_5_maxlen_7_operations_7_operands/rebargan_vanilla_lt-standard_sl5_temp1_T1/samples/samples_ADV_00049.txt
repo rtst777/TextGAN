@@ -1,0 +1,20 @@
+*
+x k - n n
+% - n n n
+- n n n n
+n n k n n
+
+- n k - x
+- - n - n
+% n
+% n
+| * n n n
+/ n n y n
+- n n n n
+% y n n m
+- * n n n
+- m n n n
+- - n
+- * x n n
+n - % - n
+% | n n n

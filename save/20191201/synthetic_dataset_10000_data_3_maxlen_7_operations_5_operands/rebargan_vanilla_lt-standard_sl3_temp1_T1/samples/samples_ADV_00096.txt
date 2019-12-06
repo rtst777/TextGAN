@@ -1,0 +1,20 @@
+n - BOS
+BOS n -
+| | -
+/ x m
+
+| BOS -
+m * -
+* m -
+* + -
+m - |
+- | -
+| BOS n
+y * -
+m - -
+
+m - BOS
+n + BOS
+* + m
+BOS - -
+* + -

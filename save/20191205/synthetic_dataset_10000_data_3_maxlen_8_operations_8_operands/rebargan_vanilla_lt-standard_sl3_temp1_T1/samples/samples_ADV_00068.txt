@@ -1,0 +1,20 @@
+m x m
+m BOS m
+m + m
+y x m
+p x z
+x + m
+q + +
+k * x
+m m +
+% q +
+* + +
+k m m
+m
+& m
+^ x +
+k * +
+BOS / m
+x m m
+m + m
++

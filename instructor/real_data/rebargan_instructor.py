@@ -147,8 +147,10 @@ class RebarGANInstructor(BasicInstructor):
 
         # =====Test=====
         avg_rebar_loss = total_rebar_loss / g_step if g_step != 0 else 0
-        self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f, %s'
-                      % (avg_rebar_loss, old_temperature, old_eta, self.cal_metrics(fmt_str=True)))
+        # self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f, %s'
+        #               % (avg_rebar_loss, old_temperature, old_eta, self.cal_metrics(fmt_str=True)))
+        self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f'
+              % (avg_rebar_loss, old_temperature, old_eta))
 
     def adv_train_discriminator(self, d_step):
         total_loss = 0

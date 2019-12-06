@@ -1,0 +1,20 @@
+y z y m n
+* % n m %
+n p n n n
+m k % % BOS
+x + % % n
+^ n y n p
+n BOS ^ y k
+y k / p %
+y - x %
+- + n + %
+m % n y k
+n - / n n
+k
+- % n y n
+/ p n n x
+y / p n x
+
+n
+y % % - n
+n x

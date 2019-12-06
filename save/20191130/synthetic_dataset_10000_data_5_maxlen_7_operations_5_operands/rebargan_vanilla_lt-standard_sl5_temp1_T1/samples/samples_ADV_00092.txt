@@ -1,0 +1,20 @@
+- n z z %
+z z x BOS z
+n * z
+z z
+/ z - z x
+* z *
+
+- z z z z
+* * z z *
+z y * z *
+* * z z y
+
+% y n z y
+- -
+n %
+/ * m * z
+% * z * *
+
+% * z z n
+| z x % z

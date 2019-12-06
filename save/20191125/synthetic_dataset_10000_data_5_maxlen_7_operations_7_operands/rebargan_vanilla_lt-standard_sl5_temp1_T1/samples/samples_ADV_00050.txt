@@ -1,0 +1,20 @@
+p k - n n
+p * n % n
+m - n n n
++ - m x n
+% n
+x / - y n
+y y n n -
+n y n % n
+m n n n n
+y - - n n
+* / n n %
+p - n n n
+n - n n n
+y n n n n
+n n n n n
+x | n x n
+z k - n n
+n m % n n
+* + n % n
+x n n n n

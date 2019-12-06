@@ -1,0 +1,20 @@
+- *
+x
++
++
+- / BOS x *
+eos x /
+eos / eos BOS BOS eos
+- - - eos eos /
+/ - eos x x eos
+eos BOS
+- x * eos /
+- BOS eos +
+
+eos / + / x x
+
+- eos eos x x /
+
+/ x + * / x
+x BOS BOS x
+* +
