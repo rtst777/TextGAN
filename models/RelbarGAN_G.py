@@ -33,6 +33,7 @@ class RelbarGAN_G(LSTMGenerator):
 
         # θ parameter in the REBAR equation. It is the softmax probability of the Generator output.
         self.theta = None
+        self.theta_hack = None
 
         self.init_params()
 
@@ -59,6 +60,7 @@ class RelbarGAN_G(LSTMGenerator):
         """
         self.theta = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
         gumbel = torch.zeros(batch_size, self.max_seq_len, self.vocab_size, dtype=torch.float)
+        self.theta_hack = []
 
         hidden = self.init_hidden(batch_size)
         inp = torch.LongTensor([start_letter] * batch_size)
@@ -72,6 +74,7 @@ class RelbarGAN_G(LSTMGenerator):
             out, hidden = self.lstm(emb, hidden)
             out = self.lstm2out(out.squeeze(1))  # batch_size * vocab_size
             out = F.softmax(out, dim=-1)  # batch_size * vocab_size
+            self.theta_hack.append(out)
             gumbel_t, gumbel_slice = self.add_gumbel(out)  # batch_size * vocab_size
             next_token = torch.argmax(gumbel_t, dim=1).detach()  # batch_size * vocab_size
 
@@ -94,8 +97,11 @@ class RelbarGAN_G(LSTMGenerator):
         assert self.theta is not None and \
                self.theta.shape == estimated_gradient.shape, 'estimated_gradient has different shape with self.theta'
 
-        rebar_loss_matrix = self.theta * estimated_gradient
-        rebar_loss = rebar_loss_matrix.sum()
+        rebar_loss = 0
+        for i, theta_hack_i in enumerate(self.theta_hack):
+            rebar_loss += (theta_hack_i * estimated_gradient[:, i, :]).sum()
+        # rebar_loss_matrix = self.theta * estimated_gradient
+        # rebar_loss = rebar_loss_matrix.sum()
         return rebar_loss
 
 
