@@ -28,7 +28,7 @@ if torch.cuda.is_available() and torch.cuda.device_count() > 0:
     CUDA = int(True)
 else:
     CUDA = int(False)
-if_real_data = [int(False), int(True)]
+if_real_data = [int(True), int(True), int(True)]
 data_shuffle = int(False)
 gen_init = 'truncated_normal'
 dis_init = 'uniform'
@@ -37,24 +37,28 @@ gen_pretrain = int(False)
 dis_pretrain = int(False)
 
 # =====Oracle  or Real=====
-dataset = ['oracle', 'image_coco']
+dataset = ['image_coco',
+           'synthetic_dataset_10000_data_3_maxlen_4_operations_1_operands',
+           'synthetic_dataset_10000_data_15_maxlen_4_operations_1_operands']
 model_type = 'vanilla'
 loss_type = 'rsgan'
-vocab_size = [5000, 6613]
-temp_adpt = 'exp'
-temperature = [2, 100]
+vocab_size = [6613, 7, 7]
+temperature = [1, 1, 1]
+eta = [1, 1, 1]
+learn_temperature = int(True)
+learn_eta = int(True)
 
 # =====Basic Train=====
 samples_num = 10000
-MLE_train_epoch = 1 # 150
-ADV_train_epoch = 2 # 3000
 batch_size = 64
-max_seq_len = 20
+MLE_train_epoch = 5 # 150
+ADV_train_epoch = 300 # 3000
+max_seq_len = [20, 3, 15]
 gen_lr = 0.01
 gen_adv_lr = 1e-4
 dis_lr = 1e-4
-pre_log_step = 1 # 10
-adv_log_step = 1 # 20
+pre_log_step = 10 # 10
+adv_log_step = 20 # 20
 
 # =====Generator=====
 ADV_g_step = 1
@@ -65,7 +69,10 @@ num_heads = 2
 head_size = 256
 
 # =====Discriminator=====
-ADV_d_step = 5
+d_step = 0 # 5
+d_epoch = 0 # 3
+ADV_d_step = 1 # 5
+ADV_d_epoch = 2
 dis_embed_dim = 64
 dis_hidden_dim = 64
 num_rep = 64
@@ -95,14 +102,16 @@ args = [
     '--mle_epoch', MLE_train_epoch,
     '--adv_epoch', ADV_train_epoch,
     '--batch_size', batch_size,
-    '--max_seq_len', max_seq_len,
+    '--max_seq_len', max_seq_len[job_id],
     '--gen_lr', gen_lr,
     '--gen_adv_lr', gen_adv_lr,
     '--dis_lr', dis_lr,
     '--pre_log_step', pre_log_step,
     '--adv_log_step', adv_log_step,
-    '--temp_adpt', temp_adpt,
     '--temperature', temperature[job_id],
+    '--eta', eta[job_id],
+    '--learn_temperature', learn_temperature,
+    '--learn_eta', learn_eta,
     '--ora_pretrain', oracle_pretrain,
     '--gen_pretrain', gen_pretrain,
     '--dis_pretrain', dis_pretrain,
@@ -116,7 +125,10 @@ args = [
     '--head_size', head_size,
 
     # Discriminator
+    '--d_step', d_step,
+    '--d_epoch', d_epoch,
     '--adv_d_step', ADV_d_step,
+    '--adv_d_epoch', ADV_d_epoch,
     '--dis_embed_dim', dis_embed_dim,
     '--dis_hidden_dim', dis_hidden_dim,
     '--num_rep', num_rep,

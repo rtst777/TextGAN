@@ -12,9 +12,10 @@ from metrics.bleu import BLEU
 from models.RebarGAN_D import RebarGAN_D, RebarGAN_D2
 from models.RebarGAN_G import RebarGAN_G
 from utils.rebar_gradient_estimator import RebarGradientEstimator
+from utils.true_gradient_estimator import TrueGradientEstimator
 from utils.data_loader import GenDataIter, DisDataIter
 from utils.text_process import tensor_to_tokens
-from utils.helpers import get_losses
+from utils.helpers import get_losses, get_gradient_variance
 
 
 class RebarGANInstructor(BasicInstructor):
@@ -69,7 +70,6 @@ class RebarGANInstructor(BasicInstructor):
 
         # =====ADVERSARIAL TRAINING=====
         self.log.info('Starting Adversarial Training...')
-        self.log.info('Initial generator: %s' % (self.cal_metrics(fmt_str=True)))
 
         for adv_epoch in range(cfg.ADV_train_epoch):
             if adv_epoch % cfg.adv_log_step == 0:
@@ -77,8 +77,8 @@ class RebarGANInstructor(BasicInstructor):
             self.sig.update()
             if self.sig.adv_sig:
                 self.adv_train_generator(cfg.ADV_g_step, adv_epoch)  # Generator
-                self.adv_train_discriminator(cfg.d_step, adv_epoch)  # Discriminator
-                
+                self.adv_train_discriminator(cfg.ADV_d_step, adv_epoch)  # Discriminator
+
                 if adv_epoch % cfg.adv_log_step == 0:
                     if cfg.if_save and not cfg.if_test:
                         self._save('ADV', adv_epoch)
@@ -104,8 +104,7 @@ class RebarGANInstructor(BasicInstructor):
 
                 # =====Test=====
                 if epoch % cfg.pre_log_step == 0 or epoch == epochs - 1:
-                    self.log.info('[MLE-GEN] epoch %d : pre_loss = %.4f, %s' % (
-                        epoch, pre_loss, self.cal_metrics(fmt_str=True)))
+                    self.log.info('[MLE-GEN] epoch %d : pre_loss = %.4f' % (epoch, pre_loss))
                     if cfg.if_save and not cfg.if_test:
                         self._save('MLE', epoch)
             else:
@@ -115,34 +114,36 @@ class RebarGANInstructor(BasicInstructor):
             self._save('MLE', epoch)
 
     def adv_train_generator(self, g_step, adv_epoch):
-        """
-        The gen is trained using policy gradients, using the reward from the discriminator.
-        Training is done for num_batches batches.
-        """
         rebar_ge = RebarGradientEstimator(discriminator=self.dis, batch_size=cfg.batch_size,
                                           real_samples=self.train_data.random_batch()['target'], gpu=cfg.CUDA)
+        # true_ge = TrueGradientEstimator()  TODO
+
         total_rebar_loss = 0
         old_temperature = self.gen.temperature.item()
         old_eta = self.gen.eta.item()
         for step in range(g_step):
             # =====Train=====
-            theta = self.gen.sample_theta()
-            estimated_gradient, temperature_grad, eta_grad = rebar_ge.estimate_gradient(theta,
+            theta, z = self.gen.sample_theta(cfg.batch_size)
+            estimated_gradient, temperature_grad, eta_grad = rebar_ge.estimate_gradient(theta, z,
                                                                                         self.gen.temperature.clone().detach().requires_grad_(),
                                                                                         self.gen.eta.clone().detach().requires_grad_())
+            # vanilla_theta = self.gen.sample_vanilla_theta()
+            # true_ge = true_ge.estimate_gradient(vanilla_theta...)  TODO
+
             adv_loss = self.gen.computeRebarLoss(estimated_gradient)
             temperature_grad = temperature_grad if cfg.learn_temperature else torch.zeros_like(temperature_grad)
             eta_grad = eta_grad if cfg.learn_eta else torch.zeros_like(eta_grad)
             self.optimize(self.gen_adv_opt, adv_loss,
                           callback=functools.partial(self.gen.set_variance_loss_gradients, temperature_grad, eta_grad))
+
+            theta_gradient_log_var = get_gradient_variance(estimated_gradient)
             total_rebar_loss += adv_loss.item()
 
         # =====Test=====
         avg_rebar_loss = total_rebar_loss / g_step if g_step != 0 else 0
         if adv_epoch % cfg.adv_log_step == 0:
-            self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f, %s'
-                      % (avg_rebar_loss, old_temperature, old_eta, self.cal_metrics(fmt_str=True)))
-
+            self.log.info('[ADV-GEN] rebar_loss = %.4f, temperature = %.4f, eta = %.4f, theta_gradient_log_var = %.4f'
+                      % (avg_rebar_loss, old_temperature, old_eta, theta_gradient_log_var))
 
     def adv_train_discriminator(self, d_step, adv_epoch):
         total_loss = 0
