@@ -9,7 +9,6 @@ class RebarGradientEstimator:
         """
         A class used to estimate REBAR-based gradient for GAN-based text sequence generation problem.
         ...
-
         Attributes
         ----------
         discriminator : torch.nn.Module
@@ -34,7 +33,6 @@ class RebarGradientEstimator:
     def _environment_function(self, input):
         """
         The environment function that computes the loss for the samples with respect to the true label.
-
         :param input: input that will be evaluated. Shape: batch_size * seq_len * vocab_size
         :return g_loss: the loss for the samples with respect to the true label. Shape: batch_size
         """
@@ -50,7 +48,6 @@ class RebarGradientEstimator:
     def _sample_from_uniform_distribution(self, shape):
         """
         Gets a sample from uniform distribution.
-
         :param shape: shape of the sample
         :return sample: a sample from uniform distribution
         """
@@ -63,7 +60,6 @@ class RebarGradientEstimator:
     def _compute_z_tilde(self, b, theta, eps=1e-20):
         """
         Computes z tilde under categorical distribution by using the equations in appendix C of REBAR paper.
-
         :param b: index of each sample element. Shape: batch_size * seq_len
         :param theta: softmax of the network output. Shape: batch_size * seq_len * vocab_size
         :return z_tilde: logit of Gumbel-Softmax which can lead to b. Shape: batch_size * seq_len * vocab_size
@@ -82,7 +78,6 @@ class RebarGradientEstimator:
     def _compute_gumbel_softmax(self, z, temperature):
         """
         Computes Gumbel-Softmax
-
         :param z: logit of Gumbel-Softmax. Shape: batch_size * seq_len * vocab_size
         :param temperature: temperature to control Gumbel-Softmax. Shape: scalar
         :return sigma_lambda: gumbel_softmax value. Shape: batch_size * seq_len * vocab_size
@@ -93,7 +88,6 @@ class RebarGradientEstimator:
     def _compute_gradient_of_theta_wrt_f(self, theta, f_input):
         """
         Computes the gradient of theta with respect to the environment function output.
-
         :param theta: softmax of the network output. Shape: batch_size * seq_len * vocab_size
         :param f_input: input passed to the environment function. Shape: batch_size * seq_len * vocab_size
         :return gradient: gradient of theta w.r.t. environment function output. Shape: batch_size * seq_len * vocab_size
@@ -107,13 +101,11 @@ class RebarGradientEstimator:
     def _compute_gradient_of_theta_wrt_log_pb(self, theta, b, eps=1e-20):
         """
         Computes the gradient of theta with respect to log p(b).
-
         :param theta: softmax of the network output. Shape: batch_size * seq_len * vocab_size
         :param b: index of each sample element. Shape: batch_size * seq_len
         :return gradient: gradient of theta w.r.t. log p(b). Shape: batch_size * seq_len * vocab_size
         """
         mask = F.one_hot(b, cfg.vocab_size).bool()  # Shape: batch_size * seq_len * vocab_size
-        softmax_z = F.softmax(z, dim=-1)  # Shape: batch_size * seq_len * vocab_size
         # TODO try theta[mask]
         log_pb = torch.log(theta[mask] + eps).sum()  # scalar
         log_pb.backward(retain_graph=True)
@@ -124,9 +116,7 @@ class RebarGradientEstimator:
     def _compute_gradients_from_variance_loss(self, expected_theta_gradient, temperature, eta):
         """
         Computes the gradient from variance loss using equation (6) in RELAX paper.
-
         The gradients will be used to update control variate parameters for minimizing the variance of the estimator.
-
         :param expected_theta_gradient: estimated REBAR gradient for theta. Shape: batch_size * seq_len * vocab_size
         :param temperature: temperature to control Gumbel-Softmax. Shape: scalar
         :param eta: control variate parameter to minimize the variance of the estimator. Shape: scalar
@@ -142,7 +132,6 @@ class RebarGradientEstimator:
     def estimate_gradient(self, theta_batch, z_batch, temperature, eta):
         """
         Estimates REBAR gradient by using the equation (4) in REBAR paper.
-
         :param theta_batch: softmax of the network output. Shape: batch_size * seq_len * vocab_size
         :param z_batch: logit of Gumbel-Softmax. Shape: batch_size * seq_len * vocab_size
         :param temperature: temperature to control Gumbel-Softmax. Shape: scalar
