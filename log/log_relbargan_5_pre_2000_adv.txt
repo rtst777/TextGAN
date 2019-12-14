@@ -58,11 +58,11 @@
 >>> tips: vanilla RelbarGAN
 ====================================================================================================
 Starting Generator MLE Training...
-[MLE-GEN] epoch 0 : pre_loss = 1.4201, BLEU-[2, 3, 4, 5] = [0.751, 0.486, 0.28, 0.167], gen_NLL = 1.2090, self_bleu = [0.534],
-[MLE-GEN] epoch 4 : pre_loss = 1.0518, BLEU-[2, 3, 4, 5] = [0.828, 0.594, 0.376, 0.238], gen_NLL = 1.0644, self_bleu = [0.66],
+[MLE-GEN] epoch_mle 0 : pre_loss = 1.4201, BLEU-[2, 3, 4, 5] = [0.751, 0.486, 0.28, 0.167], gen_NLL = 1.2090, self_bleu = [0.534],
+[MLE-GEN] epoch_mle 4 : pre_loss = 1.0518, BLEU-[2, 3, 4, 5] = [0.828, 0.594, 0.376, 0.238], gen_NLL = 1.0644, self_bleu = [0.66],
 Starting Discriminator Training...
 Starting Adversarial Training...
-Initial generator: BLEU-[2, 3, 4, 5] = [0.806, 0.542, 0.332, 0.205], gen_NLL = 1.0644, self_bleu = [0.622],
+Initial generator: BLEU_MLE-[2, 3, 4, 5] = [0.806, 0.542, 0.332, 0.205], gen_NLL = 1.0644, self_bleu = [0.622],
 -----
 ADV EPOCH 0
 -----

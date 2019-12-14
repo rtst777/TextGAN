@@ -58,8 +58,8 @@
 >>> tips: vanilla RelGAN
 ====================================================================================================
 Starting Generator MLE Training...
-[MLE-GEN] epoch 0 : pre_loss = 1.4288, BLEU-[2, 3, 4, 5] = [0.766, 0.497, 0.278, 0.16], gen_NLL = 1.2286, self_bleu = [0.578],
-[MLE-GEN] epoch 4 : pre_loss = 1.0535, BLEU-[2, 3, 4, 5] = [0.785, 0.55, 0.343, 0.217], gen_NLL = 1.0762, self_bleu = [0.644],
+[MLE-GEN] MLE_epoch_MLE 0 : pre_loss = 1.4288, BLEU_MLE-[2, 3, 4, 5] = [0.766, 0.497, 0.278, 0.16], gen_NLL = 1.2286, self_bleu_MLE = [0.578],
+[MLE-GEN] MLE_epoch_MLE 4 : pre_loss = 1.0535, BLEU_MLE-[2, 3, 4, 5] = [0.785, 0.55, 0.343, 0.217], gen_NLL = 1.0762, self_bleu_MLE = [0.644],
 Starting Adversarial Training...
 [ADV] epoch 0: g_loss: 0.6934, d_loss: 0.6929, BLEU-[2, 3, 4, 5] = [0.804, 0.569, 0.353, 0.216], gen_NLL = 1.0761, self_bleu = [0.633],
 [ADV] epoch 20: g_loss: 0.7912, d_loss: 0.5854, BLEU-[2, 3, 4, 5] = [0.814, 0.569, 0.356, 0.226], gen_NLL = 1.0740, self_bleu = [0.637],

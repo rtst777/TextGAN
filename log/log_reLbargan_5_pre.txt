@@ -58,11 +58,11 @@
 >>> tips: vanilla RelbarGAN
 ====================================================================================================
 Starting Generator MLE Training...
-[MLE-GEN] epoch 0 : pre_loss = 1.4266, BLEU-[2, 3, 4, 5] = [0.735, 0.462, 0.258, 0.153], gen_NLL = 1.2252, self_bleu = [0.576],
-[MLE-GEN] epoch 4 : pre_loss = 1.0574, BLEU-[2, 3, 4, 5] = [0.783, 0.526, 0.312, 0.19], gen_NLL = 1.0999, self_bleu = [0.62],
+[MLE-GEN] epoch 0 : pre_loss = 1.4266, BLEU_MLE-[2, 3, 4, 5] = [0.735, 0.462, 0.258, 0.153], gen_NLL = 1.2252, self_bleu_MLE = [0.576],
+[MLE-GEN] epoch 4 : pre_loss = 1.0574, BLEU_MLE-[2, 3, 4, 5] = [0.783, 0.526, 0.312, 0.19], gen_NLL = 1.0999, self_bleu_MLE = [0.62],
 Starting Discriminator Training...
 Starting Adversarial Training...
-Initial generator: BLEU-[2, 3, 4, 5] = [0.804, 0.552, 0.338, 0.206], gen_NLL = 1.0999, self_bleu = [0.641],
+Initial generator: BLEU_MLE-[2, 3, 4, 5] = [0.804, 0.552, 0.338, 0.206], gen_NLL = 1.0999, self_bleu_MLE = [0.641],
 -----
 ADV EPOCH 0
 -----
@@ -283,6 +283,4 @@ ADV EPOCH 2150
 -----
 [ADV-GEN] rebar_loss = 36.8048, temperature = 1.0289, eta = 1.0128, BLEU-[2, 3, 4, 5] = [0.891, 0.706, 0.483, 0.318], gen_NLL = 1.0588, self_bleu = [0.745],
 [ADV-DIS] d_loss = 0.6792,
------
-ADV EPOCH 2200
 -----
